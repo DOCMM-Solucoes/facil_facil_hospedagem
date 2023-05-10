@@ -51,11 +51,29 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  # gem 'rspec-rails', '~> 4.0'
+  # gem 'shoulda-matchers', '~> 5.0'
+  # gem 'database_cleaner'
+  # gem 'binding_of_caller'
+  # gem 'annotate'
+  # gem 'pry-byebug'
+  # gem 'factory_bot_rails'
+  # gem 'ffaker'
+  # gem 'faker'
+  # gem 'cpf_faker'
+  # gem 'rubycritic', require: false
+  # gem 'simplecov'
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  # gem 'listen', '>= 3.0.5', '< 3.2'
+  # gem 'spring-watcher-listen', '~> 2.0.0'
+  # gem 'better_errors'
+  # gem "binding_of_caller"
+  # gem 'rails_layout'
+  # gem 'letter_opener_web'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -69,4 +87,19 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  # gem 'rspec-benchmark'
+  # gem 'database_cleaner'
 end
+
+# gem "pg", "~> 1.1"
+
+#Admin
+# gem 'devise'
+# gem 'activeadmin'
+# gem 'activeadmin_sidekiq_stats'
+# gem "chartkick", '~> 2.2.0'
+# gem 'groupdate'
+# gem 'sass-rails'
+# gem "octokit", "~> 5.0"
+# gem 'httparty'
+# gem 'nokogiri'
