@@ -1,0 +1,67 @@
+<%= form_with(model: establishment) do |form| %>
+  <% if establishment.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(establishment.errors.count, "error") %> prohibited this establishment from being saved:</h2>
+
+      <ul>
+        <% establishment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :qty_bedrooms, style: "display: block" %>
+    <%= form.number_field :qty_bedrooms %>
+  </div>
+
+  <div>
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div>
+    <%= form.label :cep, style: "display: block" %>
+    <%= form.number_field :cep %>
+  </div>
+
+  <div>
+    <%= form.label :city, style: "display: block" %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div>
+    <%= form.label :state, style: "display: block" %>
+    <%= form.text_field :state %>
+  </div>
+
+  <div>
+    <%= form.label :phone, style: "display: block" %>
+    <%= form.number_field :phone %>
+  </div>
+
+  <div>
+    <%= form.label :site, style: "display: block" %>
+    <%= form.text_field :site %>
+  </div>
+
+  <div>
+    <%= form.label :owner, style: "display: block" %>
+    <%= form.text_field :owner %>
+  </div>
+
+  <div>
+    <%= form.label :cpf, style: "display: block" %>
+    <%= form.number_field :cpf %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
