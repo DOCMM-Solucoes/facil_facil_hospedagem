@@ -6,5 +6,6 @@
   <%= link_to "Edit this establishment", edit_establishment_path(@establishment) %> |
   <%= link_to "Back to establishments", establishments_path %>
 
-  <%= button_to "Destroy this establishment", @establishment, method: :delete %>
+  <%= button_to "Delete this establishment", @establishment, method: :delete,
+                form: { data: { turbo_confirm: 'Are you sure?' } }%>
 </div>
