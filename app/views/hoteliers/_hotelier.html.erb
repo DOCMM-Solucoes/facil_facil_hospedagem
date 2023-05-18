@@ -1,6 +1,6 @@
 <div id="<%= dom_id hotelier %>">
   <p>
-    <strong>Name:</strong>
+    <strong>Nome:</strong>
     <%= hotelier.name %>
   </p>
 
@@ -10,13 +10,33 @@
   </p>
 
   <p>
-    <strong>Phone number:</strong>
+    <strong>Telefone:</strong>
     <%= hotelier.phone_number %>
   </p>
 
   <p>
-    <strong>Plan:</strong>
+    <strong>Plano:</strong>
     <%= hotelier.plan %>
+  </p>
+
+  <p>
+    <strong>Endereço:</strong>
+    <%= hotelier.address.street %>
+  </p>
+
+  <p>
+    <strong>CEP:</strong>
+    <%= hotelier.address.postal_code %>
+  </p>
+
+  <p>
+    <strong>Cidade:</strong>
+    <%= hotelier.address.street %>
+  </p>
+
+  <p>
+    <strong>UF:</strong>
+    <%= hotelier.address.state %>
   </p>
 
 </div>
