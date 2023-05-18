@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :addresses
-  resources :hoteliers
+  resources :hoteliers do
+    resource :address
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
