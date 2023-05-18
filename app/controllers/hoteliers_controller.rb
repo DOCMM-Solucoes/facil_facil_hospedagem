@@ -13,6 +13,7 @@ class HoteliersController < ApplicationController
   # GET /hoteliers/new
   def new
     @hotelier = Hotelier.new
+    @hotelier.build_address
   end
 
   # GET /hoteliers/1/edit
@@ -65,6 +66,7 @@ class HoteliersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def hotelier_params
-      params.require(:hotelier).permit(:name, :cpf, :phone_number, :plan)
+      params.require(:hotelier).permit(:name, :cpf, :phone_number, :plan,
+                                       address_attributes: [:id, :street, :postal_code, :city, :state])
     end
 end
