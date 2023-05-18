@@ -12,7 +12,7 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
+    <%= form.label :name, 'Nome',style: "display: block" %>
     <%= form.text_field :name %>
   </div>
 
@@ -21,33 +21,31 @@
     <%= form.text_field :cpf %>
   </div>
 
-  <div>
-    <%= form.fields_for :address do |address_fields| %>
-      <%= address_fields.label :street %>
-      <%= address_fields.text_field :street %>
+  <%= form.fields_for :address do |address_fields| %>
+    <%= address_fields.label :street , 'Endereço' %>
+    <%= address_fields.text_field :street %>
 
-      <%= address_fields.label :postal_code %>
-      <%= address_fields.text_field :postal_code %>
+    <%= address_fields.label :postal_code, 'CEP' %>
+    <%= address_fields.text_field :postal_code %>
 
-      <%= address_fields.label :city %>
-      <%= address_fields.text_field :city %>
+    <%= address_fields.label :city, 'Cidade' %>
+    <%= address_fields.text_field :city %>
 
-      <%= address_fields.label :state %>
-      <%= address_fields.text_field :state %>
-    <% end %>
-  </div>
+    <%= address_fields.label :state, 'UF' %>
+    <%= address_fields.text_field :state %>
+  <% end %>
 
   <div>
-    <%= form.label :phone_number, style: "display: block" %>
+    <%= form.label :phone_number, 'Telefone',style: "display: block" %>
     <%= form.text_field :phone_number %>
   </div>
 
   <div>
-    <%= form.label :plan, style: "display: block" %>
+    <%= form.label :plan, 'Plano', style: "display: block" %>
     <%= form.text_field :plan %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit(@hotelier.new_record? ? "Salvar hoteleiro" : "Editar hoteleiro") %>
   </div>
 <% end %>
