@@ -1,0 +1,2 @@
+class Guium < ApplicationRecord
+end

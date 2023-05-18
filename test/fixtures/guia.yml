@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Nome_do_guia: MyString
+  Telefone: MyString
+  CPF: MyString
+  CNPJ: MyString
+  Cidade: MyString
+  US: MyString
+
+two:
+  Nome_do_guia: MyString
+  Telefone: MyString
+  CPF: MyString
+  CNPJ: MyString
+  Cidade: MyString
+  US: MyString

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Guia</h1>
+
+<div id="guia">
+  <% @guia.each do |guium| %>
+    <%= render guium %>
+    <p>
+      <%= link_to "Show this guium", guium %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New guium", new_guium_path %>

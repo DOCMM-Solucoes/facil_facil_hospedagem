@@ -1,0 +1,47 @@
+<%= form_with(model: guium) do |form| %>
+  <% if guium.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(guium.errors.count, "error") %> prohibited this guium from being saved:</h2>
+
+      <ul>
+        <% guium.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :Nome_do_guia, style: "display: block" %>
+    <%= form.text_field :Nome_do_guia %>
+  </div>
+
+  <div>
+    <%= form.label :Telefone, style: "display: block" %>
+    <%= form.text_field :Telefone %>
+  </div>
+
+  <div>
+    <%= form.label :CPF, style: "display: block" %>
+    <%= form.text_field :CPF %>
+  </div>
+
+  <div>
+    <%= form.label :CNPJ, style: "display: block" %>
+    <%= form.text_field :CNPJ %>
+  </div>
+
+  <div>
+    <%= form.label :Cidade, style: "display: block" %>
+    <%= form.text_field :Cidade %>
+  </div>
+
+  <div>
+    <%= form.label :US, style: "display: block" %>
+    <%= form.text_field :US %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

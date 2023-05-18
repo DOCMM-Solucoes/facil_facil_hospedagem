@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @guium %>
+
+<div>
+  <%= link_to "Edit this guium", edit_guium_path(@guium) %> |
+  <%= link_to "Back to guia", guia_path %>
+
+  <%= button_to "Destroy this guium", @guium, method: :delete %>
+</div>
