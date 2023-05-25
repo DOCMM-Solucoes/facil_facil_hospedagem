@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @establishment %>
+
+<div>
+  <%= link_to t('app.show.edit'), edit_establishment_path(@establishment) %> |
+  <%= link_to t('app.show.back'), establishments_path %>
+
+  <%= button_to t('app.show.delete'), @establishment, method: :delete,
+                form: { data: { turbo_confirm: t('app.controller.notice_delete') } }%>
+</div>
