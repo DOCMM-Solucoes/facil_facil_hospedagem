@@ -1,14 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Establishments</h1>
+<h1><%= t 'app.index.title' %></h1>
 
 <div id="establishments">
   <% @establishments.each do |establishment| %>
     <%= render establishment %>
     <p>
-      <%= link_to "Show this establishment", establishment %>
+      <%= link_to t('app.index.show'), establishment %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New establishment", new_establishment_path %>
+<%= link_to t('app.index.new'), new_establishment_path %>

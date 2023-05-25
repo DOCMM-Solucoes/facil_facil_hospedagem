@@ -3,8 +3,9 @@
 <%= render @establishment %>
 
 <div>
-  <%= link_to "Edit this establishment", edit_establishment_path(@establishment) %> |
-  <%= link_to "Back to establishments", establishments_path %>
+  <%= link_to t('app.show.edit'), edit_establishment_path(@establishment) %> |
+  <%= link_to t('app.show.back'), establishments_path %>
 
-  <%= button_to "Destroy this establishment", @establishment, method: :delete %>
+  <%= button_to t('app.show.delete'), @establishment, method: :delete,
+                form: { data: { turbo_confirm: t('app.controller.notice_delete') } }%>
 </div>
