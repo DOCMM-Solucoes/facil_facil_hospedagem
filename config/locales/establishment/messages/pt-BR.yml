@@ -1,0 +1,10 @@
+pt-BR:
+  app:
+    controller:
+      create:
+        success: Estabelecimento criado com sucesso.
+      update:
+        success: Estabelecimento atualizado com sucesso.
+      destroy:
+        success: Estabelecimento deletado com sucesso.
+      notice_delete: Deletar estabelecimento?

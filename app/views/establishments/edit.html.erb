@@ -1,0 +1,10 @@
+<h1><%= t'app.edit.title' %></h1>
+
+<%= render "form", establishment: @establishment %>
+
+<br>
+
+<div>
+  <%= link_to t('app.edit.show'), @establishment %> |
+  <%= link_to t('app.edit.back'), establishments_path %>
+</div>

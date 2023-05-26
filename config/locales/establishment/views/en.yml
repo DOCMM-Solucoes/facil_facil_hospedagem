@@ -1,0 +1,24 @@
+en:
+  app:
+    index:
+      show: Show this establishment
+      new: New establishment
+      title: Establishments
+    edit:
+      show: Show this establishment
+      back: Back to establishments
+      title: Editing establishment
+    new:
+      title: New establishment
+    show:
+      edit: Edit this establishment
+      back: Back to establishments
+      delete: Delete this establishment
+    establishment:
+      name: Establishment
+      bedrooms: Qty bedrooms
+      phone: Phone number
+      site: Site
+      create: Create
+      update: Update
+

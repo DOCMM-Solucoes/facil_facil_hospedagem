@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :hoteliers
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :hoteliers
+
+  scope '(locale)', locale:/pt-BR|en/ do
+    resources :establishments
+  end
 end
