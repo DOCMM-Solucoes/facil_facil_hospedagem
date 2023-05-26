@@ -3,8 +3,9 @@
 <%= render @guide %>
 
 <div>
-  <%= link_to "Edit this guide", edit_guide_path(@guide) %> |
-  <%= link_to "Back to guides", guides_path %>
+  <%= link_to t('app.show.edit'), edit_guide_path(@guide) %> |
+  <%= link_to t('app.show.back'), guides_path %>
 
-  <%= button_to "Destroy this guide", @guide, method: :delete %>
+  <%= button_to t('app.show.delete'), @guide, method: :delete,
+                form: { data: { turbo_confirm: t('app.controller.notice_delete') } }%>
 </div>

@@ -1,9 +1,9 @@
-<h1>New guide</h1>
+<h1><%= t('app.new.title') %></h1>
 
 <%= render "form", guide: @guide %>
 
 <br>
 
 <div>
-  <%= link_to "Back to guides", guides_path %>
+  <%= link_to  t('app.show.back'), guides_path %>
 </div>

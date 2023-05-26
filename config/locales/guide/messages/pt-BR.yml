@@ -1,0 +1,10 @@
+pt-BR:
+  app:
+    controller:
+      create:
+        success: Guia criado com sucesso.
+      update:
+        success: Guia atualizado com sucesso.
+      destroy:
+        success: Guia deletado com sucesso.
+      notice_delete: Deletar Guia?

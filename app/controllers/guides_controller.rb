@@ -25,7 +25,7 @@ class GuidesController < ApplicationController
 
     respond_to do |format|
       if @guide.save
-        format.html { redirect_to guide_url(@guide), notice: "Guide was successfully created." }
+        format.html { redirect_to guide_url(@guide), notice: t('app.controller.create.success') }
         format.json { render :show, status: :created, location: @guide }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class GuidesController < ApplicationController
   def update
     respond_to do |format|
       if @guide.update(guide_params)
-        format.html { redirect_to guide_url(@guide), notice: "Guide was successfully updated." }
+        format.html { redirect_to guide_url(@guide), notice: t('app.controller.update.success') }
         format.json { render :show, status: :ok, location: @guide }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class GuidesController < ApplicationController
     @guide.destroy
 
     respond_to do |format|
-      format.html { redirect_to guides_url, notice: "Guide was successfully destroyed." }
+      format.html { redirect_to guide_url, notice: t('app.controller.destroy.success') }
       format.json { head :no_content }
     end
   end
