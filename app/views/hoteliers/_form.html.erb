@@ -1,0 +1,51 @@
+<%= form_with(model: hotelier) do |form| %>
+  <% if hotelier.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(hotelier.errors.count, "error") %> prohibited this hotelier from being saved:</h2>
+
+      <ul>
+        <% hotelier.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, 'Nome',style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :cpf, style: "display: block" %>
+    <%= form.text_field :cpf %>
+  </div>
+
+  <%= form.fields_for :address do |address_fields| %>
+    <%= address_fields.label :street , 'Endereço' %>
+    <%= address_fields.text_field :street %>
+
+    <%= address_fields.label :postal_code, 'CEP' %>
+    <%= address_fields.text_field :postal_code %>
+
+    <%= address_fields.label :city, 'Cidade' %>
+    <%= address_fields.text_field :city %>
+
+    <%= address_fields.label :state, 'UF' %>
+    <%= address_fields.text_field :state %>
+  <% end %>
+
+  <div>
+    <%= form.label :phone_number, 'Telefone',style: "display: block" %>
+    <%= form.text_field :phone_number %>
+  </div>
+
+  <div>
+    <%= form.label :plan, 'Plano', style: "display: block" %>
+    <%= form.text_field :plan %>
+  </div>
+
+  <div>
+    <%= form.submit(@hotelier.new_record? ? "Salvar hoteleiro" : "Salvar alterações") %>
+  </div>
+<% end %>

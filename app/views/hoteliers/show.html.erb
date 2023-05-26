@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @hotelier %>
+
+<div>
+  <%= link_to "Editar este hoteleiro", edit_hotelier_path(@hotelier) %> |
+  <%= link_to "Voltar para lista de hoteleiros", hoteliers_path %>
+
+  <%= button_to "Apagar este hoteleiro", @hotelier, method: :delete %>
+</div>
