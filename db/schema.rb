@@ -11,15 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_05_25_182550) do
-  create_table "establishments", force: :cascade do |t|
-    t.string "name"
-    t.string "qty_bedrooms"
-    t.string "phone"
-    t.string "site"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-  
   create_table "addresses", force: :cascade do |t|
     t.integer "hotelier_id", null: false
     t.string "street"
@@ -31,6 +22,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_25_182550) do
     t.index ["hotelier_id"], name: "index_addresses_on_hotelier_id"
   end
 
+  create_table "establishments", force: :cascade do |t|
+    t.string "name"
+    t.string "qty_bedrooms"
+    t.string "phone"
+    t.string "site"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "hoteliers", force: :cascade do |t|
     t.string "name"
     t.string "cpf"
@@ -38,6 +38,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_25_182550) do
     t.string "plan"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    
+  end
+
   add_foreign_key "addresses", "hoteliers"
 end
