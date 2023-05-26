@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  guide: MyString
+  phone: MyString
+  cpf: MyString
+  enterprise: MyString
+  cnpj: MyString
+  city: MyString
+  uf: MyString
+
+two:
+  guide: MyString
+  phone: MyString
+  cpf: MyString
+  enterprise: MyString
+  cnpj: MyString
+  city: MyString
+  uf: MyString
