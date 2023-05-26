@@ -15,9 +15,12 @@ en:
       back: Back to guides
       delete: Delete this guide
     guide:
-      name: Guide
-      bedrooms: Qty bedrooms
-      phone: Phone number
-      site: Site
+      guide: Guide
+      phone: Phone
+      cpf: CPF
+      enterprise: Enterprise
+      cnpj: CNPJ
+      city: City
+      uf: Uf 
       create: Create
       update: Update

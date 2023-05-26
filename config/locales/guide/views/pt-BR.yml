@@ -15,9 +15,12 @@ pt-BR:
       back: Voltar para guias
       delete: Deletar guia
     guide:
-      name: Guia
-      bedrooms: Qtd quartos
+      guide: Guia
       phone: Telefone
-      site: Site
+      cpf: CPF
+      enterprise: Empresa
+      cnpj: CNPJ
+      city: Cidade
+      uf: Estado
       create: Salvar
       update: Atualizar
