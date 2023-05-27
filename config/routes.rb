@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :guides
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  scope '(locale)', locale:/pt-BR|en/ do
+    resources :guides
+  end
 end
