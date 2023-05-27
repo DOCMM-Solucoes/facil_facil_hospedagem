@@ -1,16 +1,16 @@
 en:
   app:
-    index:
+    guide_index:
       show: Show this guide
       new: New guide
       title: Guides
-    edit:
+    guide_edit:
       show: Show this guide
       back: Back to guides
       title: Editing guide
-    new:
+    guide_new:
       title: New guide
-    show:
+    guide_show:
       edit: Edit this guide
       back: Back to guides
       delete: Delete this guide
