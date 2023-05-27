@@ -235,6 +235,7 @@ en-US:
       edit: ""
     new:
       title: ""
+      back: ""
     controller:
       notice_create: ""
       notice_update: ""
