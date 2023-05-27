@@ -12,3 +12,7 @@ pt-BR:
     new:
       title: Novo hoteleiro
       back: Voltar para hoteleiros
+    show:
+      edit: Editar hoteleiro
+      back: Voltar para hoteleiros
+      delete: Deletar hoteleiro
