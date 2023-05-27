@@ -12,36 +12,31 @@
   <% end %>
 
   <div>
-    <%= form.label guide, style: "display: block" %>
     <%= form.label t'app.guide.guide', style: "display: block" %>
     <%= form.text_field :guide %>
   </div>
 
   <div>
-    <%= form.label phone, style: "display: block" %>
     <%= form.label t'app.guide.phone', style: "display: block" %>
     <%= form.text_field :phone %>
   </div>
 
   <div>
-    <%= form.label cpf, style: "display: block" %>
-    <%= form.label t'app.cuide.cpf', style: "display: block" %>
+    <%= form.label t'app.guide.cpf', style: "display: block" %>
     <%= form.text_field :cpf %>
   </div>
 
   <div>
-    <%= form.label company, style: "display: block" %>
-    <%= form.label t'app.guide.enterprise', style: "display: block" %>
+    <%= form.label t'app.guide.company', style: "display: block" %>
     <%= form.text_field :company %>
   </div>
 
   <div>
-    <%= form.label cnpj, style: "display: block" %>
     <%= form.label t'app.guide.cnpj', style: "display: block" %>
     <%= form.text_field :cnpj %>
   </div>
 
   <div>
-    <%= form.submit %>
+        <%= form.submit (@guide.new_record? ? t('app.guide.create') : t('app.guide.update'))%>
   </div>
 <% end %>
