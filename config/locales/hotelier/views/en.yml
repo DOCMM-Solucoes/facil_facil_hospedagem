@@ -5,3 +5,7 @@ en:
       new: New hotelier
       title: Hoteliers
       name: Name
+    edit:
+      show: Show this hotelier
+      back: Back to hoteliers
+      title: Editing hotelier
