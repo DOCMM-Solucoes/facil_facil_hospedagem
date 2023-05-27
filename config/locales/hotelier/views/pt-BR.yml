@@ -16,3 +16,12 @@ pt-BR:
       edit: Editar hoteleiro
       back: Voltar para hoteleiros
       delete: Deletar hoteleiro
+    hotelier:
+      name: Hoteleiro
+      cpf: CPF
+      phone_number: Telefone
+      plan: Plano
+      address_street: Endereço
+      address_postal_code: CEP
+      address_city: Cidade
+      address_state: UF
