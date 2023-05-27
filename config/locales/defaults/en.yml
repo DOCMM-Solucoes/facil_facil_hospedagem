@@ -247,6 +247,15 @@ en-US:
         success: ""
       destroy:
         success: ""
+    hotelier:
+      name: ""
+      cpf: ""
+      phone_number: ""
+      plan: ""
+      address_street: ""
+      address_postal_code: ""
+      address_city: ""
+      address_state: ""
   submit:
     update: ""
     create: ""
