@@ -12,3 +12,7 @@ en:
     new:
       title: New hotelier
       back: Back to hoteliers
+    show:
+      edit: Edit this hotelier
+      back: Back to hoteliers
+      delete: Delete this hotelier
