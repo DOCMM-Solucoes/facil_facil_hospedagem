@@ -25,3 +25,6 @@ pt-BR:
       address_postal_code: CEP
       address_city: Cidade
       address_state: UF
+    form:
+      create: Salvar
+      update: Atualizar
