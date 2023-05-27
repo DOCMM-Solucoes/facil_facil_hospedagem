@@ -1,9 +1,9 @@
-<h1>Novo hoteleiro</h1>
+<h1><%= t 'app.new.title' %></h1>
 
 <%= render "form", hotelier: @hotelier %>
 
 <br>
 
 <div>
-  <%= link_to "Voltar para lista de hoteleiros", hoteliers_path %>
+  <%= link_to t('app.new.back'), hoteliers_path %>
 </div>
