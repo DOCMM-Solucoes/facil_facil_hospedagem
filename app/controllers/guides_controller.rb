@@ -50,7 +50,7 @@ class GuidesController < ApplicationController
     @guide.destroy
 
     respond_to do |format|
-      format.html { redirect_to guide_url, notice: t('app.controller.destroy.success') }
+      format.html { redirect_to guides_url, notice: t('app.controller.destroy.success') }
       format.json { head :no_content }
     end
   end
