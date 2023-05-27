@@ -16,3 +16,12 @@ en:
       edit: Edit this hotelier
       back: Back to hoteliers
       delete: Delete this hotelier
+    hotelier:
+      name: Hotelier
+      cpf: CPF
+      phone_number: Phone number
+      plan: Plan
+      address_street: Street
+      address_postal_code: Zip/Postal code
+      address_city: City
+      address_state: State/Province/Region
