@@ -1,0 +1,24 @@
+pt-BR:
+  app:
+    index:
+      show: Mostrar este Guia
+      new: Novo Guia
+      title: Guias
+    edit:
+      show: Mostrar este guia
+      back: Voltar para guias
+      title: Editar guia
+    new:
+      title: Novo guia
+    show:
+      edit: Editar guia
+      back: Voltar para guias
+      delete: Deletar guia
+    guide:
+      guide: Guia
+      phone: Tenefone
+      cpf: CPF
+      company: Empresa
+      cnpj: CNPJ
+      create: Criar
+      update: Atualizar

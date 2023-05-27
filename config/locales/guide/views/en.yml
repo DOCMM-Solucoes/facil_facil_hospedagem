@@ -1,0 +1,24 @@
+en:
+  app:
+    index:
+      show: Show this guide
+      new: New guide
+      title: Guides
+    edit:
+      show: Show this guide
+      back: Back to guides
+      title: Editing guide
+    new:
+      title: New guide
+    show:
+      edit: Edit this guide
+      back: Back to guides
+      delete: Delete this guide
+    guide:
+      guide: Guide
+      phone: Phone number
+      cpf: CPF
+      company: Company
+      cnpj: CNPJ
+      create: Create
+      update: Update
