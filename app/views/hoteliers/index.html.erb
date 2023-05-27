@@ -1,14 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Hoteleiros</h1>
+<h1><%= t 'app.index.title' %></h1>
 
 <div id="hoteliers">
   <% @hoteliers.each do |hotelier| %>
-    <p>Nome: <%= hotelier.name %></p>
+    <p><%= t 'app.index.name' %>: <%= hotelier.name %></p>
+
     <p>
-      <%= link_to "Mostrar este hoteleiro", hotelier %>
+      <%= link_to t('app.index.show'), hotelier %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "Cadastrar novo hoteleiro", new_hotelier_path %>
+<%= link_to t('app.index.new'), new_hotelier_path %>
