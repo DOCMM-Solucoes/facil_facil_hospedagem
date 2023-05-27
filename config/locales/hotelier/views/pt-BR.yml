@@ -9,3 +9,5 @@ pt-BR:
       show: Mostrar este hoteleiro
       back: Voltar para hoteleiros
       title: Editar hoteleiro
+    new:
+      title: Novo hoteleiro
