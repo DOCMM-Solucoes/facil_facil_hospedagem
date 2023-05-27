@@ -9,3 +9,5 @@ en:
       show: Show this hotelier
       back: Back to hoteliers
       title: Editing hotelier
+    new:
+      title: New hotelier
