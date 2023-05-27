@@ -1,0 +1,7 @@
+pt-BR:
+  app:
+    index:
+      show: Mostrar este hoteleiro
+      new: Novo hoteleiro
+      title: Hoteleiros
+      name: Nome
