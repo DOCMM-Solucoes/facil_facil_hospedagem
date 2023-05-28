@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1><%= t 'app.guide_index.title' %></h1>
+
+<div id="guides">
+  <% @guides.each do |guide| %>
+    <p>
+      <%= guide.name %>
+    </p>
+    <p>
+      <%= link_to t('app.guide_index.show'), guide %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to t('app.guide_index.new'), new_guide_path %>

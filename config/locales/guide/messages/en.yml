@@ -1,0 +1,10 @@
+en:
+  app:
+    guides_controller:
+      create:
+        success: Guide was successfully created.
+      update:
+        success: Guide was successfully updated.
+      destroy:
+        success: Guide was successfully destroyed.
+      notice_delete: Are you sure?
