@@ -259,6 +259,9 @@ en-US:
     form:
       create: ""
       update: ""
+    hotelier_form:
+      create: ""
+      update: ""
   submit:
     update: ""
     create: ""
