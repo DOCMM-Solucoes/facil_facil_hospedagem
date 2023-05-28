@@ -6,5 +6,6 @@
   <%= link_to t('app.hotelier_show.edit'), edit_hotelier_path(@hotelier) %> |
   <%= link_to t('app.hotelier_show.back'), hoteliers_path %>
 
-  <%= button_to t('app.hotelier_show.delete'), @hotelier, method: :delete %>
+  <%= button_to t('app.hotelier_show.delete'), @hotelier, method: :delete,
+                form: { data: { turbo_confirm: t('app.hoteliers_controller.notice_delete') } } %>
 </div>
