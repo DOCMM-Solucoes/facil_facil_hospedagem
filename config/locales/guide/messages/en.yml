@@ -1,6 +1,6 @@
 en:
   app:
-    controller:
+    guides_controller:
       create:
         success: Guide was successfully created.
       update:

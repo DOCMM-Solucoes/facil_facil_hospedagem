@@ -3,9 +3,9 @@
 <%= render @guide %>
 
 <div>
-  <%= link_to t('app.show.edit'), edit_guide_path(@guide) %> |
-  <%= link_to t('app.show.back'), guides_path %>
+  <%= link_to t('app.guide_show.edit'), edit_guide_path(@guide) %> |
+  <%= link_to t('app.guide_show.back'), guides_path %>
 
-  <%= button_to t('app.show.delete'), @guide, method: :delete,
-                form: { data: { turbo_confirm: t('app.controller.notice_delete') } }%>
+  <%= button_to t('app.guide_show.delete'), @guide, method: :delete,
+                form: { data: { turbo_confirm: t('app.guides_controller.notice_delete') } }%>
 </div>

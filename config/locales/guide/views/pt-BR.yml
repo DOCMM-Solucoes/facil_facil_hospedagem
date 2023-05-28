@@ -1,16 +1,16 @@
 pt-BR:
   app:
-    index:
+    guide_index:
       show: Mostrar este Guia
       new: Novo Guia
       title: Guias
-    edit:
+    guide_edit:
       show: Mostrar este guia
       back: Voltar para guias
       title: Editar guia
-    new:
+    guide_new:
       title: Novo guia
-    show:
+    guide_show:
       edit: Editar guia
       back: Voltar para guias
       delete: Deletar guia

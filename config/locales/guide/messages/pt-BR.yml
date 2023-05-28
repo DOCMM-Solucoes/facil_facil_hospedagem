@@ -1,6 +1,6 @@
 pt-BR:
   app:
-    controller:
+    guides_controller:
       create:
         success: Guia criado com sucesso.
       update:
