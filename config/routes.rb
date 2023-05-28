@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-
-  resources :hoteliers
-
-  scope '(locale)', locale:/pt-BR|en/ do
-    resources :establishments
+    scope '(locale)', locale:/pt-BR|en/ do
+    resources :guides
   end
 end
