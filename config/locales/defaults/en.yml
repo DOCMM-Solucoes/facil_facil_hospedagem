@@ -262,6 +262,9 @@ en-US:
     hotelier_form:
       create: ""
       update: ""
+    hotelier_new:
+      title: ""
+      back: ""
   submit:
     update: ""
     create: ""
