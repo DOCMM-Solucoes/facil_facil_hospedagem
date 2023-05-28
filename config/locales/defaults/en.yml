@@ -274,6 +274,10 @@ en-US:
       name: ""
       show: ""
       new: ""
+    hotelier_show:
+      edit: ""
+      back: ""
+      delete: ""
   submit:
     update: ""
     create: ""
