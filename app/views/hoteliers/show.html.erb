@@ -3,8 +3,8 @@
 <%= render @hotelier %>
 
 <div>
-  <%= link_to t('app.show.edit'), edit_hotelier_path(@hotelier) %> |
-  <%= link_to t('app.show.back'), hoteliers_path %>
+  <%= link_to t('app.hotelier_show.edit'), edit_hotelier_path(@hotelier) %> |
+  <%= link_to t('app.hotelier_show.back'), hoteliers_path %>
 
-  <%= button_to t('app.show.delete'), @hotelier, method: :delete %>
+  <%= button_to t('app.hotelier_show.delete'), @hotelier, method: :delete %>
 </div>
