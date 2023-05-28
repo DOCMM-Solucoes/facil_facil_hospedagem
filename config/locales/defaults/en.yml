@@ -265,6 +265,10 @@ en-US:
     hotelier_new:
       title: ""
       back: ""
+    hotelier_edit:
+      title: ""
+      show: ""
+      back: ""
   submit:
     update: ""
     create: ""
