@@ -269,6 +269,11 @@ en-US:
       title: ""
       show: ""
       back: ""
+    hotelier_index:
+      title: ""
+      name: ""
+      show: ""
+      new: ""
   submit:
     update: ""
     create: ""
