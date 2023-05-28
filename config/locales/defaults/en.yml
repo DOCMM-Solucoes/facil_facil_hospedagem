@@ -228,12 +228,14 @@ en-US:
       show: ""
       new: ""
       title: ""
+      name: ""
     show:
       back: ""
       delete: ""
       edit: ""
     new:
       title: ""
+      back: ""
     controller:
       notice_create: ""
       notice_update: ""
@@ -245,6 +247,45 @@ en-US:
         success: ""
       destroy:
         success: ""
+    hotelier:
+      name: ""
+      cpf: ""
+      phone_number: ""
+      plan: ""
+      address_street: ""
+      address_postal_code: ""
+      address_city: ""
+      address_state: ""
+    form:
+      create: ""
+      update: ""
+    hotelier_form:
+      create: ""
+      update: ""
+    hotelier_new:
+      title: ""
+      back: ""
+    hotelier_edit:
+      title: ""
+      show: ""
+      back: ""
+    hotelier_index:
+      title: ""
+      name: ""
+      show: ""
+      new: ""
+    hotelier_show:
+      edit: ""
+      back: ""
+      delete: ""
+    hoteliers_controller:
+      create:
+        success: ""
+      update:
+        success: ""
+      destroy:
+        success: ""
+      notice_delete: ""
   submit:
     update: ""
     create: ""

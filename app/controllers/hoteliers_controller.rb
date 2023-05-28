@@ -26,7 +26,7 @@ class HoteliersController < ApplicationController
 
     respond_to do |format|
       if @hotelier.save
-        format.html { redirect_to hotelier_url(@hotelier), notice: "Hotelier was successfully created." }
+        format.html { redirect_to hotelier_url(@hotelier), notice: t('app.hoteliers_controller.create.success') }
         format.json { render :show, status: :created, location: @hotelier }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class HoteliersController < ApplicationController
   def update
     respond_to do |format|
       if @hotelier.update(hotelier_params)
-        format.html { redirect_to hotelier_url(@hotelier), notice: "Hotelier was successfully updated." }
+        format.html { redirect_to hotelier_url(@hotelier), notice: t('app.hoteliers_controller.update.success') }
         format.json { render :show, status: :ok, location: @hotelier }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class HoteliersController < ApplicationController
     @hotelier.destroy
 
     respond_to do |format|
-      format.html { redirect_to hoteliers_url, notice: "Hotelier was successfully destroyed." }
+      format.html { redirect_to hoteliers_url, notice: t('app.hoteliers_controller.destroy.success') }
       format.json { head :no_content }
     end
   end

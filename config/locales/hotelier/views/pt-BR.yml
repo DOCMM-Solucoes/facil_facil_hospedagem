@@ -1,0 +1,30 @@
+pt-BR:
+  app:
+    hotelier_index:
+      show: Mostrar este hoteleiro
+      new: Novo hoteleiro
+      title: Hoteleiros
+      name: Nome
+    hotelier_edit:
+      show: Mostrar este hoteleiro
+      back: Voltar para hoteleiros
+      title: Editar hoteleiro
+    hotelier_new:
+      title: Novo hoteleiro
+      back: Voltar para hoteleiros
+    hotelier_show:
+      edit: Editar hoteleiro
+      back: Voltar para hoteleiros
+      delete: Deletar hoteleiro
+    hotelier:
+      name: Hoteleiro
+      cpf: CPF
+      phone_number: Telefone
+      plan: Plano
+      address_street: Endereço
+      address_postal_code: CEP
+      address_city: Cidade
+      address_state: UF
+    hotelier_form:
+      create: Salvar
+      update: Atualizar
