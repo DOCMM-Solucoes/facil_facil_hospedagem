@@ -278,6 +278,14 @@ en-US:
       edit: ""
       back: ""
       delete: ""
+    hoteliers_controller:
+      create:
+        success: ""
+      update:
+        success: ""
+      destroy:
+        success: ""
+      notice_delete: ""
   submit:
     update: ""
     create: ""
