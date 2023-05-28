@@ -1,0 +1,10 @@
+pt-BR:
+  app:
+    hoteliers_controller:
+      create:
+        success: Hoteleiro criado com sucesso.
+      update:
+        success: Hoteleiro atualizado com sucesso.
+      destroy:
+        success: Hoteleiro deletado com sucesso.
+      notice_delete: Você tem certeza?

@@ -12,40 +12,40 @@
   <% end %>
 
   <div>
-    <%= form.label :name, 'Nome',style: "display: block" %>
+    <%= form.label :name, t('app.hotelier.name'), style: "display: block" %>
     <%= form.text_field :name %>
   </div>
 
   <div>
-    <%= form.label :cpf, style: "display: block" %>
+    <%= form.label :cpf, t('app.hotelier.cpf'), style: "display: block" %>
     <%= form.text_field :cpf %>
   </div>
 
   <%= form.fields_for :address do |address_fields| %>
-    <%= address_fields.label :street , 'Endereço' %>
+    <%= address_fields.label :street, t('app.hotelier.address_street') %>
     <%= address_fields.text_field :street %>
 
-    <%= address_fields.label :postal_code, 'CEP' %>
+    <%= address_fields.label :postal_code, t('app.hotelier.address_postal_code') %>
     <%= address_fields.text_field :postal_code %>
 
-    <%= address_fields.label :city, 'Cidade' %>
+    <%= address_fields.label :city, t('app.hotelier.address_city') %>
     <%= address_fields.text_field :city %>
 
-    <%= address_fields.label :state, 'UF' %>
+    <%= address_fields.label :state, t('app.hotelier.address_state') %>
     <%= address_fields.text_field :state %>
   <% end %>
 
   <div>
-    <%= form.label :phone_number, 'Telefone',style: "display: block" %>
+    <%= form.label :phone_number, t('app.hotelier.phone_number'),style: "display: block" %>
     <%= form.text_field :phone_number %>
   </div>
 
   <div>
-    <%= form.label :plan, 'Plano', style: "display: block" %>
+    <%= form.label :plan, t('app.hotelier.plan'), style: "display: block" %>
     <%= form.text_field :plan %>
   </div>
 
   <div>
-    <%= form.submit(@hotelier.new_record? ? "Salvar hoteleiro" : "Salvar alterações") %>
+    <%= form.submit(@hotelier.new_record? ? t('app.hotelier_form.create') : t('app.hotelier_form.update')) %>
   </div>
 <% end %>
