@@ -1,18 +1,18 @@
 en:
   app:
-    index:
+    hotelier_index:
       show: Show this hotelier
       new: New hotelier
       title: Hoteliers
       name: Name
-    edit:
+    hotelier_edit:
       show: Show this hotelier
       back: Back to hoteliers
       title: Editing hotelier
-    new:
+    hotelier_new:
       title: New hotelier
       back: Back to hoteliers
-    show:
+    hotelier_show:
       edit: Edit this hotelier
       back: Back to hoteliers
       delete: Delete this hotelier
@@ -25,6 +25,6 @@ en:
       address_postal_code: Zip/Postal code
       address_city: City
       address_state: State/Province/Region
-    form:
+    hotelier_form:
       create: Create
       update: Update
