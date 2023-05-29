@@ -1,0 +1,7 @@
+pt-BR:
+  app:
+    address:
+      street: Rua
+      postal_code: CEP
+      city: Cidade
+      state: Estado

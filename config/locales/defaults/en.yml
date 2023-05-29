@@ -286,7 +286,11 @@ en-US:
       destroy:
         success: ""
       notice_delete: ""
+    address:
+      street: ""
+      postal_code: ""
+      city: ""
+      state: ""
   submit:
     update: ""
     create: ""
-

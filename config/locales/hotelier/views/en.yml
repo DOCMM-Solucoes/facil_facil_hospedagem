@@ -21,10 +21,6 @@ en:
       cpf: CPF
       phone_number: Phone number
       plan: Plan
-      address_street: Street
-      address_postal_code: Zip/Postal code
-      address_city: City
-      address_state: State/Province/Region
     hotelier_form:
       create: Create
       update: Update

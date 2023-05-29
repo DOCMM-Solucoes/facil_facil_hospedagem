@@ -31,6 +31,20 @@
     <%= form.text_field :site %>
   </div>
 
+  Address:
+  <%= form.fields_for :address do |address_fields| %>
+    <%= address_fields.label :street, t('app.address_street') %>
+    <%= address_fields.text_field :street %>
+
+    <%= address_fields.label :postal_code, t('app.hotelier.address_postal_code') %>
+    <%= address_fields.text_field :postal_code %>
+
+    <%= address_fields.label :city, t('app.hotelier.address_city') %>
+    <%= address_fields.text_field :city %>
+
+    <%= address_fields.label :state, t('app.hotelier.address_state') %>
+    <%= address_fields.text_field :state %>
+  <% end %>
   <div>
     <%= form.submit(@establishment.new_record? ? t('app.establishment.create') : t('app.establishment.update')) %>
   </div>
