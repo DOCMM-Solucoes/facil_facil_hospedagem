@@ -12,14 +12,15 @@
 
 ActiveRecord::Schema[7.0].define(version: 2023_05_27_175323) do
   create_table "addresses", force: :cascade do |t|
-    t.integer "hotelier_id", null: false
     t.string "street"
     t.string "postal_code"
     t.string "city"
     t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["hotelier_id"], name: "index_addresses_on_hotelier_id"
+    t.string "addressable_type"
+    t.integer "addressable_id"
+    t.index ["addressable_type", "addressable_id"], name: "index_addresses_on_addressable"
   end
 
   create_table "establishments", force: :cascade do |t|
@@ -50,5 +51,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_27_175323) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "addresses", "hoteliers"
 end
