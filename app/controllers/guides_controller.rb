@@ -13,6 +13,7 @@ class GuidesController < ApplicationController
   # GET /guides/new
   def new
     @guide = Guide.new
+    @guide.build_address
   end
 
   # GET /guides/1/edit
@@ -63,6 +64,7 @@ class GuidesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def guide_params
-      params.require(:guide).permit(:name, :phone, :cpf, :company, :cnpj)
+      params.require(:guide).permit(:name, :phone, :cpf, :company, :cnpj,
+                                    address_attributes: [:id, :street, :postal_code, :city, :state])
     end
 end
