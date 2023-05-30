@@ -21,20 +21,6 @@
     <%= form.text_field :cpf %>
   </div>
 
-  <%= form.fields_for :address do |address_fields| %>
-    <%= address_fields.label :street, t('app.hotelier.address_street') %>
-    <%= address_fields.text_field :street %>
-
-    <%= address_fields.label :postal_code, t('app.hotelier.address_postal_code') %>
-    <%= address_fields.text_field :postal_code %>
-
-    <%= address_fields.label :city, t('app.hotelier.address_city') %>
-    <%= address_fields.text_field :city %>
-
-    <%= address_fields.label :state, t('app.hotelier.address_state') %>
-    <%= address_fields.text_field :state %>
-  <% end %>
-
   <div>
     <%= form.label :phone_number, t('app.hotelier.phone_number'),style: "display: block" %>
     <%= form.text_field :phone_number %>
@@ -45,6 +31,26 @@
     <%= form.text_field :plan %>
   </div>
 
+  <div>
+    <%= form.fields_for :address do |address_fields| %>
+      <div>
+        <%= address_fields.label :street, t('app.address.street') %>
+        <%= address_fields.text_field :street %>
+      </div>
+      <div>
+        <%= address_fields.label :postal_code, t('app.address.postal_code') %>
+        <%= address_fields.text_field :postal_code %>
+      </div>
+      <div>
+        <%= address_fields.label :city, t('app.address.city') %>
+        <%= address_fields.text_field :city %>
+      </div>
+      <div>
+        <%= address_fields.label :state, t('app.address.state') %>
+        <%= address_fields.text_field :state %>
+      </div>
+    <% end %>
+  </div>
   <div>
     <%= form.submit(@hotelier.new_record? ? t('app.hotelier_form.create') : t('app.hotelier_form.update')) %>
   </div>

@@ -1,3 +1,3 @@
 class Address < ApplicationRecord
-  belongs_to :hotelier
+  belongs_to :addressable, polymorphic: true
 end

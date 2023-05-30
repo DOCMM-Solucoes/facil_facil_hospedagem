@@ -20,22 +20,7 @@
   </p>
 
   <p>
-    <strong><%= t('app.hotelier.address_street') %>:</strong>
-    <%= hotelier.address.street %>
-  </p>
-
-  <p>
-    <strong><%= t('app.hotelier.address_postal_code') %>:</strong>
-    <%= hotelier.address.postal_code %>
-  </p>
-
-  <p>
-    <strong><%= t('app.hotelier.address_city') %>:</strong>
-    <%= hotelier.address.city %>
-  </p>
-
-  <p>
-    <strong><%= t('app.hotelier.address_state') %>:</strong>
-    <%= hotelier.address.state %>
+    <%= render 'layouts/address', address: hotelier.address %>
   </p>
 </div>
+

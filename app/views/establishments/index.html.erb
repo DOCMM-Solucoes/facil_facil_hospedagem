@@ -4,7 +4,7 @@
 
 <div id="establishments">
   <% @establishments.each do |establishment| %>
-    <%= render establishment %>
+    <p><%= t('app.establishment.name') %>:<%= establishment.name %></p>
     <p>
       <%= link_to t('app.index.show'), establishment %>
     </p>

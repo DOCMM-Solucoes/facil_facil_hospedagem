@@ -23,5 +23,7 @@
     <strong><%= t'app.guide.cnpj'%></strong>
     <%= guide.cnpj %>
   </p>
-
+  <p>
+    <%= render 'layouts/address', address: guide.address %>
+  </p>
 </div>

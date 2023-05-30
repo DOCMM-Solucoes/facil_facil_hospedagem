@@ -18,5 +18,7 @@
     <strong><%= t'app.establishment.site'%></strong>
     <%= establishment.site %>
   </p>
-
+  <p>
+    <%= render 'layouts/address', address: establishment.address %>
+  </p>
 </div>
