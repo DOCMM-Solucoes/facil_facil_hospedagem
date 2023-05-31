@@ -13,6 +13,7 @@ class EstablishmentsController < ApplicationController
   # GET /establishments/new
   def new
     @establishment = Establishment.new
+    @establishment.build_address
   end
 
   # GET /establishments/1/edit
@@ -65,6 +66,7 @@ class EstablishmentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def establishment_params
-      params.require(:establishment).permit(:name, :qty_bedrooms, :phone, :site)
+      params.require(:establishment).permit(:name, :qty_bedrooms, :phone, :site,
+                                            address_attributes: [:id, :street, :postal_code, :city, :state])
     end
 end
