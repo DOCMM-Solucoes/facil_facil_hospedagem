@@ -1,0 +1,14 @@
+<h1>Fácil Fácil Hospedagem</h1>
+<%= link_to 'hoteliers', hoteliers_url %>
+<%= link_to 'establishments', establishments_url %>
+<%= link_to 'guides', guides_url %>
+
+<% if user_signed_in? && current_user %>
+  <%= link_to 'edit user', edit_user_registration_path %>
+  <%= button_to 'logo out', destroy_user_session_url, method: :delete %>
+
+<% else %>
+  <%= link_to 'sign up', new_establishment_path %>
+  <%= link_to 'login', user_session_url %>
+
+<% end %>

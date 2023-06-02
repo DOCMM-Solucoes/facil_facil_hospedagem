@@ -94,7 +94,7 @@ end
 # gem "pg", "~> 1.1"
 
 #Admin
-# gem 'devise'
+gem 'devise'
 # gem 'activeadmin'
 # gem 'activeadmin_sidekiq_stats'
 # gem "chartkick", '~> 2.2.0'
