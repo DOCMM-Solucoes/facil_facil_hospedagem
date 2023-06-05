@@ -10,5 +10,10 @@
     </p>
   <% end %>
 </div>
+<div>
+  <% if user_signed_in? && current_user %>
+    <%= link_to t('app.index.new'), new_establishment_path %>
+  <% end %>
+  <%= link_to 'home', root_path  %>
+</div>
 
-<%= link_to t('app.index.new'), new_establishment_path %>

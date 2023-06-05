@@ -13,4 +13,11 @@
   <% end %>
 </div>
 
-<%= link_to t('app.guide_index.new'), new_guide_path %>
+<div>
+  <% if user_signed_in? && current_user %>
+    <%= link_to t('app.guide_index.new'), new_guide_path %>
+  <% end %>
+  <%= link_to 'home', root_path  %>
+</div>
+
+
