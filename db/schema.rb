@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_02_222531) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_06_153544) do
   create_table "addresses", force: :cascade do |t|
     t.string "street"
     t.string "postal_code"
@@ -20,7 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_02_222531) do
     t.datetime "updated_at", null: false
     t.string "addressable_type"
     t.integer "addressable_id"
-    t.index ["addressable_type", "addressable_id"], name: "index_addresses_on_addressable"
+    t.index %w[addressable_type addressable_id], name: "index_addresses_on_addressable"
   end
 
   create_table "establishments", force: :cascade do |t|
@@ -30,6 +30,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_02_222531) do
     t.string "site"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "hotelier_id", null: false
+    t.index ["hotelier_id"], name: "index_establishments_on_hotelier_id"
   end
 
   create_table "guides", force: :cascade do |t|
@@ -40,6 +42,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_02_222531) do
     t.string "cnpj"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "guides_establishments", force: :cascade do |t|
+    t.integer "guides_id"
+    t.integer "establishments_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["establishments_id"], name: "index_guides_establishments_on_establishments_id"
+    t.index ["guides_id"], name: "index_guides_establishments_on_guides_id"
   end
 
   create_table "hoteliers", force: :cascade do |t|
@@ -63,4 +74,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_02_222531) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "establishments", "hoteliers"
 end
