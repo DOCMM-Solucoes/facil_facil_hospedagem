@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  devise_for :users
+  root 'pages#home'
+  scope '(locale)', locale:/pt-BR|en/ do
+      resources :guides
+    resources :establishments
+    resources :hoteliers
+  end
 end

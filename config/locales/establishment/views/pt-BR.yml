@@ -1,0 +1,25 @@
+pt-BR:
+  app:
+    index:
+      show: Mostrar este estabelecimento
+      new: Novo estabelecimento
+      title: Estabelecimentos
+    edit:
+      show: Mostrar este estabelecimento
+      back: Voltar para estabelecimentos
+      title: Editar estabelecimento
+    new:
+      title: Novo estabelecimento
+    show:
+      edit: Editar estabelecimento
+      back: Voltar para estabelecimentos
+      delete: Deletar estabelecimento
+    establishment:
+      name: Estabelecimento
+      bedrooms: Qtd quartos
+      phone: Telefone
+      site: Site
+      create: Salvar
+      update: Atualizar
+
+

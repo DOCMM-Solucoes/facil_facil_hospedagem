@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<h1><%= t('app.hotelier_index.title') %></h1>
+
+<div id="hoteliers">
+  <% @hoteliers.each do |hotelier| %>
+    <p><%= t('app.hotelier_index.name') %>: <%= hotelier.name %></p>
+
+    <p>
+      <%= link_to t('app.hotelier_index.show'), hotelier %>
+    </p>
+  <% end %>
+</div>
+
+<div>
+  <% if user_signed_in? && current_user %>
+    <%= link_to t('app.hotelier_index.new'), new_hotelier_path %>
+  <% end %>
+  <%= link_to 'home', root_path  %>
+</div>
+
+

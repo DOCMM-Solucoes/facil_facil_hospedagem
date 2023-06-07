@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @guide %>
+
+<div>
+  <%= link_to t('app.guide_show.back'), guides_path %>
+  <% if user_signed_in? && current_user %>
+    <%= link_to t('app.guide_show.edit'), edit_guide_path(@guide) %>
+    <%= button_to t('app.guide_show.delete'), @guide, method: :delete,
+                form: { data: { turbo_confirm: t('app.guides_controller.notice_delete') } }%>
+  <% end %>
+</div>

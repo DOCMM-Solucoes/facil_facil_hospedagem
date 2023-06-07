@@ -1,0 +1,56 @@
+<%= form_with(model: establishment) do |form| %>
+  <% if establishment.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(establishment.errors.count, "error") %> prohibited this establishment from being saved:</h2>
+
+      <ul>
+        <% establishment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label t'app.establishment.name', style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label t'app.establishment.bedrooms', style: "display: block" %>
+    <%= form.text_field :qty_bedrooms %>
+  </div>
+
+  <div>
+    <%= form.label t'app.establishment.phone', style: "display: block" %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div>
+    <%= form.label t'app.establishment.site', style: "display: block" %>
+    <%= form.text_field :site %>
+  </div>
+
+  <div>
+    <%= form.fields_for :address do |address_fields| %>
+      <div>
+        <%= address_fields.label :street, t('app.address.street') %>
+        <%= address_fields.text_field :street %>
+      </div>
+      <div>
+        <%= address_fields.label :postal_code, t('app.address.postal_code') %>
+        <%= address_fields.text_field :postal_code %>
+      </div>
+      <div>
+        <%= address_fields.label :city, t('app.address.city') %>
+        <%= address_fields.text_field :city %>
+      </div>
+      <div>
+        <%= address_fields.label :state, t('app.address.state') %>
+        <%= address_fields.text_field :state %>
+      </div>
+    <% end %>
+  </div>
+    <%= form.submit(@establishment.new_record? ? t('app.establishment.create') : t('app.establishment.update')) %>
+  </div>
+<% end %>

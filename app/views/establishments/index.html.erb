@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<h1><%= t 'app.index.title' %></h1>
+
+<div id="establishments">
+  <% @establishments.each do |establishment| %>
+    <p><%= t('app.establishment.name') %>:<%= establishment.name %></p>
+    <p>
+      <%= link_to t('app.index.show'), establishment %>
+    </p>
+  <% end %>
+</div>
+<div>
+  <% if user_signed_in? && current_user %>
+    <%= link_to t('app.index.new'), new_establishment_path %>
+  <% end %>
+  <%= link_to 'home', root_path  %>
+</div>
+

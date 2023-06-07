@@ -1,0 +1,10 @@
+en:
+  app:
+    controller:
+      create:
+        success: Establishment was successfully created.
+      update:
+        success: Establishment was successfully updated.
+      destroy:
+        success: Establishment was successfully destroyed.
+      notice_delete: Are you sure?

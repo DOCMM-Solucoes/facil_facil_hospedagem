@@ -1,0 +1,26 @@
+en:
+  app:
+    hotelier_index:
+      show: Show this hotelier
+      new: New hotelier
+      title: Hoteliers
+      name: Name
+    hotelier_edit:
+      show: Show this hotelier
+      back: Back to hoteliers
+      title: Editing hotelier
+    hotelier_new:
+      title: New hotelier
+      back: Back to hoteliers
+    hotelier_show:
+      edit: Edit this hotelier
+      back: Back to hoteliers
+      delete: Delete this hotelier
+    hotelier:
+      name: Hotelier
+      cpf: CPF
+      phone_number: Phone number
+      plan: Plan
+    hotelier_form:
+      create: Create
+      update: Update

@@ -1,0 +1,10 @@
+<h1><%= t('app.hotelier_edit.title') %></h1>
+
+<%= render "form", hotelier: @hotelier %>
+
+<br>
+
+<div>
+  <%= link_to t('app.hotelier_edit.show'), @hotelier %> |
+  <%= link_to t('app.hotelier_edit.back'), hoteliers_path %>
+</div>

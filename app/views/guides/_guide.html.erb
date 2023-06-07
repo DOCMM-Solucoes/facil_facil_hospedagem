@@ -1,0 +1,29 @@
+<div id="<%= dom_id guide %>">
+  <p>
+    <strong><%= t'app.guide.guide'%></strong>
+    <%= guide.name %>
+  </p>
+
+  <p>
+    <strong><%= t'app.guide.phone'%>:</strong>
+    <%= guide.phone %>
+  </p>
+
+  <p>
+    <strong><%= t'app.guide.cpf'%></strong>
+    <%= guide.cpf %>
+  </p>
+
+  <p>
+    <strong><%= t'app.guide.company'%></strong>
+    <%= guide.company %>
+  </p>
+
+  <p>
+    <strong><%= t'app.guide.cnpj'%></strong>
+    <%= guide.cnpj %>
+  </p>
+  <p>
+    <%= render 'layouts/address', address: guide.address %>
+  </p>
+</div>
