@@ -11,4 +11,9 @@
   <% end %>
 </div>
 
-<%= link_to "New trip", new_trip_path %>
+<div>
+  <% if user_signed_in? && current_user %>
+    <%= link_to t('app.index.new'), new_trip_path %>
+  <% end %>
+  <%= link_to 'home', root_path  %>
+</div>
