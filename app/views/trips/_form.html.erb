@@ -1,0 +1,117 @@
+<%= form_with(model: trip) do |form| %>
+  <% if trip.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
+
+      <ul>
+        <% trip.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :establishment_id, style: "display: block" %>
+    <%= form.text_field :establishment_id %>
+  </div>
+
+  <div>
+    <%= form.label :guide_id, style: "display: block" %>
+    <%= form.text_field :guide_id %>
+  </div>
+
+  <div>
+    <%= form.label :checkin_date, style: "display: block" %>
+    <%= form.date_field :checkin_date %>
+  </div>
+
+  <div>
+    <%= form.label :checkin_time, style: "display: block" %>
+    <%= form.time_field :checkin_time %>
+  </div>
+
+  <div>
+    <%= form.label :checkout_date, style: "display: block" %>
+    <%= form.date_field :checkout_date %>
+  </div>
+
+  <div>
+    <%= form.label :checkout_time, style: "display: block" %>
+    <%= form.time_field :checkout_time %>
+  </div>
+
+  <div>
+    <%= form.label :extra_coffee, style: "display: block" %>
+    <%= form.check_box :extra_coffee %>
+  </div>
+
+  <div>
+    <%= form.label :num_people, style: "display: block" %>
+    <%= form.number_field :num_people %>
+  </div>
+
+  <div>
+    <%= form.label :num_drivers, style: "display: block" %>
+    <%= form.number_field :num_drivers %>
+  </div>
+
+  <div>
+    <%= form.label :free_driver, style: "display: block" %>
+    <%= form.check_box :free_driver %>
+  </div>
+
+  <div>
+    <%= form.label :num_guides, style: "display: block" %>
+    <%= form.number_field :num_guides %>
+  </div>
+
+  <div>
+    <%= form.label :free_guide, style: "display: block" %>
+    <%= form.check_box :free_guide %>
+  </div>
+
+  <div>
+    <%= form.label :num_rooms, style: "display: block" %>
+    <%= form.number_field :num_rooms %>
+  </div>
+
+  <div>
+    <%= form.label :rate_person_day, style: "display: block" %>
+    <%= form.text_field :rate_person_day %>
+  </div>
+
+  <div>
+    <%= form.label :signal_value, style: "display: block" %>
+    <%= form.text_field :signal_value %>
+  </div>
+
+  <div>
+    <%= form.label :signal_date, style: "display: block" %>
+    <%= form.date_field :signal_date %>
+  </div>
+
+  <div>
+    <%= form.label :notes, style: "display: block" %>
+    <%= form.text_area :notes %>
+  </div>
+
+  <div>
+    <%= form.label :confirmed, style: "display: block" %>
+    <%= form.check_box :confirmed %>
+  </div>
+
+  <div>
+    <%= form.label :accomplished, style: "display: block" %>
+    <%= form.check_box :accomplished %>
+  </div>
+
+  <div>
+    <%= form.label :suspended, style: "display: block" %>
+    <%= form.check_box :suspended %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
