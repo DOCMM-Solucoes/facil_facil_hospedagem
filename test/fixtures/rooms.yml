@@ -1,0 +1,53 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  reference: MyString
+  maximum_capacity: 1
+  status: MyString
+  photo_1: MyString
+  photo_2: MyString
+  photo_3: MyString
+  photo_4: MyString
+  is_double: false
+  is_triple: false
+  is_quadruple: false
+  is_quintuple: false
+  is_sextuple: false
+  is_single: false
+  is_couple: false
+  is_couple_plus_one: false
+  is_couple_plus_two: false
+  is_couple_plus_three: false
+  is_couple_plus_four: false
+  is_two_couples: false
+  is_two_couples_plus_one: false
+  is_two_couples_plus_two: false
+  is_three_couples: false
+
+two:
+  name: MyString
+  description: MyString
+  reference: MyString
+  maximum_capacity: 1
+  status: MyString
+  photo_1: MyString
+  photo_2: MyString
+  photo_3: MyString
+  photo_4: MyString
+  is_double: false
+  is_triple: false
+  is_quadruple: false
+  is_quintuple: false
+  is_sextuple: false
+  is_single: false
+  is_couple: false
+  is_couple_plus_one: false
+  is_couple_plus_two: false
+  is_couple_plus_three: false
+  is_couple_plus_four: false
+  is_two_couples: false
+  is_two_couples_plus_one: false
+  is_two_couples_plus_two: false
+  is_three_couples: false

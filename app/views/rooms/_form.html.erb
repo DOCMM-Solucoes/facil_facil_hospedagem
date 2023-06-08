@@ -1,0 +1,137 @@
+<%= form_with(model: room) do |form| %>
+  <% if room.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
+
+      <ul>
+        <% room.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div>
+    <%= form.label :reference, style: "display: block" %>
+    <%= form.text_field :reference %>
+  </div>
+
+  <div>
+    <%= form.label :maximum_capacity, style: "display: block" %>
+    <%= form.number_field :maximum_capacity %>
+  </div>
+
+  <div>
+    <%= form.label :status, style: "display: block" %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div>
+    <%= form.label :photo_1, style: "display: block" %>
+    <%= form.text_field :photo_1 %>
+  </div>
+
+  <div>
+    <%= form.label :photo_2, style: "display: block" %>
+    <%= form.text_field :photo_2 %>
+  </div>
+
+  <div>
+    <%= form.label :photo_3, style: "display: block" %>
+    <%= form.text_field :photo_3 %>
+  </div>
+
+  <div>
+    <%= form.label :photo_4, style: "display: block" %>
+    <%= form.text_field :photo_4 %>
+  </div>
+
+  <div>
+    <%= form.label :is_double, style: "display: block" %>
+    <%= form.check_box :is_double %>
+  </div>
+
+  <div>
+    <%= form.label :is_triple, style: "display: block" %>
+    <%= form.check_box :is_triple %>
+  </div>
+
+  <div>
+    <%= form.label :is_quadruple, style: "display: block" %>
+    <%= form.check_box :is_quadruple %>
+  </div>
+
+  <div>
+    <%= form.label :is_quintuple, style: "display: block" %>
+    <%= form.check_box :is_quintuple %>
+  </div>
+
+  <div>
+    <%= form.label :is_sextuple, style: "display: block" %>
+    <%= form.check_box :is_sextuple %>
+  </div>
+
+  <div>
+    <%= form.label :is_single, style: "display: block" %>
+    <%= form.check_box :is_single %>
+  </div>
+
+  <div>
+    <%= form.label :is_couple, style: "display: block" %>
+    <%= form.check_box :is_couple %>
+  </div>
+
+  <div>
+    <%= form.label :is_couple_plus_one, style: "display: block" %>
+    <%= form.check_box :is_couple_plus_one %>
+  </div>
+
+  <div>
+    <%= form.label :is_couple_plus_two, style: "display: block" %>
+    <%= form.check_box :is_couple_plus_two %>
+  </div>
+
+  <div>
+    <%= form.label :is_couple_plus_three, style: "display: block" %>
+    <%= form.check_box :is_couple_plus_three %>
+  </div>
+
+  <div>
+    <%= form.label :is_couple_plus_four, style: "display: block" %>
+    <%= form.check_box :is_couple_plus_four %>
+  </div>
+
+  <div>
+    <%= form.label :is_two_couples, style: "display: block" %>
+    <%= form.check_box :is_two_couples %>
+  </div>
+
+  <div>
+    <%= form.label :is_two_couples_plus_one, style: "display: block" %>
+    <%= form.check_box :is_two_couples_plus_one %>
+  </div>
+
+  <div>
+    <%= form.label :is_two_couples_plus_two, style: "display: block" %>
+    <%= form.check_box :is_two_couples_plus_two %>
+  </div>
+
+  <div>
+    <%= form.label :is_three_couples, style: "display: block" %>
+    <%= form.check_box :is_three_couples %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :rooms
   devise_for :users
   root 'pages#home'
   scope '(locale)', locale:/pt-BR|en/ do
