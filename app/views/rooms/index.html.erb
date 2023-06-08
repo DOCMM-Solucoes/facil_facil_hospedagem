@@ -1,14 +1,18 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Rooms</h1>
+<h1><%= t 'app.room_index.title' %></h1>
 
 <div id="rooms">
   <% @rooms.each do |room| %>
-    <%= render room %>
-    <p>
-      <%= link_to "Show this room", room %>
-    </p>
+    <p><%= room.name %></p>
+    <p><%= link_to t('app.room_index.show'), room %></p>
   <% end %>
 </div>
 
-<%= link_to "New room", new_room_path %>
+<div>
+  <% if user_signed_in? && current_user %>
+    <%= link_to t('app.room_index.new'), new_room_path %>
+    <strong> | </strong>
+  <% end %>
+  <%= link_to 'Home', root_path %>
+</div>
