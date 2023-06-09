@@ -1,0 +1,25 @@
+pt-BR:
+  app:
+    room_index:
+      show: Mostrar este quarto
+      new: Novo quarto
+      title: Quartos
+    room_edit:
+      show: Mostrar este quarto
+      back: Voltar para a listagem dos quartos
+      title: Editar quarto
+    room_new:
+      title: Novo quarto
+    room_show:
+      edit: Editar quarto
+      back: Voltar para a listagem dos quartos
+      delete: Deletar quarto
+    room:
+      room: Quarto
+      #inserir logo abaixo os atributos dos quartos (room entity)
+      #phone: Tenefone
+      #cpf: CPF
+      #company: Empresa
+      #cnpj: CNPJ
+      create: Criar
+      update: Atualizar
