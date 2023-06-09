@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_08_113334) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_09_131640) do
   create_table "addresses", force: :cascade do |t|
     t.string "street"
     t.string "postal_code"
@@ -42,15 +42,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_08_113334) do
     t.string "cnpj"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "guides_establishments", force: :cascade do |t|
-    t.integer "guides_id"
-    t.integer "establishments_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["establishments_id"], name: "index_guides_establishments_on_establishments_id"
-    t.index ["guides_id"], name: "index_guides_establishments_on_guides_id"
   end
 
   create_table "hoteliers", force: :cascade do |t|
