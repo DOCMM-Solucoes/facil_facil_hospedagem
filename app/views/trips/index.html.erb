@@ -4,7 +4,7 @@
 
 <div id="trips">
   <% @trips.each do |trip| %>
-    <%= render trip %>
+    <p><%= t('app.trip.checkin_date') %>: <%= trip.checkin_date %></p>
     <p>
       <%= link_to "Show this trip", trip %>
     </p>
