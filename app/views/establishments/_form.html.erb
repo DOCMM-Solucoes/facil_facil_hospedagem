@@ -50,7 +50,12 @@
         <%= address_fields.text_field :state %>
       </div>
     <% end %>
+
   </div>
+  <%= form.label :hotelier_id, "Hoteleiro" %>
+  <%= form.collection_select :hotelier_id, Hotelier.all, :id, :name, include_blank: true %>
+  </div>
+
     <%= form.submit(@establishment.new_record? ? t('app.establishment.create') : t('app.establishment.update')) %>
   </div>
 <% end %>
