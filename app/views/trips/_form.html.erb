@@ -12,13 +12,13 @@
   <% end %>
 
   <div>
-    <%= form.label :establishment_id, style: "display: block" %>
-    <%= form.text_field :establishment_id %>
+    <%= form.label :establishment_id, "Establishment" %>
+    <%= form.collection_select :establishment_id, Establishment.all, :id, :name, prompt: true %>
   </div>
 
   <div>
-    <%= form.label :guide_id, style: "display: block" %>
-    <%= form.text_field :guide_id %>
+    <%= form.label :guide_id, "Guide" %>
+    <%= form.collection_select :guide_id, Guide.all, :id, :name, prompt: true %>
   </div>
 
   <div>
