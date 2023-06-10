@@ -21,7 +21,14 @@ class RoomsController < ApplicationController
 
   # POST /rooms or /rooms.json
   def create
-    @room = Room.new(room_params)
+    @room = Room.new(room_params.except(:photos))
+    photos = params[:room][:photos]
+
+    if photos
+      photos.each do |photo|
+        @room.photos.attach(photo)  
+      end
+    end
 
     respond_to do |format|
       if @room.save
@@ -65,6 +72,9 @@ class RoomsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def room_params
-      params.require(:room).permit(:name, :description, :reference, :maximum_capacity, :status, :photo_1, :photo_2, :photo_3, :photo_4, :is_double, :is_triple, :is_quadruple, :is_quintuple, :is_sextuple, :is_single, :is_couple, :is_couple_plus_one, :is_couple_plus_two, :is_couple_plus_three, :is_couple_plus_four, :is_two_couples, :is_two_couples_plus_one, :is_two_couples_plus_two, :is_three_couples)
+      params.require(:room).permit(:name, :description, :reference, :maximum_capacity, :status, :photo_1, :photo_2, :photo_3, :photo_4, 
+                                   :is_double, :is_triple, :is_quadruple, :is_quintuple, :is_sextuple, :is_single, :is_couple, 
+                                   :is_couple_plus_one, :is_couple_plus_two, :is_couple_plus_three, :is_couple_plus_four, 
+                                   :is_two_couples, :is_two_couples_plus_one, :is_two_couples_plus_two, :is_three_couples, photos: [])
     end
 end

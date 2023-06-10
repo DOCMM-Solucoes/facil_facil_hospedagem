@@ -1,4 +1,4 @@
-<%= form_with(model: room) do |form| %>
+<%= form_with(model: room, multipart: true) do |form| %>
   <% if room.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
@@ -37,6 +37,12 @@
   </div>
 
   <div>
+    <%= form.label :image, style: "display: block" %>
+    <%= form.file_field :photos %>
+  </div>  
+
+  <!--
+  <div>
     <%= form.label :photo_1, style: "display: block" %>
     <%= form.text_field :photo_1 %>
   </div>
@@ -55,6 +61,7 @@
     <%= form.label :photo_4, style: "display: block" %>
     <%= form.text_field :photo_4 %>
   </div>
+  -->
 
   <div>
     <%= form.label :is_double, style: "display: block" %>
