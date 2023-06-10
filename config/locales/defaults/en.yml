@@ -294,3 +294,11 @@ en-US:
   submit:
     update: ""
     create: ""
+  devise:
+    registrations:
+      new_title: ""
+      label_password: ""
+      minimum_password_length: ""
+      new_password: ""
+      new_submit: ""
+      password_confirmation: ""

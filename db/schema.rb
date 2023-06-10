@@ -20,7 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_153544) do
     t.datetime "updated_at", null: false
     t.string "addressable_type"
     t.integer "addressable_id"
-    t.index %w[addressable_type addressable_id], name: "index_addresses_on_addressable"
+    t.index ["addressable_type", "addressable_id"], name: "index_addresses_on_addressable"
   end
 
   create_table "establishments", force: :cascade do |t|
