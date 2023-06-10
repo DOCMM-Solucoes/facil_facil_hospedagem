@@ -291,6 +291,31 @@ en-US:
       postal_code: ""
       city: ""
       state: ""
+    guide_edit:
+      title: ""
+    guide_index:
+      title: ""
   submit:
     update: ""
     create: ""
+  devise:
+    registrations:
+      new_title: ""
+      label_password: ""
+      minimum_password_length: ""
+      new_password: ""
+      new_submit: ""
+      password_confirmation: ""
+      edit_title: ""
+      password_message: ""
+      label_current_password: ""
+      current_password: ""
+      edit_submit: ""
+      cancel_account: ""
+      unhappy: ""
+      edit_back: ""
+      confirm_delete: ""
+      log_in: ""
+      log_out: ""
+    sessions:
+      remember_me: ""
