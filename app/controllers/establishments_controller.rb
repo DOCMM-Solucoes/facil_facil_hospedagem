@@ -22,7 +22,8 @@ class EstablishmentsController < ApplicationController
 
   # POST /establishments or /establishments.json
   def create
-    @establishment = Establishment.new(establishment_params)
+    @hotelier = Hotelier.find(params[:establishment][:hotelier_id])
+    @establishment = @hotelier.establishments.build(establishment_params)
 
     respond_to do |format|
       if @establishment.save
