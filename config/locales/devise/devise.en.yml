@@ -58,6 +58,8 @@ en:
       unhappy: "Unhappy?"
       confirm_delete: "Are you sure?"
       edit_back: "Back"
+      log_in: "Log in"
+      log_out: "Log out"
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."

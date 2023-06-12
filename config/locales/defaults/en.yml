@@ -291,6 +291,10 @@ en-US:
       postal_code: ""
       city: ""
       state: ""
+    guide_edit:
+      title: ""
+    guide_index:
+      title: ""
   submit:
     update: ""
     create: ""
@@ -311,3 +315,5 @@ en-US:
       unhappy: ""
       edit_back: ""
       confirm_delete: ""
+      log_in: ""
+      log_out: ""

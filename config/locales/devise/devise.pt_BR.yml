@@ -58,6 +58,8 @@ pt-BR:
       confirm_delete: "Cancelar conta?"
       unhappy: "Insatisfeito?"
       edit_back: "Voltar"
+      log_in: "Acessar"
+      log_out: "Sair"
     sessions:
       signed_in: "Logado com sucesso."
       signed_out: "Até breve!."
