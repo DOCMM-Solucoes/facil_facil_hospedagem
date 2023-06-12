@@ -64,6 +64,7 @@ pt-BR:
       signed_in: "Logado com sucesso."
       signed_out: "Até breve!."
       already_signed_out: "Até breve!"
+      remember_me: "lembrar automaticamente"
     unlocks:
       send_instructions: "Você receberá um e-mail com instruções sobre como desbloquear a sua conta em alguns minutos."
       send_paranoid_instructions: "Se o seu e-mail existir em nossa base de dados, você receberá um e-mail com instruções sobre como desbloquear a sua conta em alguns minutos."

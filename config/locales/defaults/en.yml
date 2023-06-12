@@ -317,3 +317,5 @@ en-US:
       confirm_delete: ""
       log_in: ""
       log_out: ""
+    sessions:
+      remember_me: ""
