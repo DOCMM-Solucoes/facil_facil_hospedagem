@@ -49,7 +49,6 @@ en:
       new_title: "Sign up"
       label_password: "password"
       minimum_password_length: "characters minimum"
-      new_password: "new-password"
       password_confirmation: "Password confirmation"
       new_submit: "Sign up"
       edit_title: "Edit user"
