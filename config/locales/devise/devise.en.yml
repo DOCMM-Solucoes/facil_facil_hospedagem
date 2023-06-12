@@ -14,15 +14,28 @@ en:
       timeout: "Your session expired. Please sign in again to continue."
       unauthenticated: "You need to sign in or sign up before continuing."
       unconfirmed: "You have to confirm your email address before continuing."
+      dont_receive: "Didn't receive confirmation instructions?"
     mailer:
       confirmation_instructions:
         subject: "Confirmation instructions"
+        welcome: "Welcome"
+        confirm_account: "You can confirm your account email through the link below:"
+        confirm_account_submit: "Confirm my account"
       reset_password_instructions:
         subject: "Reset password instructions"
+        requested: "Someone has requested a link to change your password. You can do this through the link below."
+        request: "If you didn't request this, please."
+        new_one: "Your password won't change until you access the link above and create a new one."
       unlock_instructions:
         subject: "Unlock instructions"
+        account_locked: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+        unlock_account: "Click the link below to unlock your account:"
+        unlock_account_submit: "Unlock my account"
       email_changed:
         subject: "Email Changed"
+        hello: "Hello"
+        being_changed: "We're contacting you to notify you that your email is being changed to"
+        been_changed: "We're contacting you to notify you that your email has been changed to"
       password_change:
         subject: "Password Changed"
     omniauth_callbacks:
@@ -34,6 +47,12 @@ en:
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
       updated: "Your password has been changed successfully. You are now signed in."
       updated_not_active: "Your password has been changed successfully."
+      forgot_password: "Forgot your password?"
+      forgot_password_submit: "Send me reset password instructions"
+      password_title: "Change your password"
+      new_password: "New password"
+      confirm_password: "Confirm new password"
+      change_submit: "Change my password"
     registrations:
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."
@@ -46,7 +65,6 @@ en:
       new_title: "Sign up"
       label_password: "password"
       minimum_password_length: "characters minimum"
-      new_password: "new-password"
       password_confirmation: "Password confirmation"
       new_submit: "Sign up"
       edit_title: "Edit user"

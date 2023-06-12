@@ -5,6 +5,7 @@ en:
       new: New hotelier
       title: Hoteliers
       name: Name
+      home: "Home"
     hotelier_edit:
       show: Show this hotelier
       back: Back to hoteliers

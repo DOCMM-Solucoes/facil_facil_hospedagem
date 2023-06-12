@@ -4,6 +4,7 @@ en:
       show: Show this establishment
       new: New establishment
       title: Establishments
+      home: "Home"
     edit:
       show: Show this establishment
       back: Back to establishments

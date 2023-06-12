@@ -11,9 +11,9 @@
   <div class="field">
     <%= f.label t'devise.registrations.label_password' %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> <%= t'devise.registrations.minimum_password_length' %></em>
+    <em>(<%= @minimum_password_length %> <%= t'devise.registrations.minimum_password_length' %>)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: t('devise.registrations.new_password') %>
+    <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
@@ -23,6 +23,10 @@
 
   <div class="actions">
     <%= f.submit t('devise.registrations.new_submit'), data: {turbo: false} %>
+  </div>
+
+  <div>
+    <%= link_to t('devise.registrations.edit_back'), :back %>
   </div>
 <% end %>
 

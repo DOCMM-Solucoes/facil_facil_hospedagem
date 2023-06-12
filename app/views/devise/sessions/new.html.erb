@@ -21,6 +21,10 @@
   <div class="actions">
     <%= f.submit t('devise.registrations.log_in'), data:{turbo: false} %>
   </div>
+  <div>
+    <%= link_to t('devise.registrations.edit_back'), :back %>
+  </div>
+
 <% end %>
 
 <%= render "devise/shared/links" %>

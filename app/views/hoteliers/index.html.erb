@@ -16,7 +16,7 @@
   <% if user_signed_in? && current_user %>
     <%= link_to t('app.hotelier_index.new'), new_hotelier_path %>
   <% end %>
-  <%= link_to 'home', root_path  %>
+  <%= link_to t('app.hotelier_index.home'), root_path  %>
 </div>
 
 

@@ -5,6 +5,7 @@ pt-BR:
       new: Novo hoteleiro
       title: Hoteleiros
       name: Nome
+      home: "Página inicial"
     hotelier_edit:
       show: Mostrar este hoteleiro
       back: Voltar para hoteleiros
