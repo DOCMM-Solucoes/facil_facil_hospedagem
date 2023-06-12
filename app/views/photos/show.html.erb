@@ -2,6 +2,7 @@
 
 <%= render @photo %>
 
+<%= image_tag @photo.image %>
 <div>
   <%= link_to "Edit this photo", edit_photo_path(@photo) %> |
   <%= link_to "Back to photos", photos_path %>
