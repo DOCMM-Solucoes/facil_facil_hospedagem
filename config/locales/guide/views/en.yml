@@ -4,6 +4,7 @@ en:
       show: Show this guide
       new: New guide
       title: Guides
+      home: "Home"
     guide_edit:
       show: Show this guide
       back: Back to guides

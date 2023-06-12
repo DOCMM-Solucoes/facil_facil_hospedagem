@@ -14,6 +14,7 @@ pt-BR:
       timeout: "Sua sessão expirou. Por favor, faça login novamente para continuar."
       unauthenticated: "Você precisa fazer login ou se registrar antes de continuar"
       unconfirmed: "Você deve confirmar o seu endreço de e-mail antes de continuar."
+      dont_receive: "Não recebeu a consifrmação de instrução?"
     mailer:
       confirmation_instructions:
         subject: "Instruções de confirmação"
@@ -34,6 +35,8 @@ pt-BR:
       send_paranoid_instructions: "Se o seu endereço de e-mail existir em nossa base de dados, você receberá um link de recuperação de senha em alguns minutos."
       updated: "Sua senha foi redefinida com sucesso. Você agora está conectado."
       updated_not_active: "Sua senha foi redefinida com sucesso."
+      forgot_password: "Esqueceu a senha?"
+      forgot_password_submit: "Requerir nova senha"
     registrations:
       destroyed: "Até a próxima! Sua conta foi cancelada com sucesso. Esperamos te ver de volta logo."
       signed_up: "Bem vindo! Você se registrou com sucesso."

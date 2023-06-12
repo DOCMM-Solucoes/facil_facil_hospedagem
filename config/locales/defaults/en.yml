@@ -229,6 +229,7 @@ en-US:
       new: ""
       title: ""
       name: ""
+      home: ""
     show:
       back: ""
       delete: ""
@@ -274,6 +275,7 @@ en-US:
       name: ""
       show: ""
       new: ""
+      home: ""
     hotelier_show:
       edit: ""
       back: ""
@@ -295,6 +297,7 @@ en-US:
       title: ""
     guide_index:
       title: ""
+      home: ""
   submit:
     update: ""
     create: ""
@@ -317,5 +320,11 @@ en-US:
       confirm_delete: ""
       log_in: ""
       log_out: ""
+      signed_up: ""
     sessions:
       remember_me: ""
+    passwords:
+      forgot_password: ""
+      forgot_password_submit: ""
+    failure:
+      dont_receive: ""
