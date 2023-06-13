@@ -3,10 +3,10 @@
 <%= render @trip %>
 
 <div>
-  <%= link_to t('app.show.back'), trips_path %>
+  <%= link_to t('app.trip_show.back'), trips_path %>
   <% if user_signed_in? && current_user %>
-    <%= link_to t('app.show.edit'), edit_trip_path(@trip) %>
-    <%= button_to t('app.show.delete'), @trip, method: :delete,
-                  form: { data: { turbo_confirm: t('app.controller.notice_delete') } }%>
+    <%= link_to t('app.trip_show.edit'), edit_trip_path(@trip) %>
+    <%= button_to t('app.trip_show.delete'), @trip, method: :delete,
+                  form: { data: { turbo_confirm: t('app.trips_controller.notice_delete') } }%>
   <% end %>
 </div>

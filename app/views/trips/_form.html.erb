@@ -12,106 +12,106 @@
   <% end %>
 
   <div>
-    <%= form.label :establishment_id, "Establishment" %>
+    <%= form.label t('app.trip.establishment_id'), style: "display: block" %>
     <%= form.collection_select :establishment_id, Establishment.all, :id, :name, prompt: true %>
   </div>
 
   <div>
-    <%= form.label :guide_id, "Guide" %>
+    <%= form.label t('app.trip.guide_id'), style: "display: block" %>
     <%= form.collection_select :guide_id, Guide.all, :id, :name, prompt: true %>
   </div>
 
   <div>
-    <%= form.label :checkin_date, style: "display: block" %>
+    <%= form.label t('app.trip.checkout_date'), style: "display: block" %>
     <%= form.date_field :checkin_date %>
   </div>
 
   <div>
-    <%= form.label :checkin_time, style: "display: block" %>
+    <%= form.label t('app.trip.checkin_time'), style: "display: block" %>
     <%= form.time_field :checkin_time %>
   </div>
 
   <div>
-    <%= form.label :checkout_date, style: "display: block" %>
+    <%= form.label t('app.trip.checkout_date'), style: "display: block" %>
     <%= form.date_field :checkout_date %>
   </div>
 
   <div>
-    <%= form.label :checkout_time, style: "display: block" %>
+    <%= form.label t('app.trip.checkout_time'), style: "display: block" %>
     <%= form.time_field :checkout_time %>
   </div>
 
   <div>
-    <%= form.label :extra_coffee, style: "display: block" %>
+    <%= form.label t('app.trip.extra_coffee'), style: "display: block" %>
     <%= form.check_box :extra_coffee %>
   </div>
 
   <div>
-    <%= form.label :num_people, style: "display: block" %>
+    <%= form.label t('app.trip.num_people'), style: "display: block" %>
     <%= form.number_field :num_people %>
   </div>
 
   <div>
-    <%= form.label :num_drivers, style: "display: block" %>
+    <%= form.label t('app.trip.num_drivers'), style: "display: block" %>
     <%= form.number_field :num_drivers %>
   </div>
 
   <div>
-    <%= form.label :free_driver, style: "display: block" %>
+    <%= form.label t('app.trip.free_driver'), style: "display: block" %>
     <%= form.check_box :free_driver %>
   </div>
 
   <div>
-    <%= form.label :num_guides, style: "display: block" %>
+    <%= form.label t('app.trip.num_guides'), style: "display: block" %>
     <%= form.number_field :num_guides %>
   </div>
 
   <div>
-    <%= form.label :free_guide, style: "display: block" %>
+    <%= form.label t('app.trip.free_guide'), style: "display: block" %>
     <%= form.check_box :free_guide %>
   </div>
 
   <div>
-    <%= form.label :num_rooms, style: "display: block" %>
+    <%= form.label t('app.trip.num_rooms'), style: "display: block" %>
     <%= form.number_field :num_rooms %>
   </div>
 
   <div>
-    <%= form.label :rate_person_day, style: "display: block" %>
+    <%= form.label t('app.trip.rate_person_day'), style: "display: block" %>
     <%= form.text_field :rate_person_day %>
   </div>
 
   <div>
-    <%= form.label :signal_value, style: "display: block" %>
+    <%= form.label t('app.trip.signal_value'), style: "display: block" %>
     <%= form.text_field :signal_value %>
   </div>
 
   <div>
-    <%= form.label :signal_date, style: "display: block" %>
+    <%= form.label t('app.trip.signal_date'), style: "display: block" %>
     <%= form.date_field :signal_date %>
   </div>
 
   <div>
-    <%= form.label :notes, style: "display: block" %>
+    <%= form.label t('app.trip.notes'), style: "display: block" %>
     <%= form.text_area :notes %>
   </div>
 
   <div>
-    <%= form.label :confirmed, style: "display: block" %>
+    <%= form.label t('app.trip.confirmed'), style: "display: block" %>
     <%= form.check_box :confirmed %>
   </div>
 
   <div>
-    <%= form.label :accomplished, style: "display: block" %>
+    <%= form.label t('app.trip.acomplished'), style: "display: block" %>
     <%= form.check_box :accomplished %>
   </div>
 
   <div>
-    <%= form.label :suspended, style: "display: block" %>
+    <%= form.label t('app.trip.suspended'), style: "display: block" %>
     <%= form.check_box :suspended %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit(@trip.new_record? ? t('app.trip.create') : t('app.trip.update'))%>
   </div>
 <% end %>
