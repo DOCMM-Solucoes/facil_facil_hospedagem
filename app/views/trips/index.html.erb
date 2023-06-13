@@ -4,7 +4,22 @@
 
 <div id="trips">
   <% @trips.each do |trip| %>
-    <p><%= t('app.trip.checkin_date') %>: <%= trip.checkin_date %></p>
+    <p>
+      <%= t('app.trip.guide_id') %>: <%= trip.guide.name %>
+    </p>
+
+    <p>
+      <%= t('app.trip.checkin_date') %>: <%= trip.checkin_date %>
+    </p>
+
+    <p>
+      <%= t('app.trip.checkout_date') %>: <%= trip.checkout_date %>
+    </p>
+
+    <p>
+      <%= t('app.trip.confirmed') %>: <%= trip.confirmed %>
+    </p>
+
     <p>
       <%= link_to t('app.trip_index.show'), trip %>
     </p>
