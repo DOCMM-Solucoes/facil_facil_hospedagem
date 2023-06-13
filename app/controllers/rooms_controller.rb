@@ -68,6 +68,6 @@ class RoomsController < ApplicationController
       params.require(:room).permit(:name, :description, :reference, :maximum_capacity, :status, :photo_1, :photo_2, :photo_3, :photo_4, 
                                    :is_double, :is_triple, :is_quadruple, :is_quintuple, :is_sextuple, :is_single, :is_couple, 
                                    :is_couple_plus_one, :is_couple_plus_two, :is_couple_plus_three, :is_couple_plus_four, 
-                                   :is_two_couples, :is_two_couples_plus_one, :is_two_couples_plus_two, :is_three_couples)
+                                   :is_two_couples, :is_two_couples_plus_one, :is_two_couples_plus_two, :is_three_couples, images: [])
     end
 end
