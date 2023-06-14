@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   resources :photos
-  root 'photos#index'
   devise_for :users
-  #root 'pages#home'
+  root 'pages#home'
   scope '(locale)', locale:/pt-BR|en/ do
       resources :guides
     resources :establishments
