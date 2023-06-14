@@ -14,12 +14,35 @@ pt-BR:
       edit: Editar quarto
       back: Voltar para a listagem dos quartos
       delete: Deletar quarto
+      edit_this_room: Editar este quarto
+      back_to_rooms: Voltar p/ a listagem de quartos
+      destroy_this_room: Excluir este quarto
     room:
       room: Quarto
-      #inserir logo abaixo os atributos dos quartos (room entity)
-      #phone: Tenefone
-      #cpf: CPF
-      #company: Empresa
-      #cnpj: CNPJ
+      name: Nome
+      description: Descrição
+      reference: Referência
+      maximum_capacity: Capacidade máxima
+      status: Status
+      is_double: Duplo
+      is_triple: Triplo
+      is_quadruple: Quadruplo
+      is_quintuple: Quintuplo
+      is_sextuple: Sêxtuplo
+      is_single: Solteiro
+      is_couple: Casal
+      is_couple_plus_one: Casal + 1
+      is_couple_plus_two: Casal + 2
+      is_couple_plus_three: Casal + 3
+      is_couple_plus_four: Casal + 4
+      is_two_couples: 2 Casais
+      is_two_couples_plus_one: 2 Casais + 1
+      is_two_couples_plus_two: 2 Casais + 2
+      is_three_couples: 3 Casais
+      unnder_maintenance: Em manutenção
+      active: Ativo
+      inactive: Inativo
+      yes_is: Sim
+      no_is: Não
       create: Criar
       update: Atualizar

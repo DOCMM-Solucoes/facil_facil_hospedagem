@@ -6,6 +6,6 @@ pt-BR:
       update:
         success: Quarto atualizado com sucesso.
       destroy:
-        success: Quarto deletado com sucesso.
-      notice_delete: Deletar Quarto?
+        success: Quarto excluído com sucesso.
+      notice_delete: Excluir Quarto?
       
