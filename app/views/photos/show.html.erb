@@ -8,6 +8,7 @@
   <% @photo.images.each do |image| %>
     <%= image_tag image, class: 'image-size' %>
   <% end %>
+
 </div>
 <div>
   <%= link_to "Edit this photo", edit_photo_path(@photo) %> |
