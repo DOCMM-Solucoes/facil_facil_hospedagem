@@ -21,27 +21,13 @@
 
   <p>
     <strong>Status:</strong>
-    <%= room.status %>
-  </p>
-
-  <p>
-    <strong>Photo 1:</strong>
-    <%= room.photo_1 %>
-  </p>
-
-  <p>
-    <strong>Photo 2:</strong>
-    <%= room.photo_2 %>
-  </p>
-
-  <p>
-    <strong>Photo 3:</strong>
-    <%= room.photo_3 %>
-  </p>
-
-  <p>
-    <strong>Photo 4:</strong>
-    <%= room.photo_4 %>
+    <% if room.status == 'A' %>
+      <%= 'ACTIVE' %>
+    <% elsif room.status == 'I' %>
+      <%= 'INACTIVE' %>
+    <% else %>    
+      <%= 'UNDER MAINTENANCE' %>    
+    <% end %>
   </p>
 
   <p>
@@ -118,5 +104,9 @@
     <strong>Is three couples:</strong>
     <%= room.is_three_couples %>
   </p>
+
+  <% room.images.each do |image| %>
+    <%= image_tag image %>
+  <% end %>
 
 </div>

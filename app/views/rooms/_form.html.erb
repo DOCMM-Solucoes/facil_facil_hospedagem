@@ -33,27 +33,7 @@
 
   <div>
     <%= form.label :status, style: "display: block" %>
-    <%= form.select :status, [ ["Active", "A"], ["Inactive", "I"], ["Maintenance", "M"] ] %>
-  </div>
-
-  <div>
-    <%= form.label :photo_1, style: "display: block" %>
-    <%= form.text_field :photo_1 %>
-  </div>
-
-  <div>
-    <%= form.label :photo_2, style: "display: block" %>
-    <%= form.text_field :photo_2 %>
-  </div>
-
-  <div>
-    <%= form.label :photo_3, style: "display: block" %>
-    <%= form.text_field :photo_3 %>
-  </div>
-
-  <div>
-    <%= form.label :photo_4, style: "display: block" %>
-    <%= form.text_field :photo_4 %>
+    <%= form.select :status, [ ["Active", "A"], ["Inactive", "I"], ["Under Maintenance", "M"] ] %>
   </div>
 
   <div>
