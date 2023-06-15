@@ -57,6 +57,7 @@
   <%= form.collection_select :hotelier_id, Hotelier.all, :id, :name, prompt: true %>
   </div>
 
+  <div>
     <%= form.submit(@establishment.new_record? ? t('app.establishment.create') : t('app.establishment.update')) %>
   </div>
 <% end %>
