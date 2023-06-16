@@ -72,15 +72,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_10_095728) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "guides_establishments", force: :cascade do |t|
-    t.integer "guides_id"
-    t.integer "establishments_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["establishments_id"], name: "index_guides_establishments_on_establishments_id"
-    t.index ["guides_id"], name: "index_guides_establishments_on_guides_id"
-  end
-
   create_table "hoteliers", force: :cascade do |t|
     t.string "name"
     t.string "cpf"
@@ -119,6 +110,33 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_10_095728) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "trips", force: :cascade do |t|
+    t.integer "establishment_id", null: false
+    t.integer "guide_id", null: false
+    t.date "checkin_date"
+    t.time "checkin_time"
+    t.date "checkout_date"
+    t.time "checkout_time"
+    t.boolean "extra_coffee"
+    t.integer "num_people"
+    t.integer "num_drivers"
+    t.boolean "free_driver"
+    t.integer "num_guides"
+    t.boolean "free_guide"
+    t.integer "num_rooms"
+    t.float "rate_person_day"
+    t.float "signal_value"
+    t.date "signal_date"
+    t.text "notes"
+    t.boolean "confirmed"
+    t.boolean "accomplished"
+    t.boolean "suspended"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["establishment_id"], name: "index_trips_on_establishment_id"
+    t.index ["guide_id"], name: "index_trips_on_guide_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -134,4 +152,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_10_095728) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "establishments", "hoteliers"
+  add_foreign_key "trips", "establishments"
+  add_foreign_key "trips", "guides"
 end

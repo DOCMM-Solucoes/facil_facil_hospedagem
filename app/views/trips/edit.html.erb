@@ -1,0 +1,10 @@
+<h1><%= t('app.trip_edit.title') %></h1>
+
+<%= render "form", trip: @trip %>
+
+<br>
+
+<div>
+  <%= link_to t('app.trip_edit.show'), @trip %> |
+  <%= link_to t('app.trip_edit.back'), trips_path %>
+</div>

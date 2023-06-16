@@ -1,0 +1,9 @@
+<h1><%= t('app.trip_index.title') %></h1>
+
+<%= render "form", trip: @trip %>
+
+<br>
+
+<div>
+  <%= link_to t('app.trip_new.back'), trips_path %>
+</div>
