@@ -1,0 +1,10 @@
+en:
+  app:
+    rooms_controller:
+      create:
+        success: Room was successfully created.
+      update:
+        success: Room was successfully updated.
+      destroy:
+        success: Room was successfully destroyed.
+      notice_delete: Are you sure?

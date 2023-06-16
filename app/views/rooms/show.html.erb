@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<h1> <%= t('app.room_index.title') %> </h1>
+
+<%= render @room %>
+
+<div>
+  <%= link_to t('app.room_show.edit_this_room'), edit_room_path(@room) %> |
+  <%= link_to t('app.room_show.back_to_rooms'), rooms_path %>
+
+  <%= button_to t('app.room_show.destroy_this_room'), @room, method: :delete %>
+</div>

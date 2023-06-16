@@ -1,0 +1,26 @@
+en:
+  app:
+    room_index:
+      show: Show this room
+      new: New room
+      title: Rooms
+    room_edit:
+      show: Show this room
+      back: Back to rooms
+      title: Editing room
+    room_new:
+      title: New room
+    room_show:
+      edit: Edit this room
+      back: Back to rooms
+      delete: Delete this room
+    room:
+      room: Room
+      #inserir os atributos: room entity
+      #logo abaixo...
+      #phone: Phone number
+      #cpf: CPF
+      #company: Company
+      #cnpj: CNPJ
+      create: Create
+      update: Update
