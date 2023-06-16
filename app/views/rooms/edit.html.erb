@@ -1,10 +1,10 @@
-<h1>Editing room</h1>
+<h1> <%= t('app.room_edit.title') %> </h1>
 
 <%= render "form", room: @room %>
 
 <br>
 
 <div>
-  <%= link_to "Show this room", @room %> |
-  <%= link_to "Back to rooms", rooms_path %>
+  <%= link_to t('app.room_edit.show'), @room %> |
+  <%= link_to t('app.room_edit.back'), rooms_path %>
 </div>

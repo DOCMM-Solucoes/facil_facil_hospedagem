@@ -3,13 +3,14 @@ pt-BR:
     room_index:
       show: Mostrar este quarto
       new: Novo quarto
-      title: Quartos
+      title: Quarto
     room_edit:
       show: Mostrar este quarto
       back: Voltar para a listagem dos quartos
       title: Editar quarto
     room_new:
       title: Novo quarto
+      back: Voltar para a listagem dos quartos      
     room_show:
       edit: Editar quarto
       back: Voltar para a listagem dos quartos
