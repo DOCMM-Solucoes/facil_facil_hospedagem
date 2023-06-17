@@ -5,8 +5,10 @@
 <%= render @room %>
 
 <div>
-  <%= link_to t('app.room_show.edit_this_room'), edit_room_path(@room) %> |
   <%= link_to t('app.room_show.back_to_rooms'), rooms_path %>
-
-  <%= button_to t('app.room_show.destroy_this_room'), @room, method: :delete %>
+  <% if user_signed_in? && current_user %>
+    <%= link_to t('app.room_show.edit_this_room'), edit_room_path(@room) %> |
+    <%= button_to t('app.room_show.destroy_this_room'), @room, method: :delete,
+                  form: { data: { turbo_confirm: 'Are you sure?' } } %>
+    <% end %>
 </div>

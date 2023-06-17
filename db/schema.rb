@@ -162,4 +162,3 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_220604) do
   add_foreign_key "trips", "establishments"
   add_foreign_key "trips", "guides"
 end
-
