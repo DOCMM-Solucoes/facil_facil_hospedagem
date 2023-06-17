@@ -1,0 +1,11 @@
+pt-BR:
+  app:
+    rooms_controller:
+      create:
+        success: Quarto criado com sucesso.
+      update:
+        success: Quarto atualizado com sucesso.
+      destroy:
+        success: Quarto excluído com sucesso.
+      notice_delete: Excluir Quarto?
+      

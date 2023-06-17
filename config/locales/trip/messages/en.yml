@@ -1,0 +1,10 @@
+en:
+  app:
+    trips_controller:
+      create:
+        success: Trip was successfully created.
+      update:
+        success: Trip was successfully updated.
+      destroy:
+        success: Trip was successfully destroyed.
+      notice_delete: Are you sure?
