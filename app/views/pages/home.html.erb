@@ -12,6 +12,6 @@
   <%= button_to t('home.logout'), destroy_user_session_url, method: :delete %>
 <% else %>
   <strong>|</strong>
-  <%= link_to 'Sign up', new_user_registration_path %> <strong>|</strong>
-  <%= link_to 'Login', user_session_url %>
+  <%= link_to t('home.sign_up'), new_user_registration_path %> <strong>|</strong>
+  <%= link_to t('home.login'), user_session_url %>
 <% end %>
