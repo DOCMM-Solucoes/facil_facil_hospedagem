@@ -1,0 +1,117 @@
+<%= form_with(model: trip) do |form| %>
+  <% if trip.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
+
+      <ul>
+        <% trip.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label t('app.trip.establishment_id'), style: "display: block" %>
+    <%= form.collection_select :establishment_id, Establishment.all, :id, :name, prompt: true %>
+  </div>
+
+  <div>
+    <%= form.label t('app.trip.guide_id'), style: "display: block" %>
+    <%= form.collection_select :guide_id, Guide.all, :id, :name, prompt: true %>
+  </div>
+
+  <div>
+    <%= form.label t('app.trip.checkin_date'), style: "display: block" %>
+    <%= form.date_field :checkin_date %>
+  </div>
+
+  <div>
+    <%= form.label t('app.trip.checkin_time'), style: "display: block" %>
+    <%= form.time_field :checkin_time %>
+  </div>
+
+  <div>
+    <%= form.label t('app.trip.checkout_date'), style: "display: block" %>
+    <%= form.date_field :checkout_date %>
+  </div>
+
+  <div>
+    <%= form.label t('app.trip.checkout_time'), style: "display: block" %>
+    <%= form.time_field :checkout_time %>
+  </div>
+
+  <div>
+    <%= form.label t('app.trip.extra_coffee'), style: "display: block" %>
+    <%= form.check_box :extra_coffee %>
+  </div>
+
+  <div>
+    <%= form.label t('app.trip.num_people'), style: "display: block" %>
+    <%= form.number_field :num_people %>
+  </div>
+
+  <div>
+    <%= form.label t('app.trip.num_drivers'), style: "display: block" %>
+    <%= form.number_field :num_drivers %>
+  </div>
+
+  <div>
+    <%= form.label t('app.trip.free_driver'), style: "display: block" %>
+    <%= form.check_box :free_driver %>
+  </div>
+
+  <div>
+    <%= form.label t('app.trip.num_guides'), style: "display: block" %>
+    <%= form.number_field :num_guides %>
+  </div>
+
+  <div>
+    <%= form.label t('app.trip.free_guide'), style: "display: block" %>
+    <%= form.check_box :free_guide %>
+  </div>
+
+  <div>
+    <%= form.label t('app.trip.num_rooms'), style: "display: block" %>
+    <%= form.number_field :num_rooms %>
+  </div>
+
+  <div>
+    <%= form.label t('app.trip.rate_person_day'), style: "display: block" %>
+    <%= form.text_field :rate_person_day %>
+  </div>
+
+  <div>
+    <%= form.label t('app.trip.signal_value'), style: "display: block" %>
+    <%= form.text_field :signal_value %>
+  </div>
+
+  <div>
+    <%= form.label t('app.trip.signal_date'), style: "display: block" %>
+    <%= form.date_field :signal_date %>
+  </div>
+
+  <div>
+    <%= form.label t('app.trip.notes'), style: "display: block" %>
+    <%= form.text_area :notes %>
+  </div>
+
+  <div>
+    <%= form.label t('app.trip.confirmed'), style: "display: block" %>
+    <%= form.check_box :confirmed %>
+  </div>
+
+  <div>
+    <%= form.label t('app.trip.accomplished'), style: "display: block" %>
+    <%= form.check_box :accomplished %>
+  </div>
+
+  <div>
+    <%= form.label t('app.trip.suspended'), style: "display: block" %>
+    <%= form.check_box :suspended %>
+  </div>
+
+  <div>
+    <%= form.submit(@trip.new_record? ? t('app.trip.create') : t('app.trip.update'))%>
+  </div>
+<% end %>

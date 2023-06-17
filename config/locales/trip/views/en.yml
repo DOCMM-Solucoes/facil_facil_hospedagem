@@ -1,0 +1,39 @@
+en:
+  app:
+    trip_index:
+      show: Show this trip
+      new: New trip
+      title: Trips
+    trip_edit:
+      show: Show this trip
+      back: Back to trips
+      title: Editing trip
+    trip_new:
+      title: New trip
+    trip_show:
+      edit: Edit this trip
+      back: Back to trips
+      delete: Delete this trip
+    trip:
+      establishment_id: Establishment
+      guide_id: Guide
+      checkin_date: Check-in date
+      checkin_time: Check-in time
+      checkout_date: Check-out date
+      checkout_time: Check-out time
+      extra_coffee: Extra coffee
+      num_people: Num. people
+      num_drivers: Num. drivers
+      free_driver: Free driver
+      num_guides: Num. guides
+      free_guide: Free guide
+      num_rooms: Num. rooms
+      rate_person_day: Rate person day
+      signal_value: Signal value
+      signal_date: Signal date
+      notes: Notes
+      confirmed: Confirmed
+      acomplished: Accomplished
+      suspended: suspended
+
+

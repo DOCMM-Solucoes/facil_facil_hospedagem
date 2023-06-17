@@ -1,0 +1,10 @@
+pt-BR:
+  app:
+    trips_controller:
+      create:
+        success: Viagem criada com sucesso.
+      update:
+        success: Viagem atualizada com sucesso.
+      destroy:
+        success: Viagem deletada com sucesso.
+      notice_delete: Deletar Viagem?
