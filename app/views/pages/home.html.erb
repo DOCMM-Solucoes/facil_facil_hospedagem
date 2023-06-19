@@ -1,17 +1,17 @@
 <h1>Fácil Fácil Hospedagem</h1>
-<%= link_to 'Hoteliers', hoteliers_url %> <strong>|</strong>
-<%= link_to 'Establishments', establishments_url %> <strong>|</strong>
-<%= link_to 'Guides', guides_url %> <strong>|</strong>
-<%= link_to 'Rooms', rooms_url %> <strong>|</strong>
-<%= link_to 'Trips', trips_url %> <strong>|</strong>
-<%= link_to  'Establishments photos', photos_url%>
+<%= link_to t('home.hoteliers'), hoteliers_url %> <strong>|</strong>
+<%= link_to t('home.establishments'), establishments_url %> <strong>|</strong>
+<%= link_to t('home.guides'), guides_url %> <strong>|</strong>
+<%= link_to t('home.rooms'), rooms_url %> <strong>|</strong>
+<%= link_to t('home.trips'), trips_url %> <strong>|</strong>
+<%= link_to  t('home.establishments_photos'), photos_url%>
 
 <% if user_signed_in? && current_user %>
   <strong>|</strong>
-  <%= link_to 'Edit user', edit_user_registration_path %> <strong>|</strong>
-  <%= button_to 'Logout', destroy_user_session_url, method: :delete %>
+  <%= link_to t('home.edit_user'), edit_user_registration_path %> <strong>|</strong>
+  <%= button_to t('home.logout'), destroy_user_session_url, method: :delete %>
 <% else %>
   <strong>|</strong>
-  <%= link_to 'Sign up', new_user_registration_path %> <strong>|</strong>
-  <%= link_to 'Login', user_session_url %>
+  <%= link_to t('home.sign_up'), new_user_registration_path %> <strong>|</strong>
+  <%= link_to t('home.login'), user_session_url %>
 <% end %>
