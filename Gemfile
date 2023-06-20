@@ -105,3 +105,5 @@ gem 'devise-i18n'
 # gem "octokit", "~> 5.0"
 # gem 'httparty'
 # gem 'nokogiri'
+
+gem "tailwindcss-rails", "~> 2.0"
