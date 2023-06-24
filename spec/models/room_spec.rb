@@ -13,15 +13,24 @@ RSpec.describe Room, type: :model do
   describe 'Room crud tests' do
     context 'Create, update and delete tests' do
       it 'Create room' do
-        room_type = Room.create(name: 'Room 101', description: 'Room 101', reference: 'Primeiro andar', maximum_capacity: 6, status: 'A')
-        expect(room_type.name).to eq('Room 101')
-        expect(room_type.reference).to eq('Primeiro andar')
+        room_type = build(:room)
+        expect(room_type.status).to eq('A')
+        expect(room_type.is_double).to be(true)
+        expect(room_type.maximum_capacity).to eq(6)
       end
 
-      it 'Update: modifying the name field' do
-        room_type = Room.create(name: 'Room 101', description: 'Room 101', reference: 'Primeiro andar', maximum_capacity: 6, status: 'A')
-        room_type.update(name: 'Room 1')
-        expect(room_type.name).to eq('Room 1')
+      it 'Update: modifying the name and maximum_capacity field' do
+        room_type = build(:room)
+        room_type.update(status: 'M')
+        room_type.update(maximum_capacity: 4)
+        expect(room_type.status).to eq('M')
+        expect(room_type.maximum_capacity).to be(4)
+      end
+
+      it 'Delete room' do
+        room_type = build(:room)
+        room_type.destroy
+        expect{ room_type.reload }.to raise_error(ActiveRecord::RecordNotFound)
       end
     end
   end
