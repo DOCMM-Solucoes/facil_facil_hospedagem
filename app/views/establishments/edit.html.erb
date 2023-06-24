@@ -1,10 +1,9 @@
-<h1><%= t'app.edit.title' %></h1>
+<div class="grid justify-center">
+  <div class= "grid grid-cols-1 max-w-lg p-6 bg-white border border-gray-600 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
-<%= render "form", establishment: @establishment %>
+    <h1 class="text-2xl font-bold text-blue-600 text-center"><%= t'app.edit.title' %></h1>
 
-<br>
+    <%= render "form", establishment: @establishment %>
 
-<div>
-  <%= link_to t('app.edit.show'), @establishment %> |
-  <%= link_to t('app.edit.back'), establishments_path %>
+  </div>
 </div>
