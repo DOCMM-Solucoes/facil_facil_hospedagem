@@ -1,0 +1,10 @@
+pt-BR:
+  app:
+    photos_controller:
+      create:
+        success: Foto salva com sucesso.
+      update:
+        success: Foto salva com sucesso.
+      destroy:
+        success: Foto deleta com sucesso.
+      notice_delete: Você tem certeza?

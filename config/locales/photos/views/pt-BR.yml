@@ -1,0 +1,25 @@
+pt-BR:
+  app:
+    structure_index:
+      show: Mostrar esta Estrutura
+      new: Nova Estrutura
+      title: Estrutura
+      name: Nome
+    structure_edit:
+      show: Mostrar esta Estrutura
+      back: Voltar para Estruturas
+      title: Editar Estrutura
+      edit: Editar Estrutura
+    structure_new:
+      title: Nova Estrutura
+      back: Voltar para Estruturas
+    structure_show:
+      edit: Editar Estrutura
+      back: Voltar para Estruturas
+      delete: Deletar Estrutura
+    structure:
+      name: Estrutura
+    structure_form:
+      create: Salvar
+      update: Atualizar
+      images: Imagens

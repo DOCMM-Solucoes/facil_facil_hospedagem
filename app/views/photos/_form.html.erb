@@ -12,16 +12,16 @@
   <% end %>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
+    <%= form.label t('app.structure.name'), style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
   <div>
-    <%= form.label :images, style: "display: block" %>
+    <%= form.label t('app.structure_form.images'), style: "display: block" %>
     <%= form.file_field :images, multiple: true %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit (@photo.new_record? ? t('app.structure_form.create') : t('app.structure_form.update')) %>
   </div>
 <% end %>

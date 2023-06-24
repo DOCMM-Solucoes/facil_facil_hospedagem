@@ -1,9 +1,9 @@
-<h1>New photo</h1>
+<h1><%= t('app.structure_new.title') %></h1>
 
 <%= render "form", photo: @photo %>
 
 <br>
 
 <div>
-  <%= link_to "Back to photos", photos_path %>
+  <%= link_to t('app.structure_new.back'), photos_path %>
 </div>

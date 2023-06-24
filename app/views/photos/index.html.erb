@@ -1,18 +1,18 @@
-<h1>Photos</h1>
+<h1><%= t('app.structure_index.title') %></h1>
 
 <div id="photos">
   <% @photos.each do |photo| %>
     <%= render photo %>
     <p>
-      <%= link_to "Show this photo", photo %>
+      <%= link_to t('app.structure_index.show'), photo %>
     </p>
   <% end %>
 </div>
 
 <div>
   <% if user_signed_in? && current_user %>
-    <%= link_to "New photo", new_photo_path %>
+    <%= link_to t('app.structure_index.new'), new_photo_path %>
   <% end %>
-  <%= link_to t('home.home'), root_path  %>
+  <%=  link_to t('home.home'), root_path  %>
 </div>
 
