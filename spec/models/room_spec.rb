@@ -15,15 +15,15 @@ RSpec.describe Room, type: :model do
       it 'Create room' do
         room_type = build(:room)
         expect(room_type.status).to eq('A')
-        expect(room_type.is_double).to be(true)
+        expect(room_type.is_double).to be_truthy
         expect(room_type.maximum_capacity).to eq(6)
       end
 
-      it 'Update: modifying the name and maximum_capacity field' do
+      it 'Update: modifying name, max. capacity and is_double' do
         room_type = build(:room)
-        room_type.update(status: 'M')
-        room_type.update(maximum_capacity: 4)
+        room_type.update(status: 'M', is_double: false, maximum_capacity: 4)
         expect(room_type.status).to eq('M')
+        expect(room_type.is_double).to be_falsey
         expect(room_type.maximum_capacity).to be(4)
       end
 
