@@ -1,6 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Trip, type: :model do
+
+  describe 'factories' do
+    it 'has a valid factory' do
+      trip = FactoryBot.build(:trip)
+      expect(trip).to be_valid
+    end
+  end
+
   describe 'create' do
     it 'creates a new trip' do
       expect {
@@ -55,12 +63,5 @@ RSpec.describe Trip, type: :model do
   describe 'associations' do
     it { should belong_to(:establishment) }
     it { should belong_to(:guide) }
-  end
-
-  describe 'factories' do
-    it 'has a valid factory' do
-      trip = FactoryBot.build(:trip)
-      expect(trip).to be_valid
-    end
   end
 end
