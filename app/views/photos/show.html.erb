@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<p>
+  <%= render @photo %>
+</p>
+
+<div class="field">
+  <% @photo.images.each do |image| %>
+    <%= image_tag image, class: 'image-size' %>
+  <% end %>
+
+</div>
+
+<div>
+  <%= link_to "Back to photos", photos_path %>
+  <% if user_signed_in? && current_user %>
+    <%= link_to "Edit this photos", edit_photo_path(@photo) %> |
+    <%= button_to "Destroy this photo", @photo, method: :delete,
+                form: { data: { turbo_confirm: 'Are you sure?' } } %>
+  <% end %>
+</div>
