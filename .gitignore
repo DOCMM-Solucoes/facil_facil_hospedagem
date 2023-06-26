@@ -39,3 +39,6 @@
 .idea/
 
 db/schema.rb
+
+/app/assets/builds/*
+!/app/assets/builds/.keep

@@ -1,4 +1,3 @@
-<p style="color: green"><%= notice %></p>
 
 <h1><%= t 'app.room_index.title' %></h1>
 
@@ -14,5 +13,5 @@
     <%= link_to t('app.room_index.new'), new_room_path %>
     <strong> | </strong>
   <% end %>
-  <%= link_to 'Home', root_path %>
+  <%= link_to t('home.home'), root_path %>
 </div>

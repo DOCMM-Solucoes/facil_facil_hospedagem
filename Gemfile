@@ -42,9 +42,14 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# The abstract interface for net-* client.
+gem 'net-http', require: false
+gem 'net-imap', require: false
+gem 'net-protocol', require: false
+gem 'net-smtp', require: false
 
 # Use Sass to process CSS
-# gem "sassc-rails"
+gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
@@ -58,10 +63,10 @@ group :development, :test do
   # gem 'binding_of_caller'
   # gem 'annotate'
   # gem 'pry-byebug'
-  # gem 'factory_bot_rails'
-  # gem 'ffaker'
-  # gem 'faker'
-  # gem 'cpf_faker'
+  gem 'factory_bot_rails'
+  gem 'ffaker'
+  gem 'faker'
+  gem 'cpf_faker'
   # gem 'rubycritic', require: false
   # gem 'simplecov'
 end
@@ -71,7 +76,7 @@ group :development do
   gem "web-console"
   # gem 'listen', '>= 3.0.5', '< 3.2'
   # gem 'spring-watcher-listen', '~> 2.0.0'
-  # gem 'better_errors'
+  gem 'better_errors'
   # gem "binding_of_caller"
   # gem 'rails_layout'
   # gem 'letter_opener_web'
@@ -96,6 +101,7 @@ end
 
 #Admin
 gem 'devise'
+gem 'devise-i18n'
 # gem 'activeadmin'
 # gem 'activeadmin_sidekiq_stats'
 # gem "chartkick", '~> 2.2.0'
@@ -104,3 +110,5 @@ gem 'devise'
 # gem "octokit", "~> 5.0"
 # gem 'httparty'
 # gem 'nokogiri'
+
+gem "tailwindcss-rails", "~> 2.0"

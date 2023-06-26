@@ -1,4 +1,4 @@
-en-US:
+en:
   activerecord:
     errors:
       messages:
@@ -294,3 +294,10 @@ en-US:
   submit:
     update: ""
     create: ""
+  users:
+    registrations:
+      edit:
+        title: ""
+    confirmations:
+      new:
+        resend_confirmation_instructions: ""

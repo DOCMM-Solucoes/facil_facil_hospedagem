@@ -1,0 +1,13 @@
+en:
+  home:
+    hoteliers: "Hoteliers"
+    establishments: "Establishments"
+    guides: "Guides"
+    rooms: "Rooms"
+    trips: "Trips"
+    establishments_photos: "Establishments photos"
+    edit_user: "Edit user"
+    logout: "Logout"
+    sign_up: "Sign up"
+    login: "Login"
+    home: "home"
