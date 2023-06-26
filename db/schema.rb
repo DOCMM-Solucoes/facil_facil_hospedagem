@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_06_06_153544) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "addresses", force: :cascade do |t|
     t.string "street"
     t.string "postal_code"
@@ -19,8 +22,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_153544) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "addressable_type"
-    t.integer "addressable_id"
-    t.index %w[addressable_type addressable_id], name: "index_addresses_on_addressable"
+    t.bigint "addressable_id"
+    t.index ["addressable_type", "addressable_id"], name: "index_addresses_on_addressable"
   end
 
   create_table "establishments", force: :cascade do |t|
@@ -30,7 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_153544) do
     t.string "site"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "hotelier_id", null: false
+    t.bigint "hotelier_id", null: false
     t.index ["hotelier_id"], name: "index_establishments_on_hotelier_id"
   end
 
@@ -45,8 +48,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_153544) do
   end
 
   create_table "guides_establishments", force: :cascade do |t|
-    t.integer "guides_id"
-    t.integer "establishments_id"
+    t.bigint "guides_id"
+    t.bigint "establishments_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["establishments_id"], name: "index_guides_establishments_on_establishments_id"
