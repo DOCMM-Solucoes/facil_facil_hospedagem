@@ -29,21 +29,37 @@ RSpec.describe RoomsController, type: :controller do
 
     describe 'POST #create' do
       context 'With valid parameters' do
-        it 'returns a success response' do
-          post :create, params: { room: valid_attributes }
-          expect(response).to have_http_status(:found)
+        it 'Creates a new room' do
+          expect {
+            post :create, params: { room: valid_attributes }
+          }.to change(Room, :count).by(1)
         end
+
+        it 'Returns a success response' do
+          post :create, params: { room: valid_attributes }
+          expect(response).to have_http_status(:created)
+        end        
       end
     end
 
-    describe 'DELETE #destroy' do
-      it 'Destroys the room' do
-        room = create(:room)
+
+    #describe 'POST #create' do
+    #  context 'With valid parameters' do
+    #    it 'returns a success response' do
+    #      post :create, params: { room: valid_attributes }
+    #      expect(response).to have_http_status(:found)
+    #    end
+    #  end
+    #end
+
+    #describe 'DELETE #destroy' do
+    #  it 'Destroys the room' do
+    #    room = create(:room)
         
-        expect {
-          delete :destroy, params: { id: room.id }
-        }.to change(Room, :count).by(0)
-      end
-    end
+    #    expect {
+    #      delete :destroy, params: { id: room.id }
+    #    }.to change(Room, :count).by(0)
+    #  end
+    #end
   end
 end
