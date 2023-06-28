@@ -69,6 +69,8 @@ group :development, :test do
   gem 'cpf_faker'
   # gem 'rubycritic', require: false
   # gem 'simplecov'
+  gem 'rails-controller-testing'
+
 end
 
 group :development do
