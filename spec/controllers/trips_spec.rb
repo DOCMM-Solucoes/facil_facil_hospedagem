@@ -1,6 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe TripsController, type: :controller do
+  let(:user) { FactoryBot.create(:user) }
+  let(:establishment) { FactoryBot.create(:establishment) }
+  let(:guide) { FactoryBot.create(:guide) }
+
+  before do
+    sign_in user
+  end
+
   describe 'GET #index' do
     it 'returns a successful response' do
       get :index
@@ -16,14 +24,14 @@ RSpec.describe TripsController, type: :controller do
   end
 
   describe 'GET #show' do
+    let(:trip) { FactoryBot.create(:trip) }
+
     it 'returns a successful response' do
-      trip = FactoryBot.create(:trip)
       get :show, params: { id: trip.id }
       expect(response).to be_successful
     end
 
     it 'assigns @trip with the correct trip' do
-      trip = FactoryBot.create(:trip)
       get :show, params: { id: trip.id }
       expect(assigns(:trip)).to eq(trip)
     end
@@ -31,40 +39,25 @@ RSpec.describe TripsController, type: :controller do
 
   describe 'GET #new' do
     it 'returns a successful response' do
-      user = FactoryBot.create(:user)
-      sign_in user
       get :new
       expect(response).to be_successful
     end
 
     it 'assigns @trip as a new Trip instance' do
-      trip = FactoryBot.build(:trip)
       get :new
-      expect(trip).to be_a_new(Trip)
+      expect(assigns(:trip)).to be_a_new(Trip)
     end
   end
 
   describe 'POST #create' do
     context 'with valid parameters' do
       it 'creates a new trip' do
-        user = FactoryBot.create(:user)
-        sign_in user
-
-        establishment = FactoryBot.create(:establishment)
-        guide = FactoryBot.create(:guide)
-
         expect {
           post :create, params: { trip: FactoryBot.attributes_for(:trip, establishment_id: establishment.id, guide_id: guide.id) }
         }.to change { Trip.count }.by(1)
       end
 
       it 'redirects to the created trip' do
-        user = FactoryBot.create(:user)
-        sign_in user
-
-        establishment = FactoryBot.create(:establishment)
-        guide = FactoryBot.create(:guide)
-
         post :create, params: { trip: FactoryBot.attributes_for(:trip, establishment_id: establishment.id, guide_id: guide.id) }
         new_trip = Trip.last
         expect(new_trip).to be_present
@@ -81,33 +74,21 @@ RSpec.describe TripsController, type: :controller do
       end
 
       it 'renders the new template' do
-        user = FactoryBot.create(:user)
-        sign_in user
-
-        trip_params = {
-          establishment_id: nil,
-          guide_id: nil
-        }
-
-        post :create, params: { trip: trip_params }
+        post :create, params: { trip: { establishment_id: nil, guide_id: nil } }
         expect(response).to render_template(:new)
       end
     end
   end
 
   describe 'GET #edit' do
+    let(:trip) { FactoryBot.create(:trip) }
+
     it 'returns a successful response' do
-      user = FactoryBot.create(:user)
-      sign_in user
-      trip = FactoryBot.create(:trip)
       get :edit, params: { id: trip.id }
       expect(response).to be_successful
     end
 
     it 'assigns @trip with the correct trip' do
-      user = FactoryBot.create(:user)
-      sign_in user
-      trip = FactoryBot.create(:trip)
       get :edit, params: { id: trip.id }
       expect(assigns(:trip)).to eq(trip)
     end
@@ -118,9 +99,6 @@ RSpec.describe TripsController, type: :controller do
 
     context 'with valid parameters' do
       it 'updates the trip' do
-        user = FactoryBot.create(:user)
-        sign_in user
-
         new_date = Faker::Date.between(from: Date.today, to: Date.today + 1.year)
         patch :update, params: { id: trip.id, trip: { checkin_date: new_date } }
         trip.reload
@@ -129,4 +107,3 @@ RSpec.describe TripsController, type: :controller do
     end
   end
 end
-
