@@ -105,4 +105,20 @@ RSpec.describe TripsController, type: :controller do
       end
     end
   end
+
+  describe 'DELETE #destroy' do
+    let!(:trip_to_destroy) { FactoryBot.create(:trip) }
+
+    before do
+      delete :destroy, params: { id: trip_to_destroy.id }
+    end
+
+    it 'destroys the trip' do
+      expect(Trip.exists?(trip_to_destroy.id)).to be_falsey
+    end
+
+    it 'redirects to the trips#index' do
+      expect(response).to redirect_to(trips_path)
+    end
+  end
 end
