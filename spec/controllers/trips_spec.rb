@@ -69,15 +69,16 @@ RSpec.describe TripsController, type: :controller do
     end
 
     context 'with invalid parameters' do
+      let(:invalid_params) { { establishment_id: nil, guide_id: nil } }
+
       it 'does not create a new trip' do
-        trip_params = { establishment_id: nil, guide_id: nil }
         expect {
-          post :create, params: { trip: trip_params }
+          post :create, params: { trip: invalid_params }
         }.not_to change(Trip, :count)
       end
 
       it 'renders the new template' do
-        post :create, params: { trip: { establishment_id: nil, guide_id: nil } }
+        post :create, params: { trip: invalid_params }
         expect(response).to render_template(:new)
       end
     end
