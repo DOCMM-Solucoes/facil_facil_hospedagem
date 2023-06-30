@@ -4,6 +4,7 @@ RSpec.describe TripsController, type: :controller do
   let(:user) { FactoryBot.create(:user) }
   let(:establishment) { FactoryBot.create(:establishment) }
   let(:guide) { FactoryBot.create(:guide) }
+  let(:trip) { FactoryBot.create(:trip) }
 
   before do
     sign_in user
@@ -24,8 +25,6 @@ RSpec.describe TripsController, type: :controller do
   end
 
   describe 'GET #show' do
-    let(:trip) { FactoryBot.create(:trip) }
-
     it 'returns a successful response' do
       get :show, params: { id: trip.id }
       expect(response).to be_successful
@@ -50,15 +49,17 @@ RSpec.describe TripsController, type: :controller do
   end
 
   describe 'POST #create' do
+    let(:valid_params) { { trip: FactoryBot.attributes_for(:trip, establishment_id: establishment.id, guide_id: guide.id) } }
+
     context 'with valid parameters' do
       it 'creates a new trip' do
         expect {
-          post :create, params: { trip: FactoryBot.attributes_for(:trip, establishment_id: establishment.id, guide_id: guide.id) }
+          post :create, params: valid_params
         }.to change { Trip.count }.by(1)
       end
 
       it 'redirects to the created trip' do
-        post :create, params: { trip: FactoryBot.attributes_for(:trip, establishment_id: establishment.id, guide_id: guide.id) }
+        post :create, params: valid_params
         new_trip = Trip.last
         expect(new_trip).to be_present
         expect(response).to redirect_to(trip_path(new_trip.id))
@@ -81,8 +82,6 @@ RSpec.describe TripsController, type: :controller do
   end
 
   describe 'GET #edit' do
-    let(:trip) { FactoryBot.create(:trip) }
-
     it 'returns a successful response' do
       get :edit, params: { id: trip.id }
       expect(response).to be_successful
@@ -95,8 +94,6 @@ RSpec.describe TripsController, type: :controller do
   end
 
   describe 'PATCH #update' do
-    let(:trip) { FactoryBot.create(:trip) }
-
     context 'with valid parameters' do
       it 'updates the trip' do
         new_date = Faker::Date.between(from: Date.today, to: Date.today + 1.year)
