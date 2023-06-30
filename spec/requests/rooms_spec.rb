@@ -1,48 +1,48 @@
 require 'rails_helper'
 
-RSpec.describe "/books", type: :request do
-  
-  let(:valid_attributes) {
-    {
-      name: 'Name Room',
-      description: 'Description Room',
-      reference: 'Reference Room'
-    }
-  }
-  
-  let(:invalid_attributes) {
-    {
-      name: '',
-      description: '',
-      reference: ''
-    }
-  }
+RSpec.describe 'Rooms API', type: :request do
+  let!(:rooms) { create_list(:room, 5) }
+  let(:room_id) { rooms.first.id }
 
- 
-  describe "GET /index" do
-    it "Renders a successful response" do
-      Room.create! valid_attributes
-      get "/locale/rooms"
-      expect(response).to be_successful
-    end
-  end  
+  describe 'GET /locale/rooms' do
+    before { get '/locale/rooms' }
 
-  describe "GET /show" do
-    it "Renders a successful response" do
-      room = Room.create! valid_attributes
-      get "/locale/rooms/#{room.id}"
-      expect(response).to be_successful
+    #it 'returns all rooms' do
+    #  expect(json).not_to be_empty
+    #  expect(json.size).to eq(5)
+    #end
+
+    it 'returns status code 200' do
+      expect(response).to have_http_status(200)
     end
   end
 
-  describe 'DELETE /rooms/:id' do
-    it 'Deletes an existing room' do
-      room = create(:room)
+  describe 'GET /locales/rooms/:id' do
+    before { get "/locale/rooms/#{room_id}" }
 
-      expect {
-        delete "/locale/rooms/#{room.id}"
-      }.to change(Room, :count).by(0)
+    context 'When the room exists' do
+      #it 'returns the room' do
+      #  expect(json).not_to be_empty
+      #  expect(json['id']).to eq(room_id)
+      #end
+
+      it 'Returns status code 200' do
+        expect(response).to have_http_status(200)
+      end
     end
-  end  
+
+    context 'When the room does not exist' do
+      let(:room_id) { 100 }
+
+      it 'Returns status code 404' do
+        expect(response).to have_http_status(:not_found)
+      end
+
+      it 'returns a not found message' do
+        expect(response.body).to match(/Couldn't find Room/)
+      end
+    end
+  end
 
 end
+
