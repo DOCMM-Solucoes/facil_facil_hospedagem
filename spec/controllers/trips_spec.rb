@@ -49,7 +49,9 @@ RSpec.describe TripsController, type: :controller do
   end
 
   describe 'POST #create' do
-    let(:valid_params) { { trip: FactoryBot.attributes_for(:trip, establishment_id: establishment.id, guide_id: guide.id) } }
+    let(:valid_params) { { trip: FactoryBot.attributes_for(:trip,
+                                                           establishment_id: establishment.id,
+                                                           guide_id: guide.id) } }
 
     context 'with valid parameters' do
       it 'creates a new trip' do
