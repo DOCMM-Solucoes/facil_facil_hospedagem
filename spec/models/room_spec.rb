@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Room, type: :model do
-
   describe 'Factory tests' do
     context 'When using factory standard' do
       it 'Is valid' do
