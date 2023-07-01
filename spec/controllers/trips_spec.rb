@@ -99,7 +99,7 @@ RSpec.describe TripsController, type: :controller do
   describe 'PATCH #update' do
     context 'with valid parameters' do
       it 'updates the trip' do
-        new_date = Faker::Date.between(from: Date.today, to: Date.today + 1.year)
+        new_date = trip.checkin_date
         patch :update, params: { id: trip.id, trip: { checkin_date: new_date } }
         trip.reload
         expect(trip.checkin_date).to eq(new_date)
