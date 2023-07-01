@@ -1,10 +1,10 @@
 en:
   app:
-    rooms_controller:
+    photo_controller:
       create:
-        success: Room was successfully created.
+        success: Estructure was successfully created.
       update:
-        success: Room was successfully updated.
+        success: Estructure was successfully updated.
       destroy:
-        success: Room was successfully destroyed.
+        success: Estructure was successfully destroyed.
       notice_delete: Are you sure?

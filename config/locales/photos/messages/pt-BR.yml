@@ -2,9 +2,9 @@ pt-BR:
   app:
     photos_controller:
       create:
-        success: Foto salva com sucesso.
+        success: Estrutura criada com sucesso.
       update:
-        success: Foto salva com sucesso.
+        success: Estrutura atualizada com sucesso.
       destroy:
-        success: Foto deleta com sucesso.
-      notice_delete: Você tem certeza?
+        success: Estrutura excluída com sucesso.
+      notice_delete: Excluir Estrutura?

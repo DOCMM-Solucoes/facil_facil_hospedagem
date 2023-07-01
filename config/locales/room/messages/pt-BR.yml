@@ -1,11 +1,11 @@
 pt-BR:
   app:
-    rooms_controller:
+    photos_controller:
       create:
-        success: Quarto criado com sucesso.
+        success: Estrutura criada com sucesso.
       update:
-        success: Quarto atualizado com sucesso.
+        success: Estrutura atualizada com sucesso.
       destroy:
-        success: Quarto excluído com sucesso.
-      notice_delete: Excluir Quarto?
+        success: Estrutura excluída com sucesso.
+      notice_delete: Excluir Estrutura?
       
