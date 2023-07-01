@@ -108,7 +108,7 @@ RSpec.describe TripsController, type: :controller do
   end
 
   describe 'DELETE #destroy' do
-    let!(:trip_to_destroy) { FactoryBot.create(:trip) }
+    let!(:trip_to_destroy) { trip }
 
     before do
       delete :destroy, params: { id: trip_to_destroy.id }
