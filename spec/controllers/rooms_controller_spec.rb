@@ -2,6 +2,12 @@ require 'rails_helper'
 
 RSpec.describe RoomsController, type: :controller do
   describe 'CRUD operations' do
+    let(:user) { FactoryBot.create(:user) }
+    
+    before do
+      sign_in user
+    end    
+
     let(:valid_attributes) {
        { name: 'New Room', description: 'New Room Description', reference: 'New Room Reference' } 
     }
@@ -11,7 +17,6 @@ RSpec.describe RoomsController, type: :controller do
     }
     
     let(:room) { create(:room) }
-
 
     describe 'GET #index' do
       it 'Returns a successful response' do
