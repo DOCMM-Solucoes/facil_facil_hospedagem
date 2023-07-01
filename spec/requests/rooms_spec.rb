@@ -1,48 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe 'Rooms API', type: :request do
-  let!(:rooms) { create_list(:room, 5) }
-  let(:room_id) { rooms.first.id }
+  describe 'POST /rooms' do
+    let(:user) { FactoryBot.create(:user) }
+    
+    before do
+      sign_in user
+    end        
 
-  describe 'GET /locale/rooms' do
-    before { get '/locale/rooms' }
-
-    #it 'returns all rooms' do
-    #  expect(json).not_to be_empty
-    #  expect(json.size).to eq(5)
-    #end
-
-    it 'returns status code 200' do
-      expect(response).to have_http_status(200)
-    end
-  end
-
-  describe 'GET /locales/rooms/:id' do
-    before { get "/locale/rooms/#{room_id}" }
-
-    context 'When the room exists' do
-      #it 'returns the room' do
-      #  expect(json).not_to be_empty
-      #  expect(json['id']).to eq(room_id)
-      #end
-
-      it 'Returns status code 200' do
-        expect(response).to have_http_status(200)
-      end
-    end
-
-    context 'When the room does not exist' do
-      let(:room_id) { 100 }
-
-      it 'Returns status code 404' do
-        expect(response).to have_http_status(:not_found)
-      end
-
-      it 'returns a not found message' do
-        expect(response.body).to match(/Couldn't find Room/)
+    context 'With valid parameters' do
+      it 'Creates a new room' do
+        expect {
+          post '/locale/rooms', params: { 
+            room: { name: 'Room 301',
+                    description: 'Room / Apto. 301',
+                    reference: 'Andar X - Bloco Y' } }
+        }.to change(Room, :count).by(1)
+        
+        expect(response).to have_http_status(:created)
+        expect(response_body).to include('Room 301')
+        expect(response_body).to include('2')
       end
     end
   end
-
 end
-
