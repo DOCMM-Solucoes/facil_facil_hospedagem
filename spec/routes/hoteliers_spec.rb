@@ -10,4 +10,12 @@ RSpec.describe HoteliersController, type: :routing do
   it 'routes to #new' do
     expect(get: '/hoteliers/new').to route_to('hoteliers#new')
   end
+
+  it 'routes to #show' do
+    expect(get: '/hoteliers/1').to route_to('hoteliers#show', id: '1')
+  end
+
+  it 'routes to #edit' do
+    expect(get: '/hoteliers/1/edit').to route_to('hoteliers#edit', id: '1')
+  end
 end
