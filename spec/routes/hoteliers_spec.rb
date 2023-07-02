@@ -26,4 +26,8 @@ RSpec.describe HoteliersController, type: :routing do
   it 'routes to #update via PUT' do
     expect(put: 'hoteliers/1').to route_to('hoteliers#update', id: '1')
   end
+
+  it 'routes to #update via PATCH' do
+    expect(patch: 'hoteliers/1').to route_to('hoteliers#update', id: '1')
+  end
 end
