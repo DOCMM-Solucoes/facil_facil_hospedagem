@@ -1,10 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe PhotosController, type: :controller do
-  let(:photos_attributes) {attributes_for(:photo, images: images)}
-  let(:user) {FactoryBot.create(:user)}
+  let(:user) { FactoryBot.create(:user) }
 
-  before  do
+  before do
     sign_in user
   end
 
@@ -23,20 +22,19 @@ RSpec.describe PhotosController, type: :controller do
   end
 
   describe 'POST #create' do
+    let(:photo_params) do
+      {
+        photo: {
+          images: fixture_file_upload('spec/fixtures/avatar.png')
+        }
+      }
+    end
+
     context 'with valid attributes' do
-      let(:valid_attributes) do
-        attributes_for(:photo, images_id: images.id)
-      end
-      it 'should POST #create' do
-        context 'with valid attributes' do
-          it 'create a new photo' do
-            expect{
-              post :create, params: {
-                photo: photos_attributes.merge(images: fixture_file_upload('spec/controller/avatar.png'))
-              }
-            }.to change(Photo, :count).by(1)
-          end
-        end
+      it 'creates a new photo' do
+        expect {
+          post :create, params: photo_params
+        }.to change(Photo, :count).by(1)
       end
     end
   end
