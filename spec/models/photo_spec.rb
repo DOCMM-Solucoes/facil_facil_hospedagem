@@ -1,18 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Photo, type: :model do
-  context "CRUD Photo" do
-
-    #before do
-    #user = FactoryBot.create(:user)
-    #sign_in user
-    #end
-
-    describe 'create' do
-
-      # create
-      it 'Create Photo' do
-        expect {Photo.create(title: 'Teste foto')}.to change(Photo, :count).by(1)
+  describe 'CRUD Photo' do
+    describe '#create' do
+      it 'creates a new photo' do
+        expect { Photo.create(title: 'Teste foto') }.to change { Photo.count }.by(1)
       end
     end
 
@@ -20,9 +12,14 @@ RSpec.describe Photo, type: :model do
       it { should validate_presence_of(:title) }
     end
 
-     # Update
-     it 'Update Photo' do
-     end
+    describe '#update' do
+      let!(:photo) { FactoryBot.create(:photo) }
 
+      it 'updates the photo' do
+        new_title = 'Updated title'
+        photo.update(title: new_title)
+        expect(photo.reload.title).to eq(new_title)
+      end
     end
+  end
 end
