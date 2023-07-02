@@ -50,4 +50,17 @@ RSpec.describe TripsController, type: :request do
       expect(response).to have_http_status(:success)
     end
   end
+
+  describe 'DELETE #destroy' do
+    it 'deletes a trip' do
+      user = FactoryBot.create(:user)
+      sign_in user
+
+      trip = FactoryBot.create(:trip)
+      expect {
+        delete trip_path(trip)
+      }.to change(Trip, :count).by(-1)
+      expect(response).to redirect_to(trips_path(locale: I18n.default_locale))
+    end
+  end
 end
