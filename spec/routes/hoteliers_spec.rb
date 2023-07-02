@@ -30,4 +30,8 @@ RSpec.describe HoteliersController, type: :routing do
   it 'routes to #update via PATCH' do
     expect(patch: 'hoteliers/1').to route_to('hoteliers#update', id: '1')
   end
+
+  it 'routes to #destroy' do
+    expect(delete: 'hoteliers/1').to route_to('hoteliers#destroy', id: '1')
+  end
 end
