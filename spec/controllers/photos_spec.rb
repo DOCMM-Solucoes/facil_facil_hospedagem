@@ -27,9 +27,16 @@ RSpec.describe PhotosController, type: :controller do
       let(:valid_attributes) do
         attributes_for(:photo, images_id: images.id)
       end
-      it 'create a new photo' do
-        expect{post :create, params:{photo: valid_attributes}
-        }.to change(Photo, :count).by(1)
+      it 'should POST #create' do
+        context 'with valid attributes' do
+          it 'create a new photo' do
+            expect{
+              post :create, params: {
+                photo: photos_attributes.merge(images: fixture_file_upload('spec/controller/avatar.png'))
+              }
+            }.to change(Photo, :count).by(1)
+          end
+        end
       end
     end
   end
