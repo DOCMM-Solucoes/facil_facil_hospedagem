@@ -20,7 +20,33 @@ RSpec.describe TripsController, type: :request do
     it 'returns a successful response for new trip form' do
       user = FactoryBot.create(:user)
       sign_in user
+
       get new_trip_path
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe 'POST #create' do
+    context 'with valid parameters' do
+      it "creates a new Trip" do
+        user = FactoryBot.create(:user)
+        sign_in user
+
+        expect {
+          post trips_path, params: { trip: FactoryBot.attributes_for(:trip) }
+        }.to change(Trip, :count).by(1)
+        expect(response).to redirect_to(Trip.last)
+      end
+    end
+  end
+
+  describe 'GET #edit' do
+    it 'returns a successful response for editing a trip' do
+      user = FactoryBot.create(:user)
+      sign_in user
+
+      trip = FactoryBot.create(:trip)
+      get edit_trip_path(trip)
       expect(response).to have_http_status(:success)
     end
   end
