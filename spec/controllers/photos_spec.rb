@@ -38,4 +38,21 @@ RSpec.describe PhotosController, type: :controller do
       end
     end
   end
+
+
+  describe 'PUT #update' do
+    context 'With valid parameters' do
+      it 'Updates the requested room' do
+
+      end
+    end
+  end
+
+  describe 'DELETE #destroy' do
+    it 'Destroys the room' do
+
+    end
+  end
+
+
 end
