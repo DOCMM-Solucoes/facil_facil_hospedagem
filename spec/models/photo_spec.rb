@@ -2,18 +2,16 @@ require 'rails_helper'
 
 RSpec.describe Photo, type: :model do
   describe 'CRUD Photo' do
-    describe '#create' do
       it 'creates a new photo' do
         expect { Photo.create(title: 'Teste foto') }.to change { Photo.count }.by(1)
       end
-    end
 
     describe 'validations' do
       it { should validate_presence_of(:title) }
     end
 
     describe '#update' do
-      let!(:photo) { FactoryBot.create(:photo) }
+      let(:photo) { FactoryBot.create(:photo) }
 
       it 'updates the photo' do
         new_title = 'Updated title'
