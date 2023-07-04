@@ -33,7 +33,7 @@ jobs:
       - name: Set up database schema
         run: bin/rails db:migrate
       - name: Install dependencies
-        run: npm install
+        run: yarn install
       # Add or replace test runners here
       - name: Run tests
         run: bin/rake
