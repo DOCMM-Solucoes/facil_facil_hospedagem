@@ -105,6 +105,7 @@ end
 #Admin
 gem 'devise'
 gem 'devise-i18n'
+gem 'rails-i18n'
 # gem 'activeadmin'
 # gem 'activeadmin_sidekiq_stats'
 # gem "chartkick", '~> 2.2.0'
