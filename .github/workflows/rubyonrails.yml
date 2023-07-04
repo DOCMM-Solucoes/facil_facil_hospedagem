@@ -29,7 +29,7 @@ jobs:
       - name: Set up database schema
         run: bin/rails db:migrate
       - name: Precompile tailwind
-        run: bundle exec rake assets:precompile
+        run: bin/rake assets:precompile
       # Add or replace test runners here
       - name: Run tests
         run: bundle exec rspec
