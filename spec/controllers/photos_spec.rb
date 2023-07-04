@@ -7,10 +7,14 @@ RSpec.describe PhotosController, type: :controller do
     sign_in user
   end
 
+  let(:invalid_attributes){
+    {title: nil, description: nil}
+  }
+
   describe 'GET #index' do
     it 'returns a successful response' do
       get :index
-      expect(response).to render_template(:index)
+      expect(response).to be_successful
     end
   end
 
@@ -21,38 +25,40 @@ RSpec.describe PhotosController, type: :controller do
     end
   end
 
-  describe 'POST #create' do
-    let(:photo_params) do
-      {
-        photo: {
-          images: fixture_file_upload('spec/fixtures/avatar.png')
-        }
-      }
-    end
-
-    context 'with valid attributes' do
-      it 'creates a new photo' do
-        expect {
-          post :create, params: photo_params
-        }.to change(Photo, :count).by(1)
-      end
+  describe 'GET #show' do
+    let(:photo) { FactoryBot.create(:photo) }
+    it 'Returns a success response' do
+      get :show, params: { id: photo.id}
+      expect(response).to be_successful
     end
   end
 
-
-  describe 'PUT #update' do
+  describe 'POST #create' do
+    let(:valid_attributes) {
+      {title: 'New Photo', description: 'New Photo Description'}
+    }
     context 'With valid parameters' do
-      it 'Updates the requested room' do
+      it 'updates the photo description' do
+        expect{
+          post :create, params: { photo: valid_attributes }
+        }.to change { Photo.count }.by(1)
+      end
 
+      it 'Returns a success response' do
+        post :create, params: { photo: valid_attributes }
+        expect(response).to have_http_status(:redirect)
       end
     end
   end
 
   describe 'DELETE #destroy' do
-    it 'Destroys the room' do
-
+    let(:photo) { FactoryBot.create(:photo) }
+    it 'Destroys the photo' do
+      photo = create(:photo)
+      expect{delete :destroy, params: {id: photo.id}
+      }.to change(Photo, :count).by(-1)
     end
   end
-
-
 end
+
+
