@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe PhotosController, type: :controller do
   let(:user) { FactoryBot.create(:user) }
+  let(:photo) { FactoryBot.create(:photo) }
 
   before do
     sign_in user
@@ -26,7 +27,6 @@ RSpec.describe PhotosController, type: :controller do
   end
 
   describe 'GET #show' do
-    let(:photo) { FactoryBot.create(:photo) }
     it 'Returns a success response' do
       get :show, params: { id: photo.id}
       expect(response).to be_successful
@@ -52,7 +52,6 @@ RSpec.describe PhotosController, type: :controller do
   end
 
   describe 'DELETE #destroy' do
-    let(:photo) { FactoryBot.create(:photo) }
     it 'Destroys the photo' do
       photo = create(:photo)
       expect{delete :destroy, params: {id: photo.id}
