@@ -2,8 +2,8 @@ en:
   app:
     photo_index:
       show: Show this estructure
-      new: New room
-      title: Rooms
+      new: New estructure
+      title: Estructures
     photo_edit:
       show: Show this estructure
       back: Back to estructures

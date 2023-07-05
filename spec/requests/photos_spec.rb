@@ -40,8 +40,6 @@ RSpec.describe TripsController, type: :request do
     end
   end
 
-
-
   describe 'DELETE #destroy' do
     it 'deletes a photo' do
       expect {
@@ -51,9 +49,4 @@ RSpec.describe TripsController, type: :request do
       expect(URI.parse(response.location).path).to eq(photos_path)
     end
   end
-
-
-
-
-
 end
