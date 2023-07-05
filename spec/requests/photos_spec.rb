@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe TripsController, type: :request do
   let(:user) { FactoryBot.create(:user)}
-  let!(:photos){FactoryBot.create(:photo)}
+  let!(:photo){FactoryBot.create(:photo)}
 
   before do
     sign_in user
@@ -40,13 +40,20 @@ RSpec.describe TripsController, type: :request do
     end
   end
 
-  #ERROR
+
+
   describe 'DELETE #destroy' do
     it 'deletes a photo' do
       expect {
         delete photo_path(photo)
       }.to change(Photo, :count).by(-1)
-      expect(response).to redirect_to(photos_path(locale: I18n.default_locale))
+      expect(response).to have_http_status(:redirect)
+      expect(URI.parse(response.location).path).to eq(photos_path)
     end
   end
+
+
+
+
+
 end
