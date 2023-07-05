@@ -14,4 +14,39 @@ RSpec.describe TripsController, type: :request do
     end
   end
 
+  describe 'GET #show' do
+    let!(:photo) { FactoryBot.create(:photo) }
+    it 'returns a successful response for trip show' do
+      get photo_path(photo)
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe 'GET #new' do
+    it 'returns a successful response for new trip form' do
+      get new_photo_path
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe 'POST #create' do
+    context 'with valid parameters' do
+      it "creates a new Photo" do
+        expect {
+          post photos_path, params: { photo: FactoryBot.attributes_for(:photo) }
+        }.to change(Photo, :count).by(1)
+        expect(response).to redirect_to(Photo.last)
+      end
+    end
+  end
+
+  #ERROR
+  describe 'DELETE #destroy' do
+    it 'deletes a photo' do
+      expect {
+        delete photo_path(photo)
+      }.to change(Photo, :count).by(-1)
+      expect(response).to redirect_to(photos_path(locale: I18n.default_locale))
+    end
+  end
 end
