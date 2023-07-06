@@ -3,11 +3,6 @@
     <div style="color: red">
       <h2><%= pluralize(photo.errors.count, "error") %> </h2>
 
-      <ul>
-        <% photo.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
     </div>
   <% end %>
 
@@ -17,10 +12,9 @@
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
+    <%= form.label :description, t('app.photo_index.title'), style: "display: block" %>
     <%= form.text_area :description %>
   </div>
-
 
   <div>
     <%= form.label t('app.photo.image'), style: "display: block" %>

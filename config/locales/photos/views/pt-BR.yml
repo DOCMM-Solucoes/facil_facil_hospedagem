@@ -3,7 +3,7 @@ pt-BR:
     photo_index:
       show: Mostrar esta estrutura
       new: Nova Estrutura
-      title: Estrutura
+      title: Descrição
     photo_edit:
       show: Mostrar esta estrutura
       back: Voltar para a listagem das estruturas
@@ -16,6 +16,8 @@ pt-BR:
       back: Voltar para a listagem das estruturas
       delete: Deletar estrutura
     photo:
+      name: Estrutura
+      description: Descrição
       create: Criar
       update: Atualizar
       image: Imagem

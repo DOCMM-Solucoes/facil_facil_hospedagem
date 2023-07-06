@@ -15,7 +15,7 @@ RSpec.describe TripsController, type: :request do
   end
 
   describe 'GET #show' do
-    let!(:photo) { FactoryBot.create(:photo) }
+    #let!(:photo) { FactoryBot.create(:photo) }
     it 'returns a successful response for trip show' do
       get photo_path(photo)
       expect(response).to have_http_status(:success)
