@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe TripsController, type: :request do
+RSpec.describe 'Trips', type: :request do
   let(:user) { FactoryBot.create(:user) }
   let!(:trip) { FactoryBot.create(:trip) }
 
