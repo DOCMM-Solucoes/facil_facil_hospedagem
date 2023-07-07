@@ -1,7 +1,11 @@
 <div id="<%= dom_id photo %>">
-  <p>
-    <strong>Title:</strong>
-    <%= photo.title %>
-  </p>
+    <p>
+      <strong><%= t'app.photo.name' %></strong>
+      <%= photo.title %>
+    </p>
 
+    <p>
+      <strong><%= t'app.photo.description' %></strong>
+      <%= photo.description %>
+    </p>
 </div>

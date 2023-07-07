@@ -1,10 +1,10 @@
-<h1>Editing photo</h1>
+<h1><%= t('app.photo_edit.title') %></h1>
 
 <%= render "form", photo: @photo %>
 
 <br>
 
 <div>
-  <%= link_to "Show this photo", @photo %> |
-  <%= link_to "Back to photos", photos_path %>
+  <%= link_to t('app.photo_edit.show'), @photo %> |
+  <%= link_to t('app.photo_edit.back'), photos_path %>
 </div>

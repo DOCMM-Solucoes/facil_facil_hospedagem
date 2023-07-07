@@ -69,6 +69,7 @@ group :development, :test do
   gem 'ffaker'
   gem 'faker'
   gem 'cpf_faker'
+  gem 'rails-controller-testing'
   # gem 'rubycritic', require: false
   # gem 'simplecov'
 end
@@ -113,4 +114,3 @@ gem 'devise-i18n'
 # gem 'httparty'
 # gem 'nokogiri'
 
-gem "tailwindcss-rails", "~> 2.0"

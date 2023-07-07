@@ -1,0 +1,23 @@
+en:
+  app:
+    photo_index:
+      show: Show this estructure
+      new: New estructure
+      title: Description
+    photo_edit:
+      show: Show this estructure
+      back: Back to estructures
+      title: Editing estructure
+    photo_new:
+      title: New estructure
+      back: Back to estructures
+    photo_show:
+      edit: Edit this estructure
+      back: Back to estructures
+      delete: Delete this estructure
+    photo:
+      name: Estructure
+      description: Description
+      create: Create
+      update: Update
+      image: Image

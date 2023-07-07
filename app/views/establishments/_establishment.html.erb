@@ -1,35 +1,50 @@
-<div id="<%= dom_id establishment %>">
-  <p>
-    <strong><%= t'app.establishment.name'%></strong>
-    <%= establishment.name %>
-  </p>
+<div class="grid justify-center text-2xl w-full">
+  <div id="<%= dom_id establishment %>">
 
-  <p>
-    <strong><%= t'app.establishment.bedrooms'%></strong>
-    <%= establishment.qty_bedrooms %>
-  </p>
+  <table class="border border-collapse border-slate-500">
+    <tbody>
 
-  <p>
-    <strong><%= t'app.establishment.phone' %></strong>
-    <%= establishment.phone %>
-  </p>
+    <tr>
+      <td class="border border-slate-600"><%= t'app.establishment.name' %>:</td>
+      <td class="border border-slate-600"><%= establishment.name %></td>
+    </tr>
 
-  <p>
-    <strong><%= t'app.establishment.site'%></strong>
-    <%= establishment.site %>
-  </p>
+    <tr>
+      <td class="border border-slate-600"><%= t'app.establishment.bedrooms'%>:</td>
+      <td class="border border-slate-600"><%= establishment.qty_bedrooms %></td>
+    </tr>
 
-  <p>
-    <%= render 'layouts/address', address: establishment.address %>
-  </p>
+    <tr>
+      <td class="border border-slate-600"><%= t'app.establishment.phone' %>:</td>
+      <td class="border border-slate-600"><%= establishment.phone %></td>
+    </tr>
 
-  <p>
-    <strong><%= "Hoteleiro: "%></strong>
-    <%= establishment.hotelier.name %>
-  </p>
+    <tr>
+      <td class="border border-slate-600"><%= t'app.establishment.site'%>:</td>
+      <td class="border border-slate-600"><%= establishment.site %></td>
+    </tr>
 
-  <p>
-    <strong><%= "CPF: "%></strong>
-    <%= establishment.hotelier.cpf %>
-  </p>
+    <div>
+      <strong></strong>
+
+    </div>
+
+    <div>
+      <%= render 'layouts/address', address: establishment.address %>
+    </div>
+
+    <div>
+      <strong><%= "Hoteleiro: "%></strong>
+      <%= establishment.hotelier.name %>
+    </div>
+
+    <div>
+      <strong><%= "CPF: "%></strong>
+      <%= establishment.hotelier.cpf %>
+    </div>
+    </tbody>
+
+  </table>
+  </div>
 </div>
+

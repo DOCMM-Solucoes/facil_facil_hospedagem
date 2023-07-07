@@ -1,0 +1,23 @@
+pt-BR:
+  app:
+    photo_index:
+      show: Mostrar esta estrutura
+      new: Nova Estrutura
+      title: Descrição
+    photo_edit:
+      show: Mostrar esta estrutura
+      back: Voltar para a listagem das estruturas
+      title: Editar estrutura
+    photo_new:
+      title: Nova estrutura
+      back: Voltar para a listagem das estruturas
+    photo_show:
+      edit: Editar estrutura
+      back: Voltar para a listagem das estruturas
+      delete: Deletar estrutura
+    photo:
+      name: Estrutura
+      description: Descrição
+      create: Criar
+      update: Atualizar
+      image: Imagem

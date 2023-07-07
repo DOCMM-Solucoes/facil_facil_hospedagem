@@ -1,0 +1,10 @@
+en:
+  app:
+    photos_controller:
+      create:
+        success: Photo was successfully created.
+      update:
+        success: Photo was successfully updated.
+      destroy:
+        success: Photo was successfully destroyed.
+      notice_delete: Are you sure?

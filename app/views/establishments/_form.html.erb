@@ -1,63 +1,72 @@
-<%= form_with(model: establishment) do |form| %>
-  <% if establishment.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(establishment.errors.count, "error") %> prohibited this establishment from being saved:</h2>
+<div>
+  <%= form_with(model: establishment) do |form| %>
+    <% if establishment.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(establishment.errors.count, "error") %> prohibited this establishment from being saved:</h2>
 
-      <ul>
-        <% establishment.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.label t'app.establishment.name', style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label t'app.establishment.bedrooms', style: "display: block" %>
-    <%= form.text_field :qty_bedrooms %>
-  </div>
-
-  <div>
-    <%= form.label t'app.establishment.phone', style: "display: block" %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div>
-    <%= form.label t'app.establishment.site', style: "display: block" %>
-    <%= form.text_field :site %>
-  </div>
-
-  <div>
-    <%= form.fields_for :address do |address_fields| %>
-      <div>
-        <%= address_fields.label :street, t('app.address.street') %>
-        <%= address_fields.text_field :street %>
-      </div>
-      <div>
-        <%= address_fields.label :postal_code, t('app.address.postal_code') %>
-        <%= address_fields.text_field :postal_code %>
-      </div>
-      <div>
-        <%= address_fields.label :city, t('app.address.city') %>
-        <%= address_fields.text_field :city %>
-      </div>
-      <div>
-        <%= address_fields.label :state, t('app.address.state') %>
-        <%= address_fields.text_field :state %>
+        <ul>
+          <% establishment.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
       </div>
     <% end %>
-  </div>
 
-  <div>
-  <%= form.label :hotelier_id, "Hoteleiro" %>
-  <%= form.collection_select :hotelier_id, Hotelier.all, :id, :name, prompt: true %>
-  </div>
+    <form>
+      <div class="grid gap-4 mt-4 md:grid-cols-3">
+        <div class="relative z-0 w-full mb-6 group md:col-span-2">
+          <label class=" block mb-2 text-lg text-gray-900 dark:text-white"><%= t'app.establishment.name' %></label>
+          <%= form.text_field :name, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+        </div>
+        <div class=" mb-6 md:col-span-1">
+          <label class=" block mb-2 text-lg text-gray-900 dark:text-white"><%= t'app.establishment.bedrooms'%></label>
+          <%= form.text_field :qty_bedrooms, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+        </div>
 
-  <div>
-    <%= form.submit(@establishment.new_record? ? t('app.establishment.create') : t('app.establishment.update')) %>
-  </div>
-<% end %>
+        <%= form.fields_for :address do |address_fields| %>
+          <div class="mb-6 md:col-span-3">
+            <label class="block mb-2 text-lg text-gray-900 dark:text-white"><%= t'app.address.street' %></label>
+            <%= address_fields.text_field :street, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+          </div>
+          <div class="mb-6 md:col-span-1">
+            <%= address_fields.label :postal_code, t('app.address.postal_code') %>
+            <%= address_fields.text_field :postal_code, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+          </div>
+          <div class="mb-6 md:col-span-1">
+            <%= address_fields.label :city, t('app.address.city') %>
+            <%= address_fields.text_field :city, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+          </div>
+          <div class="mb-6 md:col-span-1">
+            <%= address_fields.label :state, t('app.address.state') %>
+            <%= address_fields.text_field :state, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+          </div>
+        <% end %>
+
+        <div class="mb-6">
+          <label class="block mb-2 text-lg text-gray-900 dark:text-white"><%= t'app.establishment.phone'%></label>
+          <%= form.text_field :phone, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+        </div>
+        <div class="mb-6">
+          <label class="block mb-2 text-lg text-gray-900 dark:text-white"><%= t'app.establishment.site' %></label>
+          <%= form.text_field :site, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+        </div>
+      </div>
+
+        <div class="mb-6">
+          <label class="block mb-2 text-lg text-gray-900 dark:text-white"><%= "Hotelier owner" %></label>
+          <%= form.collection_select :hotelier_id, Hotelier.all, :id, :name, prompt: true, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"%>
+        </div>
+
+      <div class="grid md:grid-cols-1 md:grid-flow-col gap-4">
+        <button class="flex justify-end sm:w-full text-sm">
+          <%= form.submit(@establishment.new_record? ? t('app.establishment.create') : t('app.establishment.update'),
+                          class:"text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 col-span-1")%>
+        </button>
+
+        <button class="flex order-2 sm:w-full text-sm transition hover:duration-300 ease-in-out">
+          <%= link_to "Cancel", establishments_url, class:"text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"%>
+        </button>
+      </div>
+    </form>
+  <% end %>
+</div>

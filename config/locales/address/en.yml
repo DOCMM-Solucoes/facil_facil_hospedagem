@@ -5,6 +5,8 @@ en:
       postal_code: Zip/Postal code
       city: City
       state: State/Province/Region
+    structure_form:
+      images: ""
   users:
     registrations:
       edit:
