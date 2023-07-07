@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe GuidesController, type: :request do
+RSpec.describe 'Guides', type: :request do
   let(:user) { FactoryBot.create(:user) }
   let!(:guide) { FactoryBot.create(:guide) }
 
