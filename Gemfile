@@ -113,4 +113,5 @@ gem 'devise-i18n'
 # gem 'httparty'
 # gem 'nokogiri'
 
+gem 'bulma-rails'
 
