@@ -14,3 +14,5 @@ en:
     confirmations:
       new:
         resend_confirmation_instructions: ""
+  sign_up: ""
+  sign_in: ""
