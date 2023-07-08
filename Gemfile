@@ -71,6 +71,7 @@ group :development, :test do
   gem 'cpf_faker'
   # gem 'rubycritic', require: false
   # gem 'simplecov'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -104,6 +105,7 @@ end
 #Admin
 gem 'devise'
 gem 'devise-i18n'
+gem 'rails-i18n'
 # gem 'activeadmin'
 # gem 'activeadmin_sidekiq_stats'
 # gem "chartkick", '~> 2.2.0'
@@ -113,4 +115,4 @@ gem 'devise-i18n'
 # gem 'httparty'
 # gem 'nokogiri'
 
-gem "tailwindcss-rails", "~> 2.0"
+
