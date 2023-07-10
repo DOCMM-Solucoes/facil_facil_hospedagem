@@ -48,8 +48,6 @@ gem 'net-imap', require: false
 gem 'net-protocol', require: false
 gem 'net-smtp', require: false
 
-gem 'foreman'
-
 # Use Sass to process CSS
 gem "sassc-rails"
 

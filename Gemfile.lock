@@ -114,7 +114,6 @@ GEM
       i18n (>= 1.8.11, < 2)
     ffaker (2.21.0)
     ffi (1.15.5)
-    foreman (0.87.2)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.14.1)
@@ -300,7 +299,6 @@ DEPENDENCIES
   factory_bot_rails
   faker
   ffaker
-  foreman
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
