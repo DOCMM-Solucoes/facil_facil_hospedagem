@@ -40,5 +40,7 @@
 
 db/schema.rb
 
-/app/assets/builds/*
-!/app/assets/builds/.keep
+#/app/assets/builds/*
+#!/app/assets/builds/.keep
+
+node_modules
