@@ -112,5 +112,6 @@ gem 'rails-i18n'
 # gem "octokit", "~> 5.0"
 # gem 'httparty'
 # gem 'nokogiri'
+gem 'dotenv-rails'
 
 
