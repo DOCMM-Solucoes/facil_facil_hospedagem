@@ -10,7 +10,7 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem 'pg', '~> 1.1'
+gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -49,7 +49,7 @@ gem 'net-protocol', require: false
 gem 'net-smtp', require: false
 
 # Use Sass to process CSS
-# gem "sassc-rails"
+gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
@@ -69,6 +69,7 @@ group :development, :test do
   gem 'cpf_faker'
   # gem 'rubycritic', require: false
   # gem 'simplecov'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -102,6 +103,7 @@ end
 #Admin
 gem 'devise'
 gem 'devise-i18n'
+gem 'rails-i18n'
 # gem 'activeadmin'
 # gem 'activeadmin_sidekiq_stats'
 # gem "chartkick", '~> 2.2.0'
@@ -111,3 +113,5 @@ gem 'devise-i18n'
 # gem 'httparty'
 # gem 'nokogiri'
 gem 'dotenv-rails'
+
+
