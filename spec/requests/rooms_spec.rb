@@ -90,5 +90,4 @@ RSpec.describe 'Rooms API', type: :request do
       }.to change(Room, :count).by(-1)
     end
   end
-
 end
