@@ -113,5 +113,4 @@ gem 'devise-i18n'
 # gem 'httparty'
 # gem 'nokogiri'
 
-gem 'bulma-rails'
-
+gem "tailwindcss-rails", "~> 2.0"
