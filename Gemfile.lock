@@ -106,10 +106,6 @@ GEM
     devise-i18n (1.11.0)
       devise (>= 4.9.0)
     diff-lcs (1.5.0)
-    dotenv (2.8.1)
-    dotenv-rails (2.8.1)
-      dotenv (= 2.8.1)
-      railties (>= 3.2)
     erubi (1.12.0)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
@@ -120,6 +116,7 @@ GEM
       i18n (>= 1.8.11, < 2)
     ffaker (2.21.0)
     ffi (1.15.5)
+    foreman (0.87.2)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.14.1)
@@ -200,9 +197,6 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
-    rails-i18n (7.0.7)
-      i18n (>= 0.7, < 2)
-      railties (>= 6.0.0, < 8)
     railties (7.0.5)
       actionpack (= 7.0.5)
       activesupport (= 7.0.5)
@@ -303,10 +297,10 @@ DEPENDENCIES
   debug
   devise
   devise-i18n
-  dotenv-rails
   factory_bot_rails
   faker
   ffaker
+  foreman
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
@@ -318,7 +312,6 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
   rails-controller-testing
-  rails-i18n
   rspec-rails (~> 6.0, >= 6.0.3)
   sassc-rails
   selenium-webdriver
