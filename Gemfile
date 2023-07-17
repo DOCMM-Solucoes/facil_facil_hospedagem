@@ -48,6 +48,8 @@ gem 'net-imap', require: false
 gem 'net-protocol', require: false
 gem 'net-smtp', require: false
 
+gem 'foreman'
+
 # Use Sass to process CSS
 gem "sassc-rails"
 
@@ -67,9 +69,9 @@ group :development, :test do
   gem 'ffaker'
   gem 'faker'
   gem 'cpf_faker'
+  gem 'rails-controller-testing'
   # gem 'rubycritic', require: false
   # gem 'simplecov'
-  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -103,7 +105,6 @@ end
 #Admin
 gem 'devise'
 gem 'devise-i18n'
-gem 'rails-i18n'
 # gem 'activeadmin'
 # gem 'activeadmin_sidekiq_stats'
 # gem "chartkick", '~> 2.2.0'
@@ -112,6 +113,5 @@ gem 'rails-i18n'
 # gem "octokit", "~> 5.0"
 # gem 'httparty'
 # gem 'nokogiri'
-gem 'dotenv-rails'
 
-
+gem "bulma-rails"
