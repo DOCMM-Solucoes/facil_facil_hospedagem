@@ -11,53 +11,64 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label t'app.establishment.name', style: "display: block" %>
-    <%= form.text_field :name %>
+<div class="p-4">
+  <div class="is-size-5">
+    <%= form.label t'app.establishment.name' %>
+    <%= form.text_field :name, class:"input is-link", type:"text" %>
   </div>
 
-  <div>
-    <%= form.label t'app.establishment.bedrooms', style: "display: block" %>
-    <%= form.text_field :qty_bedrooms %>
+  <div class="is-size-5 mt-4">
+    <%= form.label t'app.establishment.bedrooms', class: "has-text-dark" %>
+    <%= form.text_field :qty_bedrooms, class:"input is-link", type:"text" %>
   </div>
 
-  <div>
+  <div class="is-size-5 mt-4">
     <%= form.label t'app.establishment.phone', style: "display: block" %>
-    <%= form.text_field :phone %>
+    <%= form.text_field :phone, class:"input is-link", type:"text" %>
   </div>
 
-  <div>
+  <div class="is-size-5 mt-4">
     <%= form.label t'app.establishment.site', style: "display: block" %>
-    <%= form.text_field :site %>
+    <%= form.text_field :site, class:"input is-link", type:"text" %>
   </div>
 
   <div>
     <%= form.fields_for :address do |address_fields| %>
-      <div>
+      <div class="is-size-5 mt-4">
         <%= address_fields.label :street, t('app.address.street') %>
-        <%= address_fields.text_field :street %>
+        <%= address_fields.text_field :street, class:"input is-link", type:"text" %>
       </div>
-      <div>
+
+      <div class="is-size-5 mt-4">
         <%= address_fields.label :postal_code, t('app.address.postal_code') %>
-        <%= address_fields.text_field :postal_code %>
+        <%= address_fields.text_field :postal_code, class:"input is-link", type:"text" %>
       </div>
-      <div>
+
+      <div class="is-size-5 mt-4">
         <%= address_fields.label :city, t('app.address.city') %>
-        <%= address_fields.text_field :city %>
+        <%= address_fields.text_field :city, class:"input is-link", type:"text" %>
       </div>
-      <div>
+
+      <div class="is-size-5 mt-4">
         <%= address_fields.label :state, t('app.address.state') %>
-        <%= address_fields.text_field :state %>
+        <%= address_fields.text_field :state, class:"input is-link", type:"text" %>
       </div>
     <% end %>
   </div>
 
-  <div>
-  <%= form.label :hotelier_id, "Hoteleiro" %>
-  <%= form.collection_select :hotelier_id, Hotelier.all, :id, :name, prompt: true %>
+  <div class="select is-hovered mt-4 is-medium">
+    <label>
+      <select>
+        <option><%= form.label :hotelier, "Hoteleiro" %></option>
+        <option class="is-selected"><%= form.collection_select :hotelier, Hotelier.all, :id, :name, prompt: true%></option>
+      </select>
+    </label>
   </div>
 
-  <div>
-    <%= form.submit(@establishment.new_record? ? t('app.establishment.create') : t('app.establishment.update')) %>
+  <div class="mt-6">
+    <%= form.submit(@establishment.new_record? ? t('app.establishment.create') : t('app.establishment.update'),
+                    class: "button is-primary is-outlined") %>
   </div>
 <% end %>
+</div>
+
