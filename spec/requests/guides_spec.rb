@@ -30,12 +30,16 @@ RSpec.describe 'Guides', type: :request do
   end
 
   describe 'POST #create' do
-    context 'with valid parameters' do
-      it "creates a new Guide" do
-        expect {
+    context 'with valid attributes' do
+      it 'creates a new guide' do
+        expect{
           post guides_path, params: { guide: FactoryBot.attributes_for(:guide) }
         }.to change(Guide, :count).by(1)
-        expect(response).to redirect_to(Guide.last)
+      end
+
+      it 'redirects to guide show page' do
+        post guides_path, params: { guide: FactoryBot.attributes_for(:guide) }
+        expect(response).to redirect_to(assigns(:guide))
       end
     end
   end
