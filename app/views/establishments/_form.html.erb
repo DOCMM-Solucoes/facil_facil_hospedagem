@@ -75,8 +75,7 @@
         </div>
       </div>
 
-  <div>
-    <%= form.fields_for :address do |address_fields| %>
+      <%= form.fields_for :address do |address_fields| %>
       <div class="field is-horizontal">
         <div class="field-label is-normal">
           <label class="label"><%= t'app.address.street' %></label>
@@ -133,7 +132,6 @@
         </div>
       </div>
     <% end %>
-  </div>
 
     <div class="field is-horizontal mt-4">
       <div class="field-label is-normal">
@@ -162,6 +160,7 @@
       </div>
     </div>
   </div>
-  <% end %>
-  </form>
+</form>
 </div>
+<% end %>
+

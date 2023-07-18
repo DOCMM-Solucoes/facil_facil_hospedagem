@@ -1,24 +1,19 @@
-<section class="section is-main-section">
-  <div class="card">
+<p>
+  <strong><%= t('app.address.street') %>:</strong>
+  <%= address.street %>
+</p>
 
-    <div class="field-label is-normal">
-      <%= t('app.address.street') %>:
-      <%= address.street %>
-    </div>
+<p>
+  <strong><%= t('app.address.postal_code') %>:</strong>
+  <%= address.postal_code %>
+</p>
 
-    <p>
-      <strong><%= t('app.address.postal_code') %>:</strong>
-      <%= address.postal_code %>
-    </p>
+<p>
+  <strong><%= t('app.address.city') %>:</strong>
+  <%= address.city %>
+</p>
 
-    <p>
-      <strong><%= t('app.address.city') %>:</strong>
-      <%= address.city %>
-    </p>
-
-    <p>
-      <strong><%= t('app.address.state') %>:</strong>
-      <%= address.state %>
-    </p>
-  </div>
-</section>
+<p>
+  <strong><%= t('app.address.state') %>:</strong>
+  <%= address.state %>
+</p>
