@@ -1,19 +1,19 @@
 <p>
   <strong><%= t('app.address.street') %>:</strong>
-  <%= address.street %>
+  <%= address&.street %>
 </p>
 
 <p>
   <strong><%= t('app.address.postal_code') %>:</strong>
-  <%= address.postal_code %>
+  <%= address&.postal_code %>
 </p>
 
 <p>
   <strong><%= t('app.address.city') %>:</strong>
-  <%= address.city %>
+  <%= address&.city %>
 </p>
 
 <p>
   <strong><%= t('app.address.state') %>:</strong>
-  <%= address.state %>
+  <%= address&.state %>
 </p>
