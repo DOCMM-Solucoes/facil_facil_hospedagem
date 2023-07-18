@@ -56,13 +56,13 @@
     <% end %>
   </div>
 
-  <div class="select is-hovered mt-4 is-medium">
-    <label>
-      <select>
-        <option><%= form.label :hotelier, "Hoteleiro" %></option>
-        <option class="is-selected"><%= form.collection_select :hotelier, Hotelier.all, :id, :name, prompt: true%></option>
-      </select>
-    </label>
+  <div class="field is-horizontal select is-hovered mt-4 is-medium">
+    <div class="field-label is-normal">
+      <label class="label">Hoteleiro</label>
+    </div>
+    <div class="field-body">
+      <%= form.select :hotelier_id, options_from_collection_for_select(Hotelier.all, :id, :name, establishment.hotelier_id), prompt: true %>
+    </div>
   </div>
 
   <div class="mt-6">
@@ -71,4 +71,10 @@
   </div>
 <% end %>
 </div>
+
+<!--<div class="select is-hovered mt-4 is-medium">-->
+<!--  <label>-->
+    <%#= form.select :hotelier_id, options_from_collection_for_select(Hotelier.all, :id, :name, establishment.hotelier_id), prompt: "Hoteleiro" %>
+<!--  </label>-->
+<!--</div>-->
 
