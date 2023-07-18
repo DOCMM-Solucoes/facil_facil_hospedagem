@@ -7,17 +7,13 @@
       </div>
     </header>
     <div class="card-content">
-      <%= form_with(model: @establishment, url: establishment_path(@establishment), method: :patch) do |form| %>
-        <div class="field is-horizontal">
-          <div class="field-label">
-            <%= render "form", establishment: @establishment %>
-          </div>
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <%= render "form", establishment: @establishment %>
         </div>
-
-      <% end %>
+      </div>
     </div>
   </div>
-
   <div>
     <%= link_to t('app.edit.show'), @establishment %> |
     <%= link_to t('app.edit.back'), establishments_path %>

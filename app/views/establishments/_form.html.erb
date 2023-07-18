@@ -74,62 +74,63 @@
       </div>
     </div>
 
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label"><%= t'app.address.street' %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control is-expanded has-icons-left">
-            <%= form.text_field :street, class:"input", type:"text" %>
-            <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+    <%= form.fields_for :address do |address_fields| %>
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label"><%= t'app.address.street' %></label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control is-expanded has-icons-left">
+              <%= form.text_field :street, class:"input", type:"text" %>
+              <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label"><%= t'app.address.postal_code' %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control is-expanded has-icons-left">
-            <%= form.text_field :postal_code, class:"input", type:"text" %>
-            <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label"><%= t'app.address.postal_code' %></label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control is-expanded has-icons-left">
+              <%= form.text_field :postal_code, class:"input", type:"text" %>
+              <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label"><%= t'app.address.city' %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control is-expanded has-icons-left">
-            <%= form.text_field :city, class:"input", type:"text" %>
-            <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label"><%= t'app.address.city' %></label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control is-expanded has-icons-left">
+              <%= form.text_field :city, class:"input", type:"text" %>
+              <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label"><%= t'app.address.state' %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control is-expanded has-icons-left">
-            <%= form.text_field :state, class:"input", type:"text" %>
-            <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label"><%= t'app.address.state' %></label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control is-expanded has-icons-left">
+              <%= form.text_field :state, class:"input", type:"text" %>
+              <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
+    <% end %>
   <div class="field is-horizontal mt-4">
     <div class="field-label is-normal">
       <label class="label">Hoteleiro</label>
@@ -150,7 +151,7 @@
 <div class="field-body">
   <div class="field">
     <div class="field is-grouped">
-      <div class="control">
+      <div>
       <%= form.submit(@establishment.new_record? ? t('app.establishment.create') : t('app.establishment.update'),
                       class:"button is-primary")%>
       </div>
