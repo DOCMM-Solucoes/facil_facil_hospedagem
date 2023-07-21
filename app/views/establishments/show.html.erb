@@ -1,10 +1,25 @@
-<%= render @establishment %>
-
-<div>
-  <%= link_to t('app.show.back'), establishments_path %>
-  <% if user_signed_in? && current_user %>
-    <%= link_to t('app.show.edit'), edit_establishment_path(@establishment) %>
-    <%= button_to t('app.show.delete'), @establishment, method: :delete,
-                form: { data: { turbo_confirm: t('app.controller.notice_delete') } }%>
-  <% end %>
-</div>
+<section class="section is-main-section">
+  <div class="card">
+    <header class="card-header">
+      <div class="card-header-title">
+        <span class="icon"><i class="mdi mdi-ballot"></i></span>
+        <h1><%= @establishment.name %></h1>
+      </div>
+    </header>
+    <div class="card-content">
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <%= render @establishment %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <%= link_to t('app.show.back'), establishments_path %>
+    <% if user_signed_in? && current_user %>
+      <%= link_to t('app.show.edit'), edit_establishment_path(@establishment) %>
+      <%= button_to t('app.show.delete'), @establishment, method: :delete,
+                    form: { data: { turbo_confirm: t('app.controller.notice_delete') } }%>
+    <% end %>
+  </div>
+</section>
