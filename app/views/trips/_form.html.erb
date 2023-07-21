@@ -45,6 +45,20 @@
         </div>
       </div>
     </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label"><%= t('app.trip.checkin_date') %></label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control is-expanded has-icons-left">
+            <%= form.date_field :checkin_date, class: "input is-expanded" %>
+            <span class="icon is-left"><i class="mdi mdi-calendar"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div>
