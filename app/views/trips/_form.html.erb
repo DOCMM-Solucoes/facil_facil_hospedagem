@@ -11,6 +11,18 @@
     </div>
   <% end %>
 
+  <div class="field-body">
+    <div class="field is-narrow">
+      <div class="control">
+        <div class="select is-fullwidth">
+          <%= form.select :establishment_id,
+                          options_from_collection_for_select(Establishment.all, :id, :name, trip.establishment_id),
+                          prompt: true %>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div>
     <%= form.label t('app.trip.establishment_id'), style: "display: block" %>
     <%= form.collection_select :establishment_id, Establishment.all, :id, :name, prompt: true %>
