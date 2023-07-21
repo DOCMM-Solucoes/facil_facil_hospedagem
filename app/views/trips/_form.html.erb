@@ -11,26 +11,40 @@
     </div>
   <% end %>
 
-  <div class="field-body">
-    <div class="field is-narrow">
-      <div class="control">
-        <div class="select is-fullwidth">
-          <%= form.select :establishment_id,
-                          options_from_collection_for_select(Establishment.all, :id, :name, trip.establishment_id),
-                          prompt: true %>
+  <div class="card-content">
+    <div class="field is-horizontal mt-4">
+      <div class="field-label is-normal">
+        <label class="label"><%= t('app.trip.establishment_id') %></label>
+      </div>
+      <div class="field-body">
+        <div class="field is-narrow">
+          <div class="control">
+            <div class="select is-fullwidth">
+              <%= form.select :establishment_id,
+                              options_from_collection_for_select(Establishment.all, :id, :name, trip.establishment_id),
+                              prompt: true %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div>
-    <%= form.label t('app.trip.establishment_id'), style: "display: block" %>
-    <%= form.collection_select :establishment_id, Establishment.all, :id, :name, prompt: true %>
-  </div>
-
-  <div>
-    <%= form.label t('app.trip.guide_id'), style: "display: block" %>
-    <%= form.collection_select :guide_id, Guide.all, :id, :name, prompt: true %>
+    <div class="field is-horizontal mt-4">
+      <div class="field-label is-normal">
+        <label class="label"><%= t('app.trip.guide_id') %></label>
+      </div>
+      <div class="field-body">
+        <div class="field is-narrow">
+          <div class="control">
+            <div class="select is-fullwidth">
+              <%= form.select :guide_id,
+                              options_from_collection_for_select(Guide.all, :id, :name, trip.guide_id),
+                              prompt: true %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div>
@@ -124,6 +138,6 @@
   </div>
 
   <div>
-    <%= form.submit(@trip.new_record? ? t('app.trip.create') : t('app.trip.update'))%>
+    <%= form.submit(@trip.new_record? ? t('app.trip.create') : t('app.trip.update')) %>
   </div>
 <% end %>
