@@ -62,6 +62,20 @@
 
     <div class="field is-horizontal">
       <div class="field-label is-normal">
+        <label class="label"><%= t('app.trip.checkin_time') %></label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control is-expanded has-icons-left">
+            <%= form.time_field :checkin_time, class: "input is-expanded" %>
+            <span class="icon is-left"><i class="mdi mdi-clock"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
         <label class="label"><%= t('app.trip.checkout_date') %></label>
       </div>
       <div class="field-body">
@@ -73,26 +87,35 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <div>
-    <%= form.label t('app.trip.checkin_time'), style: "display: block" %>
-    <%= form.time_field :checkin_time %>
-  </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label"><%= t('app.trip.checkout_time') %></label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control is-expanded has-icons-left">
+            <%= form.time_field :checkout_time, class: "input is-expanded" %>
+            <span class="icon is-left"><i class="mdi mdi-clock"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <div>
-    <%= form.label t('app.trip.checkout_date'), style: "display: block" %>
-    <%= form.date_field :checkout_date %>
-  </div>
-
-  <div>
-    <%= form.label t('app.trip.checkout_time'), style: "display: block" %>
-    <%= form.time_field :checkout_time %>
-  </div>
-
-  <div>
-    <%= form.label t('app.trip.extra_coffee'), style: "display: block" %>
-    <%= form.check_box :extra_coffee %>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <label class="label"><%= t('app.trip.extra_coffee') %></label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <label class="checkbox">
+              <%= form.check_box :extra_coffee %>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div>
