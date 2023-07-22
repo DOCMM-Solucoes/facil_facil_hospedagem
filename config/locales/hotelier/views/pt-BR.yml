@@ -6,7 +6,7 @@ pt-BR:
       title: Hoteleiros
       name: Nome
     hotelier_edit:
-      show: Mostrar este hoteleiro
+      show: Mostrar hoteleiro
       back: Voltar para hoteleiros
       title: Editar hoteleiro
     hotelier_new:

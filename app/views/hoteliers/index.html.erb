@@ -13,7 +13,6 @@
     <div id="establishments">
       <% @hoteliers.each do |hotelier| %>
         </div>
-
         <div class="b-table has-pagination">
           <div class="table-wrapper has-mobile-cards">
             <table class="table is-fullwidth is-striped is-hoverable is-sortable is-fullwidth">
@@ -33,7 +32,7 @@
                   </div>
                 </td>
                 <td data-label="Name"><%= hotelier.name %></td>
-                <td data-label="Company"><%= hotelier.phone_number %></td>
+                <td data-label="Phone"><%= hotelier.phone_number %></td>
                 <td data-label="City"><%= hotelier.address.state %></td>
                 <td class="is-actions-cell">
                   <div class="buttons is-right">
@@ -42,7 +41,7 @@
                       <span class="icon"><i class="mdi mdi-eye"></i></span>
                     </button>
                     <div type="button" data-target="sample-modal">
-                      <%= button_to t('app.show.delete'), hotelier, method: :delete,
+                      <%= button_to t('app.hotelier_show.delete'), hotelier, method: :delete,
                                     form: { data: { turbo_confirm: t('app.controller.notice_delete') } },
                                     class:"button is-small is-danger jb-modal"%>
                     </div>
@@ -57,13 +56,13 @@
         <% if user_signed_in? && current_user %>
           <div>
             <%= link_to t('app.hotelier_index.new'), new_hotelier_path, class:"button is-primary", type:"button" %>
-            <span class="icon"><i class=""></i></span>
+            <span class="icon"><i class="fas fa-home"></i></span>
           </div>
         <% end %>
-        <buuton>
+        <div>
           <%= link_to t('home.home'), root_path, class:"button is-info has-text-white", type:"button" %>
           <span class="icon"><i class="fas fa-home"></i></span>
-        </buuton>
+        </div>
       </div>
       </div>
       </div>
