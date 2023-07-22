@@ -216,21 +216,48 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <div>
-    <%= form.label t('app.trip.signal_value'), style: "display: block" %>
-    <%= form.text_field :signal_value %>
-  </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label"><%= t('app.trip.signal_value') %></label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control is-expanded has-icons-left">
+            <%= form.number_field :signal_value, class: "input", step: 0.01, placeholder: "0.00" %>
+            <span class="icon is-left"><i class="mdi mdi-currency-usd"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <div>
-    <%= form.label t('app.trip.signal_date'), style: "display: block" %>
-    <%= form.date_field :signal_date %>
-  </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label"><%= t('app.trip.signal_date') %></label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control is-expanded has-icons-left">
+            <%= form.date_field :signal_date, class: "input is-expanded" %>
+            <span class="icon is-left"><i class="mdi mdi-calendar"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <div>
-    <%= form.label t('app.trip.notes'), style: "display: block" %>
-    <%= form.text_area :notes %>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label"><%= t('app.trip.notes') %></label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control is-expanded has-icons-left">
+            <%= form.text_area :notes, class: "input is-expanded" %>
+            <span class="icon is-left"><i class="mdi mdi-pencil"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div>
