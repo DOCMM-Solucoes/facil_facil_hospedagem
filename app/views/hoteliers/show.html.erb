@@ -1,10 +1,16 @@
+<section class="section is-main-section">
+  <div class="card">
 <%= render @hotelier %>
-
-<div>
-  <%= link_to t('app.hotelier_show.back'), hoteliers_path %>
-  <% if user_signed_in? && current_user %>
-    <%= link_to t('app.hotelier_show.edit'), edit_hotelier_path(@hotelier) %> |
-    <%= button_to t('app.hotelier_show.delete'), @hotelier, method: :delete,
-                    form: { data: { turbo_confirm: t('app.hoteliers_controller.notice_delete') } } %>
-  <% end %>
-</div>
+    <div>
+      <%= link_to t('app.hotelier_show.back'), hoteliers_path,class:"button is-info has-text-white", type:"button" %>
+      <% if user_signed_in? && current_user %>
+        <%= link_to t('app.hotelier_show.edit'), edit_hotelier_path(@hotelier), class:"button is-primary", type:"button" %>
+        <div class="mt-4">
+          <%= button_to t('app.hotelier_show.delete'), @hotelier, method: :delete,
+                        form: { data: { turbo_confirm: t('app.hoteliers_controller.notice_delete') } },
+                        class:"button is-primary", type:"button" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
