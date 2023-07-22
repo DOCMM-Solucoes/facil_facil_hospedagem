@@ -13,7 +13,6 @@
     <div id="establishments">
       <% @establishments.each do |establishment| %>
     </div>
-
     <div class="b-table has-pagination">
       <div class="table-wrapper has-mobile-cards">
         <table class="table is-fullwidth is-striped is-hoverable is-sortable is-fullwidth">
@@ -55,15 +54,15 @@
       <% end %>
       <div class="buttons is-left">
         <% if user_signed_in? && current_user %>
-          <button class="button is-primary" type="button">
-            <%= link_to t('app.index.new'), new_establishment_path %>
+          <div>
+            <%= link_to t('app.index.new'), new_establishment_path, class:"button is-primary", type:"button" %>
             <span class="icon"><i class=""></i></span>
-          </button>
+          </div>
         <% end %>
-          <button class="button is-info" type="button">
-            <%= link_to t('home.home'), root_path %>
-            <span class="icon"><i class=""></i></span>
-          </button>
+          <div>
+            <%= link_to t('home.home'), root_path, class:"button is-info has-text-white", type:"button" %>
+            <span class="icon"><i class="fas fa-home"></i></span>
+          </div>
         </div>
       </div>
     </div>
