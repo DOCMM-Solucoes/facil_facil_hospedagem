@@ -1,4 +1,5 @@
 <%= form_with(model: room, multipart: true, local: true) do |form| %>
+
   <% if room.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
@@ -11,309 +12,297 @@
     </div>
   <% end %>
 
-  <div class="card">
-
-    <header class="card-header">
-      <p class="card-header-title">
-        <span class="icon"><i class="mdi mdi-ballot-outline default"></i></span>
-        Novo quarto
-      </p>
-    </header>
-
-    <div class="card-content">
-      <div class="field is-horizontal">
-        <div class="field-label is-normal">
-          <label class="label"><%= t('app.room.name') %></label>
-        </div>
-        <div class="field-body">
-          <div class="field">
-            <div class="control is-expanded">
-              <%= form.text_field :name, class:"input", type:"text" %>
-            </div>
-          </div>
-        </div>
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label"><%= t('app.room.name') %></label>
       </div>
-
-      <div class="field is-horizontal">
-        <div class="field-label is-normal">
-          <label class="label"><%= t('app.room.description') %></label>
-        </div>
-        <div class="field-body">
-          <div class="field">
-            <div class="control is-expanded">
-              <%= form.text_field :description, class:"input", type:"text" %>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="field is-horizontal">
-        <div class="field-label is-normal">
-          <label class="label"><%= t('app.room.reference') %></label>
-        </div>
-        <div class="field-body">
-          <div class="field">
-            <div class="control is-expanded">
-              <%= form.text_field :reference, class:"input", type:"text" %>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="field is-horizontal">
-        <div class="field-label is-normal">
-          <label class="label"><%= t('app.room.maximum_capacity') %></label>
-        </div>
-        <div class="field-body">
-          <div class="field">
-            <div class="control is-expanded">
-              <%= form.text_field :maximum_capacity, class:"input", type:"text" %>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="field is-horizontal">
-        <div class="field-label is-normal">
-          <label class="label"><%= t('app.room.status') %></label>
-        </div>
-        <div class="field-body">
-          <div class="select is-primary">
-            <div class="control is-left">
-              <%= form.select :status,  [ ["Active", "A"], ["Inactive", "I"], ["Under Maintenance", "M"] ] %>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- begin (double / triple / quadruple / quintuple / sextuple) -->
-      <div class="field is-horizontal">
-        <div class="field-label is-normal">
-          <label class="label"><%= "Sobre a Acomodação" %></label>
-        </div>
-        <div class="field-body">
-          <div class="box">
-            <div class="field">
-              <div class="field is-grouped-multiline is-grouped">
-                <div class="control">
-                  <label class="b-checkbox checkbox">
-                    <%= form.check_box :is_double %>
-                    <span class="check is-primary"></span>
-                    <span class="control-label">
-                      <%= form.label :is_double, t('app.room.is_double'), style: "display: block" %>
-                    </span>
-                  </label>
-                </div>
-                <div class="control">
-                  <label class="b-checkbox checkbox">
-                    <%= form.check_box :is_triple %>
-                    <span class="check is-primary"></span>
-                    <span class="control-label">
-                      <%= form.label :is_triple, t('app.room.is_triple'), style: "display: block" %>
-                    </span>
-                  </label>
-                </div>
-                <div class="control">
-                  <label class="b-checkbox checkbox">
-                    <%= form.check_box :is_quadruple %>
-                    <span class="check is-primary"></span>
-                    <span class="control-label">
-                      <%= form.label :is_quadruple, t('app.room.is_quadruple'), style: "display: block" %>
-                    </span>
-                  </label>
-                </div>
-                <div class="control">
-                  <label class="b-checkbox checkbox">
-                    <%= form.check_box :is_quintuple %>
-                    <span class="check is-primary"></span>
-                    <span class="control-label">
-                      <%= form.label :is_quintuple, t('app.room.is_quintuple'), style: "display: block" %>
-                    </span>
-                  </label>
-                </div>
-                <div class="control">
-                  <label class="b-checkbox checkbox">
-                    <%= form.check_box :is_sextuple %>
-                    <span class="check is-primary"></span>
-                    <span class="control-label">
-                      <%= form.label :is_sextuple, t('app.room.is_sextuple'), style: "display: block" %>
-                    </span>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- begin (single / couple / two couples / three couples) -->
-      <div class="field is-horizontal">
-        <div class="field-label is-normal">
-          <label class="label"><%= "Simples / Casal" %></label>
-        </div>
-        <div class="field-body">
-          <div class="box">
-            <div class="field">
-              <div class="field is-grouped-multiline is-grouped">
-                <div class="control">
-                  <label class="b-checkbox checkbox">
-                    <%= form.check_box :is_single %>
-                    <span class="check is-primary"></span>
-                    <span class="control-label">
-                      <%= form.label :is_single, t('app.room.is_single'), style: "display: block" %>
-                    </span>
-                  </label>
-                </div>
-                <div class="control">
-                  <label class="b-checkbox checkbox">
-                    <%= form.check_box :is_couple %>
-                    <span class="check is-primary"></span>
-                    <span class="control-label">
-                      <%= form.label :is_couple, t('app.room.is_couple'), style: "display: block" %>
-                    </span>
-                  </label>
-                </div>
-                <div class="control">
-                  <label class="b-checkbox checkbox">
-                    <%= form.check_box :is_two_couples %>
-                    <span class="check is-primary"></span>
-                    <span class="control-label">
-                      <%= form.label :is_two_couples, t('app.room.is_two_couples'), style: "display: block" %>
-                    </span>
-                  </label>
-                </div>
-                <div class="control">
-                  <label class="b-checkbox checkbox">
-                    <%= form.check_box :is_three_couples %>
-                    <span class="check is-primary"></span>
-                    <span class="control-label">
-                      <%= form.label :is_three_couples, t('app.room.is_three_couples'), style: "display: block" %>
-                    </span>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- begin (options couple) -->
-      <div class="field is-horizontal">
-        <div class="field-label is-normal">
-          <label class="label"><%= "Casal (Opções)" %></label>
-        </div>
-        <div class="field-body">
-          <div class="box">
-            <div class="field">
-              <div class="field is-grouped-multiline is-grouped">
-                <div class="control">
-                  <label class="b-checkbox checkbox">
-                    <%= form.check_box :is_couple_plus_one %>
-                    <span class="check is-primary"></span>
-                    <span class="control-label">
-                      <%= form.label :is_couple_plus_one, t('app.room.is_couple_plus_one'), style: "display: block" %>
-                    </span>
-                  </label>
-                </div>
-                <div class="control">
-                  <label class="b-checkbox checkbox">
-                    <%= form.check_box :is_couple_plus_two %>
-                    <span class="check is-primary"></span>
-                    <span class="control-label">
-                      <%= form.label :is_couple_plus_two, t('app.room.is_couple_plus_two'), style: "display: block" %>
-                    </span>
-                  </label>
-                </div>
-                <div class="control">
-                  <label class="b-checkbox checkbox">
-                    <%= form.check_box :is_couple_plus_three %>
-                    <span class="check is-primary"></span>
-                    <span class="control-label">
-                      <%= form.label :is_couple_plus_three, t('app.room.is_couple_plus_three'), style: "display: block" %>
-                    </span>
-                  </label>
-                </div>
-                <div class="control">
-                  <label class="b-checkbox checkbox">
-                    <%= form.check_box :is_couple_plus_four %>
-                    <span class="check is-primary"></span>
-                    <span class="control-label">
-                      <%= form.label :is_couple_plus_four, t('app.room.is_couple_plus_four'), style: "display: block" %>
-                    </span>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- begin (options 2 couples) -->
-      <div class="field is-horizontal">
-        <div class="field-label is-normal">
-          <label class="label"><%= "Dois Casais (Opções)" %></label>
-        </div>
-        <div class="field-body">
-          <div class="box">
-            <div class="field">
-              <div class="field is-grouped-multiline is-grouped">
-                <div class="control">
-                  <label class="b-checkbox checkbox">
-                    <%= form.check_box :is_two_couples_plus_one %>
-                    <span class="check is-primary"></span>
-                    <span class="control-label">
-                      <%= form.label :is_two_couples_plus_one, t('app.room.is_two_couples_plus_one'), style: "display: block" %>
-                    </span>
-                  </label>
-                </div>
-                <div class="control">
-                  <label class="b-checkbox checkbox">
-                    <%= form.check_box :is_two_couples_plus_two %>
-                    <span class="check is-primary"></span>
-                    <span class="control-label">
-                      <%= form.label :is_two_couples_plus_two, t('app.room.is_two_couples_plus_two'), style: "display: block" %>
-                    </span>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- begin (photos / images) -->
-      <div class="field is-horizontal">
-        <div class="field-label is-normal">
-          <label class="label"><%= t('app.room.images') %></label>
-        </div>
-        <div class="field-body">
-          <div class="field">
-            <div class="field file">
-              <label class="upload control">
-                <a class="button is-primary">
-                  <span class="icon"><i class="mdi mdi-upload"></i></span>
-                  <span><%= form.file_field :images, class: "button is-primary is-outlined", multiple: true %>Imagens</span>
-                </a>
-                <input type="file">
-              </label>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- submit -->
       <div class="field-body">
         <div class="field">
-          <div class="field is-grouped">
-            <div>
-              <%= form.submit(@room.new_record? ? t('app.establishment.create') : t('app.establishment.update'), class:"button is-primary")%>
+          <div class="control is-expanded">
+            <%= form.text_field :name, class:"input", type:"text" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label"><%= t('app.room.description') %></label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control is-expanded">
+            <%= form.text_field :description, class:"input", type:"text" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label"><%= t('app.room.reference') %></label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control is-expanded">
+            <%= form.text_field :reference, class:"input", type:"text" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label"><%= t('app.room.maximum_capacity') %></label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control is-expanded">
+            <%= form.text_field :maximum_capacity, class:"input", type:"text" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label"><%= t('app.room.status') %></label>
+      </div>
+      <div class="field-body">
+        <div class="select is-primary">
+          <div class="control is-left">
+            <%= form.select :status,  [ ["Active", "A"], ["Inactive", "I"], ["Under Maintenance", "M"] ] %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- begin (double / triple / quadruple / quintuple / sextuple) -->
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label"><%= "Sobre a Acomodação" %></label>
+      </div>
+      <div class="field-body">
+        <div class="box">
+          <div class="field">
+            <div class="field is-grouped-multiline is-grouped">
+              <div class="control">
+                <label class="b-checkbox checkbox">
+                  <%= form.check_box :is_double %>
+                  <span class="check is-primary"></span>
+                  <span class="control-label">
+                    <%= form.label :is_double, t('app.room.is_double'), style: "display: block" %>
+                  </span>
+                </label>
+              </div>
+              <div class="control">
+                <label class="b-checkbox checkbox">
+                  <%= form.check_box :is_triple %>
+                  <span class="check is-primary"></span>
+                  <span class="control-label">
+                    <%= form.label :is_triple, t('app.room.is_triple'), style: "display: block" %>
+                  </span>
+                </label>
+              </div>
+              <div class="control">
+                <label class="b-checkbox checkbox">
+                  <%= form.check_box :is_quadruple %>
+                  <span class="check is-primary"></span>
+                  <span class="control-label">
+                    <%= form.label :is_quadruple, t('app.room.is_quadruple'), style: "display: block" %>
+                  </span>
+                </label>
+              </div>
+              <div class="control">
+                <label class="b-checkbox checkbox">
+                  <%= form.check_box :is_quintuple %>
+                  <span class="check is-primary"></span>
+                  <span class="control-label">
+                    <%= form.label :is_quintuple, t('app.room.is_quintuple'), style: "display: block" %>
+                  </span>
+                </label>
+              </div>
+              <div class="control">
+                <label class="b-checkbox checkbox">
+                  <%= form.check_box :is_sextuple %>
+                  <span class="check is-primary"></span>
+                  <span class="control-label">
+                    <%= form.label :is_sextuple, t('app.room.is_sextuple'), style: "display: block" %>
+                  </span>
+                </label>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-  </div>
+    <!-- begin (single / couple / two couples / three couples) -->
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label"><%= "Simples / Casal" %></label>
+      </div>
+      <div class="field-body">
+        <div class="box">
+          <div class="field">
+            <div class="field is-grouped-multiline is-grouped">
+              <div class="control">
+                <label class="b-checkbox checkbox">
+                  <%= form.check_box :is_single %>
+                  <span class="check is-primary"></span>
+                  <span class="control-label">
+                    <%= form.label :is_single, t('app.room.is_single'), style: "display: block" %>
+                  </span>
+                </label>
+              </div>
+              <div class="control">
+                <label class="b-checkbox checkbox">
+                  <%= form.check_box :is_couple %>
+                  <span class="check is-primary"></span>
+                  <span class="control-label">
+                    <%= form.label :is_couple, t('app.room.is_couple'), style: "display: block" %>
+                  </span>
+                </label>
+              </div>
+              <div class="control">
+                <label class="b-checkbox checkbox">
+                  <%= form.check_box :is_two_couples %>
+                  <span class="check is-primary"></span>
+                  <span class="control-label">
+                    <%= form.label :is_two_couples, t('app.room.is_two_couples'), style: "display: block" %>
+                  </span>
+                </label>
+              </div>
+              <div class="control">
+                <label class="b-checkbox checkbox">
+                  <%= form.check_box :is_three_couples %>
+                  <span class="check is-primary"></span>
+                  <span class="control-label">
+                    <%= form.label :is_three_couples, t('app.room.is_three_couples'), style: "display: block" %>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- begin (options couple) -->
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label"><%= "Casal (Opções)" %></label>
+      </div>
+      <div class="field-body">
+        <div class="box">
+          <div class="field">
+            <div class="field is-grouped-multiline is-grouped">
+              <div class="control">
+                <label class="b-checkbox checkbox">
+                  <%= form.check_box :is_couple_plus_one %>
+                  <span class="check is-primary"></span>
+                  <span class="control-label">
+                    <%= form.label :is_couple_plus_one, t('app.room.is_couple_plus_one'), style: "display: block" %>
+                  </span>
+                </label>
+              </div>
+              <div class="control">
+                <label class="b-checkbox checkbox">
+                  <%= form.check_box :is_couple_plus_two %>
+                  <span class="check is-primary"></span>
+                  <span class="control-label">
+                    <%= form.label :is_couple_plus_two, t('app.room.is_couple_plus_two'), style: "display: block" %>
+                  </span>
+                </label>
+              </div>
+              <div class="control">
+                <label class="b-checkbox checkbox">
+                  <%= form.check_box :is_couple_plus_three %>
+                  <span class="check is-primary"></span>
+                  <span class="control-label">
+                    <%= form.label :is_couple_plus_three, t('app.room.is_couple_plus_three'), style: "display: block" %>
+                  </span>
+                </label>
+              </div>
+              <div class="control">
+                <label class="b-checkbox checkbox">
+                  <%= form.check_box :is_couple_plus_four %>
+                  <span class="check is-primary"></span>
+                  <span class="control-label">
+                    <%= form.label :is_couple_plus_four, t('app.room.is_couple_plus_four'), style: "display: block" %>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- begin (options 2 couples) -->
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label"><%= "Dois Casais (Opções)" %></label>
+      </div>
+      <div class="field-body">
+        <div class="box">
+          <div class="field">
+            <div class="field is-grouped-multiline is-grouped">
+              <div class="control">
+                <label class="b-checkbox checkbox">
+                  <%= form.check_box :is_two_couples_plus_one %>
+                  <span class="check is-primary"></span>
+                  <span class="control-label">
+                    <%= form.label :is_two_couples_plus_one, t('app.room.is_two_couples_plus_one'), style: "display: block" %>
+                  </span>
+                </label>
+              </div>
+              <div class="control">
+                <label class="b-checkbox checkbox">
+                  <%= form.check_box :is_two_couples_plus_two %>
+                  <span class="check is-primary"></span>
+                  <span class="control-label">
+                    <%= form.label :is_two_couples_plus_two, t('app.room.is_two_couples_plus_two'), style: "display: block" %>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- begin (photos / images) -->
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label"><%= t('app.room.images') %></label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="field file">
+            <label class="upload control">
+              <a class="button is-primary">
+                <span class="icon"><i class="mdi mdi-upload"></i></span>
+                <span><%= form.file_field :images, class: "button is-primary is-outlined", multiple: true %>Imagens</span>
+              </a>
+              <input type="file">
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- submit -->
+    <div class="field-body">
+      <div class="field">
+        <div class="field is-grouped">
+          <div>
+            <%= form.submit(@room.new_record? ? t('app.establishment.create') : t('app.establishment.update'), class:"button is-primary")%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <% end %>
