@@ -305,6 +305,15 @@
     </div>
   </div>
 
+  <div class="field is-grouped">
+    <div class="control">
+      <%= form.submit "Salvar", class: "button is-primary" %>
+    </div>
+    <div class="control">
+      <%= link_to "Voltar para Viagens", trips_path, class: "button is-primary is-outlined" %>
+    </div>
+  </div>
+
   <div>
     <%= form.submit(@trip.new_record? ? t('app.trip.create') : t('app.trip.update')) %>
   </div>
