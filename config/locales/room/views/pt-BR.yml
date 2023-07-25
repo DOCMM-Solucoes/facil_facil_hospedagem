@@ -6,7 +6,7 @@ pt-BR:
       title: Quarto
     room_edit:
       show: Mostrar este quarto
-      back: Voltar para a listagem dos quartos
+      back: Voltar para quartos
       title: Editar quarto
     room_new:
       title: Novo quarto
