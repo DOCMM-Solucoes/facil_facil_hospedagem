@@ -53,11 +53,12 @@ class EstablishmentsController < ApplicationController
   def destroy
     @establishment.destroy
 
-    respond_to do |format|
-      format.html { redirect_to establishments_url, notice: t('app.controller.destroy.success') }
-      format.json { head :no_content }
-    end
+      respond_to do |format|
+        format.html { redirect_to establishments_url, notice: t('app.controller.destroy.success') }
+        format.json { head :no_content }
+      end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
