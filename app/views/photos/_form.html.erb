@@ -1,27 +1,73 @@
-<%= form_with(model: photo, multipart: true) do |form| %>
-  <% if photo.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+<section class="section is-main-section">
+  <div class="card">
+    <header class="card-header">
+      <!-- Comente ou remova esta parte se não for necessário -->
+      <p class="card-header-title">
+        <span class="icon"><i class="mdi mdi-ballot"></i></span>
+        Formulario
+      </p>
+    </header>
+    <div class="card-content">
+      <%= form_with(model: photo, multipart: true) do |form| %>
+        <% if photo.errors.any? %>
+          <div class="notification is-danger">
+            <h2><%= pluralize(photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
 
-      <ul>
-        <% photo.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+            <ul>
+              <% photo.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
+
+        <div class="field">
+          <%= form.label "Tìtulo", class: "label" %>
+          <div class="control">
+            <%= form.text_field :title, class: "input", placeholder: "Escreva o título da estrutura" %>
+          </div>
+          <% if photo.errors[:title].any? %>
+            <p class="help is-danger">Esse campo é obrigatório</p>
+          <% end %>
+        </div>
+
+        <div class="field">
+          <%= form.label "Imagens", class: "label", style: "display: block" %>
+          <div class="control">
+            <div class="field is-horizontal">
+              <div class="field-body">
+                <div class="field">
+                  <div class="field file">
+                    <label class="upload control">
+                      <a class="button is-primary">
+                        <span class="icon"><i class="mdi mdi-upload"></i></span>
+                        <span><%= form.file_field :images, class: "button is-primary is-outlined", multiple: true %>Imagens</span>
+                      </a>
+                      <input type="file">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= form.label "Descrição", class: "label" %>
+          <div class="control">
+            <%= form.text_area :description, class: "textarea", placeholder: "Escreva os detalhes da estrutura" %>
+          </div>
+        </div>
+
+        <div class="field is-grouped">
+          <div class="control">
+            <%= form.submit "Salvar", class: "button is-primary" %>
+          </div>
+          <div class="control">
+            <%= link_to "Voltar para Estruturas", photos_path, class: "button is-primary is-outlined" %>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
   </div>
-
-  <div>
-    <%= form.label :images, style: "display: block" %>
-    <%= form.file_field :images, multiple: true %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</section>
