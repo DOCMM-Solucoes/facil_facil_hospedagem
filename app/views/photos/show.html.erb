@@ -10,10 +10,10 @@
 </div>
 
 <div>
-  <%= link_to "Back to photos", photos_path %>
+  <%= link_to "Voltar para estrututras", photos_path %>
   <% if user_signed_in? && current_user %>
-    <%= link_to "Edit this photos", edit_photo_path(@photo) %> |
-    <%= button_to "Destroy this photo", @photo, method: :delete,
-                form: { data: { turbo_confirm: 'Are you sure?' } } %>
+    <%= link_to "Editar as estrutura", edit_photo_path(@photo) %> |
+    <%= button_to "Deletar estrutura", @photo, method: :delete,
+                form: { data: { turbo_confirm: 'Você tem certeza' } } %>
   <% end %>
 </div>
