@@ -1,320 +1,328 @@
-<%= form_with(model: trip) do |form| %>
-  <% if trip.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
+<section class="section is-main-section">
+  <div class="card">
+    <header class="card-header">
+      <p class="card-header-title">
+        <span class="icon"><i class="mdi mdi-ballot"></i></span>
+        Viagem
+      </p>
+    </header>
+    <div class="card-content">
+      <%= form_with(model: trip) do |form| %>
+        <% if trip.errors.any? %>
+          <div style="color: red">
+            <h2><%= pluralize(trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
 
-      <ul>
-        <% trip.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+            <ul>
+              <% trip.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="card-content">
-    <div class="field is-horizontal mt-4">
-      <div class="field-label is-normal">
-        <label class="label"><%= t('app.trip.establishment_id') %></label>
-      </div>
-      <div class="field-body">
-        <div class="field is-narrow">
-          <div class="control">
-            <div class="select is-fullwidth">
-              <%= form.select :establishment_id,
-                              options_from_collection_for_select(Establishment.all, :id, :name, trip.establishment_id),
-                              prompt: true %>
+        <div class="card-content">
+          <div class="field is-horizontal mt-4">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.establishment_id') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field is-narrow">
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <%= form.select :establishment_id,
+                                    options_from_collection_for_select(Establishment.all, :id, :name, trip.establishment_id),
+                                    prompt: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal mt-4">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.guide_id') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field is-narrow">
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <%= form.select :guide_id,
+                                    options_from_collection_for_select(Guide.all, :id, :name, trip.guide_id),
+                                    prompt: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.checkin_date') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded has-icons-left">
+                  <%= form.date_field :checkin_date, class: "input is-expanded" %>
+                  <span class="icon is-left"><i class="mdi mdi-calendar"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.checkin_time') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded has-icons-left">
+                  <%= form.time_field :checkin_time, class: "input is-expanded" %>
+                  <span class="icon is-left"><i class="mdi mdi-clock"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.checkout_date') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded has-icons-left">
+                  <%= form.date_field :checkout_date, class: "input is-expanded" %>
+                  <span class="icon is-left"><i class="mdi mdi-calendar"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.checkout_time') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded has-icons-left">
+                  <%= form.time_field :checkout_time, class: "input is-expanded" %>
+                  <span class="icon is-left"><i class="mdi mdi-clock"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label"><%= t('app.trip.extra_coffee') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <label class="checkbox">
+                    <%= form.check_box :extra_coffee %>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.num_people') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded has-icons-left">
+                  <%= form.number_field :num_people, class: "input is-expanded", min: 0, step: 1 %>
+                  <span class="icon is-left"><i class="mdi mdi-numeric"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.num_drivers') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded has-icons-left">
+                  <%= form.number_field :num_drivers, class: "input is-expanded", min: 0, step: 1 %>
+                  <span class="icon is-left"><i class="mdi mdi-numeric"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label"><%= t('app.trip.free_driver') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <label class="checkbox">
+                    <%= form.check_box :free_driver %>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.num_guides') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded has-icons-left">
+                  <%= form.number_field :num_guides, class: "input is-expanded", min: 0, step: 1 %>
+                  <span class="icon is-left"><i class="mdi mdi-numeric"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label"><%= t('app.trip.free_guide') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <label class="checkbox">
+                    <%= form.check_box :free_guide %>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.num_rooms') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded has-icons-left">
+                  <%= form.number_field :num_rooms, class: "input is-expanded", min: 0, step: 1 %>
+                  <span class="icon is-left"><i class="mdi mdi-numeric"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.rate_person_day') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded has-icons-left">
+                  <%= form.number_field :rate_person_day, class: "input", step: 0.01, placeholder: "0.00" %>
+                  <span class="icon is-left"><i class="mdi mdi-currency-usd"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.signal_value') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded has-icons-left">
+                  <%= form.number_field :signal_value, class: "input", step: 0.01, placeholder: "0.00" %>
+                  <span class="icon is-left"><i class="mdi mdi-currency-usd"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.signal_date') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded has-icons-left">
+                  <%= form.date_field :signal_date, class: "input is-expanded" %>
+                  <span class="icon is-left"><i class="mdi mdi-calendar"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.notes') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded has-icons-left">
+                  <%= form.text_area :notes, class: "input is-expanded" %>
+                  <span class="icon is-left"><i class="mdi mdi-pencil"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label"><%= t('app.trip.confirmed') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <label class="checkbox">
+                    <%= form.check_box :confirmed %>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label"><%= t('app.trip.accomplished') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <label class="checkbox">
+                    <%= form.check_box :accomplished %>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label"><%= t('app.trip.suspended') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <label class="checkbox">
+                    <%= form.check_box :suspended %>
+                  </label>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="field is-horizontal mt-4">
-      <div class="field-label is-normal">
-        <label class="label"><%= t('app.trip.guide_id') %></label>
-      </div>
-      <div class="field-body">
-        <div class="field is-narrow">
+        <div class="field is-grouped">
           <div class="control">
-            <div class="select is-fullwidth">
-              <%= form.select :guide_id,
-                              options_from_collection_for_select(Guide.all, :id, :name, trip.guide_id),
-                              prompt: true %>
-            </div>
+            <%= form.submit "Salvar", class: "button is-primary" %>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label"><%= t('app.trip.checkin_date') %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control is-expanded has-icons-left">
-            <%= form.date_field :checkin_date, class: "input is-expanded" %>
-            <span class="icon is-left"><i class="mdi mdi-calendar"></i></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label"><%= t('app.trip.checkin_time') %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control is-expanded has-icons-left">
-            <%= form.time_field :checkin_time, class: "input is-expanded" %>
-            <span class="icon is-left"><i class="mdi mdi-clock"></i></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label"><%= t('app.trip.checkout_date') %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control is-expanded has-icons-left">
-            <%= form.date_field :checkout_date, class: "input is-expanded" %>
-            <span class="icon is-left"><i class="mdi mdi-calendar"></i></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label"><%= t('app.trip.checkout_time') %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control is-expanded has-icons-left">
-            <%= form.time_field :checkout_time, class: "input is-expanded" %>
-            <span class="icon is-left"><i class="mdi mdi-clock"></i></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="field is-horizontal">
-      <div class="field-label">
-        <label class="label"><%= t('app.trip.extra_coffee') %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
           <div class="control">
-            <label class="checkbox">
-              <%= form.check_box :extra_coffee %>
-            </label>
+            <%= link_to "Voltar para Viagens", trips_path, class: "button is-primary is-outlined" %>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label"><%= t('app.trip.num_people') %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control is-expanded has-icons-left">
-            <%= form.number_field :num_people, class: "input is-expanded", min: 0, step: 1 %>
-            <span class="icon is-left"><i class="mdi mdi-numeric"></i></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label"><%= t('app.trip.num_drivers') %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control is-expanded has-icons-left">
-            <%= form.number_field :num_drivers, class: "input is-expanded", min: 0, step: 1 %>
-            <span class="icon is-left"><i class="mdi mdi-numeric"></i></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="field is-horizontal">
-      <div class="field-label">
-        <label class="label"><%= t('app.trip.free_driver') %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control">
-            <label class="checkbox">
-              <%= form.check_box :free_driver %>
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label"><%= t('app.trip.num_guides') %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control is-expanded has-icons-left">
-            <%= form.number_field :num_guides, class: "input is-expanded", min: 0, step: 1 %>
-            <span class="icon is-left"><i class="mdi mdi-numeric"></i></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="field is-horizontal">
-      <div class="field-label">
-        <label class="label"><%= t('app.trip.free_guide') %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control">
-            <label class="checkbox">
-              <%= form.check_box :free_guide %>
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label"><%= t('app.trip.num_rooms') %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control is-expanded has-icons-left">
-            <%= form.number_field :num_rooms, class: "input is-expanded", min: 0, step: 1 %>
-            <span class="icon is-left"><i class="mdi mdi-numeric"></i></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label"><%= t('app.trip.rate_person_day') %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control is-expanded has-icons-left">
-            <%= form.number_field :rate_person_day, class: "input", step: 0.01, placeholder: "0.00" %>
-            <span class="icon is-left"><i class="mdi mdi-currency-usd"></i></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label"><%= t('app.trip.signal_value') %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control is-expanded has-icons-left">
-            <%= form.number_field :signal_value, class: "input", step: 0.01, placeholder: "0.00" %>
-            <span class="icon is-left"><i class="mdi mdi-currency-usd"></i></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label"><%= t('app.trip.signal_date') %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control is-expanded has-icons-left">
-            <%= form.date_field :signal_date, class: "input is-expanded" %>
-            <span class="icon is-left"><i class="mdi mdi-calendar"></i></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label"><%= t('app.trip.notes') %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control is-expanded has-icons-left">
-            <%= form.text_area :notes, class: "input is-expanded" %>
-            <span class="icon is-left"><i class="mdi mdi-pencil"></i></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="field is-horizontal">
-      <div class="field-label">
-        <label class="label"><%= t('app.trip.confirmed') %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control">
-            <label class="checkbox">
-              <%= form.check_box :confirmed %>
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="field is-horizontal">
-      <div class="field-label">
-        <label class="label"><%= t('app.trip.accomplished') %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control">
-            <label class="checkbox">
-              <%= form.check_box :accomplished %>
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="field is-horizontal">
-      <div class="field-label">
-        <label class="label"><%= t('app.trip.suspended') %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control">
-            <label class="checkbox">
-              <%= form.check_box :suspended %>
-            </label>
-          </div>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
-
-  <div class="field is-grouped">
-    <div class="control">
-      <%= form.submit "Salvar", class: "button is-primary" %>
-    </div>
-    <div class="control">
-      <%= link_to "Voltar para Viagens", trips_path, class: "button is-primary is-outlined" %>
-    </div>
-  </div>
-
-  <div>
-    <%= form.submit(@trip.new_record? ? t('app.trip.create') : t('app.trip.update')) %>
-  </div>
-<% end %>
+</section>
