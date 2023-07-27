@@ -1,26 +1,30 @@
-<div id="<%= dom_id hotelier %>">
-  <p>
-    <strong><%= t('app.hotelier.name') %>:</strong>
-    <%= hotelier.name %>
-  </p>
+<section class="section is-main-section">
+  <div class="card">
+    <div id="<%= dom_id hotelier %>">
+      <p>
+        <strong><%= t('app.hotelier.name') %>:</strong>
+        <%= hotelier.name %>
+      </p>
 
-  <p>
-    <strong><%= t('app.hotelier.cpf') %>:</strong>
-    <%= hotelier.cpf %>
-  </p>
+      <p>
+        <strong><%= t('app.hotelier.cpf') %>:</strong>
+        <%= hotelier.cpf %>
+      </p>
 
-  <p>
-    <strong><%= t('app.hotelier.phone_number') %>:</strong>
-    <%= hotelier.phone_number %>
-  </p>
+      <p>
+        <strong><%= t('app.hotelier.phone_number') %>:</strong>
+        <%= hotelier.phone_number %>
+      </p>
 
-  <p>
-    <strong><%= t('app.hotelier.plan') %>:</strong>
-    <%= hotelier.plan %>
-  </p>
+      <p>
+        <strong><%= t('app.hotelier.plan') %>:</strong>
+        <%= hotelier.plan %>
+      </p>
 
-  <p>
-    <%= render 'layouts/address', address: hotelier.address %>
-  </p>
-</div>
+      <p>
+        <%= render 'layouts/address', address: hotelier.address %>
+      </p>
+    </div>
+  </div>
+</section>
 

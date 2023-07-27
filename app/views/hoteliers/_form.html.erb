@@ -1,7 +1,18 @@
 <%= form_with(model: hotelier) do |form| %>
+  <div class="buttons is-right">
+    <div class="field">
+      <div class="field is-grouped">
+        <div>
+          <%= form.submit(@hotelier.new_record? ? t('app.hotelier_form.create') : t('app.hotelier_form.update'),
+                          class: "button is-primary") %>
+        </div>
+      </div>
+    </div>
+  </div>
   <% if hotelier.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(hotelier.errors.count, "error") %> prohibited this hotelier from being saved:</h2>
+
       <ul>
         <% hotelier.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,15 +22,14 @@
   <% end %>
 
   <div class="card-content">
-
     <div class="field is-horizontal">
       <div class="field-label is-normal">
-        <label class="label"><%= t'app.hotelier.name' %></label>
+        <label class="label"><%= t('app.hotelier.name') %></label>
       </div>
       <div class="field-body">
         <div class="field">
           <div class="control is-expanded has-icons-left">
-            <%= form.text_field :name, class:"input", type:"text" %>
+            <%= form.text_field :name, class: "input", type: "text" %>
             <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
           </div>
         </div>
@@ -28,12 +38,12 @@
 
     <div class="field is-horizontal">
       <div class="field-label is-normal">
-        <%= t('app.hotelier.cpf') %>
+        <label class="label"><%= t 'app.hotelier.cpf' %></label>
       </div>
       <div class="field-body">
         <div class="field">
           <div class="control is-expanded has-icons-left">
-            <%= form.text_field :cpf, class:"input", type:"text" %>
+            <%= form.text_field :cpf, class: "input", type: "text" %>
             <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
           </div>
         </div>
@@ -42,13 +52,19 @@
 
     <div class="field is-horizontal">
       <div class="field-label is-normal">
-        <%= t('app.hotelier.phone_number')%>
+        <label class="label"><%= t 'app.hotelier.phone_number' %></label>
       </div>
       <div class="field-body">
-        <div class="field">
-          <div class="control is-expanded has-icons-left">
-            <%= form.text_field :phone_number, class:"input", type:"text" %>
-            <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+        <div class="field is-expanded">
+          <div class="field has-addons">
+            <div class="control">
+              <div class="button is-static">
+                +55
+              </div>
+            </div>
+            <div class="control is-expanded">
+              <%= form.text_field :phone_number, class: "input", type: "text" %>
+            </div>
           </div>
         </div>
       </div>
@@ -56,18 +72,17 @@
 
     <div class="field is-horizontal">
       <div class="field-label is-normal">
-        <%= t('app.hotelier.plan') %>
+        <label class="label"><%= t 'app.hotelier.plan' %></label>
       </div>
       <div class="field-body">
         <div class="field">
           <div class="control is-expanded has-icons-left">
-            <%= form.text_field :plan, class:"input", type:"text" %>
+            <%= form.text_field :plan, class: "input", type: "text" %>
             <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
           </div>
         </div>
       </div>
     </div>
-
 
     <div>
       <%= form.fields_for :address do |address_fields| %>
@@ -78,7 +93,7 @@
           <div class="field-body">
             <div class="field">
               <div class="control is-expanded has-icons-left">
-                <%= address_fields.text_field :street, class:"input", type:"text" %>
+                <%= address_fields.text_field :street, class: "input", type: "text" %>
                 <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
               </div>
             </div>
@@ -92,7 +107,7 @@
           <div class="field-body">
             <div class="field">
               <div class="control is-expanded has-icons-left">
-                <%= address_fields.text_field :postal_code, class:"input", type:"text" %>
+                <%= address_fields.text_field :postal_code, class: "input", type: "text" %>
                 <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
               </div>
             </div>
@@ -106,7 +121,7 @@
           <div class="field-body">
             <div class="field">
               <div class="control is-expanded has-icons-left">
-                <%= address_fields.text_field :city, class:"input", type:"text" %>
+                <%= address_fields.text_field :city, class: "input", type: "text" %>
                 <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
               </div>
             </div>
@@ -120,25 +135,13 @@
           <div class="field-body">
             <div class="field">
               <div class="control is-expanded has-icons-left">
-                <%= address_fields.text_field :state, class:"input", type:"text" %>
+                <%= address_fields.text_field :state, class: "input", type: "text" %>
                 <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
               </div>
             </div>
           </div>
         </div>
       <% end %>
-
-      <div class="field-body">
-        <div class="field">
-          <div class="field is-grouped">
-            <div>
-              <%= form.submit(@hotelier.new_record? ? t('app.hotelier_form.create') : t('app.hotelier_form.update'),
-                              class:"button is-primary")%>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-    </div>
+  </div>
 <% end %>
-
