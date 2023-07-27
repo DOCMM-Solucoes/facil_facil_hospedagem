@@ -9,10 +9,20 @@
     </header>
     <div class="card-content">
       <%= form_with(model: photo, multipart: true) do |form| %>
+        <div class="buttons is-right">
+          <div class="field">
+            <div class="field is-grouped">
+              <div class="control">
+                <%= form.submit "Salvar", class: "button is-primary" %>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
         <% if photo.errors.any? %>
           <div class="notification is-danger">
             <h2><%= pluralize(photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
-
             <ul>
               <% photo.errors.each do |error| %>
                 <li><%= error.full_message %></li>
@@ -20,7 +30,6 @@
             </ul>
           </div>
         <% end %>
-
         <div class="field">
           <%= form.label "Tìtulo", class: "label" %>
           <div class="control">
@@ -41,7 +50,8 @@
                     <label class="upload control">
                       <a class="button is-primary">
                         <span class="icon"><i class="mdi mdi-upload"></i></span>
-                        <span><%= form.file_field :images, class: "button is-primary is-outlined", multiple: true %>Imagens</span>
+                        <span><%= form.file_field :images, class: "button is-primary is-outlined", multiple: true %>
+                          Imagens</span>
                       </a>
                       <input type="file">
                     </label>
@@ -52,17 +62,25 @@
           </div>
         </div>
         <hr>
-        <div class="field">
-          <%= form.label "Descrição", class: "label" %>
-          <div class="control">
-            <%= form.text_area :description, class: "textarea", placeholder: "Escreva os detalhes da estrutura" %>
-          </div>
-        </div>
+
 
         <div class="field is-grouped">
-          <div class="control">
-            <%= form.submit "Salvar", class: "button is-primary" %>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Descrição</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded has-icons-left">
+                  <%= form.text_area :description, class: "input", type: "text" %>
+                  <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+                </div>
+              </div>
+            </div>
           </div>
+
+
           <div class="control">
 
           </div>
