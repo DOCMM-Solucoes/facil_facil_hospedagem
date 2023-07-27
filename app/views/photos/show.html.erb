@@ -1,19 +1,33 @@
-<p>
-  <%= render @photo %>
-</p>
+<div class="card has-table has-mobile-sort-spaced">
+  <header class="card-header">
+    <div class="card-header-title">
+      <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
+      <h1><%= link_to t('new.photo.title'), new_photo_path %></h1>
+    </div>
+    <a href="#" class="card-header-icon">
+      <span class="icon"><i class="mdi mdi-reload"></i></span>
+    </a>
+  </header>
+  <header class="card-header">
+    <div class="card-header-title">
+      <p>
 
-<div class="field">
-  <% @photo.images.each do |image| %>
-    <%= image_tag image, class: 'image-size' %>
-  <% end %>
-
-</div>
-
-<div>
-  <%= link_to "Voltar para estrututras", photos_path %>
-  <% if user_signed_in? && current_user %>
-    <%= link_to "Editar as estrutura", edit_photo_path(@photo) %> |
-    <%= button_to "Deletar estrutura", @photo, method: :delete,
-                form: { data: { turbo_confirm: 'Você tem certeza' } } %>
-  <% end %>
+      </p>
+    </div>
+  </header>
+  <div class="card-content">
+    <div class="field">
+      <% @photo.images.each do |image| %>
+        <%= image_tag image, class: 'image-size' %>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to "Voltar para estrututras", photos_path %>
+      <% if user_signed_in? && current_user %>
+        <%= link_to "Editar as estrutura", edit_photo_path(@photo) %> |
+        <%= button_to "Deletar estrutura", @photo, method: :delete,
+                      form: { data: { turbo_confirm: 'Você tem certeza' } } %>
+      <% end %>
+    </div>
+  </div>
 </div>
