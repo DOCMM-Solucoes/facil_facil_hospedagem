@@ -24,10 +24,10 @@
             <thead>
             <tr>
               <th></th>
-              <th>Guia</th>
-              <th>Data check-in</th>
-              <th>Data check-out</th>
-              <th>Confirmado</th>
+              <th><%= t('app.trip.guide_id') %></th>
+              <th><%= t('app.trip.checkin_date') %></th>
+              <th><%= t('app.trip.checkout_date') %></th>
+              <th><%= t('app.trip.confirmed') %></th>
             </tr>
             </thead>
             <tbody>
@@ -43,32 +43,29 @@
                 <td data-label="City"><%= trip.checkout_date %></td>
                 <td data-label="City"><%= trip.confirmed %></td>
                 <td class="is-actions-cell">
-                    <div class="field is-grouped">
-                      <div class="control">
-                          <button class="button is-small is-primary" type="button">
-                            <%= link_to t('app.trip_index.show'), trip %>
-                            <span class="icon"><i class="mdi mdi-eye"></i></span>
-                          </button>
-
-                      </div>
-                      <div class="control">
-                        <button class="button is-small is-primary" type="button">
-                          <%= link_to t('app.trip_edit.title'), edit_trip_path(trip) %>
-                          <span class="icon"><i class="mdi mdi-pencil"></i></span>
-                        </button>
-                      </div>
-                      <div class="control">
-                        <%= form_with(model: trip, url: trip_path(trip), local: true, method: :delete,
-                                      data: { turbo_confirm: t('app.controller.notice_delete') }) do |form| %>
-                          <%= form.button class: "button is-danger jb-modal is-small is-flex" do %>
-                            <span><%= t('app.show.delete') %></span>
-                            <span class="icon is-small">
-                                <i class="mdi mdi-pencil"></i>
-                              </span>
-                          <% end %>
-                        <% end %>
-                      </div>
+                  <div class="field is-grouped">
+                    <div class="control">
+                      <%= link_to trip, class: "button is-small is-primary has-text-white jb-modal", data: { target: 'sample-modal' } do %>
+                        <span><%= t('app.trip_index.show') %></span>
+                        <span class="icon is-small"><i class="mdi mdi-eye"></i></span>
+                      <% end %>
                     </div>
+                    <div class="control">
+                      <%= link_to edit_trip_path(trip), class: "button is-small is-primary has-text-white" do %>
+                        <span><%= t('app.trip_edit.title') %></span>
+                        <span class="icon is-small"><i class="mdi mdi-pencil"></i></span>
+                      <% end %>
+                    </div>
+                    <div class="control">
+                      <%= form_with(model: trip, url: trip_path(trip), local: true, method: :delete,
+                                    data: { turbo_confirm: t('app.controller.notice_delete') }) do |form| %>
+                        <%= form.button class: "button is-danger jb-modal is-small is-flex" do %>
+                          <span><%= t('app.show.delete') %></span>
+                          <span class="icon is-small"><i class="mdi mdi-delete"></i></span>
+                        <% end %>
+                      <% end %>
+                    </div>
+                  </div>
                 </td>
               </tr>
             <% end %>
