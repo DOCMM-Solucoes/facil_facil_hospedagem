@@ -1,32 +1,81 @@
-<h1><%= t('app.trip_index.title') %></h1>
+<div class="card has-table has-mobile-sort-spaced">
+  <header class="card-header">
+    <div class="card-header-title">
+      <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
+      <h1><%= t 'app.trip_index.title' %></h1>
+    </div>
+    <a href="#" class="card-header-icon">
+      <span class="icon"><i class="mdi mdi-reload"></i></span>
+    </a>
+  </header>
 
-<div id="trips">
-  <% @trips.each do |trip| %>
-    <p>
-      <%= t('app.trip.guide_id') %>: <%= trip.guide.name %>
-    </p>
+  <div class="buttons is-right">
+    <div>
+      <%= link_to t('app.trip_index.new'), new_trip_path, class: "button is-primary", type: "button" %>
+      <span class="icon"><i class=""></i></span>
+    </div>
+  </div>
 
-    <p>
-      <%= t('app.trip.checkin_date') %>: <%= trip.checkin_date %>
-    </p>
+  <div class="card-content">
+    <div id="trips">
+      <div class="b-table has-pagination">
+        <div class="table-wrapper has-mobile-cards">
+          <table class="table is-fullwidth is-striped is-hoverable is-sortable is-fullwidth">
+            <thead>
+            <tr>
+              <th></th>
+              <th>Guia</th>
+              <th>Data check-in</th>
+              <th>Data check-out</th>
+              <th>Confirmado</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @trips.each do |trip| %>
+              <tr>
+                <td class="is-image-cell">
+                  <div class="image">
+                    <img src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg" class="is-rounded">
+                  </div>
+                </td>
+                <td data-label="Name"><%= trip.guide_id %></td>
+                <td data-label="Company"><%= trip.checkin_date %></td>
+                <td data-label="City"><%= trip.checkout_date %></td>
+                <td data-label="City"><%= trip.confirmed %></td>
+                <td class="is-actions-cell">
+                    <div class="field is-grouped">
+                      <div class="control">
+                          <button class="button is-small is-primary" type="button">
+                            <%= link_to t('app.trip_index.show'), trip %>
+                            <span class="icon"><i class="mdi mdi-eye"></i></span>
+                          </button>
 
-    <p>
-      <%= t('app.trip.checkout_date') %>: <%= trip.checkout_date %>
-    </p>
-
-    <p>
-      <%= t('app.trip.confirmed') %>: <%= trip.confirmed %>
-    </p>
-
-    <p>
-      <%= link_to t('app.trip_index.show'), trip %>
-    </p>
-  <% end %>
-</div>
-
-<div>
-  <% if user_signed_in? && current_user %>
-    <%= link_to t('app.trip_index.new'), new_trip_path %>
-  <% end %>
-  <%= link_to t('home.home'), root_path  %>
+                      </div>
+                      <div class="control">
+                        <button class="button is-small is-primary" type="button">
+                          <%= link_to t('app.trip_edit.title'), edit_trip_path(trip) %>
+                          <span class="icon"><i class="mdi mdi-pencil"></i></span>
+                        </button>
+                      </div>
+                      <div class="control">
+                        <%= form_with(model: trip, url: trip_path(trip), local: true, method: :delete,
+                                      data: { turbo_confirm: t('app.controller.notice_delete') }) do |form| %>
+                          <%= form.button class: "button is-danger jb-modal is-small is-flex" do %>
+                            <span><%= t('app.show.delete') %></span>
+                            <span class="icon is-small">
+                                <i class="mdi mdi-pencil"></i>
+                              </span>
+                          <% end %>
+                        <% end %>
+                      </div>
+                    </div>
+                </td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
