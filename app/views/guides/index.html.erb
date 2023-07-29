@@ -1,21 +1,75 @@
-<h1><%= t 'app.guide_index.title' %></h1>
+<div class="card has-table has-mobile-sort-spaced">
+  <header class="card-header">
+    <div class="card-header-title">
+      <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
+      <h1><%= t 'app.guide_index.title' %></h1>
+    </div>
+    <a href="#" class="card-header-icon">
+      <span class="icon"><i class="mdi mdi-reload"></i></span>
+    </a>
+  </header>
 
-<div id="guides">
-  <% @guides.each do |guide| %>
-    <p>
-      <%= guide.name %>
-    </p>
-    <p>
-      <%= link_to t('app.guide_index.show'), guide %>
-    </p>
-  <% end %>
+  <div class="buttons is-right">
+    <div>
+      <%= link_to t('app.guide_index.new'), new_guide_path, class: "button is-primary", type: "button" %>
+      <span class="icon"><i class=""></i></span>
+    </div>
+  </div>
+
+  <div class="card-content">
+    <div id="uides">
+      <div class="b-table has-pagination">
+        <div class="table-wrapper has-mobile-cards">
+          <table class="table is-fullwidth is-striped is-hoverable is-sortable is-fullwidth">
+            <thead>
+            <tr>
+              <th></th>
+              <th><%= t('app.guide.guide') %></th>
+              <th><%= t('app.guide.phone') %></th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @guides.each do |guide| %>
+              <tr>
+                <td class="is-image-cell">
+                  <div class="image">
+                    <img src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg" class="is-rounded">
+                  </div>
+                </td>
+                <td><%= guide.name %></td>
+                <td><%= guide.phone %></td>
+                <td class="is-actions-cell">
+                  <div class="field is-grouped">
+                    <div class="control">
+                      <%= link_to guide, class: "button is-small is-info has-text-white jb-modal",
+                                  data: { target: 'sample-modal' } do %>
+                        <span><%= t('app.guide_index.show') %></span>
+                        <span class="icon is-small"><i class="mdi mdi-eye"></i></span>
+                      <% end %>
+                    </div>
+                    <div class="control">
+                      <%= link_to edit_guide_path(guide), class: "button is-small is-primary has-text-white" do %>
+                        <span><%= t('app.guide_edit.title') %></span>
+                        <span class="icon is-small"><i class="mdi mdi-pencil"></i></span>
+                      <% end %>
+                    </div>
+                    <div class="control">
+                      <%= form_with(model: guide, url: guide_path(guide), local: true, method: :delete,
+                                    data: { turbo_confirm: t('app.controller.notice_delete') }) do |form| %>
+                        <%= form.button class: "button is-danger jb-modal is-small is-flex" do %>
+                          <span><%= t('app.show.delete') %></span>
+                          <span class="icon is-small"><i class="mdi mdi-delete"></i></span>
+                        <% end %>
+                      <% end %>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<div>
-  <% if user_signed_in? && current_user %>
-    <%= link_to t('app.guide_index.new'), new_guide_path %>
-  <% end %>
-  <%= link_to t('home.home'), root_path  %>
-</div>
-
-
