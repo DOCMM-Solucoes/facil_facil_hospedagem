@@ -1,61 +1,128 @@
 <%= form_with(model: guide) do |form| %>
+  <div class="buttons is-right">
+    <div class="field">
+      <div class="field is-grouped">
+        <div>
+          <%= form.submit(@guide.new_record? ? t('app.guide.create') : t('app.guide.update'),
+                          class: "button is-primary") %>
+        </div>
+      </div>
+    </div>
+  </div>
   <% if guide.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(guide.errors.count, "error") %> prohibited this guide from being saved:</h2>
 
       <ul>
-        <% guide.errors.each do |error| %>
+        <% hotelier.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label t'app.guide.guide', style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label t'app.guide.phone', style: "display: block" %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div>
-    <%= form.label t'app.guide.cpf', style: "display: block" %>
-    <%= form.text_field :cpf %>
-  </div>
-
-  <div>
-    <%= form.label t'app.guide.company', style: "display: block" %>
-    <%= form.text_field :company %>
-  </div>
-
-  <div>
-    <%= form.label t'app.guide.cnpj', style: "display: block" %>
-    <%= form.text_field :cnpj %>
-  </div>
-  <div>
-    <%= form.fields_for :address do |address_fields| %>
-      <div>
-        <%= address_fields.label :street, t('app.address.street') %>
-        <%= address_fields.text_field :street %>
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label"><%= t('app.guide.guide') %></label>
       </div>
-      <div>
-        <%= address_fields.label :postal_code, t('app.address.postal_code') %>
-        <%= address_fields.text_field :postal_code %>
+      <div class="field-body">
+        <div class="field">
+            <%= form.text_field :name, class: "input", type: "text" %>
+        </div>
       </div>
-      <div>
-        <%= address_fields.label :city, t('app.address.city') %>
-        <%= address_fields.text_field :city %>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label"><%= t 'app.guide.phone' %></label>
       </div>
-      <div>
-        <%= address_fields.label :state, t('app.address.state') %>
-        <%= address_fields.text_field :state %>
+      <div class="field-body">
+        <div class="field">
+            <%= form.text_field :cpf, class: "input", type: "text" %>
+        </div>
       </div>
-    <% end %>
-  </div>
-  <div>
-        <%= form.submit(@guide.new_record? ? t('app.guide.create') : t('app.guide.update'))%>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label"><%= t 'app.guide.cpf' %></label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <%= form.text_field :cpf, class: "input", type: "text" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label"><%= t 'app.guide.company' %></label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+            <%= form.text_field :company, class: "input", type: "text" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label"><%= t 'app.guide.cnpj' %></label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <%= form.text_field :cnpj, class: "input", type: "text" %>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <%= form.fields_for :address do |address_fields| %>
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <%= t('app.address.street') %>
+          </div>
+          <div class="field-body">
+            <div class="field">
+                <%= address_fields.text_field :street, class: "input", type: "text" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <%= t('app.address.postal_code') %>
+          </div>
+          <div class="field-body">
+            <div class="field">
+                <%= address_fields.text_field :postal_code, class: "input", type: "text" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <%= t('app.address.city') %>
+          </div>
+          <div class="field-body">
+            <div class="field">
+                <%= address_fields.text_field :city, class: "input", type: "text" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <%= t('app.address.state') %>
+          </div>
+          <div class="field-body">
+            <div class="field">
+                <%= address_fields.text_field :state, class: "input", type: "text" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 <% end %>
