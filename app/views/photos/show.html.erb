@@ -2,7 +2,7 @@
   <header class="card-header">
     <div class="card-header-title">
       <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
-      <h1><%= link_to t('new.photo.title'), new_photo_path %></h1>
+      <h1>Estrutura</h1>
     </div>
     <a href="#" class="card-header-icon">
       <span class="icon"><i class="mdi mdi-reload"></i></span>
@@ -10,10 +10,10 @@
   </header>
   <header class="card-header">
     <div class="card-header-title">
-      <p>
+
       <div class="field is-horizontal">
         <div class="field-label is-normal">
-          <label class="label">Description</label>
+          <label class="label">Descrição</label>
         </div>
         <div class="field-body">
           <div class="field">
@@ -24,21 +24,13 @@
           </div>
         </div>
       </div>
-      </p>
     </div>
   </header>
-  <div class="card-content">
-    <div class="field">
+
+  <div class="card-content image is-250x250">
+    <div class="field is-square is-centered">
       <% @photo.images.each do |image| %>
         <%= image_tag image, class: 'image-size' %>
-      <% end %>
-    </div>
-    <div>
-
-      <% if user_signed_in? && current_user %>
-        <%= link_to "Editar as estrutura", edit_photo_path(@photo) %> |
-        <%= button_to "Deletar estrutura", @photo, method: :delete,
-                      form: { data: { turbo_confirm: 'Você tem certeza' } } %>
       <% end %>
     </div>
   </div>
