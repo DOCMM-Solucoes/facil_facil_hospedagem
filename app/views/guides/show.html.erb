@@ -1,10 +1,131 @@
-<%= render @guide %>
+<section class="section is-main-section">
+  <div class="card">
+    <header class="card-header">
+      <div class="card-header-title">
+        <span class="icon"><i class="mdi mdi-ballot"></i></span>
+        <h1><%= @guide.name %></h1>
+      </div>
+    </header>
+    <div class="card-content">
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <div class="card-content">
 
-<div>
-  <%= link_to t('app.guide_show.back'), guides_path %>
-  <% if user_signed_in? && current_user %>
-    <%= link_to t('app.guide_show.edit'), edit_guide_path(@guide) %>
-    <%= button_to t('app.guide_show.delete'), @guide, method: :delete,
-                form: { data: { turbo_confirm: t('app.guides_controller.notice_delete') } }%>
-  <% end %>
-</div>
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.guide.guide') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :name, @guide.name, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.guide.phone') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :phone, @guide.phone, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.cpf') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :cpf, @guide.cpf, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.guide.company') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :company, @guide.company, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.guide.cnpj') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :cnpj, @guide.cnpj, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <%= form_for @guide do |form| %>
+              <%= form.fields_for :address do |address_fields| %>
+                <div class="field is-horizontal">
+                  <div class="field-label is-normal">
+                    <label class="label"><%= t('app.address.street') %></label>
+                  </div>
+                  <div class="field-body">
+                    <div class="field">
+                        <%= address_fields.text_field :street, class: "input", type: "text", disabled: true %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="field is-horizontal">
+                  <div class="field-label is-normal">
+                    <label class="label"><%= t('app.address.postal_code') %></label>
+                  </div>
+                  <div class="field-body">
+                    <div class="field">
+                        <%= address_fields.text_field :postal_code, class: "input", type: "text", disabled: true %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="field is-horizontal">
+                  <div class="field-label is-normal">
+                    <label class="label"><%= t('app.address.city') %></label>
+                  </div>
+                  <div class="field-body">
+                    <div class="field">
+                        <%= address_fields.text_field :city, class: "input", type: "text", disabled: true %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="field is-horizontal">
+                  <div class="field-label is-normal">
+                    <label class="label"><%= t('app.address.state') %></label>
+                  </div>
+                  <div class="field-body">
+                    <div class="field">
+                        <%= address_fields.text_field :state, class: "input", type: "text", disabled: true %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
