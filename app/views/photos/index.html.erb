@@ -43,7 +43,7 @@
                 <td class="is-actions-cell">
                   <div class="buttons is-right">
                       <%= link_to 'Mostar', photo_path(photo), class: "button is-primary", type: "button"%>
-                      <%= link_to 'Editar', edit_photo_path(photo), class: "button is-primary", type: "button" %>
+                      <%= link_to 'Editar', edit_photo_path(photo), class: "button is-warning", type: "button" %>
                     <div type="button" data-target="sample-modal">
                       <%= button_to 'Deletar', photo, method: :delete,
                                     form: { data: { turbo_confirm: t('app.controller.notice_delete') } },
