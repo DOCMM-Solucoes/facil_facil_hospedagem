@@ -5,3 +5,4 @@ hotelier = Hotelier.create(name: "Maick")
 establishment = Establishment.create(name: "Pousada Porto Seguro Resort", qty_bedrooms: 20, hotelier: hotelier)
 
 Address.create(city: "Porto Seguro", state: "Bahia", addressable: establishment)
+Address.create(city: "Porto Seguro", street: "Rua Amelia 45", addressable: hotelier)
