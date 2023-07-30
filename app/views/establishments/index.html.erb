@@ -53,7 +53,7 @@
                     </button>
                     <div type="button" data-target="sample-modal">
                       <%= form_with(model: establishment, url: establishment_path(establishment), local: true, method: :delete,
-                                    data: { turbo_confirm: t('app.show.delete') }) do |form| %>
+                                    data: { turbo_confirm: t('app.controller.notice_delete') }) do |form| %>
                         <%= form.button class: "button is-danger jb-modal is-small is-flex" do %>
                           <span><%= t('app.show.delete') %></span>
                           <span class="icon is-small"><i class="mdi mdi-delete"></i></span>
