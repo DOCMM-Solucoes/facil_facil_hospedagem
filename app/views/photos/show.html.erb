@@ -1,37 +1,40 @@
-<div class="card has-table has-mobile-sort-spaced">
-  <header class="card-header">
-    <div class="card-header-title">
-      <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
-      <h1>Estrutura</h1>
-    </div>
-    <a href="#" class="card-header-icon">
-      <span class="icon"><i class="mdi mdi-reload"></i></span>
-    </a>
-  </header>
-  <header class="card-header">
-    <div class="card-header-title">
+<section class="section is-main-section">
 
-      <div class="field is-horizontal">
-        <div class="field-label is-normal">
-          <label class="label">Descrição</label>
-        </div>
-        <div class="field-body">
-          <div class="field">
-            <div class="control is-expanded has-icons-left">
-              <%= text_field_tag :name, @photo.description, class: "input", type: "text", disabled: true %>
-              <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+  <div class="card has-table has-mobile-sort-spaced">
+    <header class="card-header">
+      <div class="card-header-title">
+        <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
+        <h1>Estrutura</h1>
+      </div>
+      <a href="#" class="card-header-icon">
+        <span class="icon"><i class="mdi mdi-reload"></i></span>
+      </a>
+    </header>
+    <header class="card-header">
+      <div class="card-header-title">
+
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <label class="label">Descrição</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control is-expanded has-icons-left">
+                <%= text_field_tag :name, @photo.description, class: "input", type: "text", disabled: true %>
+                <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <div class="card-content image is-250x250">
-    <div class="field is-square is-centered">
-      <% @photo.images.each do |image| %>
-        <%= image_tag image, class: 'image-size' %>
-      <% end %>
+    <div class="card-content image is-250x250">
+      <div class="field is-square is-centered">
+        <% @photo.images.each do |image| %>
+          <%= image_tag image, class: 'image-size' %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+</section>
