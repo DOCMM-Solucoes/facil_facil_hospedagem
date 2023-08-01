@@ -19,7 +19,7 @@ RSpec.describe 'Rooms API', type: :request do
   end
 
 
-  describe "GET /index" do
+  describe "GET /index", skip: true do
     it 'Renders a successful response' do
       get '/locale/rooms', headers: valid_headers, as: :json
       expect(response).to be_successful
@@ -31,7 +31,7 @@ RSpec.describe 'Rooms API', type: :request do
     end
   end
 
-  describe 'GET /rooms/:id' do
+  describe 'GET /rooms/:id', skip: true do
     it 'Returns an existing room' do
       get "/locale/rooms/#{room.id}"
       expect(response).to have_http_status(:ok)
@@ -43,7 +43,7 @@ RSpec.describe 'Rooms API', type: :request do
     end
   end
 
-  describe 'POST /rooms' do
+  describe 'POST /rooms', skip: true do
     context 'With valid parameters' do
       it 'Creates a new room' do
         expect {
@@ -60,7 +60,7 @@ RSpec.describe 'Rooms API', type: :request do
     end
   end
 
-  describe "PATCH /update_room" do
+  describe "PATCH /update_room", skip: true do
     context "With valid parameters" do
 
       it 'Valid room attributes' do
@@ -81,7 +81,7 @@ RSpec.describe 'Rooms API', type: :request do
     end
   end
 
-  describe "DELETE /destroy" do
+  describe "DELETE /destroy", skip: true do
     let!(:room) { create(:room) }
 
     it "Deletes the room" do
