@@ -4,16 +4,7 @@
     </header>
     <div class="card-content">
       <%= form_with(model: photo, multipart: true) do |form| %>
-        <div class="buttons is-right">
-          <div class="field">
-            <div class="field is-grouped">
-              <div class="control">
-                <%= form.submit "Salvar", class: "button is-primary" %>
 
-              </div>
-            </div>
-          </div>
-        </div>
 
         <% if photo.errors.any? %>
           <div class="notification is-danger">
@@ -45,8 +36,7 @@
                     <label class="upload control">
                       <a class="button is-primary">
                         <span class="icon"><i class="mdi mdi-upload"></i></span>
-                        <span><%= form.file_field :images, class: "button is-primary is-outlined", multiple: true %>
-                          Imagens</span>
+                        <span><%= form.file_field :images, class: "button is-primary is-outlined", multiple: true %>Imagens</span>
                       </a>
                       <input type="file">
                     </label>
@@ -65,7 +55,16 @@
           </div>
         </div>
         <div class="field">
-          <%= form.text_area :description, class: "input", type: "text" %>
+          <%= form.text_area :description, class:"textarea", placeholder:"Descrição da estrutura...", rows:"10", type: "text" %>
+        </div>
+        <div class="buttons is-left">
+          <div class="field">
+            <div class="field is-grouped">
+              <div class="control">
+                <%= form.submit "Salvar", class: "button is-primary" %>
+              </div>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>

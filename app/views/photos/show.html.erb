@@ -1,5 +1,4 @@
-<section class="section is-main-section">
-
+<section class="section is-main-section" xmlns="http://www.w3.org/1999/html">
   <div class="card has-table has-mobile-sort-spaced">
     <header class="card-header">
       <div class="card-header-title">
@@ -10,31 +9,28 @@
         <span class="icon"><i class="mdi mdi-reload"></i></span>
       </a>
     </header>
-    <header class="card-header">
-      <div class="card-header-title">
-
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label">Descrição</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control is-expanded has-icons-left">
-                <%= text_field_tag :name, @photo.description, class: "input", type: "text", disabled: true %>
-                <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
-              </div>
-            </div>
-          </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal ">
+        <label class="label">Descrição</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <%= text_field_tag :name, @photo.description, class: "input", type: "text", disabled: true %>
         </div>
       </div>
-    </header>
-
-    <div class="card-content image is-250x250">
-      <div class="field is-square is-centered">
-        <% @photo.images.each do |image| %>
-          <%= image_tag image, class: 'image-size' %>
-        <% end %>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label">Imagens</label>
+      </div>
+      <div class="field-body">
+        <div class=" field">
+          <% @photo.images.each do |image| %>
+            <%= image_tag image, class: 'image-size image is-96x96' %>
+          <% end %>
+        </div>
       </div>
     </div>
+    <a class="button is-primary">Voltar</a>
   </div>
 </section>
