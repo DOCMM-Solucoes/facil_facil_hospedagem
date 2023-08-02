@@ -41,14 +41,14 @@
                 <td class="is-actions-cell">
                   <div class="field is-grouped">
                     <div class="control">
-                      <%= link_to guide, class: "button is-small is-info has-text-white jb-modal",
+                      <%= link_to guide, class: "button is-small is-info jb-modal",
                                   data: { target: 'sample-modal' } do %>
                         <span><%= t('app.guide_index.show') %></span>
                         <span class="icon is-small"><i class="mdi mdi-eye"></i></span>
                       <% end %>
                     </div>
                     <div class="control">
-                      <%= link_to edit_guide_path(guide), class: "button is-small is-primary has-text-white" do %>
+                      <%= link_to edit_guide_path(guide), class: "button is-small is-warning" do %>
                         <span><%= t('app.guide_edit.title') %></span>
                         <span class="icon is-small"><i class="mdi mdi-pencil"></i></span>
                       <% end %>
