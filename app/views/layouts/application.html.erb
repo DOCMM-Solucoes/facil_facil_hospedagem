@@ -117,6 +117,7 @@
       <!--<p class="menu-label">Examples</p>-->
       <ul class="menu-list">
         <li>
+
           <!--Daniel-->
           <a href="tables.html" class="has-icon">
             <span class="icon has-update-mark"><i class="mdi mdi-table"></i></span>
@@ -124,6 +125,7 @@
           </a>
         </li>
         <li>
+
           <!--Osiris-->
           <%= link_to photos_path, class: "has-icon" do %>
             <span class="icon"><i class="mdi mdi-home"></i></span>
@@ -131,6 +133,7 @@
           <% end %>
         </li>
         <li>
+
           <!--Daniel-->
           <a href="profile.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-account-circle"></i></span>
@@ -138,6 +141,7 @@
           </a>
         </li>
         <li>
+
           <!--Marco-->
           <a href="profile.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-account-circle"></i></span>
@@ -145,6 +149,7 @@
           </a>
         </li>
         <li>
+
           <!--Sérgio-->
           <a href="profile.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-account-circle"></i></span>
@@ -152,6 +157,7 @@
           </a>
         </li>
         <li>
+
           <!--Marco-->
           <a href="profile.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-account-circle"></i></span>
@@ -159,18 +165,19 @@
           </a>
         </li>
         <li>
+
           <!--Osiris-->
-          <%= link_to user_session_url, class: "has-icon" do %>
-            <span class="icon"><i class="mdi mdi-key-variant"></i></span>
+          <%= link_to photos_path, class: "has-icon" do %>
+            <span class="icon"><i class="mdi mdi-logout"></i></span>
             <span class="menu-item-label">Entrar</span>
           <% end %>
         </li>
+
+        <!--Osiris-->
         <li>
-          <!--Osiris-->
-          <%= link_to new_user_registration_path, class: "has-icon" do %>
-            <span class="icon"><i class="mdi mdi-account-key"></i></span>
-            <span class="menu-item-label">Cadastrar</span>
-          <% end %>
+          <a title="Log out" class="has-icon">
+            <span><%= link_to t('home.sign_up'), new_user_registration_path %></span>
+          </a>
         </li>
       </ul>
       <!--<p class="menu-label">About</p>-->
