@@ -145,7 +145,7 @@
         <div class="field-body" disabled>
           <div class="box" disabled>
             <% @room.images.each do |img| %>
-              <%= image_tag img %>
+              <%= image_tag img, class: 'image-size image is-96x96' %>
             <% end %>
           </div>
         </div>
