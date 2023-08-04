@@ -139,9 +139,60 @@
 
       <div class="field is-horizontal" disabled>
         <div class="field-label is-normal" disabled>
+          <label class="label" disabled><%= "Simples / Casal" %></label>
+        </div>
+        <div class="field-body">
+          <div class="box">
+            <div class="field is-disabled">
+              <div class="field is-grouped-multiline is-grouped">
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_single, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_single, t('app.room.is_single'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_couple, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_couple, t('app.room.is_couple'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_two_couples, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_two_couples, t('app.room.is_two_couples'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_three_couples, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_three_couples, t('app.room.is_three_couples'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="field is-horizontal" disabled>
+        <div class="field-label is-normal" disabled>
           <label class="label" disabled><%= "Fotos do Quarto:" %></label>
         </div>
-
         <div class="field-body" disabled>
           <div class="box" disabled>
             <% @room.images.each do |img| %>
@@ -150,8 +201,6 @@
           </div>
         </div>
       </div>
-
-
     </div>
   </div>
 </section>
