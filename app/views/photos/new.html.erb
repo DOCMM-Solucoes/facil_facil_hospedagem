@@ -1,13 +1,23 @@
 <section class="section is-main-section">
-  <div class="card has-table has-mobile-sort-spaced">
+  <div class="card">
     <header class="card-header">
       <div class="card-header-title">
         <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
-        <h1>Editar Estrutura</h1>
+        <h1>Nova Estrutura</h1>
       </div>
     </header>
-    <div>
-      <%= render "form", photo: @photo %>
+    <div class="card-content">
+      <div class="field">
+        <%= render "form", photo: @photo %>
+      </div>
+
+      <div class="field-body">
+        <div class="field-label">
+          <div class="field is-grouped">
+            <%= link_to 'Voltar para Estrutura', photos_path, class: "button is-primary" %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
