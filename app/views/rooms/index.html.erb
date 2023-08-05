@@ -9,6 +9,7 @@
     </a>
   </header>
 
+
   <div class="card-content">
     <div id="rooms">
       <% @rooms.each do |room| %>
@@ -22,6 +23,16 @@
                   <th><%= t('app.room.description') %></th>
                   <th><%= t('app.room.maximum_capacity') %></th>
                   <th><%= t('app.room.status') %></th>
+
+                  <td class="is-actions-cell">
+                    <div class="buttons is-right">
+                      <button class="button is-small is-primary" type="button">
+                        <%= link_to t('app.room_index.new'), new_room_path %>
+                        <span class="icon"><i class="mdi mdi-plus-thick"></i></span>
+                      </button>
+                    </div>
+                  </td>
+
                 </tr>
               </thead>
               <tbody>
