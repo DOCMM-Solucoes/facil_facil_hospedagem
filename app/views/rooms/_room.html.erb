@@ -187,6 +187,90 @@
         </div>
       </div>
 
+      <div class="field is-horizontal" disabled>
+        <div class="field-label is-normal" disabled>
+          <label class="label" disabled><%= "Casal (Opções)" %></label>
+        </div>
+        <div class="field-body">
+          <div class="box">
+            <div class="field is-disabled">
+              <div class="field is-grouped-multiline is-grouped">
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_couple_plus_one, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_couple_plus_one, t('app.room.is_couple_plus_one'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_couple_plus_two, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_couple_plus_two, t('app.room.is_couple_plus_two'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_couple_plus_three, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_couple_plus_three, t('app.room.is_couple_plus_three'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_couple_plus_four, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_couple_plus_four, t('app.room.is_couple_plus_four'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal" disabled>
+        <div class="field-label is-normal" disabled>
+          <label class="label" disabled><%= "Dois Casais (Opções)" %></label>
+        </div>
+        <div class="field-body">
+          <div class="box">
+            <div class="field is-disabled">
+              <div class="field is-grouped-multiline is-grouped">
+
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_two_couples_plus_one, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_two_couples_plus_one, t('app.room.is_two_couples_plus_one'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_two_couples_plus_two, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_two_couples_plus_two, t('app.room.is_two_couples_plus_two'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
       <div class="field is-horizontal" disabled>
@@ -195,9 +279,15 @@
         </div>
         <div class="field-body" disabled>
           <div class="box" disabled>
-            <% @room.images.each do |img| %>
-              <%= image_tag img, class: 'image-size image is-96x96' %>
-            <% end %>
+
+            <div class="columns is-mobile">
+              <% @room.images.each do |img| %>
+                <div class="column">
+                  <%= image_tag img, class: 'image-size image is-128x128' %>
+                </div>
+              <% end %>
+            </div>
+
           </div>
         </div>
       </div>
