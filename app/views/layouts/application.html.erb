@@ -167,18 +167,22 @@
         <li>
 
           <!--Osiris-->
-          <%= link_to photos_path, class: "has-icon" do %>
+          <%= link_to new_user_registration_path, class: "has-icon" do %>
             <span class="icon"><i class="mdi mdi-logout"></i></span>
-            <span class="menu-item-label">Entrar</span>
+            <span class="menu-item-label">Assinar</span>
           <% end %>
         </li>
 
         <!--Osiris-->
         <li>
           <a title="Log out" class="has-icon">
-            <span><%= link_to t('home.sign_up'), new_user_registration_path %></span>
+            <span><%= link_to  edit_user_registration_path, class: "has-icon" do %></span>
+                <span class="icon"><i class="mdi mdi-home"></i></span>
+            <span class="menu-item-label">Editar Perfil</span>
+          <% end %>
           </a>
         </li>
+
       </ul>
       <!--<p class="menu-label">About</p>-->
     </div>
