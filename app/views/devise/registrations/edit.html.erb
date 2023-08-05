@@ -47,12 +47,12 @@
     </div>
 
     <div class="">
-      <div class="button is-primary"><%= button_to "Cancelar minha conta", registration_path(resource_name),
-                                                   data: { confirm: "Você tem certeza?", turbo_confirm: "Você tem certeza?" },
-                                                   method: :delete %>
+      <div><%= button_to "Cancelar minha conta", registration_path(resource_name), class: "button is-danger",
+                         data: { confirm: "Você tem certeza?", turbo_confirm: "Você tem certeza?" },
+                         method: :delete %>
       </div>
-      <%= link_to "Voltar", :back, class: "button is-primary" %>
     </div>
   </div>
 </section>
+
 
