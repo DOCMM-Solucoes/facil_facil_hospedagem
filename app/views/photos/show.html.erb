@@ -1,5 +1,5 @@
 <section class="section is-main-section" xmlns="http://www.w3.org/1999/html">
-  <div class="card has-table has-mobile-sort-spaced">
+  <div class="card">
     <header class="card-header">
       <div class="card-header-title">
         <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
@@ -9,28 +9,46 @@
         <span class="icon"><i class="mdi mdi-reload"></i></span>
       </a>
     </header>
-    <div class="field is-horizontal">
-      <div class="field-label is-normal ">
-        <label class="label">Descrição</label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <%= text_field_tag :name, @photo.description, class: "input", type: "text", disabled: true %>
+
+
+    <div class="card-content">
+
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <div class="card-content">
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Descrição</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :name, @photo.description, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label">Imagens</label>
-      </div>
-      <div class="field-body">
-        <div class=" field">
-          <% @photo.images.each do |image| %>
-            <%= image_tag image, class: 'image-size image is-96x96' %>
-          <% end %>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">Imagens</label>
+        </div>
+        <div class="field-body">
+          <div class=" field">
+            <div class="control is-expanded">
+              <% @photo.images.each do |image| %>
+                <%= image_tag image, class: 'image-size image is-96x96' %>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
+      <%= link_to 'Voltar', photos_url, class: "button is-primary" %>
     </div>
-    <a class="button is-primary">Voltar</a>
+
+
   </div>
 </section>
