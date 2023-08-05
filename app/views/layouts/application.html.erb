@@ -164,8 +164,8 @@
             <span class="menu-item-label">Viagens</span>
           </a>
         </li>
+        <br />
         <li>
-
           <!--Osiris-->
           <%= link_to new_user_registration_path, class: "has-icon" do %>
             <span class="icon"><i class="mdi mdi-logout"></i></span>
@@ -173,14 +173,26 @@
           <% end %>
         </li>
 
+        <li>
+        <%= link_to user_session_path, class: "has-icon" do %>
+          <span class="icon"><i class="mdi mdi-logout"></i></span>
+          <span class="menu-item-label">Entrar</span>
+        <% end %>
+        </li>
+
         <!--Osiris-->
         <li>
-          <a title="Log out" class="has-icon">
-            <span><%= link_to  edit_user_registration_path, class: "has-icon" do %></span>
-                <span class="icon"><i class="mdi mdi-home"></i></span>
+            <%= link_to  edit_user_registration_path, class: "has-icon" do %>
+            <span class="icon"><i class="mdi mdi-logout"></i></span>
             <span class="menu-item-label">Editar Perfil</span>
           <% end %>
-          </a>
+        </li>
+
+        <li>
+          <%= button_to  destroy_user_session_path, method: :delete do %>
+            <span class="icon"><i class="mdi mdi-logout"></i></span>
+            <span class="menu-item-label">Sair</span>
+          <% end %>
         </li>
 
       </ul>
