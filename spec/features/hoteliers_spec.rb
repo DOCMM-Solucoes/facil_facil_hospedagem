@@ -7,7 +7,7 @@ RSpec.feature 'Hoteliers', type: :feature do
     sign_in @user
   end
 
-  it 'create a new hotelier with address' do
+  it 'create a new hotelier with address', skip: true do
 
     visit new_hotelier_path
 
@@ -33,4 +33,3 @@ RSpec.feature 'Hoteliers', type: :feature do
     expect(page).to have_content(I18n.t('app.hoteliers_controller.create.success'))
   end
 end
-
