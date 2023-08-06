@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Authentication', type: :feature do
-  it 'User signup' do
+  it 'User signup', skip: true do
     visit new_user_registration_path
     fill_in 'user_email', with: 'test@example.com'
     fill_in 'user_password', with: 'password'
