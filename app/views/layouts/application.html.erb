@@ -168,14 +168,14 @@
         <li>
           <!--Osiris-->
           <%= link_to new_user_registration_path, class: "has-icon" do %>
-            <span class="icon"><i class="mdi mdi-logout"></i></span>
+            <span class="icon"><i class="mdi mdi-account"></i></span>
             <span class="menu-item-label">Assinar</span>
           <% end %>
         </li>
 
         <li>
         <%= link_to user_session_path, class: "has-icon" do %>
-          <span class="icon"><i class="mdi mdi-logout"></i></span>
+          <span class="icon"><i class="mdi mdi-key-variant"></i></span>
           <span class="menu-item-label">Entrar</span>
         <% end %>
         </li>
@@ -183,14 +183,15 @@
         <!--Osiris-->
         <li>
             <%= link_to  edit_user_registration_path, class: "has-icon" do %>
-            <span class="icon"><i class="mdi mdi-logout"></i></span>
+            <span class="icon"><i class="mdi mdi-account-edit "></i></span>
             <span class="menu-item-label">Editar Perfil</span>
           <% end %>
         </li>
 
+        <!--Osiris-->
         <li>
-          <%= button_to  destroy_user_session_path, method: :delete do %>
-            <span class="icon"><i class="mdi mdi-logout"></i></span>
+          <%= button_to  destroy_user_session_url, method: :delete, class:"has-icon" do %>
+            <span class="icon"><i class="mdi mdi-exit-to-app "></i></span>
             <span class="menu-item-label">Sair</span>
           <% end %>
         </li>
