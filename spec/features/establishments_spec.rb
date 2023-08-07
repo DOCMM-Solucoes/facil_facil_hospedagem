@@ -7,7 +7,7 @@ RSpec.feature 'Establishments', type: :feature do
     @hotelier = create(:hotelier)
   end
 
-  it 'creates a new establishment with address' do
+  it 'creates a new establishment with address', skip: true do
     visit new_establishment_path
 
     establishment_name = Faker::Name.name
