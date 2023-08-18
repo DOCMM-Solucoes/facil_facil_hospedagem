@@ -1,4 +1,17 @@
 <section class="section is-main-section">
+  <div class="buttons is-right">
+    <div class="field">
+      <div class="field is-grouped">
+        <div>
+            <%= link_to edit_guide_path, class: "button is-small is-warning" do %>
+              <span><%= t('app.guide_edit.title') %></span>
+              <span class="icon is-small"><i class="mdi mdi-pencil"></i></span>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="card">
     <header class="card-header">
       <div class="card-header-title">
