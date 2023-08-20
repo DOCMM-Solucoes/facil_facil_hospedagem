@@ -2,12 +2,9 @@
   <div class="card has-table has-mobile-sort-spaced">
     <header class="card-header">
       <div class="card-header-title">
-        <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
+        <span class="icon"><i class="mdi mdi-home"></i></span>
         <h1>Estrutura</h1>
       </div>
-      <a href="#" class="card-header-icon">
-        <span class="icon"><i class="mdi mdi-reload"></i></span>
-      </a>
     </header>
     <div class="buttons is-right">
       <div>
@@ -26,29 +23,28 @@
                 <th></th>
                 <th>Estrutura</th>
                 <th>Descrição Curta</th>
-                <!--<th>Estado</th>-->
               </tr>
               </thead>
               <tbody>
               <% @photos.each do |photo| %>
                 <tr>
-                  <td class="is-image-cell">
+                  <!--<td class="is-image-cell">
                     <div class="image">
                       <img src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg" class="is-rounded">
                     </div>
-                  </td>
+                  </td>-->
 
                   <td data-label="Title"><%= photo.title %></td>
                   <td data-label="Describe"><%= photo.description %></td>
 
                   <td class="is-actions-cell">
                     <div class="buttons is-right">
-                      <%= link_to 'Mostar', photo_path(photo), class: "button is-primary", type: "button" %>
-                      <%= link_to 'Editar', edit_photo_path(photo), class: "button is-warning", type: "button" %>
+                      <%= link_to 'Mostar Estrutura', photo_path(photo), class: "button is-primary mdi mdi-eye", type: "button" %>
+                      <%= link_to 'Editar Estrutura', edit_photo_path(photo), class: "button is-warning mdi mdi-pencil", type: "button" %>
                       <div type="button" data-target="sample-modal">
-                        <%= button_to 'Deletar', photo, method: :delete,
+                        <%= button_to 'Deletar Estrutura', photo, method: :delete,
                                       form: { data: { turbo_confirm: t('app.controller.notice_delete') } },
-                                      class: "button is-primary is-danger jb-modal" %>
+                                      class: "button is-danger jb-modal mdi mdi-trash-can-outline" %>
                       </div>
                     </div>
                   </td>
