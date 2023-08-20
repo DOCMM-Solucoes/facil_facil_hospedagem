@@ -1,24 +1,29 @@
 <section class="section is-main-section">
+
   <div class="card">
+
     <header class="card-header">
       <div class="card-header-title">
-        <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
-        <h1>Nova Estrutura</h1>
+        <span class="icon"><i class="mdi mdi-home"></i></span>
+        <h1><%= "Nova Estrutura" %></h1>
       </div>
     </header>
-    <div class="card-content">
-      <div class="field">
-        <%= render "form", photo: @photo %>
-      </div>
 
-      <div class="field-body">
+    <div class="card-content">
+      <div class="field is-horizontal">
         <div class="field-label">
-          <div class="field is-grouped">
-            <%= link_to 'Voltar para Estrutura', photos_path, class: "button is-primary" %>
-          </div>
+          <%= render "form", photo: @photo %>
         </div>
       </div>
+    </div>
+
+  </div>
+  <div class="buttons">
+    <div class="button is-info has-text-white">
+      <%= link_to 'Voltar para Estrutura', photos_path %>
     </div>
   </div>
 
 </section>
+
+
