@@ -24,8 +24,9 @@
         </div>
         <% if devise_mapping.rememberable? %>
         <% end %>
-        <div class="actions">
-          <%= f.submit "Entrar", class: "button is-primary" %>
+        <div class="buttons">
+          <%= f.submit "Entrar", class: "button is-success has-text-white" %>
+          <%= link_to t('home.sign_up'), new_user_registration_path, class:"button is-info has-text-white" %>
         </div>
       <% end %>
     </div>
