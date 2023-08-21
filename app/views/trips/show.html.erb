@@ -6,6 +6,19 @@
         <h1>Viagem</h1>
       </div>
     </header>
+
+    <div class="buttons is-right">
+      <div class="field">
+        <div class="field is-grouped">
+          <div>
+            <%= link_to edit_trip_path, class: "button is-primary" do %>
+              <span><%= t('app.trip_edit.title') %></span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="card-content">
       <div class="field is-horizontal">
         <div class="field-label">
