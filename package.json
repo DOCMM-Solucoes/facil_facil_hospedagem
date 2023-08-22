@@ -13,6 +13,6 @@
     "build:css": "sass ./app/assets/stylesheets/application.bulma.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
   },
   "devDependencies": {
-    "node-sass": "^8.0.0"
+    "node-sass": "^9.0.0"
   }
 }

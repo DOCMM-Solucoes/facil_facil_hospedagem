@@ -1,19 +1,19 @@
 pt-BR:
   app:
     index:
-      show: Mostrar este estabelecimento
-      new: Novo estabelecimento
+      show: Mostrar
+      new: Novo Estabelecimento
       title: Estabelecimentos
     edit:
-      show: Mostrar este estabelecimento
+      show: Mostrar Estabelecimento
       back: Voltar para estabelecimentos
-      title: Editar estabelecimento
+      title: Editar Estabelecimento
     new:
-      title: Novo estabelecimento
+      title: Novo Estabelecimento
     show:
-      edit: Editar estabelecimento
+      edit: Editar
       back: Voltar para estabelecimentos
-      delete: Deletar estabelecimento
+      delete: Deletar
     establishment:
       name: Estabelecimento
       bedrooms: Qtd quartos

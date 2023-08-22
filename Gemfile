@@ -63,7 +63,7 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 5.0'
   # gem 'database_cleaner'
   # gem 'binding_of_caller'
-  # gem 'annotate'
+  gem 'annotate'
   # gem 'pry-byebug'
   gem 'factory_bot_rails'
   gem 'ffaker'
