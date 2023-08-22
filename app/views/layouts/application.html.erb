@@ -101,55 +101,46 @@
   <aside class="aside is-placed-left is-expanded">
     <div class="aside-tools">
       <div class="aside-tools-label">
-        <span><b>LOGO</b></span>
+        <span><b>Tourify</b></span>
       </div>
     </div>
     <div class="menu is-menu-main">
       <!--<p class="menu-label">General</p>-->
       <ul class="menu-list">
         <li>
-          <a href="index.html" class="is-active router-link-active has-icon">
+          <%= link_to root_path, class: "has-icon" do %>
             <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
             <span class="menu-item-label">Home</span>
-          </a>
+          <% end %>
         </li>
       </ul>
       <!--<p class="menu-label">Examples</p>-->
       <ul class="menu-list">
         <li>
-
-          <!--Daniel-->
-          <a href="tables.html" class="has-icon">
-            <span class="icon has-update-mark"><i class="mdi mdi-table"></i></span>
-            <span class="menu-item-label">Hoteleiro</span>
-          </a>
-        </li>
-        <li>
-
-          <!--Osiris-->
-          <%= link_to photos_path, class: "has-icon" do %>
+          <%= link_to establishments_path, class: "has-icon" do %>
             <span class="icon"><i class="mdi mdi-home"></i></span>
-            <span class="menu-item-label">Estrutura</span>
+            <span class="menu-item-label">Establecimentos</span>
           <% end %>
         </li>
         <li>
-
-          <!--Daniel-->
-          <a href="profile.html" class="has-icon">
-            <span class="icon"><i class="mdi mdi-account-circle"></i></span>
-            <span class="menu-item-label">Estabelecimento</span>
-          </a>
+          <%= link_to hoteliers_path, class: "has-icon" do %>
+            <span class="icon"><i class="mdi mdi-home"></i></span>
+            <span class="menu-item-label">Hoteleiros</span>
+          <% end %>
         </li>
         <li>
-
-          <!--Marco-->
+          <%= link_to trips_path, class: "has-icon" do %>
+            <span class="icon"><i class="mdi mdi-home"></i></span>
+            <span class="menu-item-label">Viagens</span>
+          <% end %>
+        </li>
+        <li>
           <%= link_to guides_path, class: "has-icon" do %>
             <span class="icon"><i class="mdi mdi-home"></i></span>
             <span class="menu-item-label">Guias</span>
           <% end %>
         </li>
         <li>
-
           <!--Sérgio-->
           <%= link_to rooms_path, class: "has-icon" do %>
             <span class="icon"><i class="mdi mdi-account-circle"></i></span>
@@ -157,7 +148,6 @@
           <% end %>
         </li>
         <li>
-
           <!--Marco-->
           <%= link_to trips_path, class: "has-icon" do %>
             <span class="icon"><i class="mdi mdi-home"></i></span>
@@ -165,7 +155,6 @@
           <% end %>
         </li>
         <li>
-
           <!--Osiris-->
           <%= link_to photos_path, class: "has-icon" do %>
             <span class="icon"><i class="mdi mdi-logout"></i></span>
@@ -194,6 +183,7 @@
            <span class="icon"><i class="mdi mdi-logout"></i></span>
            <span class="menu-item-label">Assinar</span>
          <% end %>
+        </li>
       </ul>
       <!--<p class="menu-label">About</p>-->
     </div>
