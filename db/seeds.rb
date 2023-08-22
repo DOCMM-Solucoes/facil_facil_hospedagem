@@ -49,3 +49,14 @@ end
     suspended: [true, false].sample
   )
 end
+
+
+
+3.times do |i|
+  photo = Photo.create!(
+    title: Faker::Lorem.sentence,
+    description: Faker::Lorem.paragraph
+  )
+  image_path = Rails.root.join('spec/support', "quarto-estrutura-#{i + 1}.jpg")
+  photo.images.attach(io: File.open(image_path), filename: "quarto-estrutura-#{i + 1}.jpg")
+end

@@ -1,5 +1,5 @@
-<section class="section is-title-bar">
-  <div class="level">
+<section class="section is-title-bar ">
+  <!--<div class="level">
     <div class="level-left">
       <div class="level-item">
         <ul>
@@ -8,10 +8,10 @@
         </ul>
       </div>
     </div>
-  </div>
+  </div>-->
 </section>
 <section class="hero is-hero-bar">
-  <div class="hero-body">
+  <!--<div class="hero-body">
     <div class="level">
       <div class="level-left">
         <div class="level-item"><h1 class="title">
@@ -22,11 +22,11 @@
         <div class="level-item"></div>
       </div>
     </div>
-  </div>
+  </div>-->
 </section>
 <section class="section is-main-section">
   <div class="card">
-    <header class="card-header">
+    <!--<header class="card-header">
       <p class="card-header-title">
         <span class="icon"><i class="mdi mdi-finance"></i></span>
         Performance
@@ -34,7 +34,7 @@
       <a href="#" class="card-header-icon">
         <span class="icon"><i class="mdi mdi-reload"></i></span>
       </a>
-    </header>
+    </header>-->
     <div class="card-content">
       <div class="chart-area">
         <div style="height: 100%;">
@@ -52,20 +52,3 @@
     </div>
   </div>
 </section>
-<h1>Fácil Fácil Hospedagem</h1>
-<%= link_to t('home.hoteliers'), hoteliers_url %> <strong>|</strong>
-<%= link_to t('home.establishments'), establishments_url %> <strong>|</strong>
-<%= link_to t('home.guides'), guides_url %> <strong>|</strong>
-<%= link_to t('home.rooms'), rooms_url %> <strong>|</strong>
-<%= link_to t('home.trips'), trips_url %> <strong>|</strong>
-<%= link_to  t('home.establishments_photos'), photos_url%>
-
-<% if user_signed_in? && current_user %>
-  <strong>|</strong>
-  <%= link_to t('home.edit_user'), edit_user_registration_path %> <strong>|</strong>
-  <%= button_to t('home.logout'), destroy_user_session_url, method: :delete %>
-<% else %>
-  <strong>|</strong>
-  <%= link_to t('home.sign_up'), new_user_registration_path %> <strong>|</strong>
-  <%= link_to t('home.login'), user_session_url %>
-<% end %>
