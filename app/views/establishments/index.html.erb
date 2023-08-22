@@ -43,18 +43,22 @@
                 <td data-label="City"><%= establishment.address.state %></td>
                 <td class="is-actions-cell">
                   <div class="buttons is-right">
-                    <button class="button is-small is-primary" type="button">
+                    <button class="button is-small is-info has-text-white jb-modal" type="button">
                       <%= link_to t('app.index.show'), establishment %>
-                      <span class="icon"><i class="mdi mdi-eye"></i></span>
+                      <span class="icon is-small"><i class="mdi mdi-eye"></i></span>
                     </button>
-                    <button class="button is-small is-primary" type="button">
+                    <button class="button is-small is-warning has-text-white" type="button">
                       <%= link_to t('app.show.edit'), edit_establishment_path(establishment) %>
-                      <span class="icon"><i class="mdi mdi-pencil"></i></span>
+                      <span class="icon is-small"><i class="mdi mdi-pencil"></i></span>
                     </button>
                     <div type="button" data-target="sample-modal">
-                      <%= button_to t('app.show.delete'), establishment, method: :delete,
-                                    form: { data: { turbo_confirm: t('app.controller.notice_delete') } },
-                                    class: "button is-small is-danger jb-modal" %>
+                      <%= form_with(model: establishment, url: establishment_path(establishment), local: true, method: :delete,
+                                    data: { turbo_confirm: t('app.controller.notice_delete') }) do |form| %>
+                        <%= form.button class: "button is-danger jb-modal is-small is-flex" do %>
+                          <span><%= t('app.show.delete') %></span>
+                          <span class="icon is-small"><i class="mdi mdi-delete"></i></span>
+                        <% end %>
+                      <% end %>
                     </div>
                   </div>
                 </td>
