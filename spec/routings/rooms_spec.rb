@@ -3,6 +3,7 @@ require "rails_helper"
 RSpec.describe 'Routes for Room', type: :routing do
   let(:room) { FactoryBot.create(:room) }
 
+
   it 'Routes /rooms to the index action of the Rooms controller', skip: true do
     expect(get('/locale/rooms')).
       to route_to("rooms#index")

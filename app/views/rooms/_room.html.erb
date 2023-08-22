@@ -1,172 +1,302 @@
-<div id="<%= dom_id room %>">
-  <p>
-    <strong> <%= t('app.room.name') %>: </strong>
-    <%= room.name %>
-  </p>
+<section class="section is-main-section">
+  <div class="card">
+    <header class="card-header">
+      <div class="card-header-title">
+        <span class="icon"><i class="mdi mdi-ballot"></i></span>
+        <h1><%= @room.name %></h1>
+      </div>
+    </header>
 
-  <p>
-    <strong> <%= t('app.room.description') %>: </strong>
-    <%= room.description %>
-  </p>
+    <div class="card-content">
 
-  <p>
-    <strong> <%= t('app.room.reference') %>: </strong>
-    <%= room.reference %>
-  </p>
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label"><%= t('app.room.name') %></label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control is-expanded">
+              <%= text_field_tag :name, @room.name, class: "input", type: "text", disabled: true %>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <p>
-    <strong> <%= t('app.room.maximum_capacity') %>: </strong>
-    <%= room.maximum_capacity %>
-  </p>
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label"><%= t('app.room.description') %></label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control is-expanded">
+              <%= text_field_tag :description, @room.description, class: "input", type: "text", disabled: true %>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <p>
-    <strong> <%= t('app.room.status') %>: </strong>
-    <% if room.status == 'A' %>
-      <%= t('app.room.active') %>
-    <% elsif room.status == 'I' %>
-      <%= t('app.room.inactive') %>
-    <% else %>    
-      <%= t('app.room.unnder_maintenance') %>    
-    <% end %>
-  </p>
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label"><%= t('app.room.reference') %></label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control is-expanded">
+              <%= text_field_tag :reference, @room.reference, class: "input", type: "text", disabled: true %>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <p>
-    <strong> <%= t('app.room.is_double') %>: </strong>
-    <% if room.is_double %>
-      <%= t('app.room.yes_is') %>
-    <% else %>
-      <%= t('app.room.no_is') %>
-    <% end %>
-  </p>
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label"><%= t('app.room.maximum_capacity') %></label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control is-expanded">
+              <%= text_field_tag :maximum_capacity, @room.maximum_capacity, class: "input", type: "text", disabled: true %>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <p>
-    <strong> <%= t('app.room.is_triple') %>: </strong>
-    <% if room.is_triple %>
-      <%= t('app.room.yes_is') %>
-    <% else %>
-      <%= t('app.room.no_is') %>
-    <% end %>    
-  </p>
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label"><%= t('app.room.status') %></label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control is-expanded">
+              <% status_room = t('app.room.active') if @room.status == 'A' %>
+              <% status_room = t('app.room.inactive') if @room.status == 'I' %>
+              <% status_room = t('app.room.under_maintenance') if @room.status == 'M' %>
+              <%= text_field_tag :status, status_room, class: "input", type: "text", disabled: true %>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <p>
-    <strong> <%= t('app.room.is_quadruple') %>: </strong>
-    <% if room.is_quadruple %>
-      <%= t('app.room.yes_is') %>
-    <% else %>
-      <%= t('app.room.no_is') %>
-    <% end %>    
-  </p>
+      <div class="field is-horizontal" disabled>
+        <div class="field-label is-normal" disabled>
+          <label class="label" disabled><%= "Sobre a Acomodação" %></label>
+        </div>
 
-  <p>
-    <strong> <%= t('app.room.is_quintuple') %>: </strong>
-    <% if room.is_quintuple %>
-      <%= t('app.room.yes_is') %>
-    <% else %>
-      <%= t('app.room.no_is') %>
-    <% end %>
-  </p>
+        <div class="field-body">
+          <div class="box">
+            <div class="field is-disabled">
+              <div class="field is-grouped-multiline is-grouped">
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_double, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_double, t('app.room.is_double'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_triple, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_triple, t('app.room.is_triple'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_quadruple, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_quadruple, t('app.room.is_quadruple'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_quintuple, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_quintuple, t('app.room.is_quintuple'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_sextuple, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_sextuple, t('app.room.is_sextuple'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <p>
-    <strong> <%= t('app.room.is_sextuple') %>: </strong>
-    <% if room.is_sextuple %>
-      <%= t('app.room.yes_is') %>
-    <% else %>
-      <%= t('app.room.no_is') %>
-    <% end %>
-  </p>
+      <div class="field is-horizontal" disabled>
+        <div class="field-label is-normal" disabled>
+          <label class="label" disabled><%= "Simples / Casal" %></label>
+        </div>
+        <div class="field-body">
+          <div class="box">
+            <div class="field is-disabled">
+              <div class="field is-grouped-multiline is-grouped">
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_single, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_single, t('app.room.is_single'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_couple, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_couple, t('app.room.is_couple'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_two_couples, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_two_couples, t('app.room.is_two_couples'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_three_couples, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_three_couples, t('app.room.is_three_couples'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <p>
-    <strong> <%= t('app.room.is_single') %>: </strong>
-    <% if room.is_single %>
-      <%= t('app.room.yes_is') %>
-    <% else %>
-      <%= t('app.room.no_is') %>
-    <% end %>
-  </p>
+      <div class="field is-horizontal" disabled>
+        <div class="field-label is-normal" disabled>
+          <label class="label" disabled><%= "Casal (Opções)" %></label>
+        </div>
+        <div class="field-body">
+          <div class="box">
+            <div class="field is-disabled">
+              <div class="field is-grouped-multiline is-grouped">
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_couple_plus_one, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_couple_plus_one, t('app.room.is_couple_plus_one'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_couple_plus_two, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_couple_plus_two, t('app.room.is_couple_plus_two'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_couple_plus_three, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_couple_plus_three, t('app.room.is_couple_plus_three'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_couple_plus_four, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_couple_plus_four, t('app.room.is_couple_plus_four'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <p>
-    <strong> <%= t('app.room.is_couple') %>: </strong>
-    <% if room.is_couple %>
-      <%= t('app.room.yes_is') %>
-    <% else %>
-      <%= t('app.room.no_is') %>
-    <% end %>
-  </p>
+      <div class="field is-horizontal" disabled>
+        <div class="field-label is-normal" disabled>
+          <label class="label" disabled><%= "Dois Casais (Opções)" %></label>
+        </div>
+        <div class="field-body">
+          <div class="box">
+            <div class="field is-disabled">
+              <div class="field is-grouped-multiline is-grouped">
 
-  <p>
-    <strong> <%= t('app.room.is_couple_plus_one') %>: </strong>
-    <% if room.is_couple_plus_one %>
-      <%= t('app.room.yes_is') %>
-    <% else %>
-      <%= t('app.room.no_is') %>
-    <% end %>
-  </p>
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_two_couples_plus_one, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_two_couples_plus_one, t('app.room.is_two_couples_plus_one'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
 
-  <p>
-    <strong> <%= t('app.room.is_couple_plus_two') %>: </strong>
-    <% if room.is_couple_plus_two %>
-      <%= t('app.room.yes_is') %>
-    <% else %>
-      <%= t('app.room.no_is') %>
-    <% end %>
-  </p>
+                <div class="control">
+                  <label class="b-checkbox checkbox" disabled="true">
+                    <%= check_box_tag :is_two_couples_plus_two, :readonly => true, :disabled => true %>
+                    <span class="check is-primary"></span>
+                    <span class="control-label">
+                    <%= label_tag :is_two_couples_plus_two, t('app.room.is_two_couples_plus_two'), style: "display: block", disabled: true %>
+                  </span>
+                  </label>
+                </div>
 
-  <p>
-    <strong> <%= t('app.room.is_couple_plus_three') %>: </strong>
-    <% if room.is_couple_plus_three %>
-      <%= t('app.room.yes_is') %>
-    <% else %>
-      <%= t('app.room.no_is') %>
-    <% end %>
-  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <p>
-    <strong> <%= t('app.room.is_couple_plus_four') %>: </strong>
-    <% if room.is_couple_plus_four %>
-      <%= t('app.room.yes_is') %>
-    <% else %>
-      <%= t('app.room.no_is') %>
-    <% end %>
-  </p>
 
-  <p>
-    <strong> <%= t('app.room.is_two_couples') %>: </strong>
-    <% if room.is_two_couples %>
-      <%= t('app.room.yes_is') %>
-    <% else %>
-      <%= t('app.room.no_is') %>
-    <% end %>
-  </p>
+      <div class="field is-horizontal" disabled>
+        <div class="field-label is-normal" disabled>
+          <label class="label" disabled><%= "Fotos do Quarto:" %></label>
+        </div>
+        <div class="field-body" disabled>
+          <div class="box" disabled>
 
-  <p>
-    <strong> <%= t('app.room.is_two_couples_plus_one') %>: </strong>
-    <% if room.is_two_couples_plus_one %>
-      <%= t('app.room.yes_is') %>
-    <% else %>
-      <%= t('app.room.no_is') %>
-    <% end %>
-  </p>
+            <div class="columns is-mobile">
+              <% @room.images.each do |img| %>
+                <div class="column">
+                  <%= image_tag img, class: 'image-size image is-128x128' %>
+                </div>
+              <% end %>
+            </div>
 
-  <p>
-    <strong> <%= t('app.room.is_two_couples_plus_two') %>: </strong>
-    <% if room.is_two_couples_plus_two %>
-      <%= t('app.room.yes_is') %>
-    <% else %>
-      <%= t('app.room.no_is') %>
-    <% end %>
-  </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <p>
-    <strong> <%= t('app.room.is_three_couples') %>: </strong>
-    <% if room.is_three_couples %>
-      <%= t('app.room.yes_is') %>
-    <% else %>
-      <%= t('app.room.no_is') %>
-    <% end %>
-  </p>
+  <div>
+    <%= link_to t('app.room_show.edit'), edit_room_path(room), class:"button is-warning", type:"button" %>
+    <%= link_to t('app.room_edit.back'), rooms_path, class:"button is-info has-text-white", type:"button" %>
+  </div>
 
-  <% room.images.each do |image| %>
-    <%= image_tag image, class: 'image-size' %>
-  <% end %>
-
-</div>
+</section>
