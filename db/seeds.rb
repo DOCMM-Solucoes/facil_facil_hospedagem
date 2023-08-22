@@ -50,10 +50,13 @@ end
   )
 end
 
-5.times do |i = photo.create|
+
+
+3.times do |i|
   photo = Photo.create!(
     title: Faker::Lorem.sentence,
-    #image: "https://picsum.photos/800/600",  # URL de imagem do serviço Lorem Picsum
     description: Faker::Lorem.paragraph
   )
+  image_path = Rails.root.join('spec/support', "quarto-estrutura-#{i + 1}.jpg")
+  photo.images.attach(io: File.open(image_path), filename: "quarto-estrutura-#{i + 1}.jpg")
 end
