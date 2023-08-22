@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: guides
+#
+#  id         :bigint           not null, primary key
+#  cnpj       :string
+#  company    :string
+#  cpf        :string
+#  name       :string
+#  phone      :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 require 'rails_helper'
 
 RSpec.describe Guide, type: :model do

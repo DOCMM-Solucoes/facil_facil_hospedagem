@@ -33,4 +33,3 @@ RSpec.feature 'Hoteliers', type: :feature do
     expect(page).to have_content(I18n.t('app.hoteliers_controller.create.success'))
   end
 end
-

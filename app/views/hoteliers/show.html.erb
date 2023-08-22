@@ -1,10 +1,139 @@
-<%= render @hotelier %>
+<section class="section is-main-section">
+  <div class="card">
+    <header class="card-header">
+      <div class="card-header-title">
+        <span class="icon"><i class="mdi mdi-ballot"></i></span>
+        <h1><%= @hotelier.name %></h1>
+      </div>
+    </header>
+    <div class="card-content">
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <div class="card-content">
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.hotelier.name') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded has-icons-left">
+                    <%= text_field_tag :name, @hotelier.name, class: "input", type: "text", disabled: true %>
+                    <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<div>
-  <%= link_to t('app.hotelier_show.back'), hoteliers_path %>
-  <% if user_signed_in? && current_user %>
-    <%= link_to t('app.hotelier_show.edit'), edit_hotelier_path(@hotelier) %> |
-    <%= button_to t('app.hotelier_show.delete'), @hotelier, method: :delete,
-                    form: { data: { turbo_confirm: t('app.hoteliers_controller.notice_delete') } } %>
-  <% end %>
-</div>
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label"><%= t 'app.hotelier.cpf' %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded has-icons-left">
+                    <%= text_field_tag :cpf, @hotelier.cpf, class: "input", type: "text", disabled: true %>
+                    <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label"><%= t 'app.hotelier.phone_number' %></label>
+              </div>
+              <div class="field-body">
+                <div class="field is-expanded">
+                  <div class="field has-addons">
+                    <div class="control">
+                      <div class="button is-static">
+                        +55
+                      </div>
+                    </div>
+                    <div class="control is-expanded">
+                      <%= text_field_tag :phone_number, @hotelier.phone_number, class: "input", type: "text", disabled: true %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label"><%= t 'app.hotelier.plan' %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded has-icons-left">
+                    <%= text_field_tag :plan, @hotelier.plan, class: "input", type: "text", disabled: true %>
+                    <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <%= form_for @hotelier do |form| %>
+              <%= form.fields_for :address do |address_fields| %>
+                <div class="field is-horizontal">
+                  <div class="field-label is-normal">
+                    <label class="label"><%= t('app.address.street') %></label>
+                  </div>
+                  <div class="field-body">
+                    <div class="field">
+                      <div class="control is-expanded has-icons-left">
+                        <%= address_fields.text_field :street, class: "input", type: "text", disabled: true %>
+                        <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="field is-horizontal">
+                  <div class="field-label is-normal">
+                    <label class="label"><%= t('app.address.postal_code') %></label>
+                  </div>
+                  <div class="field-body">
+                    <div class="field">
+                      <div class="control is-expanded has-icons-left">
+                        <%= address_fields.text_field :postal_code, class: "input", type: "text", disabled: true %>
+                        <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="field is-horizontal">
+                  <div class="field-label is-normal">
+                    <label class="label"><%= t('app.address.city') %></label>
+                  </div>
+                  <div class="field-body">
+                    <div class="field">
+                      <div class="control is-expanded has-icons-left">
+                        <%= address_fields.text_field :city, class: "input", type: "text", disabled: true %>
+                        <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="field is-horizontal">
+                  <div class="field-label is-normal">
+                    <label class="label"><%= t('app.address.state') %></label>
+                  </div>
+                  <div class="field-body">
+                    <div class="field">
+                      <div class="control is-expanded has-icons-left">
+                        <%= address_fields.text_field :state, class: "input", type: "text", disabled: true %>
+                        <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

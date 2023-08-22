@@ -4,15 +4,110 @@
   <% @photos.each do |photo| %>
     <%= render photo %>
     <p>
-      <%= link_to "Show this photo", photo %>
+      <%= link_to "Mostrar essa Estrutura", photo %>
     </p>
   <% end %>
 </div>
 
 <div>
   <% if user_signed_in? && current_user %>
-    <%= link_to "New photo", new_photo_path %>
+    <%= link_to "Nova Estrutura", new_photo_path %>
   <% end %>
   <%= link_to t('home.home'), root_path  %>
 </div>
+
+<section class="section is-main-section">
+  <div class="card">
+    <header class="card-header">
+      <p class="card-header-title">
+        <span class="icon"><i class="mdi mdi-ballot"></i></span>
+        Estruturas
+      </p>
+    </header>
+    <div class="card-content">
+     <br>
+      <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <p class="title">Recepção</p>
+            <td class="is-actions-cell">
+              <div class="buttons is-right">
+                <button class="button is-small is-primary" type="button">
+                  <span class="icon"><i class="mdi mdi-eye"></i></span>
+                </button>
+                <button class="button is-small is-danger jb-modal" data-target="sample-modal" type="button">
+                  <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                </button>
+              </div>
+            </td>
+            <figure class="image is-4by3">
+              <img src="https://bulma.io/images/placeholders/256x256.png">
+            </figure>
+          </article>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <p class="title">Piscina</p>
+            <td class="is-actions-cell">
+              <div class="buttons is-right">
+                <button class="button is-small is-primary" type="button">
+                  <span class="icon"><i class="mdi mdi-eye"></i></span>
+                </button>
+                <button class="button is-small is-danger jb-modal" data-target="sample-modal" type="button">
+                  <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                </button>
+              </div>
+            </td>
+            <figure class="image is-4by3">
+              <img src="https://bulma.io/images/placeholders/256x256.png">
+            </figure>
+          </article>
+        </div>
+      </div>
+      <hr>
+      <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <p class="title">Café da Manhã</p>
+            <td class="is-actions-cell">
+              <div class="buttons is-right">
+                <button class="button is-small is-primary" type="button">
+                  <span class="icon"><i class="mdi mdi-eye"></i></span>
+                </button>
+                <button class="button is-small is-danger jb-modal" data-target="sample-modal" type="button">
+                  <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                </button>
+              </div>
+            </td>
+            <figure class="image is-4by3">
+              <img src="https://bulma.io/images/placeholders/256x256.png">
+            </figure>
+          </article>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <p class="title">Faxada</p>
+            <td class="is-actions-cell">
+              <div class="buttons is-right">
+                <button class="button is-small is-primary" type="button">
+                  <span class="icon"><i class="mdi mdi-eye"></i></span>
+                </button>
+                <button class="button is-small is-primary" type="button">
+                  <span class="icon"><i class="mdi mdi-eye"></i></span>
+                </button>
+                <button class="button is-small is-danger jb-modal" data-target="sample-modal" type="button">
+                  <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                </button>
+              </div>
+            </td>
+            <figure class="image is-4by3">
+              <img src="https://bulma.io/images/placeholders/256x256.png">
+            </figure>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 

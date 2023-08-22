@@ -6,7 +6,7 @@ en:
       title: Hoteliers
       name: Name
     hotelier_edit:
-      show: Show this hotelier
+      show: Show hotelier
       back: Back to hoteliers
       title: Editing hotelier
     hotelier_new:

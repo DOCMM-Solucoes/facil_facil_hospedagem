@@ -1,117 +1,320 @@
-<%= form_with(model: trip) do |form| %>
-  <% if trip.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
+      <%= form_with(model: trip) do |form| %>
+        <% if trip.errors.any? %>
+          <div style="color: red">
+            <h2><%= pluralize(trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
 
-      <ul>
-        <% trip.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+            <ul>
+              <% trip.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div>
-    <%= form.label t('app.trip.establishment_id'), style: "display: block" %>
-    <%= form.collection_select :establishment_id, Establishment.all, :id, :name, prompt: true %>
-  </div>
+        <div class="card-content">
+          <div class="field is-horizontal mt-4">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.establishment_id') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field is-narrow">
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <%= form.select :establishment_id,
+                                    options_from_collection_for_select(Establishment.all, :id, :name, trip.establishment_id),
+                                    prompt: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <div>
-    <%= form.label t('app.trip.guide_id'), style: "display: block" %>
-    <%= form.collection_select :guide_id, Guide.all, :id, :name, prompt: true %>
-  </div>
+          <div class="field is-horizontal mt-4">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.guide_id') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field is-narrow">
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <%= form.select :guide_id,
+                                    options_from_collection_for_select(Guide.all, :id, :name, trip.guide_id),
+                                    prompt: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <div>
-    <%= form.label t('app.trip.checkin_date'), style: "display: block" %>
-    <%= form.date_field :checkin_date %>
-  </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.checkin_date') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded">
+                  <%= form.date_field :checkin_date, class: "input is-expanded" %>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <div>
-    <%= form.label t('app.trip.checkin_time'), style: "display: block" %>
-    <%= form.time_field :checkin_time %>
-  </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.checkin_time') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded">
+                  <%= form.time_field :checkin_time, class: "input is-expanded" %>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <div>
-    <%= form.label t('app.trip.checkout_date'), style: "display: block" %>
-    <%= form.date_field :checkout_date %>
-  </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.checkout_date') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded">
+                  <%= form.date_field :checkout_date, class: "input is-expanded" %>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <div>
-    <%= form.label t('app.trip.checkout_time'), style: "display: block" %>
-    <%= form.time_field :checkout_time %>
-  </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.checkout_time') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded">
+                  <%= form.time_field :checkout_time, class: "input is-expanded" %></div>
+              </div>
+            </div>
+          </div>
 
-  <div>
-    <%= form.label t('app.trip.extra_coffee'), style: "display: block" %>
-    <%= form.check_box :extra_coffee %>
-  </div>
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label"><%= t('app.trip.extra_coffee') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="field is-grouped">
+                  <div class="control">
+                    <label class="b-checkbox checkbox">
+                      <%= form.check_box :extra_coffee, class: "is-checkradio is-primary" %>
+                      <div class="check"></div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <div>
-    <%= form.label t('app.trip.num_people'), style: "display: block" %>
-    <%= form.number_field :num_people %>
-  </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.num_people') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded">
+                  <%= form.number_field :num_people, class: "input is-expanded", min: 0, step: 1 %></div>
+              </div>
+            </div>
+          </div>
 
-  <div>
-    <%= form.label t('app.trip.num_drivers'), style: "display: block" %>
-    <%= form.number_field :num_drivers %>
-  </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.num_drivers') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded">
+                  <%= form.number_field :num_drivers, class: "input is-expanded", min: 0, step: 1 %></div>
+              </div>
+            </div>
+          </div>
 
-  <div>
-    <%= form.label t('app.trip.free_driver'), style: "display: block" %>
-    <%= form.check_box :free_driver %>
-  </div>
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label"><%= t('app.trip.free_driver') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="field is-grouped">
+                  <div class="control">
+                    <label class="b-checkbox checkbox">
+                      <%= form.check_box :free_driver, class: "is-checkradio is-primary" %>
+                      <div class="check"></div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <div>
-    <%= form.label t('app.trip.num_guides'), style: "display: block" %>
-    <%= form.number_field :num_guides %>
-  </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.num_guides') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded">
+                  <%= form.number_field :num_guides, class: "input is-expanded", min: 0, step: 1 %></div>
+              </div>
+            </div>
+          </div>
 
-  <div>
-    <%= form.label t('app.trip.free_guide'), style: "display: block" %>
-    <%= form.check_box :free_guide %>
-  </div>
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label"><%= t('app.trip.free_guide') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="field is-grouped">
+                  <div class="control">
+                    <label class="b-checkbox checkbox">
+                      <%= form.check_box :free_guide, class: "is-checkradio is-primary" %>
+                      <div class="check"></div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <div>
-    <%= form.label t('app.trip.num_rooms'), style: "display: block" %>
-    <%= form.number_field :num_rooms %>
-  </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.num_rooms') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded">
+                  <%= form.number_field :num_rooms, class: "input is-expanded", min: 0, step: 1 %></div>
+              </div>
+            </div>
+          </div>
 
-  <div>
-    <%= form.label t('app.trip.rate_person_day'), style: "display: block" %>
-    <%= form.text_field :rate_person_day %>
-  </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.rate_person_day') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded">
+                  <%= form.number_field :rate_person_day, class: "input", step: 0.01, placeholder: "0.00" %></div>
+              </div>
+            </div>
+          </div>
 
-  <div>
-    <%= form.label t('app.trip.signal_value'), style: "display: block" %>
-    <%= form.text_field :signal_value %>
-  </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.signal_value') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded">
+                  <%= form.number_field :signal_value, class: "input", step: 0.01, placeholder: "0.00" %></div>
+              </div>
+            </div>
+          </div>
 
-  <div>
-    <%= form.label t('app.trip.signal_date'), style: "display: block" %>
-    <%= form.date_field :signal_date %>
-  </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.signal_date') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded">
+                  <%= form.date_field :signal_date, class: "input is-expanded" %></div>
+              </div>
+            </div>
+          </div>
 
-  <div>
-    <%= form.label t('app.trip.notes'), style: "display: block" %>
-    <%= form.text_area :notes %>
-  </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label"><%= t('app.trip.notes') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded">
+                  <%= form.text_area :notes, class: "input is-expanded" %></div>
+              </div>
+            </div>
+          </div>
 
-  <div>
-    <%= form.label t('app.trip.confirmed'), style: "display: block" %>
-    <%= form.check_box :confirmed %>
-  </div>
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label"><%= t('app.trip.confirmed') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="field is-grouped">
+                  <div class="control">
+                    <label class="b-checkbox checkbox">
+                      <%= form.check_box :confirmed, class: "is-checkradio is-primary" %>
+                      <div class="check"></div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <div>
-    <%= form.label t('app.trip.accomplished'), style: "display: block" %>
-    <%= form.check_box :accomplished %>
-  </div>
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label"><%= t('app.trip.accomplished') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="field is-grouped">
+                  <div class="control">
+                    <label class="b-checkbox checkbox">
+                      <%= form.check_box :accomplished, class: "is-checkradio is-primary" %>
+                      <div class="check"></div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <div>
-    <%= form.label t('app.trip.suspended'), style: "display: block" %>
-    <%= form.check_box :suspended %>
-  </div>
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label"><%= t('app.trip.suspended') %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="field is-grouped">
+                  <div class="control">
+                    <label class="b-checkbox checkbox">
+                      <%= form.check_box :suspended, class: "is-checkradio is-primary" %>
+                      <div class="check"></div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  <div>
-    <%= form.submit(@trip.new_record? ? t('app.trip.create') : t('app.trip.update'))%>
-  </div>
-<% end %>
+        <div class="field-body">
+          <div class="field">
+            <div class="field is-grouped">
+              <div>
+                <%= form.submit(@trip.new_record? ? t('app.hotelier_form.create') : t('app.hotelier_form.update'),
+                                class:"button is-primary")%>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+      <% end %>
+
+
+
