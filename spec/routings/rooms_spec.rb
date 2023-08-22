@@ -8,7 +8,7 @@ RSpec.describe 'Routes for Room', type: :routing do
       to route_to("rooms#index")
   end
 
-  it 'Routes /rooms/:id to the show action of the Rooms controller',skip: true do
+  it 'Routes /rooms/:id to the show action of the Rooms controller', skip: true do
     expect(get("/locale/rooms/#{room.id}")).
       to route_to("rooms#show", id: room.id.to_s)
   end
@@ -23,7 +23,7 @@ RSpec.describe 'Routes for Room', type: :routing do
       to route_to("rooms#edit", id: room.id.to_s)
   end
 
-  it 'Routes /rooms to the create action of the Rooms controller',skip: true do
+  it 'Routes /rooms to the create action of the Rooms controller', skip: true do
     expect(post("/locale/rooms")).
       to route_to("rooms#create")
   end
@@ -33,7 +33,7 @@ RSpec.describe 'Routes for Room', type: :routing do
       to route_to("rooms#update", id: room.id.to_s)
   end
 
-  it 'Routes /rooms/:id to the destroy action of the Rooms controller',skip: true do
+  it 'Routes /rooms/:id to the destroy action of the Rooms controller', skip: true do
     expect(delete("/locale/rooms/#{room.id}")).
       to route_to("rooms#destroy", id: room.id.to_s)
   end

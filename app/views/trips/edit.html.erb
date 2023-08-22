@@ -1,10 +1,21 @@
-<h1><%= t('app.trip_edit.title') %></h1>
-
-<%= render "form", trip: @trip %>
-
-<br>
-
-<div>
-  <%= link_to t('app.trip_edit.show'), @trip %> |
-  <%= link_to t('app.trip_edit.back'), trips_path %>
-</div>
+<section class="section is-main-section">
+  <div class="card">
+    <header class="card-header">
+      <div class="card-header-title">
+        <span class="icon"><i class="mdi mdi-ballot"></i></span>
+        <h1><%= t('app.trip_edit.title') %></h1>
+      </div>
+    </header>
+    <div class="card-content">
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <%= render "form", trip: @trip %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <%= link_to t('app.trip_edit.show'), @trip, class:"button is-success has-text-white", type:"button" %>
+    <%= link_to t('app.trip_edit.back'), trips_path, class:"button is-info has-text-white", type:"button" %>
+  </div>
+</section>

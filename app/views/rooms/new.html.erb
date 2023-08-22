@@ -1,9 +1,27 @@
-<h1> <%= t('app.room_new.title') %> </h1>
+<section class="section is-main-section">
 
-<%= render "form", room: @room %>
+  <div class="card">
 
-<br>
+    <header class="card-header">
+      <div class="card-header-title">
+        <span class="icon"><i class="mdi mdi-ballot"></i></span>
+        <h1> <%= t('app.room_new.title') %> </h1>
+      </div>
+    </header>
 
-<div>
-  <%= link_to t('app.room_new.back'), rooms_path %>
-</div>
+    <div class="card-content">
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <%= render "form", room: @room %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div>
+    <%= link_to t('app.room_new.back'), rooms_path, class:"button is-info has-text-white", type:"button" %>
+    <span class="icon"><i class=""></i></span>
+  </div>
+
+</section>

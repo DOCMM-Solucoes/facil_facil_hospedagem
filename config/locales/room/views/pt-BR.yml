@@ -3,20 +3,20 @@ pt-BR:
     room_index:
       show: Mostrar este quarto
       new: Novo quarto
-      title: Quarto
+      title: Quartos
     room_edit:
       show: Mostrar este quarto
-      back: Voltar para a listagem dos quartos
+      back: Voltar para quartos
       title: Editar quarto
     room_new:
       title: Novo quarto
       back: Voltar para a listagem dos quartos      
     room_show:
       edit: Editar quarto
-      back: Voltar para a listagem dos quartos
+      back: Voltar para quartos
       delete: Deletar quarto
       edit_this_room: Editar este quarto
-      back_to_rooms: Voltar p/ a listagem de quartos
+      back_to_rooms: Voltar para listagem quartos
       destroy_this_room: Excluir este quarto
     room:
       room: Quarto
@@ -40,7 +40,7 @@ pt-BR:
       is_two_couples_plus_one: 2 Casais + 1
       is_two_couples_plus_two: 2 Casais + 2
       is_three_couples: 3 Casais
-      unnder_maintenance: Em manutenção
+      under_maintenance: Em manutenção
       active: Ativo
       inactive: Inativo
       yes_is: Sim

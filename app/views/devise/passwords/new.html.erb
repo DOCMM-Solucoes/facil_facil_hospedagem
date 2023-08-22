@@ -1,0 +1,30 @@
+<section class="section is-main-section is-justify-content-center">
+  <div class="card has-table has-mobile-sort-spaced">
+    <header class="card-header">
+      <div class="card-header-title">
+        <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
+        <h2>Esqueceu sua senha?</h2>
+      </div>
+      <a href="#" class="card-header-icon">
+        <span class="icon"><i class="mdi mdi-reload"></i></span>
+      </a>
+    </header>
+    <div class="card-header-title is-centered is-relative" style="height: 50vh;">
+
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="field">
+          <%= f.label :email %><br/>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input is-success" %>
+        </div>
+        <br/>
+        <div class="actions">
+          <%= f.submit "Enviar", class: "button is-primary" %>
+        </div>
+      <% end %>
+
+    </div>
+    <%= render "devise/shared/links" %>
+  </div>
+</section>

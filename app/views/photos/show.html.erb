@@ -1,19 +1,61 @@
-<p>
-  <%= render @photo %>
-</p>
+<section class="section is-main-section" xmlns="http://www.w3.org/1999/html">
 
-<div class="field">
-  <% @photo.images.each do |image| %>
-    <%= image_tag image, class: 'image-size' %>
-  <% end %>
+  <div class="card">
+    <header class="card-header">
+      <div class="card-header-title">
+        <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
+        <h1>Estrutura</h1>
+      </div>
+    </header>
 
-</div>
+    <div class="card-content">
 
-<div>
-  <%= link_to "Back to photos", photos_path %>
-  <% if user_signed_in? && current_user %>
-    <%= link_to "Edit this photos", edit_photo_path(@photo) %> |
-    <%= button_to "Destroy this photo", @photo, method: :delete,
-                form: { data: { turbo_confirm: 'Are you sure?' } } %>
-  <% end %>
-</div>
+      <div class="field is-horizontal">
+        <div class="field-label is-horizontal">
+          <label class="label">Título:</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control is-expanded">
+              <%= text_field_tag :name, @photo.title, class: "input", type: "text", disabled: true %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-horizontal">
+          <label class="label">Descrição:</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control is-expanded">
+              <%= text_field_tag :name, @photo.description, class: "input", type: "text", disabled: true %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal" disabled>
+        <div class="field-label is-normal" disabled>
+          <label class="label" disabled><%="Fotos da Estrutura:" %></label>
+        </div>
+        <div class="field-body" disabled>
+          <div class="box" disabled>
+            <div class="columns is-mobile">
+              <% @photo.images.each do |image| %>
+                <div class="column">
+                  <%= image_tag image, class: 'image-size image is-96-96' %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="buttons">
+    <%= link_to 'Editar estrutura', edit_photo_url, class:"button is-warning" %>
+    <%= link_to 'Voltar para estrutura', photos_url, class: "button is-info has-text-white"  %>
+  </div>
+</section>

@@ -1,10 +1,22 @@
-<h1>Editing photo</h1>
+<section class="section is-main-section">
+  <div class="card">
+    <header class="card-header">
+      <div class="card-header-title">
+        <span class="icon"><i class="mdi mdi-home"></i></span>
+        <h1><%= 'Editar Estrutura' %></h1>
+      </div>
+    </header>
+    <div class="card-content">
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <%= render "form", photo: @photo %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<%= render "form", photo: @photo %>
 
-<br>
 
-<div>
-  <%= link_to "Show this photo", @photo %> |
-  <%= link_to "Back to photos", photos_path %>
-</div>
+
+

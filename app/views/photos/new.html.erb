@@ -1,9 +1,29 @@
-<h1>New photo</h1>
+<section class="section is-main-section">
 
-<%= render "form", photo: @photo %>
+  <div class="card">
 
-<br>
+    <header class="card-header">
+      <div class="card-header-title">
+        <span class="icon"><i class="mdi mdi-home"></i></span>
+        <h1><%= "Nova Estrutura" %></h1>
+      </div>
+    </header>
 
-<div>
-  <%= link_to "Back to photos", photos_path %>
-</div>
+    <div class="card-content">
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <%= render "form", photo: @photo %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="buttons">
+    <div class="button is-info has-text-white">
+      <%= link_to 'Voltar para Estrutura', photos_path %>
+    </div>
+  </div>
+
+</section>
+
+
