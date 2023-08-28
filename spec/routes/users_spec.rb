@@ -11,7 +11,7 @@ RSpec.describe 'User Routes', type: :routing do
   it 'routes to user authentication', skip: true do
     expect(get: '/users/sign_in').to route_to('devise/sessions#new')
     expect(post: '/users/sign_in').to route_to('devise/sessions#create')
-    expect(delete: '/users/sign_out').to route_to('devise/sessions#destroy')
+    expect(get: '/users/sign_out').to route_to('devise/sessions#destroy')
   end
 
 end
