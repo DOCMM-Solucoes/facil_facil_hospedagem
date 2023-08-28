@@ -9,7 +9,6 @@
       </ul>
     </div>
   <% end %>
-  <div class="card-content">
     <div class="field is-horizontal">
       <div class="field-label is-normal">
         <label class="label"><%= form.label "Título:", class: "label" %></label>
@@ -25,25 +24,6 @@
         <p class="help is-danger">Esse campo é obrigatório</p>
       <% end %>
     </div>
-    <hr>
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label"><%= form.label "Imagens:", class: "label", style: "display: block" %></label>
-      </div>
-      <div class="field-body">
-        <div class="field-body">
-          <label class="upload control">
-            <a class="button is-primary">
-              <span class="icon"><i class="mdi mdi-upload"></i></span>
-              <span><%= form.file_field :images, class: "button is-primary is-outlined", multiple: true %>
-                Imagens</span>
-            </a>
-            <input type="file">
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
   <hr>
   <div class="field is-horizontal">
     <div class="field-label is-normal">
@@ -54,6 +34,24 @@
         <div class="control is-expanded has-icons-left">
           <%= form.text_area :description, class: "textarea", placeholder: "Descrição da estrutura...", rows: "10", type: "text" %>
         </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <label class="label"><%= form.label "Imagens:", class: "label", style: "display: block" %></label>
+    </div>
+    <div class="field-body">
+      <div class="field-body">
+        <label class="upload control">
+          <a class="button is-primary">
+            <span class="icon"><i class="mdi mdi-upload"></i></span>
+            <span><%= form.file_field :images, class: "button is-primary is-outlined", multiple: true %>
+              Imagens</span>
+          </a>
+          <input type="file">
+        </label>
       </div>
     </div>
   </div>
