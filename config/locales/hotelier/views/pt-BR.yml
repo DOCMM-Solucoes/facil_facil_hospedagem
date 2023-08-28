@@ -1,14 +1,14 @@
 pt-BR:
   app:
     hotelier_index:
-      show: Mostrar este hoteleiro
+      show: Mostrar
       new: Novo hoteleiro
       title: Hoteleiros
       name: Nome
     hotelier_edit:
-      show: Mostrar este hoteleiro
+      show: Mostrar
       back: Voltar para hoteleiros
-      title: Editar hoteleiro
+      title: Editar
     hotelier_new:
       title: Novo hoteleiro
       back: Voltar para hoteleiros

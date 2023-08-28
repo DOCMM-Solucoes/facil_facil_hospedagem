@@ -1,0 +1,78 @@
+<div class="card has-table has-mobile-sort-spaced">
+  <header class="card-header">
+    <div class="card-header-title">
+      <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
+      <h1><%= t 'app.trip_index.title' %></h1>
+    </div>
+    <a href="#" class="card-header-icon">
+      <span class="icon"><i class="mdi mdi-reload"></i></span>
+    </a>
+  </header>
+
+  <div class="buttons is-right">
+    <div>
+      <%= link_to t('app.trip_index.new'), new_trip_path, class: "button is-primary", type: "button" %>
+      <span class="icon"><i class=""></i></span>
+    </div>
+  </div>
+
+  <div class="card-content">
+    <div id="trips">
+      <div class="b-table has-pagination">
+        <div class="table-wrapper has-mobile-cards">
+          <table class="table is-fullwidth is-striped is-hoverable is-sortable is-fullwidth">
+            <thead>
+            <tr>
+              <th></th>
+              <th><%= t('app.trip.guide_id') %></th>
+              <th><%= t('app.trip.checkin_date') %></th>
+              <th><%= t('app.trip.checkout_date') %></th>
+              <th><%= t('app.trip.confirmed') %></th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @trips.each do |trip| %>
+              <tr>
+                <td class="is-image-cell">
+                  <div class="image">
+                    <img src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg" class="is-rounded">
+                  </div>
+                </td>
+                <td><%= trip.guide_id %></td>
+                <td><%= trip.checkin_date %></td>
+                <td><%= trip.checkout_date %></td>
+                <td><%= trip.confirmed %></td>
+                <td class="is-actions-cell">
+                  <div class="field is-grouped">
+                    <div class="control">
+                      <%= link_to trip, class: "button is-small is-info has-text-white jb-modal", data: { target: 'sample-modal' } do %>
+                        <span><%= t('app.trip_index.show') %></span>
+                        <span class="icon is-small"><i class="mdi mdi-eye"></i></span>
+                      <% end %>
+                    </div>
+                    <div class="control">
+                      <%= link_to edit_trip_path(trip), class: "button is-small is-warning" do %>
+                        <span><%= t('app.trip_edit.title') %></span>
+                        <span class="icon is-small"><i class="mdi mdi-pencil"></i></span>
+                      <% end %>
+                    </div>
+                    <div class="control">
+                      <%= form_with(model: trip, url: trip_path(trip), local: true, method: :delete,
+                                    data: { turbo_confirm: t('app.controller.notice_delete') }) do |form| %>
+                        <%= form.button class: "button is-danger jb-modal is-small is-flex" do %>
+                          <span><%= t('app.show.delete') %></span>
+                          <span class="icon is-small"><i class="mdi mdi-delete"></i></span>
+                        <% end %>
+                      <% end %>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

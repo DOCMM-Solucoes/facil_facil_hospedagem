@@ -1,0 +1,13 @@
+pt-BR:
+  home:
+    hoteliers: "Hotelieiros"
+    establishments: "Estabelecimentos"
+    guides: "Guias"
+    rooms: "Quartos"
+    trips: "Viagens"
+    establishments_photos: "Fotos do estabelecimento"
+    edit_user: "Editar perfil"
+    logout: "Sair"
+    sign_up: "Assinar"
+    login: "Entrar"
+    home: "Página incial"

@@ -5,3 +5,12 @@ en:
       postal_code: Zip/Postal code
       city: City
       state: State/Province/Region
+  users:
+    registrations:
+      edit:
+        title: ""
+    confirmations:
+      new:
+        resend_confirmation_instructions: ""
+  sign_up: ""
+  sign_in: ""

@@ -5,3 +5,12 @@ pt-BR:
       postal_code: CEP
       city: Cidade
       state: Estado
+  users:
+    registrations:
+      edit:
+        title: ""
+    confirmations:
+      new:
+        resend_confirmation_instructions: ""
+  sign_up: ""
+  sign_in: ""

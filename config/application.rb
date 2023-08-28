@@ -8,8 +8,20 @@ Bundler.require(*Rails.groups)
 
 module FacilFacilHospedagem
   class Application < Rails::Application
+
+    config.i18n.default_locale = :'pt-BR'
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+
+    config.generators do |g|
+      g.test_framework :rspec,
+                       fixtures: true,
+                       view_specs: true,
+                       routing_specs: false,
+                       controller_specs: false,
+                       request_specs: false
+      g.factory_bot dir: "spec/factories"
+    end
 
     # Configuration for the application, engines, and railties goes here.
     #

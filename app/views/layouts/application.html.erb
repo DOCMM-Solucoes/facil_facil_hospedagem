@@ -1,16 +1,227 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>FacilFacilHospedagem</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html class="has-aside-left has-aside-mobile-transition has-navbar-fixed-top has-aside-expanded">
+<head>
+  <title>Facil Facil Hospedagem</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  <%= stylesheet_link_tag "application.bulma", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  <!-- Bulma is included -->
 
-  <body>
+  <!-- Fonts -->
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<% if user_signed_in? %>
+  <div>
+    <nav id="navbar-main" class="navbar is-fixed-top">
+      <div class="navbar-brand">
+        <a class="navbar-item is-hidden-desktop jb-aside-mobile-toggle">
+          <span class="icon"><i class="mdi mdi-forwardburger mdi-24px"></i></span>
+        </a>
+        <div class="navbar-item has-control">
+          <div class="control"><input placeholder="Search everywhere..." class="input"></div>
+        </div>
+      </div>
+      <div class="navbar-brand is-right">
+        <a class="navbar-item is-hidden-desktop jb-navbar-menu-toggle" data-target="navbar-menu">
+          <span class="icon"><i class="mdi mdi-dots-vertical"></i></span>
+        </a>
+      </div>
+      <div class="navbar-menu fadeIn animated faster" id="navbar-menu">
+        <div class="navbar-end">
+          <!--<div class="navbar-item has-dropdown has-dropdown-with-icons has-divider is-hoverable">
+            <a class="navbar-link is-arrowless">
+              <span class="icon"><i class="mdi mdi-menu"></i></span>
+              <span>Sample Menu</span>
+              <span class="icon">
+              <i class="mdi mdi-chevron-down"></i>
+            </span>
+            </a>
+            <div class="navbar-dropdown">
+              <a href="profile.html" class="navbar-item">
+                <span class="icon"><i class="mdi mdi-account"></i></span>
+                <span>My Profile</span>
+              </a>
+              <a class="navbar-item">
+                <span class="icon"><i class="mdi mdi-settings"></i></span>
+                <span>Settings</span>
+              </a>
+              <a class="navbar-item">
+                <span class="icon"><i class="mdi mdi-email"></i></span>
+                <span>Messages</span>
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item">
+                <span class="icon"><i class="mdi mdi-logout"></i></span>
+                <span></span>
+              </a>
+            </div>
+          </div>-->
+          <div class="navbar-item has-dropdown has-dropdown-with-icons has-divider has-user-avatar is-hoverable">
+            <!--<a class="navbar-link is-arrowless">
+              <div class="is-user-avatar">
+                <img src="https://avatars.dicebear.com/v2/initials/john-doe.svg" alt="John Doe">
+              </div>
+              <div class="is-user-name"><span>John Doe</span></div>
+              <span class="icon"><i class="mdi mdi-chevron-down"></i></span>
+            </a>-->
+            <div class="navbar-dropdown">
+              <a class="navbar-item is-flex">
+                <span class="icon"></span>
+                <button class="">
+                  <span><%= link_to 'Editar Perfil', edit_user_registration_path, class: "mdi mdi-account" %></span>
+                </button>
+
+              </a>
+              <!--<a class="navbar-item">
+                <span class="icon"><i class="mdi mdi-settings"></i></span>
+                <span>Settings</span>
+              </a>
+              <a class="navbar-item">
+                <span class="icon"><i class="mdi mdi-email"></i></span>
+                <span>Messages</span>
+              </a>-->
+              <hr class="navbar-divider">
+              <a class="navbar-item">
+                <span class="icon"><i class="mdi mdi-logout"></i></span>
+                <span><%= button_to t('home.logout'), destroy_user_session_url, method: :delete %></span>
+              </a>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </nav>
+    <aside class="aside is-placed-left is-expanded">
+      <div class="aside-tools">
+        <div class="aside-tools-label">
+          <span><b>Tourify</b></span>
+        </div>
+      </div>
+      <div class="menu is-menu-main">
+        <!--<p class="menu-label">General</p>-->
+        <ul class="menu-list">
+          <li>
+            <%= link_to root_path, class: "has-icon" do %>
+              <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
+              <span class="menu-item-label">Home</span>
+            <% end %>
+          </li>
+        </ul>
+        <!--<p class="menu-label">Examples</p>-->
+        <ul class="menu-list">
+          <li>
+            <%= link_to establishments_path, class: "has-icon" do %>
+              <span class="icon"><i class="mdi mdi-home"></i></span>
+              <span class="menu-item-label">Establecimentos</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to hoteliers_path, class: "has-icon" do %>
+              <span class="icon"><i class="mdi mdi-home"></i></span>
+              <span class="menu-item-label">Hoteleiros</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to guides_path, class: "has-icon" do %>
+              <span class="icon"><i class="mdi mdi-home"></i></span>
+              <span class="menu-item-label">Guias</span>
+            <% end %>
+          </li>
+          <li>
+            <!--Sérgio-->
+            <%= link_to rooms_path, class: "has-icon" do %>
+              <span class="icon"><i class="mdi mdi-account-circle"></i></span>
+              <span class="menu-item-label">Quartos</span>
+            <% end %>
+          </li>
+          <li>
+            <!--Marco-->
+            <%= link_to trips_path, class: "has-icon" do %>
+              <span class="icon"><i class="mdi mdi-home"></i></span>
+              <span class="menu-item-label">Viagens</span>
+            <% end %>
+          </li>
+          <li>
+            <!--Osiris-->
+            <%= link_to photos_path, class: "has-icon" do %>
+              <span class="icon"><i class="mdi mdi-logout"></i></span>
+              <span class="menu-item-label">Estruturas</span>
+            <% end %>
+          </li>
+
+          <!--Osiris-->
+          <li>
+            <a title="Log out" class="has-icon">
+              <span><%= link_to t('home.sign_up'), new_user_registration_path %></span>
+            </a>
+          </li>
+          <li>
+            <!--Osiris-->
+            <%= link_to user_session_url, class: "has-icon" do %>
+              <span class="icon"><i class="mdi mdi-logout"></i></span>
+              <span class="menu-item-label">Entrar</span>
+            <% end %>
+          </li>
+          <!--Osiris-->
+          <li>
+            <%= link_to new_user_registration_path, class: "has-icon" do %>
+              <span class="icon"><i class="mdi mdi-logout"></i></span>
+              <span class="menu-item-label">Assinar</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <span class="icon"><i class="mdi mdi-logout"></i></span>
+              <span class="menu-item-label">Sair</span>
+            <% end %>
+          </li>
+        </ul>
+        <!--<p class="menu-label">About</p>-->
+      </div>
+    </aside>
     <%= yield %>
-  </body>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="level">
+          <div class="level-left">
+            <div class="level-item">
+              © 2020, DOCMM Soluções
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item">
+              <div class="logo">
+                <a href="https://justboil.me"><img src="img/logo.png" alt="JustBoil.me"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+<% else %>
+  <%= link_to user_session_url, class: "has-icon" do %>
+    <span class="icon"><i class="mdi mdi-logout"></i></span>
+    <span class="menu-item-label">Entrar</span>
+  <% end %>
+  <%= yield %>
+<% end %>
+
+
+<!-- Scripts below are for demo only -->
+<script type="text/javascript" src="js/main.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script type="text/javascript" src="js/chart.sample.min.js"></script>
+
+<!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
+<link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
+</body>
 </html>

@@ -1,0 +1,267 @@
+<section class="section is-main-section">
+  <div class="card">
+    <header class="card-header">
+      <div class="card-header-title">
+        <span class="icon"><i class="mdi mdi-ballot"></i></span>
+        <h1>Viagem</h1>
+      </div>
+    </header>
+
+    <div class="buttons is-right">
+      <div class="field">
+        <div class="field is-grouped">
+          <div>
+            <%= link_to edit_trip_path, class: "button is-primary" do %>
+              <span><%= t('app.trip_edit.title') %></span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-content">
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <div class="card-content">
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.establishment_id') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                      <%= text_field_tag :establishment_id, @trip.establishment.name, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.guide_id') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :guide_id, @trip.guide.name, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.checkin_date') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :checkin_date, @trip.checkin_date, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.checkout_time') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :checkout_time, @trip.checkout_time, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.extra_coffee') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :extra_coffee, @trip.extra_coffee, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.num_people') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :num_people, @trip.num_people, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.num_drivers') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :num_drivers, @trip.num_drivers, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.free_driver') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :free_driver, @trip.free_driver, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.num_guides') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :num_guides, @trip.num_guides, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.free_guide') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :free_guide, @trip.free_guide, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.num_rooms') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :num_rooms, @trip.num_rooms, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.rate_person_day') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :rate_person_day, @trip.rate_person_day, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.signal_value') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :signal_value, @trip.signal_value, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.signal_date') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :signal_date, @trip.signal_date, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.notes') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :notes, @trip.notes, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.confirmed') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :confirmed, @trip.confirmed, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.accomplished') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :accomplished, @trip.accomplished, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.suspended') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :suspended, @trip.suspended, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

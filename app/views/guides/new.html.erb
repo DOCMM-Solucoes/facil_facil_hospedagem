@@ -1,9 +1,17 @@
-<h1><%= t('app.guide_new.title') %></h1>
-
-<%= render "form", guide: @guide %>
-
-<br>
-
-<div>
-  <%= link_to t('app.guide_show.back'), guides_path %>
-</div>
+<section class="section is-main-section">
+  <div class="card">
+    <header class="card-header">
+      <div class="card-header-title">
+        <span class="icon"><i class="mdi mdi-ballot"></i></span>
+        <h1><%= t('app.guide_new.title') %></h1>
+      </div>
+    </header>
+    <div class="card-content">
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <%= render "form", guide: @guide %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

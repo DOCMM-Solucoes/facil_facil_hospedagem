@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   around_action :switch_locale
-  before_action :authenticate_user!, except: %i[show index home]
+  #before_action :authenticate_user!, except: %i[show index home]
   private
   # app/controllers/application_controller.rb
   def default_url_options
