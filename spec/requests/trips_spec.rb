@@ -52,7 +52,7 @@ RSpec.describe 'Trips', type: :request do
       expect {
         delete trip_path(trip)
       }.to change(Trip, :count).by(-1)
-      expect(response).to redirect_to(trips_path(locale: I18n.default_locale))
+      expect(response).to redirect_to(trips_path)
     end
   end
 end

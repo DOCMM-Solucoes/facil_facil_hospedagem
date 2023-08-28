@@ -56,7 +56,7 @@ RSpec.describe 'Guides', type: :request do
       expect {
         delete guide_path(guide)
       }.to change(Guide, :count).by(-1)
-      expect(response).to redirect_to(guides_path(locale: I18n.default_locale))
+      expect(response).to redirect_to(guides_path)
     end
   end
 end
