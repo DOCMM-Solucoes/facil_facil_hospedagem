@@ -4,9 +4,6 @@
       <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
       <h1><%= t 'app.index.title' %></h1>
     </div>
-    <a href="#" class="card-header-icon">
-      <span class="icon"><i class="mdi mdi-reload"></i></span>
-    </a>
   </header>
 
   <div class="buttons is-right">
@@ -27,20 +24,20 @@
               <tr>
                 <th></th>
                 <th class="fixed-width">Estabelecimento</th>
-                <th class="fixed-width">Dono</th>
+                <th class="fixed-width">Rua</th>
+                <th class="fixed-width">Cidade</th>
                 <th class="fixed-width">Estado</th>
+                <th class="fixed-width">CEP</th>
               </tr>
               </thead>
               <tbody>
               <tr>
-                <td class="is-image-cell">
-                  <div class="image">
-                    <img src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg" class="is-rounded">
-                  </div>
-                </td>
+                <td></td>
                 <td data-label="Name"><%= establishment.name %></td>
-                <td data-label="Company"><%= establishment.hotelier.name %></td>
-                <td data-label="City"><%= establishment.address.state %></td>
+                <td data-label="Street"><%= establishment.address.street %></td>
+                <td data-label="City"><%= establishment.address.city %></td>
+                <td data-label="State"><%= establishment.address.state %></td>
+                <td data-label="State"><%= establishment.address.postal_code %></td>
                 <td class="is-actions-cell">
                   <div class="buttons is-right">
                     <button class="button is-small is-info has-text-white jb-modal" type="button">

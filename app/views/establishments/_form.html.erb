@@ -24,6 +24,22 @@
   <div class="card-content">
     <div class="field is-horizontal">
       <div class="field-label is-normal">
+        <label class="label">Hoteleiro</label>
+      </div>
+      <div class="field-body">
+        <div class="field is-narrow">
+          <div class="control">
+            <div class="select is-fullwidth">
+              <%= form.select :hotelier_id, options_from_collection_for_select(Hotelier.all, :id, :name, establishment.hotelier_id),
+                              prompt: "Hoteleiro" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
         <label class="label"><%= t('app.establishment.name') %></label>
       </div>
       <div class="field-body">
@@ -77,6 +93,9 @@
 
     <div>
       <%= form.fields_for :address do |address_fields| %>
+        <div class="field is-vertical">
+          <hr />
+        </div>
         <div class="field is-horizontal">
           <div class="field-label is-normal">
             <%= t('app.address.street') %>
@@ -121,22 +140,6 @@
           </div>
         </div>
       <% end %>
-
-      <div class="field is-horizontal">
-        <div class="field-label is-normal">
-          <label class="label">Hoteleiro</label>
-        </div>
-        <div class="field-body">
-          <div class="field is-narrow">
-            <div class="control">
-              <div class="select is-fullwidth">
-                <%= form.select :hotelier_id, options_from_collection_for_select(Hotelier.all, :id, :name, establishment.hotelier_id),
-                                prompt: "Hoteleiro" %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 <% end %>

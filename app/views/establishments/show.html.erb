@@ -10,6 +10,18 @@
       <div class="field is-horizontal">
         <div class="field-label">
           <div class="card-content">
+
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Hoteleiro</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <%= text_field_tag :name, @establishment.hotelier.name, class: "input", type: "text", disabled: true %>
+                </div>
+              </div>
+            </div>
+
             <div class="field is-horizontal">
               <div class="field-label is-normal">
                 <label class="label"><%= t('app.establishment.name') %></label>
@@ -62,9 +74,9 @@
                 </div>
               </div>
             </div>
-
             <%= form_for @establishment do |form| %>
               <%= form.fields_for :address do |address_fields| %>
+                <hr />
                 <div class="field is-horizontal">
                   <div class="field-label is-normal">
                     <label class="label"><%= t('app.address.street') %></label>
@@ -110,17 +122,6 @@
                 </div>
               <% end %>
             <% end %>
-
-            <div class="field is-horizontal">
-              <div class="field-label is-normal">
-                <label class="label">Hoteleiro</label>
-              </div>
-              <div class="field-body">
-                <div class="field">
-                  <%= text_field_tag :name, @establishment.hotelier.name, class: "input", type: "text", disabled: true %>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
