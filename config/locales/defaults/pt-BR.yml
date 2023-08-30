@@ -7,6 +7,11 @@ pt-BR:
         name: Nome
         phone: Telefone
     errors:
+      models:
+        guide:
+          attributes:
+            base:
+              cpf_or_cnpj_presence: "Pelo menos um dos campos CPF ou CNPJ deve ser preenchido"
       template:
         header:
           one: "1 erro impediu que este %{model} fosse salvo:"
