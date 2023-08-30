@@ -25,4 +25,6 @@ class Establishment < ApplicationRecord
   accepts_nested_attributes_for :address
   has_many :trips, dependent: :destroy
   has_many :guides, through: :trips
+
+  validates :name, :qty_bedrooms, presence: :true
 end
