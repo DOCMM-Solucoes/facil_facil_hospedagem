@@ -16,4 +16,6 @@ class Guide < ApplicationRecord
   accepts_nested_attributes_for :address
   has_many :trips, dependent: :destroy
   has_many :establishments, through: :trips
+  validates :name, presence: true
+  validates :phone, presence: true
 end
