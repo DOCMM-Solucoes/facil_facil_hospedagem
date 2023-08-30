@@ -1,7 +1,7 @@
 <div class="card has-table has-mobile-sort-spaced">
   <header class="card-header">
     <div class="card-header-title">
-      <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
+      <span class="mdi mdi-account-tie"></span>
       <h1><%= t 'app.hotelier_index.title' %></h1>
     </div>
     <a href="#" class="card-header-icon">
@@ -24,23 +24,17 @@
             <thead>
             <tr>
               <th></th>
-              <th>Hoteleiro</th>
-              <th>Telefone</th>
-              <th>Estado</th>
+              <th class="fixed-width">Hoteleiro</th>
+              <th class="fixed-width">Telefone</th>
               <th></th>
             </tr>
             </thead>
             <tbody>
             <% @hoteliers.each do |hotelier| %>
               <tr>
-                <td class="is-image-cell">
-                  <div class="image">
-                    <img src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg" class="is-rounded">
-                  </div>
-                </td>
+                <td></td>
                 <td data-label="Name"><%= hotelier.name %></td>
                 <td data-label="Company"><%= hotelier.phone_number %></td>
-                <td data-label="City"><%= hotelier.address&.state %></td>
                 <td class="is-actions-cell">
                   <div class="buttons is-right">
                     <button class="button is-small is-info has-text-white jb-modal" type="button">

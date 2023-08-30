@@ -28,9 +28,7 @@
       </div>
       <div class="field-body">
         <div class="field">
-          <div class="control is-expanded has-icons-left">
-            <%= form.text_field :name, class: "input", type: "text" %>
-          </div>
+          <%= form.text_field :name, class: "input", type: "text" %>
         </div>
       </div>
     </div>
@@ -41,9 +39,7 @@
       </div>
       <div class="field-body">
         <div class="field">
-          <div class="control is-expanded has-icons-left">
-            <%= form.text_field :cpf, class: "input", type: "text" %>
-          </div>
+          <%= form.text_field :cpf, class: "input", type: "text" %>
         </div>
       </div>
     </div>
@@ -74,14 +70,13 @@
       </div>
       <div class="field-body">
         <div class="field">
-          <div class="control is-expanded has-icons-left">
-            <%= form.text_field :plan, class: "input", type: "text" %>
-          </div>
+          <%= form.text_field :plan, class: "input", type: "text" %>
         </div>
       </div>
     </div>
 
     <div>
+      <hr />
       <%= form.fields_for :address do |address_fields| %>
         <div class="field is-horizontal">
           <div class="field-label is-normal">
@@ -89,9 +84,7 @@
           </div>
           <div class="field-body">
             <div class="field">
-              <div class="control is-expanded has-icons-left">
-                <%= address_fields.text_field :street, class: "input", type: "text" %>
-              </div>
+              <%= address_fields.text_field :street, class: "input", type: "text" %>
             </div>
           </div>
         </div>
@@ -102,9 +95,7 @@
           </div>
           <div class="field-body">
             <div class="field">
-              <div class="control is-expanded has-icons-left">
-                <%= address_fields.text_field :postal_code, class: "input", type: "text" %>
-              </div>
+              <%= address_fields.text_field :postal_code, class: "input", type: "text" %>
             </div>
           </div>
         </div>
@@ -115,9 +106,7 @@
           </div>
           <div class="field-body">
             <div class="field">
-              <div class="control is-expanded has-icons-left">
-                <%= address_fields.text_field :city, class: "input", type: "text" %>
-              </div>
+              <%= address_fields.text_field :city, class: "input", type: "text" %>
             </div>
           </div>
         </div>
@@ -128,9 +117,7 @@
           </div>
           <div class="field-body">
             <div class="field">
-              <div class="control is-expanded has-icons-left">
-                <%= address_fields.text_field :state, class: "input", type: "text" %>
-              </div>
+              <%= address_fields.text_field :state, class: "input", type: "text" %>
             </div>
           </div>
         </div>
