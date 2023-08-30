@@ -17,3 +17,7 @@
     max-width: 400px;
     max-height: 300px;
 }
+
+.fixed-width {
+    width: 300px;
+}
