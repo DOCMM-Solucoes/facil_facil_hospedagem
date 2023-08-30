@@ -14,7 +14,7 @@
       <h2><%= pluralize(guide.errors.count, "error") %> prohibited this guide from being saved:</h2>
 
       <ul>
-        <% hotelier.errors.each do |error| %>
+        <% guide.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
