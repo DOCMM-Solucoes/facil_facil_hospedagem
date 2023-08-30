@@ -1,6 +1,16 @@
 pt-BR:
   activerecord:
+    models:
+      guide: Guia
+    attributes:
+      guide:
+        name: Nome
+        phone: Telefone
     errors:
+      template:
+        header:
+          one: "1 erro impediu que este %{model} fosse salvo:"
+          other: "%{count} erros impediram que este %{model} fosse salvo:"
       messages:
         record_invalid: 'A validação falhou: %{errors}'
         restrict_dependent_destroy:
