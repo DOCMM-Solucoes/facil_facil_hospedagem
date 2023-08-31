@@ -33,14 +33,23 @@
 class Room < ApplicationRecord
 	validates :name, :maximum_capacity, :status, presence: true
 	validate :at_least_one_accommodation_type_must_be_selected
+	validate :at_least_one_option_single_double
 
 	has_many_attached :images, dependent: :destroy do |attachable|
 		attachable.variant :thumb, resize: "200x200"
 	end
 
 	def at_least_one_accommodation_type_must_be_selected
-		return true if :is_double == true || :is_triple == true || :is_quadruple == true || :is_quintuple == true || :is_sextuple == true
+		#return true if :is_double == true || :is_triple == true || :is_quadruple == true || :is_quintuple == true || :is_sextuple == true
+		if :is_double == false and :is_triple == false and :is_quadruple == false and :is_quintuple == false and :is_sextuple == false
+		  errors.add( :is_double, "At least one accommodation type must be selected")
+		end
+	end
 
-		errors.add(:accommodation_type, "At least one accommodation type must be selected")
+	def at_least_one_option_single_double
+		#return true if :is_single == true || :is_couple == true || :is_two_couples == true || :is_three_couples == true
+		if :is_single == false and :is_couple == false and :is_two_couples == false and :is_three_couples == false
+  		errors.add( :is_single,"At least one option must be selected referring to the single or double room")
+		end
 	end
 end
