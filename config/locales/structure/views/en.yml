@@ -1,0 +1,20 @@
+en:
+  app:
+    structure_index:
+      show: Show this structure
+      new: New structure
+      title: Structures
+    structure_edit:
+      show: Show this structure
+      back: Back to structures
+      title: Editing structure
+    structure_new:
+      title: New structure
+    structure_show:
+      edit: Edit this structure
+      back: Back to structures
+      delete: Delete this structure
+    structure:
+      structure: Structure
+      create: Create
+      update: Update

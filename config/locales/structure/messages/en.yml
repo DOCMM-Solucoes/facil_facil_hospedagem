@@ -1,0 +1,10 @@
+en:
+  app:
+    structure_controller:
+      create:
+        success: Structure was successfully created.
+      update:
+        success: Structure was successfully updated.
+      destroy:
+        success: Structure was successfully destroyed.
+      notice_delete: Are you sure?

@@ -1,9 +1,9 @@
-<%= form_with(model: photo, multipart: true) do |form| %>
-  <% if photo.errors.any? %>
+<%= form_with(model: structure, multipart: true) do |form| %>
+  <% if structure.errors.any? %>
     <div class="notification is-danger">
-      <h2><%= pluralize(photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+      <h2><%= pluralize(structure.errors.count, "error") %> prohibited this photo from being saved:</h2>
       <ul>
-        <% photo.errors.each do |error| %>
+        <% structure.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -20,7 +20,7 @@
           </div>
         </div>
       </div>
-      <% if photo.errors[:title].any? %>
+      <% if structure.errors[:title].any? %>
         <p class="help is-danger">Esse campo é obrigatório</p>
       <% end %>
     </div>

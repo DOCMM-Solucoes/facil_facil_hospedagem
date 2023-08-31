@@ -7,7 +7,7 @@
   </header>
   <div class="buttons is-right">
     <div>
-      <%= link_to 'Nova Estrutura', new_photo_path, class: "button is-primary", type: "button" %>
+      <%= link_to 'Nova Estrutura', new_structure_path, class: "button is-primary", type: "button" %>
       <span class="icon"><i class=""> </i></span>
     </div>
   </div>
@@ -24,23 +24,23 @@
             </tr>
             </thead>
             <tbody>
-            <% @photos.each do |photo| %>
+            <% @structures.each do |structure| %>
               <tr>
                 <td></td>
-                <td data-label="Title"><%= photo.title %></td>
-                <td data-label="Describe"><%= photo.description %></td>
+                <td data-label="Title"><%= structure.title %></td>
+                <td data-label="Describe"><%= structure.description %></td>
                 <td class="is-actions-cell">
                   <div class="buttons is-right has-text-white">
                     <button class="button is-small is-info has-text-white jb-modal" type="button">
-                      <%= link_to 'Mostar', photo_path(photo) %>
+                      <%= link_to 'Mostar', structure_path(structure) %>
                       <span class="icon is-small"><i class="mdi mdi-eye"></i></span>
                     </button>
                     <button class="button is-small is-warning has-text-white jb-modal" type="button">
-                      <%= link_to 'Editar', edit_photo_path(photo) %>
+                      <%= link_to 'Editar', edit_structure_path(structure) %>
                       <span class="icon is-small"><i class="mdi mdi-pencil"></i></span>
                     </button>
                     <div type="button" data-target="sample-modal">
-                      <%= button_to 'Deletar', photo, method: :delete,
+                      <%= button_to 'Deletar', structure, method: :delete,
                                     form: { data: { turbo_confirm: t('app.controller.notice_delete') } },
                                     class: "button is-danger jb-modal is-small is-flex" %>
 
