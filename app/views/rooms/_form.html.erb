@@ -274,6 +274,25 @@
     </div>
 
     <!-- begin (photos / images) -->
+    <div class="field is-horizontal" disabled>
+      <div class="field-label is-normal" disabled>
+        <label class="label" disabled><%= "Fotos do Quarto" %></label>
+      </div>
+      <div class="field-body" disabled>
+        <div class="box" disabled>
+
+          <div class="columns is-mobile">
+            <% @room.images.each do |img| %>
+              <div class="column">
+                <%= image_tag img, class: 'image-size image is-128x128' %>
+              </div>
+            <% end %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
     <div class="field is-horizontal">
       <div class="field-label is-normal">
         <label class="label"><%= t('app.room.images') %></label>

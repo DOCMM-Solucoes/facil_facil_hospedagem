@@ -17,6 +17,8 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1/edit
   def edit
+    @room = Room.find(params[:id])
+    @images = @room.images
   end
 
   # POST /rooms or /rooms.json
@@ -36,8 +38,14 @@ class RoomsController < ApplicationController
 
   # PATCH/PUT /rooms/1 or /rooms/1.json
   def update
+    @room = Room.find(params[:id])
+
+    if room_params[:images]
+      @room.images.attach(room_params[:images])
+    end
+
     respond_to do |format|
-      if @room.update(room_params)
+      if @room.update(room_params.except(:images))
         format.html { redirect_to room_url(@room), notice: "Room was successfully updated." }
         format.json { render :show, status: :ok, location: @room }
       else
