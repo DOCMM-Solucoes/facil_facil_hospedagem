@@ -10,9 +10,7 @@ pt-BR:
       notice_delete: Deletar Guia?
 
     errors:
-      models:
-        guide:
-          attributes:
-            base:
-              cpf_or_cnpj_presence: "Pelo menos um dos campos CPF ou CNPJ deve ser preenchido"
-              company_presence_with_cnpj: "Informe a empresa quando o CNPJ estiver preenchido"
+      cpf_or_cnpj_presence: "Pelo menos um dos campos CPF ou CNPJ deve ser preenchido"
+      company_presence_with_cnpj: "Informe a empresa quando o CNPJ estiver preenchido"
+      invalid_cpf: "CPF inválido"
+      invalid_cnpj: "CNPJ inválido"

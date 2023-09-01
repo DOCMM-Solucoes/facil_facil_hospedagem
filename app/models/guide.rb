@@ -20,18 +20,29 @@ class Guide < ApplicationRecord
   validates :phone, presence: true
   validate :cpf_or_cnpj_present
   validate :company_presence_with_cnpj
+  validate :valid_cpf_or_cnpj
 
   private
 
   def cpf_or_cnpj_present
     unless cpf.present? || cnpj.present?
-      errors.add(:base, I18n.t('app.errors.models.guide.attributes.base.cpf_or_cnpj_presence'))
+      errors.add(:base, I18n.t('app.errors.cpf_or_cnpj_presence'))
     end
   end
 
   def company_presence_with_cnpj
     if cnpj.present? && company.blank?
-      errors.add(:base, I18n.t('app.errors.models.guide.attributes.base.company_presence_with_cnpj'))
+      errors.add(:base, I18n.t('app.errors.company_presence_with_cnpj'))
+    end
+  end
+
+  def valid_cpf_or_cnpj
+    if cpf.present? && !CPF.valid?(cpf)
+      errors.add(:base, I18n.t('app.errors.invalid_cpf'))
+    end
+
+    if cnpj.present? && !CNPJ.valid?(cnpj)
+      errors.add(:base, I18n.t('app.errors.invalid_cnpj'))
     end
   end
 end
