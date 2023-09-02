@@ -23,7 +23,6 @@
           <table class="table is-fullwidth is-striped is-hoverable is-sortable is-fullwidth">
             <thead>
             <tr>
-              <th></th>
               <th><%= t('app.trip.guide_id') %></th>
               <th><%= t('app.trip.checkin_date') %></th>
               <th><%= t('app.trip.checkout_date') %></th>
@@ -33,11 +32,6 @@
             <tbody>
             <% @trips.each do |trip| %>
               <tr>
-                <td class="is-image-cell">
-                  <div class="image">
-                    <img src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg" class="is-rounded">
-                  </div>
-                </td>
                 <td><%= trip.guide_id %></td>
                 <td><%= trip.checkin_date %></td>
                 <td><%= trip.checkout_date %></td>
