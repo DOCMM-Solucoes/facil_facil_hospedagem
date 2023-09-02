@@ -74,17 +74,17 @@ RSpec.describe Guide, type: :model do
     end
 
     it 'validates company presence with cnpj' do
-      guide = FactoryBot.build(:guide, company: nil, cnpj: FFaker::IdentificationBR.cnpj)
+      guide = FactoryBot.build(:guide, company: nil)
       guide.valid?
       expect(guide.errors[:base]).to include(I18n.t('app.errors.company_presence_with_cnpj'))
     end
 
     it 'validates valid cpf or cnpj' do
-      guide = FactoryBot.build(:guide, cpf: '12345678900', cnpj: FFaker::IdentificationBR.cnpj)
+      guide = FactoryBot.build(:guide, cpf: '12345678900')
       guide.valid?
       expect(guide.errors[:base]).to include(I18n.t('app.errors.invalid_cpf'))
 
-      guide = FactoryBot.build(:guide, cnpj: '12345678901234', cpf: FFaker::IdentificationBR.cpf)
+      guide = FactoryBot.build(:guide, cnpj: '12345678901234')
       guide.valid?
       expect(guide.errors[:base]).to include(I18n.t('app.errors.invalid_cnpj'))
     end
