@@ -15,8 +15,6 @@
         <%= t('activerecord.errors.template.header', model: t('activerecord.models.' + guide.class.name.downcase), count: guide.errors.count) %>
       </h2>
 
-
-
       <ul>
         <% guide.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -82,6 +80,18 @@
     </div>
 
     <div>
+      <hr>
+    </div>
+
+    <div>
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label"><%= t('app.address.address') %></label>
+        </div>
+        <div class="field-body">
+        </div>
+      </div>
+
       <%= form.fields_for :address do |address_fields| %>
         <div class="field is-horizontal">
           <div class="field-label is-normal">
