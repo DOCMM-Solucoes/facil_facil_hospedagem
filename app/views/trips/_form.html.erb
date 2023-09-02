@@ -1,7 +1,20 @@
 <%= form_with(model: trip) do |form| %>
+  <div class="buttons is-right">
+    <div class="field">
+      <div class="field is-grouped">
+        <div>
+          <%= form.submit(@trip.new_record? ? t('app.guide.create') : t('app.guide.update'),
+                          class: "button is-primary") %>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <% if trip.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
+      <h2>
+        <%= t('activerecord.errors.template.header', model: t('activerecord.models.' + trip.class.name.downcase), count: trip.errors.count) %>
+      </h2>
 
       <ul>
         <% trip.errors.each do |error| %>
@@ -300,18 +313,5 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="field-body">
-    <div class="field">
-      <div class="field is-grouped">
-        <div>
-          <%= form.submit(@trip.new_record? ? t('app.hotelier_form.create') : t('app.hotelier_form.update'),
-                          class: "button is-primary") %>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
   </div>
 <% end %>
