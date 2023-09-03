@@ -32,7 +32,7 @@
             <tbody>
             <% @trips.each do |trip| %>
               <tr>
-                <td><%= trip.guide_id %></td>
+                <td><%= trip.guide.name %></td>
                 <td><%= trip.checkin_date %></td>
                 <td><%= trip.checkout_date %></td>
                 <td><%= trip.confirmed %></td>
