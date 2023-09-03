@@ -35,7 +35,15 @@
                 <td><%= trip.guide.name %></td>
                 <td><%= trip.checkin_date %></td>
                 <td><%= trip.checkout_date %></td>
-                <td><%= trip.confirmed %></td>
+                <td>
+                  <% if trip.confirmed %>
+                    <span class="has-text-success">sim</span>
+                    <div class="confirmation-indicator is-success"></div>
+                  <% else %>
+                    <span class="has-text-danger">não</span>
+                    <div class="confirmation-indicator is-danger"></div>
+                  <% end %>
+                </td>
                 <td class="is-actions-cell">
                   <div class="field is-grouped">
                     <div class="control">
