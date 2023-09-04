@@ -74,54 +74,68 @@
                 </div>
               </div>
             </div>
-            <%= form_for @establishment do |form| %>
-              <%= form.fields_for :address do |address_fields| %>
-                <hr />
-                <div class="field is-horizontal">
-                  <div class="field-label is-normal">
-                    <label class="label"><%= t('app.address.street') %></label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <%= address_fields.text_field :street, class: "input", type: "text", disabled: true %>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="field is-horizontal">
-                  <div class="field-label is-normal">
-                    <label class="label"><%= t('app.address.postal_code') %></label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <%= address_fields.text_field :postal_code, class: "input", type: "text", disabled: true %>
-                    </div>
-                  </div>
-                </div>
+            <div>
+              <hr>
+            </div>
 
-                <div class="field is-horizontal">
-                  <div class="field-label is-normal">
-                    <label class="label"><%= t('app.address.city') %></label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <%= address_fields.text_field :city, class: "input", type: "text", disabled: true %>
-                    </div>
-                  </div>
+            <div>
+              <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                  <strong>Endereço:</strong>
                 </div>
+                <div class="field-body">
+                </div>
+              </div>
 
-                <div class="field is-horizontal">
-                  <div class="field-label is-normal">
-                    <label class="label"><%= t('app.address.state') %></label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <%= address_fields.text_field :state, class: "input", type: "text", disabled: true %>
+              <%= form_for @establishment do |form| %>
+                <%= form.fields_for :address do |address_fields| %>
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label"><%= t('app.address.street') %></label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
+                        <%= address_fields.text_field :street, class: "input", type: "text", disabled: true %>
+                      </div>
                     </div>
                   </div>
-                </div>
+
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label"><%= t('app.address.postal_code') %></label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
+                        <%= address_fields.text_field :postal_code, class: "input", type: "text", disabled: true %>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label"><%= t('app.address.city') %></label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
+                        <%= address_fields.text_field :city, class: "input", type: "text", disabled: true %>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label"><%= t('app.address.state') %></label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
+                        <%= address_fields.text_field :state, class: "input", type: "text", disabled: true %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
           </div>
         </div>
       </div>
