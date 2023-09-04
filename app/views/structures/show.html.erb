@@ -3,7 +3,7 @@
   <div class="card">
     <header class="card-header">
       <div class="card-header-title">
-        <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
+        <span class="icon"><i class="mdi mdi mdi-warehouse"></i></span>
         <h1>Estrutura</h1>
       </div>
     </header>
@@ -17,7 +17,7 @@
         <div class="field-body">
           <div class="field">
             <div class="control is-expanded">
-              <%= text_field_tag :name, @photo.title, class: "input", type: "text", disabled: true %>
+              <%= text_field_tag :name, @structure.title, class: "input", type: "text", disabled: true %>
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@
         <div class="field-body">
           <div class="field">
             <div class="control is-expanded">
-              <%= text_field_tag :name, @photo.description, class: "input", type: "text", disabled: true %>
+              <%= text_field_tag :name, @structure.description, class: "input", type: "text", disabled: true %>
             </div>
           </div>
         </div>
@@ -43,7 +43,7 @@
         <div class="field-body" disabled>
           <div class="box" disabled>
             <div class="columns is-mobile">
-              <% @photo.images.each do |image| %>
+              <% @structure.images.each do |image| %>
                 <div class="column">
                   <%= image_tag image, class: 'image-size image is-96-96' %>
                 </div>
@@ -55,7 +55,6 @@
     </div>
   </div>
   <div class="buttons">
-    <%= link_to 'Editar estrutura', edit_photo_url, class:"button is-warning" %>
-    <%= link_to 'Voltar para estrutura', photos_url, class: "button is-info has-text-white"  %>
+    <%= link_to 'Editar', edit_structure_url, class:"button is-warning" %>
   </div>
 </section>

@@ -54,7 +54,7 @@ end
 
 
 3.times do |i|
-  photo = Photo.create!(
+  photo = Structure.create!(
     title: Faker::Lorem.sentence,
     description: Faker::Lorem.paragraph
   )
