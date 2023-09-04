@@ -77,13 +77,15 @@
             </div>
 
             <div class="field is-horizontal mt-4">
-              <div class="field-label is-normal">
+              <div class="field-label is-align-content-baseline">
                 <label class="label"><%= t('app.trip.extra_coffee') %></label>
               </div>
               <div class="field-body">
                 <div class="field">
                   <div class="control is-expanded">
-                    <%= text_field_tag :extra_coffee, @trip.extra_coffee, class: "input", type: "text", disabled: true %>
+                    <div class="custom-checkbox-left">
+                      <input type="checkbox" <%= "checked" if @trip.extra_coffee %> disabled>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -116,13 +118,15 @@
             </div>
 
             <div class="field is-horizontal mt-4">
-              <div class="field-label is-normal">
+              <div class="field-label is-align-content-baseline">
                 <label class="label"><%= t('app.trip.free_driver') %></label>
               </div>
               <div class="field-body">
                 <div class="field">
                   <div class="control is-expanded">
-                    <%= text_field_tag :free_driver, @trip.free_driver, class: "input", type: "text", disabled: true %>
+                    <div class="custom-checkbox-left">
+                      <input type="checkbox" <%= "checked" if @trip.free_driver %> disabled>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -142,13 +146,15 @@
             </div>
 
             <div class="field is-horizontal mt-4">
-              <div class="field-label is-normal">
+              <div class="field-label is-align-content-baseline">
                 <label class="label"><%= t('app.trip.free_guide') %></label>
               </div>
               <div class="field-body">
                 <div class="field">
                   <div class="control is-expanded">
-                    <%= text_field_tag :free_guide, @trip.free_guide, class: "input", type: "text", disabled: true %>
+                    <div class="custom-checkbox-left">
+                      <input type="checkbox" <%= "checked" if @trip.free_guide %> disabled>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -220,45 +226,49 @@
             </div>
 
             <div class="field is-horizontal mt-4">
-              <div class="field-label is-normal">
+              <div class="field-label is-align-content-baseline">
                 <label class="label"><%= t('app.trip.confirmed') %></label>
               </div>
               <div class="field-body">
                 <div class="field">
                   <div class="control is-expanded">
-                    <%= text_field_tag :confirmed, @trip.confirmed, class: "input", type: "text", disabled: true %>
+                    <div class="custom-checkbox-left">
+                      <input type="checkbox" <%= "checked" if @trip.confirmed %> disabled>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="field is-horizontal mt-4">
-              <div class="field-label is-normal">
+              <div class="field-label is-align-content-baseline">
                 <label class="label"><%= t('app.trip.accomplished') %></label>
               </div>
               <div class="field-body">
                 <div class="field">
                   <div class="control is-expanded">
-                    <%= text_field_tag :accomplished, @trip.accomplished, class: "input", type: "text", disabled: true %>
+                    <div class="custom-checkbox-left">
+                      <input type="checkbox" <%= "checked" if @trip.accomplished %> disabled>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="field is-horizontal mt-4">
-              <div class="field-label is-normal">
+              <div class="field-label is-align-content-baseline">
                 <label class="label"><%= t('app.trip.suspended') %></label>
               </div>
               <div class="field-body">
                 <div class="field">
                   <div class="control is-expanded">
-                    <%= text_field_tag :suspended, @trip.suspended, class: "input", type: "text", disabled: true %>
+                    <div class="custom-checkbox-left">
+                      <input type="checkbox" <%= "checked" if @trip.suspended %> disabled>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
-
           </div>
         </div>
       </div>

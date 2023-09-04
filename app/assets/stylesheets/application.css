@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+@import "custom_styles.css";
 .image-size {
     max-width: 400px;
     max-height: 300px;
