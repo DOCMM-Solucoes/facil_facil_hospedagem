@@ -110,7 +110,10 @@
                 <div class="field">
                   <div class="control is-expanded">
                     <div class="custom-checkbox-left">
-                      <input type="checkbox" <%= "checked" if @trip.extra_coffee %> disabled>
+                      <label class="b-checkbox checkbox cursor-not-allowed">
+                        <input type="checkbox" <%= "checked" if @trip.extra_coffee %> disabled>
+                        <div class="check"></div>
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -151,7 +154,10 @@
                 <div class="field">
                   <div class="control is-expanded">
                     <div class="custom-checkbox-left">
-                      <input type="checkbox" <%= "checked" if @trip.free_driver %> disabled>
+                      <label class="b-checkbox checkbox cursor-not-allowed">
+                        <input type="checkbox" <%= "checked" if @trip.free_driver %> disabled>
+                        <div class="check"></div>
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -179,7 +185,10 @@
                 <div class="field">
                   <div class="control is-expanded">
                     <div class="custom-checkbox-left">
-                      <input type="checkbox" <%= "checked" if @trip.free_guide %> disabled>
+                      <label class="b-checkbox checkbox cursor-not-allowed">
+                        <input type="checkbox" <%= "checked" if @trip.free_guide %> disabled>
+                        <div class="check"></div>
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -259,7 +268,10 @@
                 <div class="field">
                   <div class="control is-expanded">
                     <div class="custom-checkbox-left">
-                      <input type="checkbox" <%= "checked" if @trip.confirmed %> disabled>
+                      <label class="b-checkbox checkbox cursor-not-allowed">
+                        <input type="checkbox" <%= "checked" if @trip.confirmed %> disabled>
+                        <div class="check"></div>
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -274,7 +286,10 @@
                 <div class="field">
                   <div class="control is-expanded">
                     <div class="custom-checkbox-left">
-                      <input type="checkbox" <%= "checked" if @trip.accomplished %> disabled>
+                      <label class="b-checkbox checkbox cursor-not-allowed">
+                        <input type="checkbox" <%= "checked" if @trip.accomplished %> disabled>
+                        <div class="check"></div>
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -289,7 +304,10 @@
                 <div class="field">
                   <div class="control is-expanded">
                     <div class="custom-checkbox-left">
-                      <input type="checkbox" <%= "checked" if @trip.suspended %> disabled>
+                      <label class="b-checkbox checkbox cursor-not-allowed">
+                        <input type="checkbox" <%= "checked" if @trip.suspended %> disabled>
+                        <div class="check"></div>
+                      </label>
                     </div>
                   </div>
                 </div>
