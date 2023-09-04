@@ -65,6 +65,32 @@
 
             <div class="field is-horizontal mt-4">
               <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.checkin_time') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :checkin_time, @trip.checkin_time, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.checkout_date') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :checkout_date, @trip.checkout_date, class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
                 <label class="label"><%= t('app.trip.checkout_time') %></label>
               </div>
               <div class="field-body">
