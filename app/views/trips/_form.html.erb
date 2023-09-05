@@ -79,7 +79,7 @@
       <div class="field-body">
         <div class="field">
           <div class="control is-expanded">
-            <%= form.time_field :checkin_time, class: "input is-expanded" %>
+            <%= form.time_field :checkin_time, class: "input is-expanded", minute_interval: 15 %>
           </div>
         </div>
       </div>
@@ -105,7 +105,7 @@
       <div class="field-body">
         <div class="field">
           <div class="control is-expanded">
-            <%= form.time_field :checkout_time, class: "input is-expanded" %></div>
+            <%= form.time_field :checkout_time, class: "input is-expanded", minute_interval: 15 %></div>
         </div>
       </div>
     </div>
