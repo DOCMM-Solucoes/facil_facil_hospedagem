@@ -130,12 +130,6 @@
             <% end %>
           </li>
           <li>
-            <%= link_to trips_path, class: "has-icon" do %>
-              <span class="icon"><i class="mdi mdi-home"></i></span>
-              <span class="menu-item-label">Viagens</span>
-            <% end %>
-          </li>
-          <li>
             <%= link_to guides_path, class: "has-icon" do %>
               <span class="icon"><i class="mdi mdi-home"></i></span>
               <span class="menu-item-label">Guias</span>
@@ -168,14 +162,6 @@
               <span><%= link_to t('home.sign_up'), new_user_registration_path %></span>
             </a>
           </li>
-          <li>
-            <!--Osiris-->
-            <%= link_to user_session_url, class: "has-icon" do %>
-              <span class="icon"><i class="mdi mdi-logout"></i></span>
-              <span class="menu-item-label">Entrar</span>
-            <% end %>
-          </li>
-          <!--Osiris-->
           <li>
             <%= link_to new_user_registration_path, class: "has-icon" do %>
               <span class="icon"><i class="mdi mdi-logout"></i></span>
