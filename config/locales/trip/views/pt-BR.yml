@@ -12,6 +12,7 @@ pt-BR:
       title: Nova viagem
       back: Voltar para viagens
     trip_show:
+      title: Viagem
       edit: Editar viagem
       back: Voltar para viagens
       delete: Deletar viagem
