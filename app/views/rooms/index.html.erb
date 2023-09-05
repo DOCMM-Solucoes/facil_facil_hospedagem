@@ -37,14 +37,21 @@
                     <td data-label="City"><%= room.status %></td>
                     <td class="is-actions-cell">
                       <div class="buttons is-right">
-                        <button class="button is-small is-primary" type="button">
-                          <%= link_to t('app.room_index.show'), room %>
-                          <span class="icon"><i class="mdi mdi-eye"></i></span>
-                        </button>
-                        <button class="button is-small is-warning" type="button">
-                          <%= link_to t('app.room_show.edit'), edit_room_path(room) %>
-                          <span class="icon"><i class="mdi mdi-pencil"></i></span>
-                        </button>
+
+                        <div class="control">
+                          <%= link_to room, class: "button is-small is-info has-text-white jb-modal", data: { target: 'sample-modal' } do %>
+                            <span><%= t('app.room_index.show') %></span>
+                            <span class="icon is-small"><i class="mdi mdi-eye"></i></span>
+                          <% end %>
+                        </div>
+
+                        <div class="control">
+                          <%= link_to edit_room_path(room), class: "button is-small is-warning" do %>
+                            <span><%= t('app.room_edit.title') %></span>
+                            <span class="icon is-small"><i class="mdi mdi-pencil"></i></span>
+                          <% end %>
+                        </div>
+
                         <div type="button" data-target="sample-modal">
                           <%= form_with(model: room, url: room_path(room), local: true, method: :delete,
                                         data: { turbo_confirm: t('app.controller.notice_delete') }) do |form| %>
