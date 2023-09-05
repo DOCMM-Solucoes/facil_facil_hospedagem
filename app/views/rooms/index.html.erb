@@ -46,10 +46,15 @@
                           <span class="icon"><i class="mdi mdi-pencil"></i></span>
                         </button>
                         <div type="button" data-target="sample-modal">
-                          <%= button_to t('app.room_show.delete'), room, method: :delete,
-                                        form: { data: { turbo_confirm: t('app.controller.notice_delete') } },
-                                        class: "button is-small is-danger jb-modal" %>
+                          <%= form_with(model: room, url: room_path(room), local: true, method: :delete,
+                                        data: { turbo_confirm: t('app.controller.notice_delete') }) do |form| %>
+                            <%= form.button class: "button is-danger jb-modal is-small is-flex" do %>
+                              <span><%= t('app.show.delete') %></span>
+                              <span class="icon is-small"><i class="mdi mdi-delete"></i></span>
+                            <% end %>
+                          <% end %>
                         </div>
+
                       </div>
                     </td>
                   </tr>
