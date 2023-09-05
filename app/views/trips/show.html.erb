@@ -3,7 +3,7 @@
     <header class="card-header">
       <div class="card-header-title">
         <span class="icon"><i class="mdi mdi-bus-side"></i></span>
-        <h1>Viagem</h1>
+        <h1><%= t('app.trip_show.title') %></h1>
       </div>
     </header>
 
@@ -70,7 +70,11 @@
               <div class="field-body">
                 <div class="field">
                   <div class="control is-expanded">
-                    <%= text_field_tag :checkin_time, @trip.checkin_time.strftime('%H:%M'), class: "input", type: "text", disabled: true %>
+                    <% if @trip.checkin_time.present? %>
+                      <%= text_field_tag :checkin_time, @trip.checkin_time.strftime('%H:%M'), class: "input", type: "text", disabled: true %>
+                    <% else %>
+                      <%= text_field_tag :checkin_time, '', class: "input", type: "text", disabled: true %>
+                    <% end %>
                   </div>
                 </div>
               </div>
@@ -96,7 +100,11 @@
               <div class="field-body">
                 <div class="field">
                   <div class="control is-expanded">
-                    <%= text_field_tag :checkout_time, @trip.checkout_time.strftime('%H:%M'), class: "input", type: "text", disabled: true %>
+                    <% if @trip.checkout_time.present? %>
+                      <%= text_field_tag :checkout_time, @trip.checkout_time.strftime('%H:%M'), class: "input", type: "text", disabled: true %>
+                    <% else %>
+                      <%= text_field_tag :checkout_time, '', class: "input", type: "text", disabled: true %>
+                    <% end %>
                   </div>
                 </div>
               </div>
@@ -241,7 +249,11 @@
               <div class="field-body">
                 <div class="field">
                   <div class="control is-expanded">
-                    <%= text_field_tag :signal_date, @trip.signal_date.strftime('%d/%m/%Y'), class: "input", type: "text", disabled: true %>
+                    <% if @trip.signal_date.present? %>
+                      <%= text_field_tag :signal_date, @trip.signal_date.strftime('%d/%m/%Y'), class: "input", type: "text", disabled: true %>
+                    <% else %>
+                      <%= text_field_tag :signal_date, '', class: "input", type: "text", disabled: true %>
+                    <% end %>
                   </div>
                 </div>
               </div>
