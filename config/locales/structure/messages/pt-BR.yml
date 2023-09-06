@@ -1,0 +1,10 @@
+pt-BR:
+  app:
+    structures_controller:
+      create:
+        success: Estrutura criada com sucesso.
+      update:
+        success: Estrutura atualizada com sucesso.
+      destroy:
+        success: Estrutura excluída com sucesso.
+      notice_delete: Excluir Quarto?
