@@ -223,7 +223,7 @@
               <div class="field-body">
                 <div class="field">
                   <div class="control is-expanded">
-                    <%= text_field_tag :rate_person_day, @trip.rate_person_day, class: "input", type: "text", disabled: true %>
+                    <%= text_field_tag :rate_person_day, number_with_precision(@trip.rate_person_day, precision: 2, separator: ",", delimiter: "."), class: "input", type: "text", disabled: true %>
                   </div>
                 </div>
               </div>
@@ -236,7 +236,7 @@
               <div class="field-body">
                 <div class="field">
                   <div class="control is-expanded">
-                    <%= text_field_tag :signal_value, @trip.signal_value, class: "input", type: "text", disabled: true %>
+                    <%= text_field_tag :signal_value, number_with_precision(@trip.signal_value, precision: 2, separator: ",", delimiter: "."), class: "input", type: "text", disabled: true %>
                   </div>
                 </div>
               </div>
