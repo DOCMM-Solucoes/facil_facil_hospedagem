@@ -8,3 +8,9 @@ pt-BR:
       destroy:
         success: Guia deletado com sucesso.
       notice_delete: Deletar Guia?
+
+    errors:
+      cpf_or_cnpj_presence: "Pelo menos um dos campos CPF ou CNPJ deve ser preenchido"
+      company_presence_with_cnpj: "Informe a empresa quando o CNPJ estiver preenchido"
+      invalid_cpf: "CPF inválido"
+      invalid_cnpj: "CNPJ inválido"

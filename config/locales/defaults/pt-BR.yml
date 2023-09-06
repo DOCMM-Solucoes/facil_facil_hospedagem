@@ -1,6 +1,23 @@
 pt-BR:
   activerecord:
+    models:
+      guide: Guia
+      trip: Viagem
+    attributes:
+      guide:
+        name: Nome
+        phone: Telefone
+      trip:
+        establishment: Estabelecimento
+        guide: Guia
+        checkin_date: Data check-in
+        checkout_date: Data check-out
+        num_people: Qtd pessoas
     errors:
+      template:
+        header:
+          one: "1 erro impediu que este %{model} fosse salvo:"
+          other: "%{count} erros impediram que este(a) %{model} fosse salvo(a):"
       messages:
         record_invalid: 'A validação falhou: %{errors}'
         restrict_dependent_destroy:

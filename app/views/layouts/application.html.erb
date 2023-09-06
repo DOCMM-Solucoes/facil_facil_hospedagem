@@ -7,7 +7,7 @@
   <%= csp_meta_tag %>
 
   <%= stylesheet_link_tag "application.bulma", "data-turbo-track": "reload" %>
-  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "application", 'custom_styles', "data-turbo-track": "reload" %>
   <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   <!-- Bulma is included -->
 
@@ -131,7 +131,7 @@
           </li>
           <li>
             <%= link_to guides_path, class: "has-icon" do %>
-              <span class="icon"><i class="mdi mdi-home"></i></span>
+              <span class="icon"><i class="mdi mdi-human-child"></i></span>
               <span class="menu-item-label">Guias</span>
             <% end %>
           </li>
@@ -145,7 +145,7 @@
           <li>
             <!--Marco-->
             <%= link_to trips_path, class: "has-icon" do %>
-              <span class="icon"><i class="mdi mdi-home"></i></span>
+              <span class="icon"><i class="mdi mdi-bus-side"></i></span>
               <span class="menu-item-label">Viagens</span>
             <% end %>
           </li>

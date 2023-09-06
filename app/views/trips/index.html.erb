@@ -1,7 +1,7 @@
 <div class="card has-table has-mobile-sort-spaced">
   <header class="card-header">
     <div class="card-header-title">
-      <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
+      <span class="icon"><i class="mdi mdi mdi-bus-side"></i></span>
       <h1><%= t 'app.trip_index.title' %></h1>
     </div>
     <a href="#" class="card-header-icon">
@@ -23,7 +23,6 @@
           <table class="table is-fullwidth is-striped is-hoverable is-sortable is-fullwidth">
             <thead>
             <tr>
-              <th></th>
               <th><%= t('app.trip.guide_id') %></th>
               <th><%= t('app.trip.checkin_date') %></th>
               <th><%= t('app.trip.checkout_date') %></th>
@@ -33,15 +32,18 @@
             <tbody>
             <% @trips.each do |trip| %>
               <tr>
-                <td class="is-image-cell">
-                  <div class="image">
-                    <img src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg" class="is-rounded">
-                  </div>
+                <td><%= trip.guide.name %></td>
+                <td><%= trip.checkin_date.strftime('%d/%m/%Y') %></td>
+                <td><%= trip.checkout_date.strftime('%d/%m/%Y') %></td>
+                <td>
+                  <% if trip.confirmed %>
+                    <span class="has-text-success">sim</span>
+                    <div class="confirmation-indicator is-success"></div>
+                  <% else %>
+                    <span class="has-text-danger">não</span>
+                    <div class="confirmation-indicator is-danger"></div>
+                  <% end %>
                 </td>
-                <td><%= trip.guide_id %></td>
-                <td><%= trip.checkin_date %></td>
-                <td><%= trip.checkout_date %></td>
-                <td><%= trip.confirmed %></td>
                 <td class="is-actions-cell">
                   <div class="field is-grouped">
                     <div class="control">
