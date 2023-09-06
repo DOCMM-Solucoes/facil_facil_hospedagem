@@ -99,9 +99,6 @@ GEM
     crass (1.0.6)
     date (3.3.3)
     date (3.3.3-java)
-    debug (1.8.0)
-      irb (>= 1.5.0)
-      reline (>= 0.3.1)
     devise (4.9.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -135,10 +132,6 @@ GEM
     importmap-rails (1.2.1)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
-    io-console (0.6.0)
-    io-console (0.6.0-java)
-    irb (1.7.4)
-      reline (>= 0.3.6)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -229,8 +222,6 @@ GEM
       zeitwerk (~> 2.5)
     rake (13.0.6)
     regexp_parser (2.8.1)
-    reline (0.3.6)
-      io-console (~> 0.5)
     responders (3.1.0)
       actionpack (>= 5.2)
       railties (>= 5.2)
@@ -328,7 +319,6 @@ DEPENDENCIES
   bulma-rails
   capybara
   cpf_faker
-  debug
   devise
   devise-i18n
   factory_bot_rails
