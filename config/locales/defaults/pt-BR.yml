@@ -1,5 +1,22 @@
 pt-BR:
   activerecord:
+    models:
+      guide: Guia
+      trip: Viagem
+      room: Quarto
+    attributes:
+      guide:
+        name: Nome
+        phone: Telefone
+      trip:
+        establishment: Estabelecimento
+        guide: Guia
+        checkin_date: Data check-in
+        checkout_date: Data check-out
+        num_people: Qtd pessoas
+      room:
+        name: Nome
+        maximum_capacity: Capacidade máxima
     errors:
       template:
         header:
