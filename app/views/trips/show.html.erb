@@ -2,8 +2,8 @@
   <div class="card">
     <header class="card-header">
       <div class="card-header-title">
-        <span class="icon"><i class="mdi mdi-ballot"></i></span>
-        <h1>Viagem</h1>
+        <span class="icon"><i class="mdi mdi-bus-side"></i></span>
+        <h1><%= t('app.trip_show.title') %></h1>
       </div>
     </header>
 
@@ -57,7 +57,37 @@
               <div class="field-body">
                 <div class="field">
                   <div class="control is-expanded">
-                    <%= text_field_tag :checkin_date, @trip.checkin_date, class: "input", type: "text", disabled: true %>
+                    <%= text_field_tag :checkin_date, @trip.checkin_date.strftime('%d/%m/%Y'), class: "input", type: "text", disabled: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.checkin_time') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <% if @trip.checkin_time.present? %>
+                      <%= text_field_tag :checkin_time, @trip.checkin_time.strftime('%H:%M'), class: "input", type: "text", disabled: true %>
+                    <% else %>
+                      <%= text_field_tag :checkin_time, '', class: "input", type: "text", disabled: true %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal mt-4">
+              <div class="field-label is-normal">
+                <label class="label"><%= t('app.trip.checkout_date') %></label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= text_field_tag :checkout_date, @trip.checkout_date.strftime('%d/%m/%Y'), class: "input", type: "text", disabled: true %>
                   </div>
                 </div>
               </div>
@@ -70,20 +100,29 @@
               <div class="field-body">
                 <div class="field">
                   <div class="control is-expanded">
-                    <%= text_field_tag :checkout_time, @trip.checkout_time, class: "input", type: "text", disabled: true %>
+                    <% if @trip.checkout_time.present? %>
+                      <%= text_field_tag :checkout_time, @trip.checkout_time.strftime('%H:%M'), class: "input", type: "text", disabled: true %>
+                    <% else %>
+                      <%= text_field_tag :checkout_time, '', class: "input", type: "text", disabled: true %>
+                    <% end %>
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="field is-horizontal mt-4">
-              <div class="field-label is-normal">
+              <div class="field-label is-align-content-baseline">
                 <label class="label"><%= t('app.trip.extra_coffee') %></label>
               </div>
               <div class="field-body">
                 <div class="field">
                   <div class="control is-expanded">
-                    <%= text_field_tag :extra_coffee, @trip.extra_coffee, class: "input", type: "text", disabled: true %>
+                    <div class="custom-checkbox-left">
+                      <label class="b-checkbox checkbox" disabled="true">
+                        <input type="checkbox" <%= "checked" if @trip.extra_coffee %> disabled>
+                        <div class="check"></div>
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -116,13 +155,18 @@
             </div>
 
             <div class="field is-horizontal mt-4">
-              <div class="field-label is-normal">
+              <div class="field-label is-align-content-baseline">
                 <label class="label"><%= t('app.trip.free_driver') %></label>
               </div>
               <div class="field-body">
                 <div class="field">
                   <div class="control is-expanded">
-                    <%= text_field_tag :free_driver, @trip.free_driver, class: "input", type: "text", disabled: true %>
+                    <div class="custom-checkbox-left">
+                      <label class="b-checkbox checkbox" disabled="true">
+                        <input type="checkbox" <%= "checked" if @trip.free_driver %> disabled>
+                        <div class="check"></div>
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -142,13 +186,18 @@
             </div>
 
             <div class="field is-horizontal mt-4">
-              <div class="field-label is-normal">
+              <div class="field-label is-align-content-baseline">
                 <label class="label"><%= t('app.trip.free_guide') %></label>
               </div>
               <div class="field-body">
                 <div class="field">
                   <div class="control is-expanded">
-                    <%= text_field_tag :free_guide, @trip.free_guide, class: "input", type: "text", disabled: true %>
+                    <div class="custom-checkbox-left">
+                      <label class="b-checkbox checkbox" disabled="true">
+                        <input type="checkbox" <%= "checked" if @trip.free_guide %> disabled>
+                        <div class="check"></div>
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -174,7 +223,7 @@
               <div class="field-body">
                 <div class="field">
                   <div class="control is-expanded">
-                    <%= text_field_tag :rate_person_day, @trip.rate_person_day, class: "input", type: "text", disabled: true %>
+                    <%= text_field_tag :rate_person_day, number_with_precision(@trip.rate_person_day, precision: 2, separator: ",", delimiter: "."), class: "input", type: "text", disabled: true %>
                   </div>
                 </div>
               </div>
@@ -187,7 +236,7 @@
               <div class="field-body">
                 <div class="field">
                   <div class="control is-expanded">
-                    <%= text_field_tag :signal_value, @trip.signal_value, class: "input", type: "text", disabled: true %>
+                    <%= text_field_tag :signal_value, number_with_precision(@trip.signal_value, precision: 2, separator: ",", delimiter: "."), class: "input", type: "text", disabled: true %>
                   </div>
                 </div>
               </div>
@@ -200,7 +249,11 @@
               <div class="field-body">
                 <div class="field">
                   <div class="control is-expanded">
-                    <%= text_field_tag :signal_date, @trip.signal_date, class: "input", type: "text", disabled: true %>
+                    <% if @trip.signal_date.present? %>
+                      <%= text_field_tag :signal_date, @trip.signal_date.strftime('%d/%m/%Y'), class: "input", type: "text", disabled: true %>
+                    <% else %>
+                      <%= text_field_tag :signal_date, '', class: "input", type: "text", disabled: true %>
+                    <% end %>
                   </div>
                 </div>
               </div>
@@ -220,45 +273,58 @@
             </div>
 
             <div class="field is-horizontal mt-4">
-              <div class="field-label is-normal">
+              <div class="field-label is-align-content-baseline">
                 <label class="label"><%= t('app.trip.confirmed') %></label>
               </div>
               <div class="field-body">
                 <div class="field">
                   <div class="control is-expanded">
-                    <%= text_field_tag :confirmed, @trip.confirmed, class: "input", type: "text", disabled: true %>
+                    <div class="custom-checkbox-left">
+                      <label class="b-checkbox checkbox" disabled="true">
+                        <input type="checkbox" <%= "checked" if @trip.confirmed %> disabled>
+                        <div class="check"></div>
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="field is-horizontal mt-4">
-              <div class="field-label is-normal">
+              <div class="field-label is-align-content-baseline">
                 <label class="label"><%= t('app.trip.accomplished') %></label>
               </div>
               <div class="field-body">
                 <div class="field">
                   <div class="control is-expanded">
-                    <%= text_field_tag :accomplished, @trip.accomplished, class: "input", type: "text", disabled: true %>
+                    <div class="custom-checkbox-left">
+                      <label class="b-checkbox checkbox" disabled="true">
+                        <input type="checkbox" <%= "checked" if @trip.accomplished %> disabled>
+                        <div class="check"></div>
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="field is-horizontal mt-4">
-              <div class="field-label is-normal">
+              <div class="field-label is-align-content-baseline">
                 <label class="label"><%= t('app.trip.suspended') %></label>
               </div>
               <div class="field-body">
                 <div class="field">
                   <div class="control is-expanded">
-                    <%= text_field_tag :suspended, @trip.suspended, class: "input", type: "text", disabled: true %>
+                    <div class="custom-checkbox-left">
+                      <label class="b-checkbox checkbox" disabled="true">
+                        <input type="checkbox" <%= "checked" if @trip.suspended %> disabled>
+                        <div class="check"></div>
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
-
           </div>
         </div>
       </div>

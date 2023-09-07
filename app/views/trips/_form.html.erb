@@ -1,7 +1,20 @@
 <%= form_with(model: trip) do |form| %>
+  <div class="buttons is-right">
+    <div class="field">
+      <div class="field is-grouped">
+        <div>
+          <%= form.submit(@trip.new_record? ? t('app.guide.create') : t('app.guide.update'),
+                          class: "button is-primary") %>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <% if trip.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
+      <h2>
+        <%= t('activerecord.errors.template.header', model: t('activerecord.models.' + trip.class.name.downcase), count: trip.errors.count) %>
+      </h2>
 
       <ul>
         <% trip.errors.each do |error| %>
@@ -66,7 +79,7 @@
       <div class="field-body">
         <div class="field">
           <div class="control is-expanded">
-            <%= form.time_field :checkin_time, class: "input is-expanded" %>
+            <%= form.time_field :checkin_time, class: "input is-expanded", minute_interval: 15 %>
           </div>
         </div>
       </div>
@@ -92,7 +105,7 @@
       <div class="field-body">
         <div class="field">
           <div class="control is-expanded">
-            <%= form.time_field :checkout_time, class: "input is-expanded" %></div>
+            <%= form.time_field :checkout_time, class: "input is-expanded", minute_interval: 15 %></div>
         </div>
       </div>
     </div>
@@ -206,7 +219,7 @@
       <div class="field-body">
         <div class="field">
           <div class="control is-expanded">
-            <%= form.number_field :rate_person_day, class: "input", step: 0.01, placeholder: "0.00" %></div>
+            <%= form.number_field :rate_person_day, class: "input", step: 0.01, placeholder: "0,00" %></div>
         </div>
       </div>
     </div>
@@ -218,7 +231,7 @@
       <div class="field-body">
         <div class="field">
           <div class="control is-expanded">
-            <%= form.number_field :signal_value, class: "input", step: 0.01, placeholder: "0.00" %></div>
+            <%= form.number_field :signal_value, class: "input", step: 0.01, placeholder: "0,00" %></div>
         </div>
       </div>
     </div>
@@ -300,18 +313,5 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="field-body">
-    <div class="field">
-      <div class="field is-grouped">
-        <div>
-          <%= form.submit(@trip.new_record? ? t('app.hotelier_form.create') : t('app.hotelier_form.update'),
-                          class: "button is-primary") %>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
   </div>
 <% end %>

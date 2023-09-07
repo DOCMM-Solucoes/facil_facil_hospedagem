@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
   root 'welcome#index'
-  resources :photos
+  resources :structures
   resources :guides
   resources :establishments
   resources :hoteliers

@@ -15,6 +15,10 @@ FactoryBot.define do
   factory :guide do
     sequence(:id) { |n| n }
     name { Faker::Name.name }
+    phone { FFaker::PhoneNumber.phone_number }
+    cpf { FFaker::IdentificationBR.cpf }
+    company { FFaker::Company.name }
+    cnpj { FFaker::IdentificationBR.cnpj }
 
     after(:build) do |guide|
       guide.address ||= FactoryBot.build(:address, addressable: guide)

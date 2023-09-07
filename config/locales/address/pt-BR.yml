@@ -1,6 +1,7 @@
 pt-BR:
   app:
     address:
+      address: Endereço
       street: Rua
       postal_code: CEP
       city: Cidade

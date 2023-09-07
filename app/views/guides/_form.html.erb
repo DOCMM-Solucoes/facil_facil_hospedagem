@@ -11,10 +11,12 @@
   </div>
   <% if guide.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(guide.errors.count, "error") %> prohibited this guide from being saved:</h2>
+      <h2>
+        <%= t('activerecord.errors.template.header', model: t('activerecord.models.' + guide.class.name.downcase), count: guide.errors.count) %>
+      </h2>
 
       <ul>
-        <% hotelier.errors.each do |error| %>
+        <% guide.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -78,6 +80,18 @@
     </div>
 
     <div>
+      <hr>
+    </div>
+
+    <div>
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label"><%= t('app.address.address') %></label>
+        </div>
+        <div class="field-body">
+        </div>
+      </div>
+
       <%= form.fields_for :address do |address_fields| %>
         <div class="field is-horizontal">
           <div class="field-label is-normal">

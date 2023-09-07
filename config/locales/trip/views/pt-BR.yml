@@ -12,6 +12,7 @@ pt-BR:
       title: Nova viagem
       back: Voltar para viagens
     trip_show:
+      title: Viagem
       edit: Editar viagem
       back: Voltar para viagens
       delete: Deletar viagem
@@ -29,8 +30,8 @@ pt-BR:
       num_guides: Qtd guias
       free_guide: Guia cortesia
       num_rooms: Qtd quartos
-      rate_person_day: Valor diária pax
-      signal_value: Valor sinal
+      rate_person_day: Valor diária pax R$
+      signal_value: Valor sinal R$
       signal_date: Data sinal
       notes: Observações
       confirmed: Confirmado
