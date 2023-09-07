@@ -62,5 +62,9 @@ FactoryBot.define do
 		is_two_couples_plus_one { true } 
 		is_two_couples_plus_two { true } 
 		is_three_couples { true }
+
+		after(:build) do |room|
+      room.images.attach(io: File.open(Rails.root.join('spec', 'support', 'sample_photo_room.png')), filename: 'sample_photo_room.png', content_type: 'image/png')
+		end
   end
 end
