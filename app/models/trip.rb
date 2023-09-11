@@ -39,4 +39,7 @@
 class Trip < ApplicationRecord
   belongs_to :establishment
   belongs_to :guide
+  validates :checkin_date, presence: true
+  validates :checkout_date, presence: true
+  validates :num_people, presence: true, numericality: { only_integer: true, greater_than: 0 }
 end

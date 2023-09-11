@@ -62,4 +62,31 @@ RSpec.describe Guide, type: :model do
   describe 'associations' do
     it { should have_many(:trips) }
   end
+
+  describe 'validations' do
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:phone) }
+
+    it 'validates presence of cpf or cnpj' do
+      guide = FactoryBot.build(:guide, cpf: nil, cnpj: nil)
+      guide.valid?
+      expect(guide.errors[:base]).to include(I18n.t('app.errors.cpf_or_cnpj_presence'))
+    end
+
+    it 'validates company presence with cnpj' do
+      guide = FactoryBot.build(:guide, company: nil)
+      guide.valid?
+      expect(guide.errors[:base]).to include(I18n.t('app.errors.company_presence_with_cnpj'))
+    end
+
+    it 'validates valid cpf or cnpj' do
+      guide = FactoryBot.build(:guide, cpf: '12345678900')
+      guide.valid?
+      expect(guide.errors[:base]).to include(I18n.t('app.errors.invalid_cpf'))
+
+      guide = FactoryBot.build(:guide, cnpj: '12345678901234')
+      guide.valid?
+      expect(guide.errors[:base]).to include(I18n.t('app.errors.invalid_cnpj'))
+    end
+  end
 end

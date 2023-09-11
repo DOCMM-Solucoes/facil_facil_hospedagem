@@ -16,12 +16,12 @@
       <div class="field-body">
         <div class="field">
           <div class="control is-expanded">
-            <%= form.text_field :title, class: "input", placeholder: "Escreva o título da estrutura" %>
+            <%= form.text_field :title, require: true, class: "input", placeholder: "Escreva o título da estrutura" %>
+            <p class="help is-danger">Esse campo é obrigatório</p>
           </div>
         </div>
       </div>
       <% if structure.errors[:title].any? %>
-        <p class="help is-danger">Esse campo é obrigatório</p>
       <% end %>
     </div>
   <hr>
@@ -32,7 +32,8 @@
     <div class="field-body">
       <div class="field">
         <div class="control is-expanded has-icons-left">
-          <%= form.text_area :description, class: "textarea", placeholder: "Descrição da estrutura...", rows: "10", type: "text" %>
+          <%= form.text_area :description, require: true, class: "textarea", placeholder: "Descrição da estrutura...", rows: "10", type: "text" %>
+          <p class="help is-danger">Esse campo é obrigatório</p>
         </div>
       </div>
     </div>

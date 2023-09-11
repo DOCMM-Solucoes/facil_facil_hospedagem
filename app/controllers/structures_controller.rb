@@ -17,6 +17,8 @@ class StructuresController < ApplicationController
 
   # GET /structures/1/edit
   def edit
+    @structure = Structure.find(params[:id])
+    @images = @structure.images
   end
 
   # POST /structures or /structures.json
@@ -36,8 +38,14 @@ class StructuresController < ApplicationController
 
   # PATCH/PUT /structures/1 or /structures/1.json
   def update
+    @structure = Structure.find(params[:id])
+
+    if structure_params[:images]
+      @structure.images.attach(structure_params[:images])
+    end
+
     respond_to do |format|
-      if @structure.update(structure_params)
+      if @structure.update(structure_params.except(:images))
         format.html { redirect_to structure_url(@structure), notice: "Structure was successfully updated." }
         format.json { render :show, status: :ok, location: @structure }
       else

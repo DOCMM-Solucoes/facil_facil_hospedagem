@@ -40,6 +40,23 @@ FactoryBot.define do
   factory :trip do
     establishment_id { FactoryBot.create(:establishment).id }
     guide_id { FactoryBot.create(:guide).id }
-    checkin_date { Faker::Date.between(from: Date.today, to: Date.today + 1.year) }
+    checkin_date { Faker::Date.between(from: Date.today, to: 1.year.from_now) }
+    checkin_time { Faker::Time.between(from: '08:00 AM', to: '12:00 PM') }
+    checkout_date { Faker::Date.between(from: Date.tomorrow, to: 1.year.from_now) }
+    checkout_time { Faker::Time.between(from: '01:00 PM', to: '05:00 PM') }
+    extra_coffee { Faker::Boolean.boolean }
+    num_people { Faker::Number.between(from: 1, to: 10) }
+    num_drivers { Faker::Number.between(from: 0, to: 3) }
+    free_driver { Faker::Boolean.boolean }
+    num_guides { Faker::Number.between(from: 0, to: 3) }
+    free_guide { Faker::Boolean.boolean }
+    num_rooms { Faker::Number.between(from: 1, to: 5) }
+    rate_person_day { Faker::Number.decimal(l_digits: 2, r_digits: 2) }
+    signal_value { Faker::Number.decimal(l_digits: 2, r_digits: 2) }
+    signal_date { Faker::Date.between(from: Date.today, to: 1.year.from_now) }
+    notes { Faker::Lorem.paragraph }
+    confirmed { Faker::Boolean.boolean }
+    accomplished { Faker::Boolean.boolean }
+    suspended { Faker::Boolean.boolean }
   end
 end

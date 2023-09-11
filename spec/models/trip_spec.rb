@@ -96,6 +96,16 @@ RSpec.describe Trip, type: :model do
       trip.guide_id = nil
       expect(trip).not_to be_valid
     end
+
+    it { should validate_presence_of(:checkin_date) }
+    it { should validate_presence_of(:checkout_date) }
+    it { should validate_presence_of(:num_people) }
+
+    it do
+      should validate_numericality_of(:num_people)
+               .only_integer
+               .is_greater_than(0)
+    end
   end
 
   describe 'associations' do
