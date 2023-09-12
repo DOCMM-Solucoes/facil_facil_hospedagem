@@ -6,6 +6,8 @@ gem install rake -v '12.2'
 gem install bundler -v 2.1.4
 gem update --system
 
+bundle config set --local frozen false
+
 bundle install
 bundle update
 npm install
