@@ -116,3 +116,4 @@ gem 'devise-i18n'
 # gem 'nokogiri'
 
 gem "bulma-rails"
+gem "dotenv-rails"

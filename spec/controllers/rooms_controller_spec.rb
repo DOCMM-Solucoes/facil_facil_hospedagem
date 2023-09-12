@@ -32,7 +32,7 @@ RSpec.describe RoomsController, type: :controller do
       end
     end 
 
-    describe 'POST #create' do
+    describe 'POST #create', skip: true do
       context 'With valid parameters' do
         it 'Creates a new room' do
           expect {

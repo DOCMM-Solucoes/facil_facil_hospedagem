@@ -17,6 +17,8 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1/edit
   def edit
+    @room = Room.find(params[:id])
+    @images = @room.images
   end
 
   # POST /rooms or /rooms.json
@@ -25,7 +27,7 @@ class RoomsController < ApplicationController
 
     respond_to do |format|
       if @room.save
-        format.html { redirect_to room_url(@room), notice: "Room was successfully created." }
+        format.html { redirect_to room_url(@room), notice: t('app.rooms_controller.create.success') }
         format.json { render :show, status: :created, location: @room }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -36,9 +38,15 @@ class RoomsController < ApplicationController
 
   # PATCH/PUT /rooms/1 or /rooms/1.json
   def update
+    @room = Room.find(params[:id])
+
+    if room_params[:images]
+      @room.images.attach(room_params[:images])
+    end
+
     respond_to do |format|
-      if @room.update(room_params)
-        format.html { redirect_to room_url(@room), notice: "Room was successfully updated." }
+      if @room.update(room_params.except(:images))
+        format.html { redirect_to room_url(@room), notice: t('app.rooms_controller.update.success') }
         format.json { render :show, status: :ok, location: @room }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +60,7 @@ class RoomsController < ApplicationController
     @room.destroy
 
     respond_to do |format|
-      format.html { redirect_to rooms_url, notice: "Room was successfully destroyed." }
+      format.html { redirect_to rooms_url, notice: t('app.rooms_controller.destroy.success') }
       format.json { head :no_content }
     end
   end

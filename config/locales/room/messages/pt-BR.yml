@@ -8,4 +8,8 @@ pt-BR:
       destroy:
         success: Quarto excluído com sucesso.
       notice_delete: Excluir Quarto?
-      
+
+    errors:
+      type_of_accommodation: "Pelo menos um tipo de acomodação deve ser selecionado"
+      single_or_double: "Deve ser selecionada pelo menos uma opção referente ao quarto individual ou duplo"
+      photo attached: "Pelo menos uma foto deve ser anexada ao quarto"

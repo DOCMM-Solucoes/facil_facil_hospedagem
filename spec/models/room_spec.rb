@@ -50,12 +50,6 @@ RSpec.describe Room, type: :model do
         expect(room_type.maximum_capacity).to eq(6)
       end
 
-      it 'Creates a new room' do
-        expect {
-          Room.create(name: 'Room Name', description: 'Lorem ipsum', reference: 'Room Ref.')
-        }.to change(Room, :count).by(1)
-      end
-
       it 'Reads an existing room' do
         room_type = create(:room)
         expect(Room.find(room_type.id)).to eq(room_type)

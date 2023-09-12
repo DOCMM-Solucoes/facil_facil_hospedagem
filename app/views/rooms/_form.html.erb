@@ -2,7 +2,9 @@
 
   <% if room.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
+      <h2>
+        <%= t('activerecord.errors.template.header', model: t('activerecord.models.' + room.class.name.downcase), count: room.errors.count) %>
+      </h2>
 
       <ul>
         <% room.errors.each do |error| %>
@@ -274,6 +276,25 @@
     </div>
 
     <!-- begin (photos / images) -->
+    <div class="field is-horizontal" disabled>
+      <div class="field-label is-normal" disabled>
+        <label class="label" disabled><%= "Fotos do Quarto" %></label>
+      </div>
+      <div class="field-body" disabled>
+        <div class="box" disabled>
+
+          <div class="columns is-mobile">
+            <% @room.images.each do |img| %>
+              <div class="column">
+                <%= image_tag img, class: 'image-size image is-128x128' %>
+              </div>
+            <% end %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
     <div class="field is-horizontal">
       <div class="field-label is-normal">
         <label class="label"><%= t('app.room.images') %></label>
