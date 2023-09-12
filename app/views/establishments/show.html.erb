@@ -2,7 +2,7 @@
   <div class="card">
     <header class="card-header">
       <div class="card-header-title">
-        <span class="icon"><i class="mdi mdi-ballot"></i></span>
+        <span class="mdi mdi-store"></span>
         <h1><%= @establishment.name %></h1>
       </div>
     </header>
@@ -10,15 +10,25 @@
       <div class="field is-horizontal">
         <div class="field-label">
           <div class="card-content">
+
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Hoteleiro</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <%= text_field_tag :name, @establishment.hotelier.name, class: "input", type: "text", disabled: true %>
+                </div>
+              </div>
+            </div>
+
             <div class="field is-horizontal">
               <div class="field-label is-normal">
                 <label class="label"><%= t('app.establishment.name') %></label>
               </div>
               <div class="field-body">
                 <div class="field">
-                  <div class="control is-expanded has-icons-left">
-                    <%= text_field_tag :name, @establishment.name, class: "input", type: "text", disabled: true %>
-                  </div>
+                  <%= text_field_tag :name, @establishment.name, class: "input", type: "text", disabled: true %>
                 </div>
               </div>
             </div>
@@ -29,9 +39,7 @@
               </div>
               <div class="field-body">
                 <div class="field">
-                  <div class="control is-expanded has-icons-left">
-                    <%= text_field_tag :name, @establishment.qty_bedrooms, class: "input", type: "text", disabled: true %>
-                  </div>
+                  <%= text_field_tag :name, @establishment.qty_bedrooms, class: "input", type: "text", disabled: true %>
                 </div>
               </div>
             </div>
@@ -62,80 +70,71 @@
               </div>
               <div class="field-body">
                 <div class="field">
-                  <div class="control is-expanded has-icons-left">
-                    <%= text_field_tag :name, @establishment.site, class: "input", type: "text", disabled: true %>
-                  </div>
+                  <%= text_field_tag :name, @establishment.site, class: "input", type: "text", disabled: true %>
                 </div>
               </div>
             </div>
 
-            <%= form_for @establishment do |form| %>
-              <%= form.fields_for :address do |address_fields| %>
-                <div class="field is-horizontal">
-                  <div class="field-label is-normal">
-                    <label class="label"><%= t('app.address.street') %></label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <div class="control is-expanded has-icons-left">
+            <div>
+              <hr>
+            </div>
+
+            <div>
+              <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                  <strong>Endereço:</strong>
+                </div>
+                <div class="field-body">
+                </div>
+              </div>
+
+              <%= form_for @establishment do |form| %>
+                <%= form.fields_for :address do |address_fields| %>
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label"><%= t('app.address.street') %></label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
                         <%= address_fields.text_field :street, class: "input", type: "text", disabled: true %>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <div class="field is-horizontal">
-                  <div class="field-label is-normal">
-                    <label class="label"><%= t('app.address.postal_code') %></label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <div class="control is-expanded has-icons-left">
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label"><%= t('app.address.postal_code') %></label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
                         <%= address_fields.text_field :postal_code, class: "input", type: "text", disabled: true %>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <div class="field is-horizontal">
-                  <div class="field-label is-normal">
-                    <label class="label"><%= t('app.address.city') %></label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <div class="control is-expanded has-icons-left">
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label"><%= t('app.address.city') %></label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
                         <%= address_fields.text_field :city, class: "input", type: "text", disabled: true %>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <div class="field is-horizontal">
-                  <div class="field-label is-normal">
-                    <label class="label"><%= t('app.address.state') %></label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <div class="control is-expanded has-icons-left">
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label"><%= t('app.address.state') %></label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
                         <%= address_fields.text_field :state, class: "input", type: "text", disabled: true %>
                       </div>
                     </div>
                   </div>
-                </div>
+                <% end %>
               <% end %>
-            <% end %>
-
-            <div class="field is-horizontal">
-              <div class="field-label is-normal">
-                <label class="label">Hoteleiro</label>
-              </div>
-              <div class="field-body">
-                <div class="field">
-                  <div class="control is-expanded has-icons-left">
-                    <%= text_field_tag :name, @establishment.hotelier.name, class: "input", type: "text", disabled: true %>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
