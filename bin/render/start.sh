@@ -6,8 +6,8 @@ gem install rake -v '12.2'
 gem install bundler -v 2.1.4
 gem update --system
 
-bundle update
 bundle install
+bundle update
 npm install
 bundle exec rake assets:precompile
 bundle exec rake assets:clean
