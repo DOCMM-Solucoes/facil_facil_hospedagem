@@ -15,4 +15,6 @@ class Hotelier < ApplicationRecord
   has_many :establishments, dependent: :destroy
 
   accepts_nested_attributes_for :address
+
+  validates :name, :phone_number, presence: :true
 end
