@@ -2,7 +2,7 @@
 # exit on error
 set -o errexit
 
-gem install bundler
+gem install bundler -v 2.1.4
 gem update --system
 
 bundle install
