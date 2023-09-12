@@ -113,7 +113,7 @@ gem 'devise-i18n'
 # gem 'sass-rails'
 # gem "octokit", "~> 5.0"
 # gem 'httparty'
-gem 'nokogiri'
+gem 'nokogiri', "1.14.5"
 
 gem "bulma-rails"
 gem "dotenv-rails"
