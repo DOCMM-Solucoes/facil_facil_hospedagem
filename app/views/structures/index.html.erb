@@ -7,8 +7,7 @@
   </header>
   <div class="buttons is-right">
     <div>
-      <%= link_to 'Nova Estrutura', new_structure_path, class: "button is-primary", type: "button" %>
-      <span class="icon"><i class=""> </i></span>
+      <%= link_to 'Nova Estrutura', new_structure_path, class: "button is-primary mdi mdi-plus-thick", type: "button" %>
     </div>
   </div>
   <div class="card-content">
@@ -43,9 +42,7 @@
                       <%= button_to 'Deletar', structure, method: :delete,
                                     form: { data: { turbo_confirm: t('app.controller.notice_delete') } },
                                     class: "button is-danger jb-modal is-small is-flex" %>
-
                     </div>
-
                   </div>
                 </td>
               </tr>

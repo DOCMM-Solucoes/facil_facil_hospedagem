@@ -8,3 +8,9 @@ pt-BR:
       destroy:
         success: Estrutura excluída com sucesso.
       notice_delete: Excluir Quarto?
+
+      errors:
+        type_of_title: "É preciso preencher o campo do título"
+        type_of_description: "É preciso preencher o campo de descrição"
+        photo_attached: "Pelo menos uma foto deve ser anexada ao formulário"
+

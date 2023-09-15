@@ -1,6 +1,6 @@
 <%= form_with(model: structure, multipart: true) do |form| %>
   <% if structure.errors.any? %>
-    <div class="notification is-danger">
+    <div style="color: red">
       <h2><%= pluralize(structure.errors.count, "error") %> prohibited this photo from being saved:</h2>
       <ul>
         <% structure.errors.each do |error| %>
@@ -9,22 +9,23 @@
       </ul>
     </div>
   <% end %>
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label"><%= form.label "Título:", class: "label" %></label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control is-expanded">
-            <%= form.text_field :title, require: true, class: "input", placeholder: "Escreva o título da estrutura" %>
-            <p class="help is-danger">Esse campo é obrigatório</p>
-          </div>
+
+  <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <label class="label"><%= form.label "Título:", class: "label" %></label>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control is-expanded">
+          <%= form.text_field :title, require: true, class: "input", placeholder: "Escreva o título da estrutura" %>
+          <% if structure.errors[:title].any? %>
+          <% end %>
         </div>
       </div>
-      <% if structure.errors[:title].any? %>
-      <% end %>
     </div>
+  </div>
   <hr>
+
   <div class="field is-horizontal">
     <div class="field-label is-normal">
       <label class="label">Descrição:</label>
@@ -33,12 +34,14 @@
       <div class="field">
         <div class="control is-expanded has-icons-left">
           <%= form.text_area :description, require: true, class: "textarea", placeholder: "Descrição da estrutura...", rows: "10", type: "text" %>
-          <p class="help is-danger">Esse campo é obrigatório</p>
+          <% if structure.errors[:description].any? %>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
   <hr>
+
   <div class="field is-horizontal">
     <div class="field-label is-normal">
       <label class="label"><%= form.label "Imagens:", class: "label", style: "display: block" %></label>
@@ -48,14 +51,14 @@
         <label class="upload control">
           <a class="button is-primary">
             <span class="icon"><i class="mdi mdi-upload"></i></span>
-            <span><%= form.file_field :images, class: "button is-primary is-outlined", multiple: true %>
-              Imagens</span>
+            <span><%= form.file_field :images, class: "button is-primary is-outlined", multiple: true %>Imagens</span>
           </a>
           <input type="file">
         </label>
       </div>
     </div>
   </div>
+
   <div class="field-body">
     <div class="field">
       <div class="field is-grouped">
