@@ -42,9 +42,9 @@
         </div>
         <div class="field-body" disabled>
           <div class="box" disabled>
-            <div class="columns is-mobile">
+            <div class="columns is-multiline">
               <% @structure.images.each do |image| %>
-                <div class="column">
+                <div class="column is-one-quarter-desktop is-half-tablet">
                   <%= image_tag image %>
                 </div>
               <% end %>
