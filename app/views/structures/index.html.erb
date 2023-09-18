@@ -27,7 +27,7 @@
               <tr>
                 <td></td>
                 <td data-label="Title"><%= structure.title %></td>
-                <td data-label="Describe"><%= structure.description %></td>
+                <td data-label="Describe"><%= truncate(structure.description, length: 90, separator: '', omission: '... (continua)') %></td>
                 <td class="is-actions-cell">
                   <div class="buttons is-right has-text-white">
                     <button class="button is-small is-info has-text-white jb-modal" type="button">
